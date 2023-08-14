@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "Bakery-Menage-App": {
+        "Bakery-Manage-App": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/bakery-menage-app",
+                        "outputPath": "dist/bakery-manage-app",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -53,10 +53,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "Bakery-Menage-App:build:production"
+                            "browserTarget": "Bakery-Manage-App:build:production"
                         },
                         "development": {
-                            "browserTarget": "Bakery-Menage-App:build:development"
+                            "browserTarget": "Bakery-Manage-App:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "Bakery-Menage-Appp:build"
+                        "browserTarget": "Bakery-Manage-App:build"
                     }
                 },
                 "test": {
