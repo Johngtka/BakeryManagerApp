@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -37,6 +38,7 @@ const materialsModules = [
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatMenuModule,
+    MatSidenavModule,
     MatDialogModule,
     MatSnackBarModule,
 ];
