@@ -3,6 +3,9 @@
         "TITLE": "Menadżer Piekarni"
     },
     "MENU": {
-        "SALES": "Promocje"
+        "HOME": "Strona Główna",
+        "SALES": "Promocje",
+        "PRODUCTS": "Produkty",
+        "UPDATES": "Aktualizacje"
     }
 }
