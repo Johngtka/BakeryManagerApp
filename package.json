@@ -3,10 +3,10 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
+        "start": "ng serve -c development",
         "prebuild": "standard-version",
-        "postbuild": "git push --follow-tags",
+        "build": "ng build -c production --base-href https://johngtka.github.io/BakeryManagerApp/",
+        "postbuild": "git push --follow-tags && npx angular-cli-ghpages --dir=dist/bakery-manage-app",
         "watch": "ng build --watch --configuration development",
         "format": "prettier --write ./**/*.{ts,json,html,css}",
         "test": "ng test",
