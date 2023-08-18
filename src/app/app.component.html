@@ -26,6 +26,15 @@
 
     <mat-sidenav-content>
         <div class="content">
+            <button
+                mat-icon-button
+                *ngIf="sidenav.mode === 'over' && !sidenav.opened"
+                (click)="sidenav.toggle()"
+                style="float: left; color: #fff; margin: 10px"
+                class="mat-elevation-z8"
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
