@@ -1,1 +1,19 @@
-<app-home></app-home>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+        <div class="project">
+            <img class="logo" src="../assets/logo.png" />
+            <span>{{ 'APP.TITLE' | translate }}</span>
+        </div>
+        <mat-divider style="margin-top: 10px; margin-bottom: 10px">
+        </mat-divider>
+        <button mat-button class="menu-button">
+            <mat-icon>add_to_queue</mat-icon>
+            <span>{{ 'MENU.SALES' | translate }}</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
