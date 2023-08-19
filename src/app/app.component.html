@@ -1,1 +1,41 @@
-<app-home></app-home>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+        <div class="project">
+            <img class="logo" src="../assets/logo.png" />
+            <span>{{ 'APP.TITLE' | translate }}</span>
+        </div>
+        <mat-divider style="margin-top: 10px; margin-bottom: 10px">
+        </mat-divider>
+        <button mat-button routerLink="/home" class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span>{{ 'MENU.HOME' | translate }}</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>file_upload</mat-icon>
+            <span>{{ 'MENU.UPDATES' | translate }}</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>add_to_queue</mat-icon>
+            <span>{{ 'MENU.SALES' | translate }}</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>storage</mat-icon>
+            <span>{{ 'MENU.PRODUCTS' | translate }}</span>
+        </button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="content">
+            <button
+                mat-icon-button
+                *ngIf="sidenav.mode === 'over' && !sidenav.opened"
+                (click)="sidenav.toggle()"
+                style="float: left; color: #fff; margin: 10px"
+                class="mat-elevation-z8"
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
