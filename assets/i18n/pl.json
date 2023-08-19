@@ -1,0 +1,11 @@
+{
+    "APP": {
+        "TITLE": "Menadżer Piekarni"
+    },
+    "MENU": {
+        "HOME": "Strona Główna",
+        "SALES": "Promocje",
+        "PRODUCTS": "Produkty",
+        "UPDATES": "Aktualizacje"
+    }
+}
