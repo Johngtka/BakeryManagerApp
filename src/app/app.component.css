@@ -53,6 +53,7 @@ span {
 .content {
     height: 100vh;
     margin: 0;
+    /* padding: 2%; */
     background-color: rgb(44, 44, 44);
 }
 
