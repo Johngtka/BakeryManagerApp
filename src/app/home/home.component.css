@@ -1,0 +1,54 @@
+.usersTable {
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.usersTableBox {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    clear: both;
+}
+
+.mat-column-name {
+    text-align: center;
+    width: 5%;
+}
+.mat-column-surname {
+    text-align: center;
+    width: 5%;
+}
+.mat-column-surname {
+    text-align: center;
+    width: 5%;
+}
+.mat-column-nick {
+    text-align: center;
+    width: 5%;
+}
+.mat-column-phone {
+    text-align: center;
+    width: 5%;
+}
+.mat-column-email {
+    text-align: center;
+    width: 5%;
+}
+
+@media screen and (max-width: 700px) {
+    .usersTableBox {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        clear: both;
+    }
+    .usersTable {
+        padding: 1%;
+    }
+    .onPhone {
+        display: none;
+    }
+}

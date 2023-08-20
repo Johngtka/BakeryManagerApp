@@ -44,11 +44,15 @@ body {
 
 .loader-container {
     position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 200px;
     max-height: 400px;
     overflow: auto;
     background: rgba(0, 0, 0, 0.15);
     height: 30vh;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
 
     user!: User[];
     dataSource!: MatTableDataSource<User>;
+    loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'surname', 'nick', 'phone', 'email'];
 
     ngOnInit(): void {
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
             next: (data) => {
                 this.user = data;
                 this.dataSource = new MatTableDataSource<User>(this.user);
+                this.loadingProcess = false;
             },
             error: (err) => {
                 this.snackService.showSnackBar(
