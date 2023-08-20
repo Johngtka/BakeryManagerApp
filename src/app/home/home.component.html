@@ -51,6 +51,12 @@
         </ng-container>
     </table>
 </div>
+<div class="filterPanel">
+    <button mat-raised-button class="mat-elevation-z8">
+        <mat-icon>search</mat-icon>
+        <span>{{ 'USERS_TABLE.FILTER_PANEL.SEARCH_BUTTON' | translate }}</span>
+    </button>
+</div>
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
 </div>

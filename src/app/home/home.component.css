@@ -7,9 +7,9 @@
 
 .usersTableBox {
     width: 80%;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
     clear: both;
 }
 
@@ -51,4 +51,14 @@
     .onPhone {
         display: none;
     }
+}
+
+.filterPanel {
+    padding-top: 20px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-end;
 }

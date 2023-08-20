@@ -21,6 +21,9 @@
             "NICK": "Login",
             "PHONE": "Telefon",
             "EMAIL": "Poczta"
+        },
+        "FILTER_PANEL": {
+            "SEARCH_BUTTON": "Szukaj"
         }
     }
 }
