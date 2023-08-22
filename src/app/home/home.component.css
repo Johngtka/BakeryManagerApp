@@ -1,18 +1,3 @@
-.usersTable {
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    padding: 3%;
-}
-
-.usersTableBox {
-    width: 80%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    clear: both;
-}
-
 .mat-column-name {
     text-align: center;
     width: 5%;
@@ -41,31 +26,4 @@
 .mat-column-email {
     text-align: center;
     width: 5%;
-}
-
-@media screen and (max-width: 700px) {
-    .usersTableBox {
-        width: 100%;
-        margin: 0;
-        display: flex;
-        clear: both;
-    }
-
-    .usersTable {
-        padding: 1%;
-    }
-
-    .onPhone {
-        display: none;
-    }
-}
-
-.filterPanel {
-    padding-top: 20px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: flex-end;
 }

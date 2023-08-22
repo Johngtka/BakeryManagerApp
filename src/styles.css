@@ -57,3 +57,45 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.tablesTemplate {
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.tablesTemplateBox {
+    width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+@media screen and (max-width: 700px) {
+    .tablesTemplateBox {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        clear: both;
+    }
+
+    .tablesTemplate {
+        padding: 1%;
+    }
+
+    .onPhone {
+        display: none;
+    }
+}
+
+.filterPanel {
+    padding-top: 20px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-end;
+}
