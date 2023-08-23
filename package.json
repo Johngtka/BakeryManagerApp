@@ -26,7 +26,7 @@
     "@angular/router": "^16.2.1",
     "@ngneat/until-destroy": "^10.0.0",
     "@ngx-translate/core": "^15.0.0",
-    "@ngx-translate/http-loader": "^7.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "rxjs": "~7.8.0",
     "standard-version": "^9.5.0",
     "tslib": "^2.3.0",
