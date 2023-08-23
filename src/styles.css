@@ -72,24 +72,6 @@ body {
     margin-right: auto;
     clear: both;
 }
-
-@media screen and (max-width: 700px) {
-    .tablesTemplateBox {
-        width: 100%;
-        margin: 0;
-        display: flex;
-        clear: both;
-    }
-
-    .tablesTemplate {
-        padding: 1%;
-    }
-
-    .onPhone {
-        display: none;
-    }
-}
-
 .filterPanel {
     padding-top: 20px;
     width: 80%;
@@ -105,4 +87,27 @@ body {
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .tablesTemplateBox {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        clear: both;
+    }
+    .filterPanel {
+        width: 100%;
+    }
+
+    .tablesTemplate {
+        padding: 1%;
+    }
+
+    .onPhone {
+        display: none;
+    }
+    .paginator {
+        width: 100%;
+    }
 }

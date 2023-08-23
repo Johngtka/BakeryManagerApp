@@ -4,10 +4,7 @@
         [dataSource]="dataSource"
         class="mat-elevation-z8 tablesTemplate"
     >
-        <tr
-            mat-header-row
-            *matHeaderRowDef="displayedColumns; sticky: true"
-        ></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         <ng-container matColumnDef="name">
             <th mat-header *matHeaderCellDef>
