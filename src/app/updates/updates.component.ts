@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
 import { MatPaginator } from '@angular/material/paginator';
 import {
@@ -25,7 +25,9 @@ export class UpdatesComponent implements OnInit {
     update!: Update[];
     dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
+    isSelected: boolean = false;
     displayedColumns: string[] = ['name', 'date', 'description'];
+    logID: number[] = [];
 
     ngOnInit(): void {
         this.updateService.getUpdates().subscribe({
@@ -43,5 +45,36 @@ export class UpdatesComponent implements OnInit {
                 console.log(err);
             },
         });
+    }
+
+    clickedRow(row: Update): void {
+        const ID = this.logID.indexOf(row.id);
+        if (ID !== -1) {
+            this.logID.splice(ID, 1);
+            this.isSelected = false;
+        } else {
+            this.logID.push(row.id);
+        }
+        this.checkLogSelect();
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
+            this.paginator.nextPage();
+        } else if (
+            event.key === 'ArrowLeft' &&
+            this.paginator.hasPreviousPage()
+        ) {
+            this.paginator.previousPage();
+        }
+    }
+
+    private checkLogSelect(): void {
+        if (this.logID.length >= 1) {
+            this.isSelected = true;
+        } else {
+            this.isSelected = false;
+        }
     }
 }

@@ -5,7 +5,12 @@
         class="mat-elevation-z8 tablesTemplate"
     >
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="clickedRow(row)"
+            [ngClass]="{ selectedRow: logID.indexOf(row.id) > -1 }"
+        ></tr>
         <ng-container matColumnDef="name">
             <th mat-header *matHeaderCellDef>
                 {{ 'UPDATES_TABLE.COLUMNS.NAME' | translate }}
@@ -37,6 +42,22 @@
     [pageSizeOptions]="[5]"
     aria-label="Select page"
 ></mat-paginator>
+<div class="controlPanel">
+    <button mat-raised-button class="mat-elevation-z8" color="primary">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>dodaj</span>
+    </button>
+    <button
+        mat-raised-button
+        style="background-color: #0f0"
+        class="mat-elevation-z8"
+        [disabled]="!isSelected"
+        [ngClass]="{ isSelect: !isSelected }"
+    >
+        <mat-icon>edit</mat-icon>
+        <span>edytuj</span>
+    </button>
+</div>
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
 </div>
