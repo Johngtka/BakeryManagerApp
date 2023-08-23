@@ -9,6 +9,10 @@ body {
     font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
+td:hover {
+    cursor: pointer;
+}
+
 .info-snackbar div {
     background: blue !important;
     color: white;
@@ -115,8 +119,7 @@ body {
     }
 }
 
-.selectedRow,
-selectedRow:hover {
+.selectedRow {
     background-color: lightgray !important;
 }
 .isSelect {
