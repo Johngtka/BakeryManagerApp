@@ -12,7 +12,8 @@
         "CLOSE": "Zamknij"
     },
     "ERRORS": {
-        "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!"
+        "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
+        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!"
     },
     "USERS_TABLE": {
         "COLUMNS": {
@@ -24,6 +25,13 @@
         },
         "FILTER_PANEL": {
             "SEARCH_BUTTON": "Szukaj"
+        }
+    },
+    "UPDATES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa",
+            "DATE": "Data",
+            "DESCRIPTION": "Opis"
         }
     }
 }

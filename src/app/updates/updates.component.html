@@ -1,1 +1,45 @@
-<p>updates works!</p>
+<div class="mat-elevation-z8 tablesTemplateBox">
+    <table
+        mat-table
+        [dataSource]="dataSource"
+        class="mat-elevation-z8 tablesTemplate"
+    >
+        <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        <ng-container matColumnDef="name">
+            <th mat-header *matHeaderCellDef>
+                {{ 'UPDATES_TABLE.COLUMNS.NAME' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.Nazwa }}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+            <th mat-header *matHeaderCellDef>
+                {{ 'UPDATES_TABLE.COLUMNS.DATE' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.Data }}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header *matHeaderCellDef>
+                {{ 'UPDATES_TABLE.COLUMNS.DESCRIPTION' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.Opis }}
+            </td>
+        </ng-container>
+    </table>
+</div>
+<mat-paginator
+    class="paginator"
+    [pageSizeOptions]="[5]"
+    aria-label="Select page"
+></mat-paginator>
+<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
+    <mat-spinner></mat-spinner>
+</div>
