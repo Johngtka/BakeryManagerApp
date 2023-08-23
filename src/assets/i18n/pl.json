@@ -13,7 +13,7 @@
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
-        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!"
+        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!"
     },
     "USERS_TABLE": {
         "COLUMNS": {

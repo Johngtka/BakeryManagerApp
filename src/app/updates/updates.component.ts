@@ -39,7 +39,7 @@ export class UpdatesComponent implements OnInit {
             },
             error: (err) => {
                 this.snackService.showSnackBar(
-                    'UPDATES_GETTING_ERROR',
+                    'ERRORS.UPDATES_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
                 console.log(err);
@@ -71,7 +71,7 @@ export class UpdatesComponent implements OnInit {
     }
 
     private checkLogSelect(): void {
-        if (this.logID.length >= 1) {
+        if (this.logID.length === 1) {
             this.isSelected = true;
         } else {
             this.isSelected = false;
