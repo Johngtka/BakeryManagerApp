@@ -45,7 +45,7 @@
 <div class="controlPanel">
     <button mat-raised-button class="mat-elevation-z8" color="primary">
         <mat-icon>add_circle_outline</mat-icon>
-        <span>dodaj</span>
+        <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
     <button
         mat-raised-button
@@ -55,7 +55,7 @@
         [ngClass]="{ isSelect: !isSelected }"
     >
         <mat-icon>edit</mat-icon>
-        <span>edytuj</span>
+        <span>{{ 'CONTROL_PANEL_TABLES.EDIT' | translate }}</span>
     </button>
 </div>
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">

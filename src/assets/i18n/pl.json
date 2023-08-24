@@ -15,6 +15,11 @@
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
         "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!"
     },
+    "CONTROL_PANEL_TABLES": {
+        "ADD": "Dodaj",
+        "EDIT": "Edytuj",
+        "DELETE": "Usuń"
+    },
     "USERS_TABLE": {
         "COLUMNS": {
             "NAME": "Imie",
@@ -22,9 +27,6 @@
             "NICK": "Login",
             "PHONE": "Telefon",
             "EMAIL": "Poczta"
-        },
-        "FILTER_PANEL": {
-            "SEARCH_BUTTON": "Szukaj"
         }
     },
     "UPDATES_TABLE": {
