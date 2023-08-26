@@ -7,5 +7,33 @@
         "SALES": "Promocje",
         "PRODUCTS": "Produkty",
         "UPDATES": "Aktualizacje"
+    },
+    "SNACK_BAR": {
+        "CLOSE": "Zamknij"
+    },
+    "ERRORS": {
+        "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
+        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!"
+    },
+    "CONTROL_PANEL_TABLES": {
+        "ADD": "Dodaj",
+        "EDIT": "Edytuj",
+        "DELETE": "Usuń"
+    },
+    "USERS_TABLE": {
+        "COLUMNS": {
+            "NAME": "Imie",
+            "SURNAME": "Nazwisko",
+            "NICK": "Login",
+            "PHONE": "Telefon",
+            "EMAIL": "Poczta"
+        }
+    },
+    "UPDATES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa",
+            "DATE": "Data",
+            "DESCRIPTION": "Opis"
+        }
     }
 }
