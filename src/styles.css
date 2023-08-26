@@ -9,6 +9,10 @@ body {
     font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
+td:hover {
+    cursor: pointer;
+}
+
 .info-snackbar div {
     background: blue !important;
     color: white;
@@ -72,6 +76,25 @@ body {
     margin-right: auto;
     clear: both;
 }
+.controlPanel {
+    padding-top: 10px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-end;
+}
+.controlPanel button {
+    margin: 10px;
+}
+
+.paginator {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 700px) {
     .tablesTemplateBox {
@@ -79,6 +102,9 @@ body {
         margin: 0;
         display: flex;
         clear: both;
+    }
+    .controlPanel {
+        width: 100%;
     }
 
     .tablesTemplate {
@@ -88,14 +114,14 @@ body {
     .onPhone {
         display: none;
     }
+    .paginator {
+        width: 100%;
+    }
 }
 
-.filterPanel {
-    padding-top: 20px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: flex-end;
+.selectedRow {
+    background-color: lightgray !important;
+}
+.isSelect {
+    background-color: lightgray !important;
 }

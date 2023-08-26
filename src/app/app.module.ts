@@ -16,6 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
@@ -26,6 +27,7 @@ import { AppComponent } from './app.component';
 import { SalesService } from './services/sales.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UpdatesComponent } from './updates/updates.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -47,10 +49,11 @@ const materialsModules = [
     MatTooltipModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatPaginatorModule,
 ];
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent],
+    declarations: [AppComponent, HomeComponent, UpdatesComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

@@ -1,0 +1,13 @@
+.mat-column-name {
+    text-align: center;
+    width: 10%;
+}
+.mat-column-date {
+    text-align: center;
+    width: 10%;
+}
+.mat-column-description {
+    text-align: left;
+    font-size: x-small;
+    width: 60%;
+}
