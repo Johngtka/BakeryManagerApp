@@ -28,6 +28,7 @@ import { SalesService } from './services/sales.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UpdatesComponent } from './updates/updates.component';
+import { UpdateDescPipe } from './pipes/update-desc.pipe';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -53,7 +54,12 @@ const materialsModules = [
 ];
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, UpdatesComponent],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        UpdatesComponent,
+        UpdateDescPipe,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
