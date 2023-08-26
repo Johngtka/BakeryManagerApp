@@ -35,7 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 const navigatorLang = navigator.language.split('-')[0];
 const supportedLang = ['pl'];
-const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'en';
+const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'pl';
 const materialsModules = [
     MatIconModule,
     MatTableModule,
