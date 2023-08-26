@@ -1,10 +1,10 @@
 # BakeryManagerApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Development server
+## Deployed app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Navigate to `https://johngtka.github.io/BakeryManagerApp/`. The New versions and builds is Deployed every 2 weeks
 
 ## Code scaffolding
 
