@@ -29,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UpdatesComponent } from './updates/updates.component';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
+import { ProductsComponent } from './products/products.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -59,6 +60,7 @@ const materialsModules = [
         HomeComponent,
         UpdatesComponent,
         UpdateDescPipe,
+        ProductsComponent,
     ],
     imports: [
         BrowserModule,
