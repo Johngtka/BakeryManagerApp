@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
 import {
     MatTableDataSource,
@@ -50,5 +50,16 @@ export class ProductsComponent implements OnInit {
                 console.log(err);
             },
         });
+    }
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
+            this.paginator.nextPage();
+        } else if (
+            event.key === 'ArrowLeft' &&
+            this.paginator.hasPreviousPage()
+        ) {
+            this.paginator.previousPage();
+        }
     }
 }
