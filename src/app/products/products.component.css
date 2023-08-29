@@ -12,3 +12,19 @@
 .mat-column-description {
     width: 20%;
 }
+@media screen and (max-width: 700px) {
+    .mat-column-name {
+        width: 5%;
+        text-align: center;
+    }
+    .mat-column-unitPrice {
+        width: 5%;
+        text-align: center;
+    }
+    .mat-column-components {
+        font-size: x-small;
+    }
+    .mat-column-description {
+        font-size: x-small;
+    }
+}
