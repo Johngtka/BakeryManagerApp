@@ -51,6 +51,17 @@ export class ProductsComponent implements OnInit {
             },
         });
     }
+    clickedRow(row: Product): void {
+        const ID = this.logID.indexOf(row.id);
+        if (ID !== -1) {
+            this.logID.splice(ID, 1);
+            this.isSelected = false;
+        } else {
+            this.logID.push(row.id);
+        }
+        this.checkLogSelect();
+    }
+
     @HostListener('document:keydown', ['$event'])
     handleKeyEvent(event: KeyboardEvent): void {
         if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
@@ -60,6 +71,13 @@ export class ProductsComponent implements OnInit {
             this.paginator.hasPreviousPage()
         ) {
             this.paginator.previousPage();
+        }
+    }
+    private checkLogSelect(): void {
+        if (this.logID.length === 1) {
+            this.isSelected = true;
+        } else {
+            this.isSelected = false;
         }
     }
 }
