@@ -40,6 +40,12 @@
         </ng-container>
     </table>
 </div>
+<mat-paginator
+    class="paginator"
+    [pageSizeOptions]="[8]"
+    aria-label="Select page"
+>
+</mat-paginator>
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
 </div>

@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { MatTableDataSource } from '@angular/material/table';
+import {
+    MatTableDataSource,
+    MatTableDataSourcePaginator,
+} from '@angular/material/table';
 
 import { Product } from '../models/product';
 import { ProductsService } from '../services/products.service';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
     selector: 'app-products',
@@ -16,10 +20,11 @@ export class ProductsComponent implements OnInit {
         private productService: ProductsService,
         private snackService: SnackService,
     ) {}
-
+    @ViewChild(MatPaginator)
+    paginator!: MatPaginator;
     product!: Product[];
     logID: number[] = [];
-    dataSource!: MatTableDataSource<Product>;
+    dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
     isSelected: boolean = false;
     displayedColumns: string[] = [
@@ -34,6 +39,7 @@ export class ProductsComponent implements OnInit {
             next: (data) => {
                 this.product = data;
                 this.dataSource = new MatTableDataSource<Product>(this.product);
+                this.dataSource.paginator = this.paginator;
                 this.loadingProcess = false;
             },
             error: (err) => {
