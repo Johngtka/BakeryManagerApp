@@ -24,12 +24,12 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
+import { UsersService } from './services/users.service';
 import { HomeComponent } from './home/home.component';
+import { UpdateDescPipe } from './pipes/update-desc.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { UpdatesComponent } from './updates/updates.component';
-import { UpdateDescPipe } from './pipes/update-desc.pipe';
 import { ProductsComponent } from './products/products.component';
-import { UsersService } from './services/users.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -58,8 +58,8 @@ const materialsModules = [
     declarations: [
         AppComponent,
         HomeComponent,
-        UpdatesComponent,
         UpdateDescPipe,
+        UpdatesComponent,
         ProductsComponent,
     ],
     imports: [

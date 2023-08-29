@@ -7,8 +7,8 @@ import {
 } from '@angular/material/table';
 
 import { Update } from '../models/update';
-import { UpdatesService } from '../services/updates.service';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
+import { UpdatesService } from '../services/updates.service';
 
 @Component({
     selector: 'app-updates',

@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
+import { MatPaginator } from '@angular/material/paginator';
 import {
     MatTableDataSource,
     MatTableDataSourcePaginator,
 } from '@angular/material/table';
 
 import { Product } from '../models/product';
-import { ProductsService } from '../services/products.service';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
-import { MatPaginator } from '@angular/material/paginator';
+import { ProductsService } from '../services/products.service';
 
 @Component({
     selector: 'app-products',
