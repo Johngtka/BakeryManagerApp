@@ -1,0 +1,14 @@
+.mat-column-name {
+    width: 10%;
+    text-align: center;
+}
+.mat-column-unitPrice {
+    width: 10%;
+    text-align: center;
+}
+.mat-column-components {
+    width: 30%;
+}
+.mat-column-description {
+    width: 20%;
+}
