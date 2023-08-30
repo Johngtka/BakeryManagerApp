@@ -6,48 +6,52 @@ import {
     MatTableDataSourcePaginator,
 } from '@angular/material/table';
 
-import { Update } from '../models/update';
+import { Product } from '../models/product';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
-import { UpdatesService } from '../services/updates.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
-    selector: 'app-updates',
-    templateUrl: './updates.component.html',
-    styleUrls: ['./updates.component.css'],
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.css'],
 })
-export class UpdatesComponent implements OnInit {
+export class ProductsComponent implements OnInit {
     constructor(
-        private updateService: UpdatesService,
+        private productService: ProductsService,
         private snackService: SnackService,
     ) {}
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
-    update!: Update[];
-    dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
+    product!: Product[];
+    logID: number[] = [];
+    dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
     isSelected: boolean = false;
-    displayedColumns: string[] = ['name', 'date', 'description'];
-    logID: number[] = [];
+    displayedColumns: string[] = [
+        'name',
+        'unitPrice',
+        'components',
+        'description',
+    ];
 
     ngOnInit(): void {
-        this.updateService.getUpdates().subscribe({
+        this.productService.getProducts().subscribe({
             next: (data) => {
-                this.update = data;
-                this.dataSource = new MatTableDataSource<Update>(this.update);
+                this.product = data;
+                this.dataSource = new MatTableDataSource<Product>(this.product);
                 this.dataSource.paginator = this.paginator;
                 this.loadingProcess = false;
             },
             error: (err) => {
                 this.snackService.showSnackBar(
-                    'ERRORS.UPDATES_GETTING_ERROR',
+                    'ERRORS.PRODUCTS_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
                 console.log(err);
             },
         });
     }
-
-    clickedRow(row: Update): void {
+    clickedRow(row: Product): void {
         const ID = this.logID.indexOf(row.id);
         if (ID !== -1) {
             this.logID.splice(ID, 1);
@@ -69,7 +73,6 @@ export class UpdatesComponent implements OnInit {
             this.paginator.previousPage();
         }
     }
-
     private checkLogSelect(): void {
         if (this.logID.length === 1) {
             this.isSelected = true;

@@ -13,7 +13,8 @@
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
-        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!"
+        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
+        "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -33,6 +34,14 @@
         "COLUMNS": {
             "NAME": "Nazwa",
             "DATE": "Data",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "PRODUCT_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa",
+            "UNIT_PRICE": "Cena i Waga",
+            "COMPONENTS": "Składniki",
             "DESCRIPTION": "Opis"
         }
     }
