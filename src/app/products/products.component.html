@@ -24,7 +24,8 @@
                 {{ 'PRODUCT_TABLE.COLUMNS.UNIT_PRICE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.Cena + ' ' + element.Masa }}
+                {{ element.Cena | price }}
+                {{ element.Masa | weight }}
             </td>
         </ng-container>
         <ng-container matColumnDef="components">
