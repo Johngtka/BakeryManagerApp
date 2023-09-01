@@ -46,15 +46,12 @@
             >
                 <span *ngIf="logID.length >= 1 && logID.includes(element.id)">
                     <button
-                        mat-raised-button
-                        style="background-color: #0f0"
-                        class="mat-elevation-z8"
+                        mat-mini-fab
+                        style="background-color: #0f0; color: #000"
+                        class="buttons"
                         (click)="openDialog(element)"
                     >
                         <mat-icon>edit</mat-icon>
-                        <span>{{
-                            'CONTROL_PANEL_TABLES.EDIT' | translate
-                        }}</span>
                     </button>
                 </span>
             </td>

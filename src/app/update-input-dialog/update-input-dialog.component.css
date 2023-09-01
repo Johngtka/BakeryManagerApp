@@ -8,3 +8,8 @@
     display: flex;
     flex-direction: column;
 }
+@media screen and (max-width: 600px) {
+    .col {
+        width: 80vw;
+    }
+}
