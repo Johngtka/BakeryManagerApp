@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import {
     MatTableDataSource,
@@ -9,6 +10,7 @@ import {
 import { Update } from '../models/update';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
 import { UpdatesService } from '../services/updates.service';
+import { UpdateInputDialogComponent } from '../update-input-dialog/update-input-dialog.component';
 
 @Component({
     selector: 'app-updates',
@@ -19,6 +21,7 @@ export class UpdatesComponent implements OnInit {
     constructor(
         private updateService: UpdatesService,
         private snackService: SnackService,
+        private dialog: MatDialog,
     ) {}
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
@@ -28,6 +31,7 @@ export class UpdatesComponent implements OnInit {
     isSelected: boolean = false;
     displayedColumns: string[] = ['name', 'date', 'description'];
     logID: number[] = [];
+    updateBody!: Update;
 
     ngOnInit(): void {
         this.updateService.getUpdates().subscribe({
@@ -56,6 +60,23 @@ export class UpdatesComponent implements OnInit {
             this.logID.push(row.id);
         }
         this.checkLogSelect();
+        this.updateBody = {
+            id: row.id,
+            Nazwa: row.Nazwa,
+            Data: row.Data,
+            Opis: row.Opis,
+        };
+    }
+
+    openDialog() {
+        const body = this.updateBody;
+        const dialogRef = this.dialog.open(UpdateInputDialogComponent, {
+            data: {
+                body,
+            },
+            disableClose: true,
+        });
+        // console.log(body);
     }
 
     @HostListener('document:keydown', ['$event'])

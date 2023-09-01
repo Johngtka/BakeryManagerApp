@@ -32,6 +32,7 @@ import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './pipes/price.pipe';
 import { WeightPipe } from './pipes/weight.pipe';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
+import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -65,6 +66,7 @@ const materialsModules = [
         PricePipe,
         WeightPipe,
         UpdateDescPipe,
+        UpdateInputDialogComponent,
     ],
     imports: [
         BrowserModule,

@@ -53,6 +53,7 @@
         class="mat-elevation-z8"
         [disabled]="!isSelected"
         [ngClass]="{ isSelect: !isSelected }"
+        (click)="openDialog()"
     >
         <mat-icon>edit</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.EDIT' | translate }}</span>
