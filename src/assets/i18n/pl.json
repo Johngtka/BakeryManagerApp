@@ -34,7 +34,8 @@
         "COLUMNS": {
             "NAME": "Nazwa",
             "DATE": "Data",
-            "DESCRIPTION": "Opis"
+            "DESCRIPTION": "Opis",
+            "OPTIONS": "Opcje"
         }
     },
     "PRODUCT_TABLE": {
@@ -42,6 +43,22 @@
             "NAME": "Nazwa",
             "UNIT_PRICE": "Cena i Waga",
             "COMPONENTS": "Składniki",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Zamknij"
+    },
+    "UPDATE_DIALOG": {
+        "INFO": {
+            "EDIT_LOG_TITLE": "Edycja Logów",
+            "EDIT_LOG_BUTTON": "Aktualizuj",
+            "NEW_LOG_TITLE": "Nowy Wpis",
+            "NEW_LOG_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "NAME": "Nazwa",
+            "DATE": "Data",
             "DESCRIPTION": "Opis"
         }
     }

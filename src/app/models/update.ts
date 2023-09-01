@@ -1,6 +1,6 @@
 export interface Update {
     id: number;
-    Nazwa: string;
-    Data: string;
-    Opis: string;
+    name: string;
+    date: string;
+    description: string;
 }

@@ -74,3 +74,10 @@ span {
     width: 3rem;
     border-radius: 40%;
 }
+.dividers {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.descriptions {
+    resize: none;
+}

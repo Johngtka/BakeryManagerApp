@@ -28,10 +28,8 @@ export class UpdatesComponent implements OnInit {
     update!: Update[];
     dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
-    isSelected: boolean = false;
-    displayedColumns: string[] = ['name', 'date', 'description'];
+    displayedColumns: string[] = ['name', 'date', 'description', 'options'];
     logID: number[] = [];
-    updateBody!: Update;
 
     ngOnInit(): void {
         this.updateService.getUpdates().subscribe({
@@ -55,28 +53,19 @@ export class UpdatesComponent implements OnInit {
         const ID = this.logID.indexOf(row.id);
         if (ID !== -1) {
             this.logID.splice(ID, 1);
-            this.isSelected = false;
         } else {
             this.logID.push(row.id);
         }
-        this.checkLogSelect();
-        this.updateBody = {
-            id: row.id,
-            Nazwa: row.Nazwa,
-            Data: row.Data,
-            Opis: row.Opis,
-        };
     }
 
-    openDialog() {
-        const body = this.updateBody;
+    openDialog(update?: Update) {
         const dialogRef = this.dialog.open(UpdateInputDialogComponent, {
             data: {
-                body,
+                update,
             },
             disableClose: true,
         });
-        // console.log(body);
+        // console.log(log);
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -88,14 +77,6 @@ export class UpdatesComponent implements OnInit {
             this.paginator.hasPreviousPage()
         ) {
             this.paginator.previousPage();
-        }
-    }
-
-    private checkLogSelect(): void {
-        if (this.logID.length === 1) {
-            this.isSelected = true;
-        } else {
-            this.isSelected = false;
         }
     }
 }

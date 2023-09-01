@@ -21,34 +21,32 @@ export class UpdateInputDialogComponent implements OnInit {
         @Inject(MAT_DIALOG_DATA) public data: { update: Update },
     ) {}
 
-    dialogTitle!: string;
-    actionButton!: string;
+    titleText!: string;
     isEdit!: boolean;
+    buttonText!: string;
     registerForm!: FormGroup;
-    originalFormValues!: Update;
-    logId!: number;
+    originalFormValues!: Worker;
 
     ngOnInit(): void {
         if (this.data?.update) {
             this.isEdit = true;
-            this.actionButton = 'aktualizuj';
-            this.dialogTitle = 'edycja logów';
-            this.logId = this.data.update.id;
+            this.titleText = 'UPDATE_DIALOG.INFO.EDIT_LOG_TITLE';
+            this.buttonText = 'UPDATE_DIALOG.INFO.EDIT_LOG_BUTTON';
             this.registerForm = new FormGroup({
-                name: new FormControl(this.data.update.Nazwa, [
+                name: new FormControl(this.data.update.name, [
                     Validators.required,
                 ]),
-                date: new FormControl(this.data.update.Data, [
+                date: new FormControl(this.data.update.date, [
                     Validators.required,
                 ]),
-                description: new FormControl(this.data.update.Opis, [
+                description: new FormControl(this.data.update.description, [
                     Validators.required,
                 ]),
             });
         } else {
             this.isEdit = false;
-            this.actionButton = 'dodaj';
-            this.dialogTitle = 'nowe logi';
+            this.titleText = 'UPDATE_DIALOG.INFO.NEW_LOG_TITLE';
+            this.buttonText = 'UPDATE_DIALOG.INFO.NEW_LOG_BUTTON';
             this.registerForm = new FormGroup({
                 name: new FormControl('', [Validators.required]),
                 date: new FormControl('', [Validators.required]),
@@ -56,5 +54,17 @@ export class UpdateInputDialogComponent implements OnInit {
             });
         }
         this.originalFormValues = this.registerForm.value;
+    }
+
+    addUpdate() {
+        const log = this.registerForm.value;
+        console.log(log);
+    }
+
+    hasChange() {
+        return (
+            JSON.stringify(this.registerForm.value) !==
+            JSON.stringify(this.originalFormValues)
+        );
     }
 }
