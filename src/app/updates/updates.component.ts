@@ -65,18 +65,7 @@ export class UpdatesComponent implements OnInit {
             },
             disableClose: true,
         });
-        dialogRef.afterClosed().subscribe((result: Update) => {
-            const ID = this.logID.indexOf(result.id);
-            if (result) {
-                if (this.logID.length >= 1) {
-                    this.logID.splice(ID, 1);
-                }
-            } else {
-                if (this.logID.length >= 1) {
-                    this.logID.splice(ID, 1);
-                }
-            }
-        });
+        dialogRef.afterClosed().subscribe((result: Update) => {});
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -89,5 +78,8 @@ export class UpdatesComponent implements OnInit {
         ) {
             this.paginator.previousPage();
         }
+    }
+    clearSelect() {
+        this.logID = [];
     }
 }

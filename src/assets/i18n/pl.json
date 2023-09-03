@@ -19,7 +19,8 @@
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
         "EDIT": "Edytuj",
-        "DELETE": "Usuń"
+        "DELETE": "Usuń",
+        "CLEAR": "Wyczyść"
     },
     "USERS_TABLE": {
         "COLUMNS": {

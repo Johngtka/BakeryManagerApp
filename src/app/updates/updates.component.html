@@ -73,6 +73,16 @@
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
+    <button
+        mat-stroked-button
+        (click)="clearSelect()"
+        [disabled]="logID.length < 1"
+        class="mat-elevation-z8"
+        color="warn"
+    >
+        <mat-icon>highlight_off</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
+    </button>
 </div>
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
