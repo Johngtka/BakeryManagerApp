@@ -65,6 +65,14 @@ export class UpdatesComponent implements OnInit {
             },
             disableClose: true,
         });
+        dialogRef.afterClosed().subscribe({
+            next: () => {
+                this.logID = [];
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
         // console.log(log);
     }
 

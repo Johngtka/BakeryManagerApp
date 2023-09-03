@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, HostListener } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
@@ -66,5 +66,11 @@ export class UpdateInputDialogComponent implements OnInit {
             JSON.stringify(this.registerForm.value) !==
             JSON.stringify(this.originalFormValues)
         );
+    }
+    @HostListener('document:keydown', ['$event'])
+    keyboardCloseDialog(event: KeyboardEvent): void {
+        if (event.key === 'Escape') {
+            this.dialogRef.close();
+        }
     }
 }
