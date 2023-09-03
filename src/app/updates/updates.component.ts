@@ -65,15 +65,18 @@ export class UpdatesComponent implements OnInit {
             },
             disableClose: true,
         });
-        dialogRef.afterClosed().subscribe({
-            next: () => {
-                this.logID = [];
-            },
-            error: (err) => {
-                console.log(err);
-            },
+        dialogRef.afterClosed().subscribe((result: Update) => {
+            const ID = this.logID.indexOf(result.id);
+            if (result) {
+                if (this.logID.length >= 1) {
+                    this.logID.splice(ID, 1);
+                }
+            } else {
+                if (this.logID.length >= 1) {
+                    this.logID.splice(ID, 1);
+                }
+            }
         });
-        // console.log(log);
     }
 
     @HostListener('document:keydown', ['$event'])
