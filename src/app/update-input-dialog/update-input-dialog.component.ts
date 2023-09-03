@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit, HostListener } from '@angular/core';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
@@ -18,6 +19,7 @@ export class UpdateInputDialogComponent implements OnInit {
         private updateService: UpdatesService,
         private snackService: SnackService,
         private dialogRef: MatDialogRef<UpdateInputDialogComponent>,
+        private autosize: CdkTextareaAutosize,
         @Inject(MAT_DIALOG_DATA) public data: { update: Update },
     ) {}
 

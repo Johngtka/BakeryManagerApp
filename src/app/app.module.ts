@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LayoutModule } from '@angular/cdk/layout';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -55,6 +57,7 @@ const materialsModules = [
     MatDialogModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    LayoutModule,
 ];
 
 @NgModule({
@@ -85,7 +88,7 @@ const materialsModules = [
         ReactiveFormsModule,
         ...materialsModules,
     ],
-    providers: [UsersService],
+    providers: [UsersService, CdkTextareaAutosize],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
