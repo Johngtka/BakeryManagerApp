@@ -57,8 +57,27 @@ export class UpdateInputDialogComponent implements OnInit {
     }
 
     addUpdate() {
-        const log = this.registerForm.value;
-        console.log(log);
+        const logFormValues = this.registerForm.value;
+        if (this.isEdit) {
+            logFormValues.id = this.data.update.id;
+            this.updateService.editUpdate(logFormValues).subscribe({
+                next: (update: Update) => {
+                    this.dialogRef.close(update);
+                    this.snackService.showSnackBar(
+                        'SUCCESS.UPDATE_LOG_EDIT',
+                        SNACK_TYPE.success,
+                    );
+                },
+                error: (err) => {
+                    console.log(err);
+                    this.dialogRef.close();
+                    this.snackService.showSnackBar(
+                        'ERRORS.UPDATES_POSTING_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                },
+            });
+        }
     }
 
     hasChange() {

@@ -65,7 +65,25 @@ export class UpdatesComponent implements OnInit {
             },
             disableClose: true,
         });
-        dialogRef.afterClosed().subscribe((result: Update) => {});
+        dialogRef.afterClosed().subscribe((result: Update) => {
+            if (result) {
+                this.updateTable(result);
+                this.updateService.getUpdates().subscribe({
+                    next: (data) => {
+                        this.dataSource = new MatTableDataSource<Update>(data);
+                        this.dataSource.paginator = this.paginator;
+                        this.loadingProcess = false;
+                    },
+                    error: (err) => {
+                        console.log(err);
+                        this.snackService.showSnackBar(
+                            'ERRORS.UPDATES_GETTING_ERROR',
+                            SNACK_TYPE.error,
+                        );
+                    },
+                });
+            }
+        });
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -81,5 +99,23 @@ export class UpdatesComponent implements OnInit {
     }
     clearSelect() {
         this.logID = [];
+    }
+    private updateTable(newOrUpdatedLogs: Update): void {
+        if (!!this.update && !!newOrUpdatedLogs) {
+            const tableUpdateIndex = this.update.findIndex(
+                (ds: Update) => ds.id === newOrUpdatedLogs.id,
+            );
+
+            if (tableUpdateIndex !== -1) {
+                // update
+                this.update[tableUpdateIndex] = newOrUpdatedLogs;
+                this.update = [...this.update];
+                this.dataSource = new MatTableDataSource<Update>(this.update);
+            } else {
+                // new
+                this.update = [...this.update, newOrUpdatedLogs];
+                this.dataSource = new MatTableDataSource<Update>(this.update);
+            }
+        }
     }
 }

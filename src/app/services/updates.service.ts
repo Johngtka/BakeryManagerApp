@@ -18,4 +18,23 @@ export class UpdatesService {
             getUpdates: true,
         });
     }
+
+    postUpdate(data: Update): Observable<Update> {
+        return this.http.post<Update>(`${this.apiURL}`, {
+            postUpdate: true,
+            name: data.name,
+            date: data.date,
+            desc: data.description,
+        });
+    }
+
+    editUpdate(data: Update): Observable<Update> {
+        return this.http.post<Update>(`${this.apiURL}`, {
+            editUpdate: true,
+            name: data.name,
+            date: data.date,
+            desc: data.description,
+            id: data.id,
+        });
+    }
 }

@@ -11,10 +11,14 @@
     "SNACK_BAR": {
         "CLOSE": "Zamknij"
     },
+    "SUCCESS": {
+        "UPDATE_LOG_EDIT": "Pomyślnie zaktualizowano wpis, dziękujemy"
+    },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
         "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
-        "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!"
+        "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
+        "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
