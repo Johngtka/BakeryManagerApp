@@ -108,8 +108,6 @@ export class UpdateInputDialogComponent implements OnInit {
     keyboardCloseDialog(event: KeyboardEvent): void {
         if (event.key === 'Escape') {
             this.dialogRef.close();
-        } else if (event.key === 'Enter') {
-            this.dialogRef.close(event);
         }
     }
 }
