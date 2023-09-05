@@ -70,7 +70,6 @@ export class UpdateInputDialogComponent implements OnInit {
                 },
                 error: (err) => {
                     console.log(err);
-                    this.dialogRef.close();
                     this.snackService.showSnackBar(
                         'ERRORS.UPDATES_EDITING_ERROR',
                         SNACK_TYPE.error,
@@ -88,7 +87,6 @@ export class UpdateInputDialogComponent implements OnInit {
                 },
                 error: (err) => {
                     console.log(err);
-                    this.dialogRef.close();
                     this.snackService.showSnackBar(
                         'ERRORS.UPDATES_POSTING_ERROR',
                         SNACK_TYPE.error,
