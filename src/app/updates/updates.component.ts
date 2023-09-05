@@ -111,10 +111,12 @@ export class UpdatesComponent implements OnInit {
                 this.update[tableUpdateIndex] = newOrUpdatedLogs;
                 this.update = [...this.update];
                 this.dataSource = new MatTableDataSource<Update>(this.update);
+                this.dataSource.paginator = this.paginator;
             } else {
                 // new
                 this.update = [...this.update, newOrUpdatedLogs];
                 this.dataSource = new MatTableDataSource<Update>(this.update);
+                this.dataSource.paginator = this.paginator;
             }
         }
     }

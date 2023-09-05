@@ -61,10 +61,28 @@ export class UpdateInputDialogComponent implements OnInit {
         if (this.isEdit) {
             logFormValues.id = this.data.update.id;
             this.updateService.editUpdate(logFormValues).subscribe({
-                next: (update: Update) => {
-                    this.dialogRef.close(update);
+                next: (editLog: Update) => {
+                    this.dialogRef.close(editLog);
                     this.snackService.showSnackBar(
                         'SUCCESS.UPDATE_LOG_EDIT',
+                        SNACK_TYPE.success,
+                    );
+                },
+                error: (err) => {
+                    console.log(err);
+                    this.dialogRef.close();
+                    this.snackService.showSnackBar(
+                        'ERRORS.UPDATES_EDITING_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                },
+            });
+        } else {
+            this.updateService.postUpdate(logFormValues).subscribe({
+                next: (newLog) => {
+                    this.dialogRef.close(newLog);
+                    this.snackService.showSnackBar(
+                        'SUCCESS.UPDATE_LOG_ADD',
                         SNACK_TYPE.success,
                     );
                 },
@@ -90,6 +108,8 @@ export class UpdateInputDialogComponent implements OnInit {
     keyboardCloseDialog(event: KeyboardEvent): void {
         if (event.key === 'Escape') {
             this.dialogRef.close();
+        } else if (event.key === 'Enter') {
+            this.dialogRef.close(event);
         }
     }
 }
