@@ -46,9 +46,9 @@
             >
                 <span *ngIf="logID.length >= 1 && logID.includes(element.id)">
                     <button
-                        mat-mini-fab
-                        style="background-color: #0f0; color: #000"
-                        class="buttons"
+                        mat-icon-button
+                        style="background-color: #0f0"
+                        class="mat-elevation-z8"
                         (click)="openDialog(element)"
                     >
                         <mat-icon>edit</mat-icon>
