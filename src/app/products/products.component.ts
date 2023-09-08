@@ -1,4 +1,11 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition,
+} from '@angular/animations';
 
 import { MatPaginator } from '@angular/material/paginator';
 import {
@@ -14,6 +21,42 @@ import { ProductsService } from '../services/products.service';
     selector: 'app-products',
     templateUrl: './products.component.html',
     styleUrls: ['./products.component.css'],
+    animations: [
+        trigger('editHovered', [
+            state(
+                'inactive',
+                style({
+                    background: 'white',
+                }),
+            ),
+            state(
+                'active',
+                style({
+                    background: 'green',
+                    color: 'white',
+                }),
+            ),
+            transition('inactive => active', animate('240ms ease-in')),
+            transition('active => inactive', animate('400ms ease-out')),
+        ]),
+        trigger('deleteHovered', [
+            state(
+                'inactive',
+                style({
+                    background: 'white',
+                }),
+            ),
+            state(
+                'active',
+                style({
+                    background: 'red',
+                    color: 'white',
+                }),
+            ),
+            transition('inactive => active', animate('240ms ease-in')),
+            transition('active => inactive', animate('400ms ease-out')),
+        ]),
+    ],
 })
 export class ProductsComponent implements OnInit {
     constructor(
@@ -32,7 +75,10 @@ export class ProductsComponent implements OnInit {
         'unitPrice',
         'components',
         'description',
+        'options',
     ];
+    isEditHovered: string = 'inactive';
+    isDeleteHovered: string = 'inactive';
 
     ngOnInit(): void {
         this.productService.getProducts().subscribe({
@@ -60,6 +106,10 @@ export class ProductsComponent implements OnInit {
             this.logID.push(row.id);
         }
         this.checkLogSelect();
+    }
+
+    clearSelect() {
+        this.logID = [];
     }
 
     @HostListener('document:keydown', ['$event'])

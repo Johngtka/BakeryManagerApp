@@ -28,6 +28,9 @@
         "DELETE": "Usuń",
         "CLEAR": "Wyczyść"
     },
+    "TABLES": {
+        "OPTIONS_COLUMN": "Opcje"
+    },
     "USERS_TABLE": {
         "COLUMNS": {
             "NAME": "Imie",
@@ -41,8 +44,7 @@
         "COLUMNS": {
             "NAME": "Nazwa",
             "DATE": "Data",
-            "DESCRIPTION": "Opis",
-            "OPTIONS": "Opcje"
+            "DESCRIPTION": "Opis"
         }
     },
     "PRODUCT_TABLE": {
