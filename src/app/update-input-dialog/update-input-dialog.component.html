@@ -1,0 +1,55 @@
+<form [formGroup]="registerForm">
+    <h1 mat-dialog-title>{{ titleText | translate }}</h1>
+    <mat-divider class="dividers"></mat-divider>
+    <mat-dialog-content class="mat-typography">
+        <div class="col-wrapper">
+            <div class="col">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{
+                        'UPDATE_DIALOG.FORM.NAME' | translate
+                    }}</mat-label>
+                    <input matInput formControlName="name" tabindex="1" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>{{
+                        'UPDATE_DIALOG.FORM.DATE' | translate
+                    }}</mat-label>
+                    <input
+                        matInput
+                        type="date"
+                        formControlName="date"
+                        tabindex="2"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>{{
+                        'UPDATE_DIALOG.FORM.DESCRIPTION' | translate
+                    }}</mat-label>
+                    <textarea
+                        matInput
+                        formControlName="description"
+                        tabindex="3"
+                        class="descriptions"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close mat-raised-button>
+            {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            mat-button
+            cdkFocusInitial
+            (click)="addUpdate()"
+            [disabled]="!hasChange() || !registerForm.valid"
+        >
+            {{ buttonText | translate }}
+        </button>
+    </mat-dialog-actions>
+</form>

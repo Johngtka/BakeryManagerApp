@@ -9,5 +9,30 @@
 .mat-column-description {
     text-align: left;
     font-size: x-small;
-    width: 60%;
+    width: 50%;
+}
+.mat-column-options {
+    text-align: center;
+    width: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .mat-column-name {
+        font-size: x-small;
+        padding: 0;
+    }
+    .mat-column-date {
+        font-size: small;
+        padding: 0;
+    }
+    .mat-column-description {
+        padding-left: 2% !important;
+        padding: 0;
+    }
+    .mat-column-options {
+        padding: 0;
+    }
+    .buttons {
+        box-shadow: none;
+    }
 }

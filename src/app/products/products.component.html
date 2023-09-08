@@ -16,7 +16,7 @@
                 {{ 'PRODUCT_TABLE.COLUMNS.NAME' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.Nazwa }}
+                {{ element.name }}
             </td>
         </ng-container>
         <ng-container matColumnDef="unitPrice">
@@ -24,8 +24,8 @@
                 {{ 'PRODUCT_TABLE.COLUMNS.UNIT_PRICE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.Cena | price }}
-                {{ element.Masa | weight }}
+                {{ element.price | price }}
+                {{ element.weight | weight }}
             </td>
         </ng-container>
         <ng-container matColumnDef="components">
@@ -33,7 +33,7 @@
                 {{ 'PRODUCT_TABLE.COLUMNS.COMPONENTS' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.Skladniki }}
+                {{ element.components }}
             </td>
         </ng-container>
         <ng-container matColumnDef="description">
@@ -41,7 +41,7 @@
                 {{ 'PRODUCT_TABLE.COLUMNS.DESCRIPTION' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.Opis }}
+                {{ element.description }}
             </td>
         </ng-container>
     </table>

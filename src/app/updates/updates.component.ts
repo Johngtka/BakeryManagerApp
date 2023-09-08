@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import {
     MatTableDataSource,
@@ -9,6 +10,7 @@ import {
 import { Update } from '../models/update';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
 import { UpdatesService } from '../services/updates.service';
+import { UpdateInputDialogComponent } from '../update-input-dialog/update-input-dialog.component';
 
 @Component({
     selector: 'app-updates',
@@ -19,14 +21,14 @@ export class UpdatesComponent implements OnInit {
     constructor(
         private updateService: UpdatesService,
         private snackService: SnackService,
+        private dialog: MatDialog,
     ) {}
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
     update!: Update[];
     dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
-    isSelected: boolean = false;
-    displayedColumns: string[] = ['name', 'date', 'description'];
+    displayedColumns: string[] = ['name', 'date', 'description', 'options'];
     logID: number[] = [];
 
     ngOnInit(): void {
@@ -51,11 +53,37 @@ export class UpdatesComponent implements OnInit {
         const ID = this.logID.indexOf(row.id);
         if (ID !== -1) {
             this.logID.splice(ID, 1);
-            this.isSelected = false;
         } else {
             this.logID.push(row.id);
         }
-        this.checkLogSelect();
+    }
+
+    openDialog(update?: Update) {
+        const dialogRef = this.dialog.open(UpdateInputDialogComponent, {
+            data: {
+                update,
+            },
+            disableClose: true,
+        });
+        dialogRef.afterClosed().subscribe((result: Update) => {
+            if (result) {
+                this.updateTable(result);
+                this.updateService.getUpdates().subscribe({
+                    next: (data) => {
+                        this.dataSource = new MatTableDataSource<Update>(data);
+                        this.dataSource.paginator = this.paginator;
+                        this.loadingProcess = false;
+                    },
+                    error: (err) => {
+                        console.log(err);
+                        this.snackService.showSnackBar(
+                            'ERRORS.UPDATES_GETTING_ERROR',
+                            SNACK_TYPE.error,
+                        );
+                    },
+                });
+            }
+        });
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -69,12 +97,27 @@ export class UpdatesComponent implements OnInit {
             this.paginator.previousPage();
         }
     }
+    clearSelect() {
+        this.logID = [];
+    }
+    private updateTable(newOrUpdatedLogs: Update): void {
+        if (!!this.update && !!newOrUpdatedLogs) {
+            const tableUpdateIndex = this.update.findIndex(
+                (ds: Update) => ds.id === newOrUpdatedLogs.id,
+            );
 
-    private checkLogSelect(): void {
-        if (this.logID.length === 1) {
-            this.isSelected = true;
-        } else {
-            this.isSelected = false;
+            if (tableUpdateIndex !== -1) {
+                // update
+                this.update[tableUpdateIndex] = newOrUpdatedLogs;
+                this.update = [...this.update];
+                this.dataSource = new MatTableDataSource<Update>(this.update);
+                this.dataSource.paginator = this.paginator;
+            } else {
+                // new
+                this.update = [...this.update, newOrUpdatedLogs];
+                this.dataSource = new MatTableDataSource<Update>(this.update);
+                this.dataSource.paginator = this.paginator;
+            }
         }
     }
 }

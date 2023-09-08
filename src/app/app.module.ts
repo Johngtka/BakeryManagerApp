@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LayoutModule } from '@angular/cdk/layout';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -32,6 +34,7 @@ import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './pipes/price.pipe';
 import { WeightPipe } from './pipes/weight.pipe';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
+import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -54,6 +57,7 @@ const materialsModules = [
     MatDialogModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    LayoutModule,
 ];
 
 @NgModule({
@@ -65,6 +69,7 @@ const materialsModules = [
         PricePipe,
         WeightPipe,
         UpdateDescPipe,
+        UpdateInputDialogComponent,
     ],
     imports: [
         BrowserModule,
@@ -83,7 +88,7 @@ const materialsModules = [
         ReactiveFormsModule,
         ...materialsModules,
     ],
-    providers: [UsersService],
+    providers: [UsersService, CdkTextareaAutosize],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
