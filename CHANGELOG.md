@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.2...v0.0.3) (2023-09-08)
+
+
+### Features
+
+* added new layout of updates table and allowed edit and adding updates ([#9](https://github.com/Johngtka/BakeryManagerApp/issues/9)) ([cac4858](https://github.com/Johngtka/BakeryManagerApp/commit/cac4858a34c344e751876833840ef081f6e4f84e))
+* new pipes for formatting products price ang weight ([#8](https://github.com/Johngtka/BakeryManagerApp/issues/8)) ([04c8075](https://github.com/Johngtka/BakeryManagerApp/commit/04c807561b852e9a1e7573129c5aae8defe9e1ab))
+* new products table in app ([#7](https://github.com/Johngtka/BakeryManagerApp/issues/7)) ([6ecea24](https://github.com/Johngtka/BakeryManagerApp/commit/6ecea241d644862ad9d818435dad42e7e8e80a66))
+
 ### [0.0.2](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.1...v0.0.2) (2023-08-26)
 
 
