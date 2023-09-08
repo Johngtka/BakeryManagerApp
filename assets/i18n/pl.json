@@ -11,14 +11,22 @@
     "SNACK_BAR": {
         "CLOSE": "Zamknij"
     },
+    "SUCCESS": {
+        "UPDATE_LOG_EDIT": "Pomyślnie zaktualizowano wpis, dziękujemy",
+        "UPDATE_LOG_ADD": "Pomyślnie dodano wpis, dziękujemy"
+    },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
-        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!"
+        "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
+        "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
+        "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisy do bazy!!!",
+        "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
         "EDIT": "Edytuj",
-        "DELETE": "Usuń"
+        "DELETE": "Usuń",
+        "CLEAR": "Wyczyść"
     },
     "USERS_TABLE": {
         "COLUMNS": {
@@ -31,6 +39,31 @@
     },
     "UPDATES_TABLE": {
         "COLUMNS": {
+            "NAME": "Nazwa",
+            "DATE": "Data",
+            "DESCRIPTION": "Opis",
+            "OPTIONS": "Opcje"
+        }
+    },
+    "PRODUCT_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa",
+            "UNIT_PRICE": "Cena i Waga",
+            "COMPONENTS": "Składniki",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Zamknij"
+    },
+    "UPDATE_DIALOG": {
+        "INFO": {
+            "EDIT_LOG_TITLE": "Edycja Logów",
+            "EDIT_LOG_BUTTON": "Aktualizuj",
+            "NEW_LOG_TITLE": "Nowy Wpis",
+            "NEW_LOG_BUTTON": "Dodaj"
+        },
+        "FORM": {
             "NAME": "Nazwa",
             "DATE": "Data",
             "DESCRIPTION": "Opis"
