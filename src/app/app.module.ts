@@ -34,6 +34,7 @@ import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './pipes/price.pipe';
 import { WeightPipe } from './pipes/weight.pipe';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -69,6 +70,7 @@ const materialsModules = [
         PricePipe,
         WeightPipe,
         UpdateDescPipe,
+        ConfirmDialogComponent,
         UpdateInputDialogComponent,
     ],
     imports: [

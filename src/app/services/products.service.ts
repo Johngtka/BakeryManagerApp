@@ -19,4 +19,27 @@ export class ProductsService {
             getProducts: true,
         });
     }
+
+    postProduct(data: Product): Observable<Product> {
+        return this.http.post<Product>(`${this.apiURL}`, {
+            postProduct: true,
+            name: data.name,
+            price: data.price,
+            weight: data.weight,
+            components: data.components,
+            description: data.description,
+            id: data.id,
+        });
+    }
+
+    editProduct(data: Product): Observable<Product> {
+        return this.http.post<Product>(`${this.apiURL}`, {
+            editProduct: true,
+            name: data.name,
+            price: data.price,
+            weight: data.weight,
+            components: data.components,
+            description: data.description,
+        });
+    }
 }
