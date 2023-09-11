@@ -42,4 +42,11 @@ export class ProductsService {
             description: data.description,
         });
     }
+
+    deleteProduct(data: Product): Observable<Product> {
+        return this.http.post<Product>(`${this.apiURL}`, {
+            deleteProduct: true,
+            id: data.id,
+        });
+    }
 }
