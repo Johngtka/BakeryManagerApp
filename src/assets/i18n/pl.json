@@ -13,14 +13,20 @@
     },
     "SUCCESS": {
         "UPDATE_LOG_EDIT": "Pomyślnie zaktualizowano wpis, dziękujemy",
-        "UPDATE_LOG_ADD": "Pomyślnie dodano wpis, dziękujemy"
+        "UPDATE_LOG_ADD": "Pomyślnie dodano wpis, dziękujemy",
+        "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
         "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
-        "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
+
         "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisy do bazy!!!",
-        "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!"
+        "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!",
+        "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
+        "PRODUCT_DELETE_ERROR": "Wystąpił podczas próby usuięcia produktu z bazy!!!"
+    },
+    "INFO": {
+        "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -30,6 +36,11 @@
     },
     "TABLES": {
         "OPTIONS_COLUMN": "Opcje"
+    },
+    "PRODUCT_CONFIRM_DIALOG": {
+        "TITLE": "Usunięcie produktu",
+        "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
+        "ACTION": "Usuń"
     },
     "USERS_TABLE": {
         "COLUMNS": {

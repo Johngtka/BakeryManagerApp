@@ -7,6 +7,7 @@ import {
     transition,
 } from '@angular/animations';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import {
     MatTableDataSource,
@@ -16,6 +17,10 @@ import {
 import { Product } from '../models/product';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
 import { ProductsService } from '../services/products.service';
+import {
+    ConfirmDialogComponent,
+    ConfirmationDialogResponse,
+} from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
     selector: 'app-products',
@@ -62,11 +67,12 @@ export class ProductsComponent implements OnInit {
     constructor(
         private productService: ProductsService,
         private snackService: SnackService,
+        private dialog: MatDialog,
     ) {}
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
     product!: Product[];
-    logID: number[] = [];
+    prodID: number[] = [];
     dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
     isSelected: boolean = false;
@@ -98,18 +104,77 @@ export class ProductsComponent implements OnInit {
         });
     }
     clickedRow(row: Product): void {
-        const ID = this.logID.indexOf(row.id);
+        const ID = this.prodID.indexOf(row.id);
         if (ID !== -1) {
-            this.logID.splice(ID, 1);
+            this.prodID.splice(ID, 1);
             this.isSelected = false;
         } else {
-            this.logID.push(row.id);
+            this.prodID.push(row.id);
         }
         this.checkLogSelect();
     }
 
-    clearSelect() {
-        this.logID = [];
+    clearSelect(): void {
+        this.prodID = [];
+    }
+
+    deleteProduct(product: Product): void {
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+            data: {
+                title: 'PRODUCT_CONFIRM_DIALOG.TITLE',
+                message: 'PRODUCT_CONFIRM_DIALOG.MESSAGE',
+                action: 'PRODUCT_CONFIRM_DIALOG.ACTION',
+            },
+        });
+        dialogRef.afterClosed().subscribe((response) => {
+            if (response === ConfirmationDialogResponse.OK) {
+                this.productService.deleteProduct(product).subscribe({
+                    next: () => {
+                        this.product = this.product.filter(
+                            (newList: Product) => {
+                                newList.id !== product.id;
+                            },
+                        );
+                        this.dataSource = new MatTableDataSource<Product>(
+                            this.product,
+                        );
+                        this.clearSelect();
+                        this.snackService.showSnackBar(
+                            'SUCCESS.PRODUCT_REMOVED',
+                            SNACK_TYPE.success,
+                        );
+                        this.productService.getProducts().subscribe({
+                            next: (newList) => {
+                                this.dataSource =
+                                    new MatTableDataSource<Product>(newList);
+                                this.loadingProcess = false;
+                                this.dataSource.paginator = this.paginator;
+                            },
+                            error: (err) => {
+                                this.snackService.showSnackBar(
+                                    'ERRORS.PRODUCTS_GETTING_ERROR',
+                                    SNACK_TYPE.error,
+                                );
+                                console.log(err);
+                            },
+                        });
+                    },
+                    error: (err) => {
+                        this.snackService.showSnackBar(
+                            'ERRORS.PRODUCT_DELETE_ERROR',
+                            SNACK_TYPE.error,
+                        );
+                        console.log(err);
+                    },
+                });
+            } else if (response === ConfirmationDialogResponse.NOPE) {
+                this.snackService.showSnackBar(
+                    'INFO.STOPPED_PRODUCT_REMOVING',
+                    SNACK_TYPE.info,
+                );
+                this.prodID.splice(this.prodID.indexOf(product.id), 1);
+            }
+        });
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -123,8 +188,9 @@ export class ProductsComponent implements OnInit {
             this.paginator.previousPage();
         }
     }
+
     private checkLogSelect(): void {
-        if (this.logID.length === 1) {
+        if (this.prodID.length === 1) {
             this.isSelected = true;
         } else {
             this.isSelected = false;
