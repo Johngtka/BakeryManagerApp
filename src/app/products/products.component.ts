@@ -21,6 +21,7 @@ import {
     ConfirmDialogComponent,
     ConfirmationDialogResponse,
 } from '../confirm-dialog/confirm-dialog.component';
+import { ProductInputDialogComponent } from '../product-input-dialog/product-input-dialog.component';
 
 @Component({
     selector: 'app-products',
@@ -116,6 +117,15 @@ export class ProductsComponent implements OnInit {
 
     clearSelect(): void {
         this.prodID = [];
+    }
+
+    openDialog(product?: Product): void {
+        const dialogRef = this.dialog.open(ProductInputDialogComponent, {
+            data: {
+                product,
+            },
+            disableClose: true,
+        });
     }
 
     deleteProduct(product: Product): void {

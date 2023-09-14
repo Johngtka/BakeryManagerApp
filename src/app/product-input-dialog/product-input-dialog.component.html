@@ -1,0 +1,60 @@
+<form [formGroup]="registerForm">
+    <h1 mat-dialog-title>{{ titleText | translate }}</h1>
+    <mat-divider class="dividers"></mat-divider>
+    <mat-stepper orientation="vertical">
+        <mat-step>
+            <ng-template matStepLabel>Basic!!!</ng-template>
+            <ng-template matStepContent>
+                <div class="col-wrapper">
+                    <div class="col">
+                        <mat-dialog-content class="mat-typography">
+                            name price weight
+                        </mat-dialog-content>
+                    </div>
+                </div>
+                <button mat-button matStepperNext>Next</button>
+            </ng-template>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>next</ng-template>
+            <ng-template matStepContent>
+                <div class="col-wrapper">
+                    <div class="col">
+                        <mat-dialog-content class="mat-typography">
+                            components description
+                        </mat-dialog-content>
+                    </div>
+                </div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </ng-template>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>summary</ng-template>
+            <ng-template matStepContent>
+                <div class="col-wrapper">
+                    <div class="col">
+                        <mat-dialog-actions align="end">
+                            <button
+                                mat-button
+                                mat-dialog-close
+                                mat-raised-button
+                            >
+                                {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
+                            </button>
+                            <button
+                                mat-raised-button
+                                color="primary"
+                                mat-button
+                                cdkFocusInitial
+                                [disabled]="!hasChange() || !registerForm.valid"
+                            >
+                                {{ buttonText | translate }}
+                            </button>
+                        </mat-dialog-actions>
+                    </div>
+                </div>
+            </ng-template>
+        </mat-step>
+    </mat-stepper>
+</form>

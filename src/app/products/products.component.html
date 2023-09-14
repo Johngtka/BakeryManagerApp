@@ -96,7 +96,12 @@
 >
 </mat-paginator>
 <div class="controlPanel">
-    <button mat-raised-button class="mat-elevation-z8" color="primary">
+    <button
+        mat-raised-button
+        (click)="openDialog()"
+        class="mat-elevation-z8"
+        color="primary"
+    >
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
