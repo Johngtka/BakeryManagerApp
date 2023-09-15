@@ -83,6 +83,7 @@
                         color="primary"
                         mat-button
                         cdkFocusInitial
+                        (click)="addProduct()"
                         [disabled]="!hasChange() || !registerForm.valid"
                     >
                         {{ buttonText | translate }}

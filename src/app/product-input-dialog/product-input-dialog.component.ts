@@ -60,12 +60,23 @@ export class ProductInputDialogComponent implements OnInit {
         this.originalFormValues = this.registerForm.value;
     }
 
+    addProduct(): void {
+        const prodFormData = this.registerForm.value;
+        if (this.isEdit) {
+            prodFormData.id = this.data.product.id;
+            // products service edit product in next close dialog with results of type product
+        } else {
+            // products service post product in next close dialog with results without type product
+        }
+    }
+
     hasChange() {
         return (
             JSON.stringify(this.registerForm.value) !==
             JSON.stringify(this.originalFormValues)
         );
     }
+
     @HostListener('document:keydown', ['$event'])
     keyboardCloseDialog(event: KeyboardEvent): void {
         if (event.key === 'Escape') {

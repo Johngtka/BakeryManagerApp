@@ -104,6 +104,7 @@ export class ProductsComponent implements OnInit {
             },
         });
     }
+
     clickedRow(row: Product): void {
         const ID = this.prodID.indexOf(row.id);
         if (ID !== -1) {
@@ -204,6 +205,27 @@ export class ProductsComponent implements OnInit {
             this.isSelected = true;
         } else {
             this.isSelected = false;
+        }
+    }
+
+    private updateProductsTable(newOrUpdatedProd: Product): void {
+        if (!!this.product && !!newOrUpdatedProd) {
+            const tableProductIndex = this.product.findIndex(
+                (pi: Product) => pi.id === newOrUpdatedProd.id,
+            );
+            // pi it is shortcut of product id
+            if (tableProductIndex !== -1) {
+                // update
+                this.product[tableProductIndex] = newOrUpdatedProd;
+                this.product = [...this.product];
+                this.dataSource = new MatTableDataSource<Product>(this.product);
+                this.dataSource.paginator = this.paginator;
+            } else {
+                // new
+                this.product = [...this.product, newOrUpdatedProd];
+                this.dataSource = new MatTableDataSource<Product>(this.product);
+                this.dataSource.paginator = this.paginator;
+            }
         }
     }
 }
