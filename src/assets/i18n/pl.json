@@ -83,6 +83,11 @@
         }
     },
     "PRODUCT_DIALOG": {
+        "STEPPER": {
+            "1STEP": "Podstawowe",
+            "2STEP": "Dodatkowe",
+            "3STEP": "Podsumowanie"
+        },
         "INFO": {
             "EDIT_PROD_TITLE": "Edycja Produktu",
             "EDIT_PROD_BUTTON": "Aktualizuj",
@@ -91,8 +96,8 @@
         },
         "FORM": {
             "NAME": "Nazwa",
-            "PRICE": "Cena",
-            "WEIGHT": "Waga",
+            "PRICE": "Cena (gr/zł)",
+            "WEIGHT": "Waga (g)",
             "COMPONENTS": "Składniki",
             "DESCRIPTION": "Opis"
         }
