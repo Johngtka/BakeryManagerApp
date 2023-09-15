@@ -66,6 +66,7 @@
                         (mouseenter)="isEditHovered = 'active'"
                         (mouseleave)="isEditHovered = 'inactive'"
                         [@editHovered]="isEditHovered"
+                        (click)="openDialog(element)"
                     >
                         <mat-icon>edit</mat-icon>
                         <span>{{

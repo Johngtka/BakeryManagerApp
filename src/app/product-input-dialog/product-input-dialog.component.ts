@@ -27,7 +27,38 @@ export class ProductInputDialogComponent implements OnInit {
     registerForm!: FormGroup;
     originalFormValues!: Product;
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        if (this.data?.product) {
+            this.isEdit = true;
+            this.titleText = 'PRODUCT_DIALOG.INFO.EDIT_PROD_TITLE';
+            this.buttonText = 'PRODUCT_DIALOG.INFO.EDIT_PROD_BUTTON';
+            this.registerForm = new FormGroup({
+                name: new FormControl(this.data.product.name, [
+                    Validators.required,
+                ]),
+                price: new FormControl(this.data.product.price, [
+                    Validators.required,
+                ]),
+                weight: new FormControl(this.data.product.weight, [
+                    Validators.required,
+                ]),
+                components: new FormControl(this.data.product.components),
+                description: new FormControl(this.data.product.description),
+            });
+        } else {
+            this.isEdit = false;
+            this.titleText = 'PRODUCT_DIALOG.INFO.ADD_PROD_TITLE';
+            this.buttonText = 'PRODUCT_DIALOG.INFO.ADD_PROD_BUTTON';
+            this.registerForm = new FormGroup({
+                name: new FormControl('', [Validators.required]),
+                price: new FormControl('', [Validators.required]),
+                weight: new FormControl('', [Validators.required]),
+                components: new FormControl(''),
+                description: new FormControl(''),
+            });
+        }
+        this.originalFormValues = this.registerForm.value;
+    }
 
     hasChange() {
         return (

@@ -71,7 +71,7 @@
     },
     "UPDATE_DIALOG": {
         "INFO": {
-            "EDIT_LOG_TITLE": "Edycja Logów",
+            "EDIT_LOG_TITLE": "Edycja Wpisu",
             "EDIT_LOG_BUTTON": "Aktualizuj",
             "NEW_LOG_TITLE": "Nowy Wpis",
             "NEW_LOG_BUTTON": "Dodaj"
@@ -79,6 +79,21 @@
         "FORM": {
             "NAME": "Nazwa",
             "DATE": "Data",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "PRODUCT_DIALOG": {
+        "INFO": {
+            "EDIT_PROD_TITLE": "Edycja Produktu",
+            "EDIT_PROD_BUTTON": "Aktualizuj",
+            "ADD_PROD_TITLE": "Nowy Produkt",
+            "ADD_PROD_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "NAME": "Nazwa",
+            "PRICE": "Cena",
+            "WEIGHT": "Waga",
+            "COMPONENTS": "Składniki",
             "DESCRIPTION": "Opis"
         }
     }

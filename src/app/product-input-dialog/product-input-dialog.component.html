@@ -1,59 +1,87 @@
 <form [formGroup]="registerForm">
     <h1 mat-dialog-title>{{ titleText | translate }}</h1>
     <mat-divider class="dividers"></mat-divider>
+
     <mat-stepper orientation="vertical">
-        <mat-step>
-            <ng-template matStepLabel>Basic!!!</ng-template>
-            <ng-template matStepContent>
-                <div class="col-wrapper">
-                    <div class="col">
-                        <mat-dialog-content class="mat-typography">
-                            name price weight
-                        </mat-dialog-content>
+        <mat-dialog-content class="mat-typography">
+            <mat-step>
+                <ng-template matStepLabel>Basic!!!</ng-template>
+                <ng-template matStepContent>
+                    <div class="col-wrapper">
+                        <div class="col">
+                            <mat-form-field appearance="fill"
+                                ><mat-label>{{
+                                    'PRODUCT_DIALOG.FORM.NAME' | translate
+                                }}</mat-label
+                                ><input matInput formControlName="name"
+                            /></mat-form-field>
+                            <mat-form-field appearance="fill"
+                                ><mat-label>{{
+                                    'PRODUCT_DIALOG.FORM.PRICE' | translate
+                                }}</mat-label
+                                ><input matInput formControlName="price"
+                            /></mat-form-field>
+                            <mat-form-field appearance="fill"
+                                ><mat-label>{{
+                                    'PRODUCT_DIALOG.FORM.WEIGHT' | translate
+                                }}</mat-label
+                                ><input matInput formControlName="weight"
+                            /></mat-form-field>
+                        </div>
                     </div>
-                </div>
-                <button mat-button matStepperNext>Next</button>
-            </ng-template>
-        </mat-step>
-        <mat-step>
-            <ng-template matStepLabel>next</ng-template>
-            <ng-template matStepContent>
-                <div class="col-wrapper">
-                    <div class="col">
-                        <mat-dialog-content class="mat-typography">
-                            components description
-                        </mat-dialog-content>
+                </ng-template>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>next</ng-template>
+                <ng-template matStepContent>
+                    <div class="col-wrapper">
+                        <div class="col">
+                            <mat-form-field appearance="fill"
+                                ><mat-label>{{
+                                    'PRODUCT_DIALOG.FORM.COMPONENTS' | translate
+                                }}</mat-label
+                                ><textarea
+                                    matInput
+                                    formControlName="components"
+                                    class="descriptions"
+                                    cdkTextareaAutosize
+                                    #autosize="cdkTextareaAutosize"
+                                ></textarea>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill"
+                                ><mat-label>{{
+                                    'PRODUCT_DIALOG.FORM.DESCRIPTION'
+                                        | translate
+                                }}</mat-label
+                                ><textarea
+                                    matInput
+                                    formControlName="description"
+                                    class="descriptions"
+                                    cdkTextareaAutosize
+                                ></textarea>
+                            </mat-form-field>
+                        </div>
                     </div>
-                </div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </ng-template>
-        </mat-step>
+                </ng-template>
+            </mat-step>
+        </mat-dialog-content>
         <mat-step>
             <ng-template matStepLabel>summary</ng-template>
             <ng-template matStepContent>
-                <div class="col-wrapper">
-                    <div class="col">
-                        <mat-dialog-actions align="end">
-                            <button
-                                mat-button
-                                mat-dialog-close
-                                mat-raised-button
-                            >
-                                {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
-                            </button>
-                            <button
-                                mat-raised-button
-                                color="primary"
-                                mat-button
-                                cdkFocusInitial
-                                [disabled]="!hasChange() || !registerForm.valid"
-                            >
-                                {{ buttonText | translate }}
-                            </button>
-                        </mat-dialog-actions>
-                    </div>
-                </div>
+                <mat-dialog-actions align="end">
+                    <button mat-button mat-dialog-close mat-raised-button>
+                        {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
+                    </button>
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        mat-button
+                        cdkFocusInitial
+                        [disabled]="!hasChange() || !registerForm.valid"
+                    >
+                        {{ buttonText | translate }}
+                    </button>
+                </mat-dialog-actions>
             </ng-template>
         </mat-step>
     </mat-stepper>
