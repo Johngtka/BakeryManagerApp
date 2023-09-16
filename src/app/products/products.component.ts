@@ -127,6 +127,25 @@ export class ProductsComponent implements OnInit {
             },
             disableClose: true,
         });
+        dialogRef.afterClosed().subscribe((result: Product) => {
+            if (result) {
+                this.updateProductsTable(result);
+                this.productService.getProducts().subscribe({
+                    next: (data) => {
+                        this.dataSource = new MatTableDataSource<Product>(data);
+                        this.dataSource.paginator = this.paginator;
+                        this.loadingProcess = false;
+                    },
+                    error: (err) => {
+                        console.log(err);
+                        this.snackService.showSnackBar(
+                            'ERRORS.PRODUCTS_GETTING_ERROR',
+                            SNACK_TYPE.error,
+                        );
+                    },
+                });
+            }
+        });
     }
 
     deleteProduct(product: Product): void {

@@ -14,16 +14,19 @@
     "SUCCESS": {
         "UPDATE_LOG_EDIT": "Pomyślnie zaktualizowano wpis, dziękujemy",
         "UPDATE_LOG_ADD": "Pomyślnie dodano wpis, dziękujemy",
-        "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy"
+        "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy",
+        "PRODUCT_EDITED": "Pomyślnie zmieniono dane produktu w bazie, dziękujemy",
+        "PRODUCT_ADDED": "Pomyślnie dodano produkt do bazy, dziękujemy"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
         "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
-
-        "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisy do bazy!!!",
+        "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisu do bazy!!!",
         "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!",
         "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
-        "PRODUCT_DELETE_ERROR": "Wystąpił podczas próby usuięcia produktu z bazy!!!"
+        "PRODUCT_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia produktu z bazy!!!",
+        "PRODUCT_EDIT_ERROR": "Wystąpił błąd podczas próby edycji produktu w bazie!!!",
+        "PRODUCT_ADD_ERROR": "Wystąpił błąd podczas próby dodania produktu do bazie!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"

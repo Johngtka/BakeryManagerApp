@@ -65,8 +65,40 @@ export class ProductInputDialogComponent implements OnInit {
         if (this.isEdit) {
             prodFormData.id = this.data.product.id;
             // products service edit product in next close dialog with results of type product
+            this.productService.editProduct(prodFormData).subscribe({
+                next: (editProd: Product) => {
+                    this.dialogRef.close(editProd);
+                    this.snackService.showSnackBar(
+                        'SUCCESS.PRODUCT_EDITED',
+                        SNACK_TYPE.success,
+                    );
+                },
+                error: (err) => {
+                    console.log(err);
+                    this.snackService.showSnackBar(
+                        'ERRORS.PRODUCT_EDIT_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                },
+            });
         } else {
             // products service post product in next close dialog with results without type product
+            this.productService.postProduct(prodFormData).subscribe({
+                next: (newProd) => {
+                    this.dialogRef.close(newProd);
+                    this.snackService.showSnackBar(
+                        'SUCCESS.PRODUCT_ADDED',
+                        SNACK_TYPE.success,
+                    );
+                },
+                error: (err) => {
+                    console.log(err);
+                    this.snackService.showSnackBar(
+                        'ERRORS.PRODUCT_ADD_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                },
+            });
         }
     }
 

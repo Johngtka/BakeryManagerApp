@@ -40,6 +40,7 @@ export class ProductsService {
             weight: data.weight,
             components: data.components,
             description: data.description,
+            id: data.id,
         });
     }
 
