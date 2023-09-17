@@ -1,7 +1,14 @@
-import { Component, Inject, OnInit, HostListener } from '@angular/core';
+import {
+    Component,
+    Inject,
+    OnInit,
+    HostListener,
+    ViewChild,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
 
+import { MatStepper } from '@angular/material/stepper';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Product } from '../models/product';
@@ -21,6 +28,7 @@ export class ProductInputDialogComponent implements OnInit {
         @Inject(MAT_DIALOG_DATA) public data: { product: Product },
     ) {}
 
+    @ViewChild('stepper') stepper!: MatStepper;
     titleText!: string;
     isEdit!: boolean;
     buttonText!: string;
@@ -110,9 +118,14 @@ export class ProductInputDialogComponent implements OnInit {
     }
 
     @HostListener('document:keydown', ['$event'])
-    keyboardCloseDialog(event: KeyboardEvent): void {
+    tabNextStepperSwitching(event: KeyboardEvent): void {
         if (event.key === 'Escape') {
             this.dialogRef.close();
+        }
+        if (event.key === 'ArrowDown') {
+            this.stepper.next();
+        } else if (event.key === 'ArrowUp') {
+            this.stepper.previous();
         }
     }
 }

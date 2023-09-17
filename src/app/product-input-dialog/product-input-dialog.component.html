@@ -2,7 +2,7 @@
     <h1 mat-dialog-title>{{ titleText | translate }}</h1>
     <mat-divider class="dividers"></mat-divider>
 
-    <mat-stepper orientation="vertical">
+    <mat-stepper #stepper orientation="vertical">
         <mat-dialog-content class="mat-typography">
             <mat-step>
                 <ng-template matStepLabel>{{
@@ -11,19 +11,19 @@
                 <ng-template matStepContent>
                     <div class="col-wrapper">
                         <div class="col">
-                            <mat-form-field appearance="fill"
+                            <mat-form-field tabindex="1" appearance="fill"
                                 ><mat-label>{{
                                     'PRODUCT_DIALOG.FORM.NAME' | translate
                                 }}</mat-label
                                 ><input matInput formControlName="name"
                             /></mat-form-field>
-                            <mat-form-field appearance="fill"
+                            <mat-form-field tabindex="2" appearance="fill"
                                 ><mat-label>{{
                                     'PRODUCT_DIALOG.FORM.PRICE' | translate
                                 }}</mat-label
                                 ><input matInput formControlName="price"
                             /></mat-form-field>
-                            <mat-form-field appearance="fill"
+                            <mat-form-field tabindex="3" appearance="fill"
                                 ><mat-label>{{
                                     'PRODUCT_DIALOG.FORM.WEIGHT' | translate
                                 }}</mat-label
