@@ -29,80 +29,80 @@
         "PRODUCT_DELETE_ERROR": "An error occurred while trying to removed product from the database!!!"
     },
     "INFO": {
-        "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"
+        "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process"
     },
     "CONTROL_PANEL_TABLES": {
-        "ADD": "Dodaj",
-        "EDIT": "Edytuj",
-        "DELETE": "Usuń",
-        "CLEAR": "Wyczyść"
+        "ADD": "Add",
+        "EDIT": "Edit",
+        "DELETE": "Delete",
+        "CLEAR": "Clear"
     },
     "TABLES": {
-        "OPTIONS_COLUMN": "Opcje"
+        "OPTIONS_COLUMN": "Options"
     },
     "PRODUCT_CONFIRM_DIALOG": {
-        "TITLE": "Usunięcie produktu",
-        "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
-        "ACTION": "Usuń"
+        "TITLE": "Product Removing",
+        "MESSAGE": "Are you sure you wont to remove the product?",
+        "ACTION": "Delete"
     },
     "USERS_TABLE": {
         "COLUMNS": {
-            "NAME": "Imie",
-            "SURNAME": "Nazwisko",
+            "NAME": "Name",
+            "SURNAME": "Surname",
             "NICK": "Login",
-            "PHONE": "Telefon",
-            "EMAIL": "Poczta"
+            "PHONE": "Phone",
+            "EMAIL": "Email"
         }
     },
     "UPDATES_TABLE": {
         "COLUMNS": {
-            "NAME": "Nazwa",
-            "DATE": "Data",
-            "DESCRIPTION": "Opis"
+            "NAME": "Name",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
         }
     },
     "PRODUCT_TABLE": {
         "COLUMNS": {
-            "NAME": "Nazwa",
-            "UNIT_PRICE": "Cena i Waga",
-            "COMPONENTS": "Składniki",
-            "DESCRIPTION": "Opis"
+            "NAME": "Name",
+            "UNIT_PRICE": "Price and Weight",
+            "COMPONENTS": "Components",
+            "DESCRIPTION": "Description"
         }
     },
     "DIALOG_ACTIONS": {
-        "CLOSE": "Zamknij"
+        "CLOSE": "Close"
     },
     "UPDATE_DIALOG": {
         "INFO": {
-            "EDIT_LOG_TITLE": "Edycja Wpisu",
-            "EDIT_LOG_BUTTON": "Aktualizuj",
-            "NEW_LOG_TITLE": "Nowy Wpis",
-            "NEW_LOG_BUTTON": "Dodaj"
+            "EDIT_LOG_TITLE": "Update Edit",
+            "EDIT_LOG_BUTTON": "Update",
+            "NEW_LOG_TITLE": "New Update",
+            "NEW_LOG_BUTTON": "Add"
         },
         "FORM": {
-            "NAME": "Nazwa",
-            "DATE": "Data",
-            "DESCRIPTION": "Opis"
+            "NAME": "Name",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
         }
     },
     "PRODUCT_DIALOG": {
         "STEPPER": {
-            "1STEP": "Podstawowe",
-            "2STEP": "Dodatkowe",
-            "3STEP": "Podsumowanie"
+            "1STEP": "Basic",
+            "2STEP": "Additional",
+            "3STEP": "Summary"
         },
         "INFO": {
-            "EDIT_PROD_TITLE": "Edycja Produktu",
-            "EDIT_PROD_BUTTON": "Aktualizuj",
-            "ADD_PROD_TITLE": "Nowy Produkt",
-            "ADD_PROD_BUTTON": "Dodaj"
+            "EDIT_PROD_TITLE": "Product Edit",
+            "EDIT_PROD_BUTTON": "Update",
+            "ADD_PROD_TITLE": "New Product",
+            "ADD_PROD_BUTTON": "Add"
         },
         "FORM": {
-            "NAME": "Nazwa",
-            "PRICE": "Cena (gr/zł)",
-            "WEIGHT": "Waga (g)",
-            "COMPONENTS": "Składniki",
-            "DESCRIPTION": "Opis"
+            "NAME": "Name",
+            "PRICE": "Price (gr/zł)",
+            "WEIGHT": "Weight (g)",
+            "COMPONENTS": "Components",
+            "DESCRIPTION": "Description"
         }
     }
 }
