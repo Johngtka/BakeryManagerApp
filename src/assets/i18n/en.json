@@ -64,7 +64,7 @@
     "PRODUCT_TABLE": {
         "COLUMNS": {
             "NAME": "Name",
-            "UNIT_PRICE": "Price and Weight",
+            "UNIT_PRICE": "Price & Weight",
             "COMPONENTS": "Components",
             "DESCRIPTION": "Description"
         }
