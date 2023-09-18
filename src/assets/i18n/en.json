@@ -1,108 +1,108 @@
 {
-  "APP": {
-      "TITLE": "Bakery Manager"
-  },
-  "MENU": {
-      "HOME": "Home",
-      "SALES": "Sales",
-      "PRODUCTS": "Products",
-      "UPDATES": "Updates"
-  },
-  "SNACK_BAR": {
-      "CLOSE": "Close"
-  },
-  "SUCCESS": {
-      "UPDATE_LOG_EDIT": "Successfully updated log in data base, thanks",
-      "UPDATE_LOG_ADD": "Successfully added new log to data base. thanks",
-      "PRODUCT_REMOVED": "Successfully removed product from data base, thanks",
-      "PRODUCT_EDITED": "Successfully changed product data in data base, thanks",
-      "PRODUCT_ADDED": "Successfully added new product to data base, thanks"
-  },
-  "ERRORS": {
-      "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
-      "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
-      "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisu do bazy!!!",
-      "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!",
-      "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
-      "PRODUCT_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia produktu z bazy!!!",
-      "PRODUCT_EDIT_ERROR": "Wystąpił błąd podczas próby edycji produktu w bazie!!!",
-      "PRODUCT_ADD_ERROR": "Wystąpił błąd podczas próby dodania produktu do bazie!!!"
-  },
-  "INFO": {
-      "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"
-  },
-  "CONTROL_PANEL_TABLES": {
-      "ADD": "Dodaj",
-      "EDIT": "Edytuj",
-      "DELETE": "Usuń",
-      "CLEAR": "Wyczyść"
-  },
-  "TABLES": {
-      "OPTIONS_COLUMN": "Opcje"
-  },
-  "PRODUCT_CONFIRM_DIALOG": {
-      "TITLE": "Usunięcie produktu",
-      "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
-      "ACTION": "Usuń"
-  },
-  "USERS_TABLE": {
-      "COLUMNS": {
-          "NAME": "Imie",
-          "SURNAME": "Nazwisko",
-          "NICK": "Login",
-          "PHONE": "Telefon",
-          "EMAIL": "Poczta"
-      }
-  },
-  "UPDATES_TABLE": {
-      "COLUMNS": {
-          "NAME": "Nazwa",
-          "DATE": "Data",
-          "DESCRIPTION": "Opis"
-      }
-  },
-  "PRODUCT_TABLE": {
-      "COLUMNS": {
-          "NAME": "Nazwa",
-          "UNIT_PRICE": "Cena i Waga",
-          "COMPONENTS": "Składniki",
-          "DESCRIPTION": "Opis"
-      }
-  },
-  "DIALOG_ACTIONS": {
-      "CLOSE": "Zamknij"
-  },
-  "UPDATE_DIALOG": {
-      "INFO": {
-          "EDIT_LOG_TITLE": "Edycja Wpisu",
-          "EDIT_LOG_BUTTON": "Aktualizuj",
-          "NEW_LOG_TITLE": "Nowy Wpis",
-          "NEW_LOG_BUTTON": "Dodaj"
-      },
-      "FORM": {
-          "NAME": "Nazwa",
-          "DATE": "Data",
-          "DESCRIPTION": "Opis"
-      }
-  },
-  "PRODUCT_DIALOG": {
-      "STEPPER": {
-          "1STEP": "Podstawowe",
-          "2STEP": "Dodatkowe",
-          "3STEP": "Podsumowanie"
-      },
-      "INFO": {
-          "EDIT_PROD_TITLE": "Edycja Produktu",
-          "EDIT_PROD_BUTTON": "Aktualizuj",
-          "ADD_PROD_TITLE": "Nowy Produkt",
-          "ADD_PROD_BUTTON": "Dodaj"
-      },
-      "FORM": {
-          "NAME": "Nazwa",
-          "PRICE": "Cena (gr/zł)",
-          "WEIGHT": "Waga (g)",
-          "COMPONENTS": "Składniki",
-          "DESCRIPTION": "Opis"
-      }
-  }
+    "APP": {
+        "TITLE": "Bakery Manager"
+    },
+    "MENU": {
+        "HOME": "Home",
+        "SALES": "Sales",
+        "PRODUCTS": "Products",
+        "UPDATES": "Updates"
+    },
+    "SNACK_BAR": {
+        "CLOSE": "Close"
+    },
+    "SUCCESS": {
+        "UPDATE_LOG_ADD": "Successfully added new log to database. thanks",
+        "UPDATE_LOG_EDIT": "Successfully updated log in database, thanks",
+        "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
+        "PRODUCT_ADDED": "Successfully added new product to database, thanks",
+        "PRODUCT_EDITED": "Successfully changed product data in database, thanks"
+    },
+    "ERRORS": {
+        "USERS_GETTING_ERROR": "An error occurred while getting users from the database!!!",
+        "UPDATES_GETTING_ERROR": "An error occurred while getting updates from the database!!!",
+        "UPDATES_POSTING_ERROR": "An error occurred while adding new update log to the database!!!",
+        "UPDATES_EDITING_ERROR": "An error occurred while trying to update data of updates log in database!!!",
+        "PRODUCTS_GETTING_ERROR": "An error occurred while getting products from the database!!!",
+        "PRODUCT_ADD_ERROR": "An error occurred while trying to add a product to the database!!!",
+        "PRODUCT_EDIT_ERROR": "An error occurred while trying to edit a product in the database!!!",
+        "PRODUCT_DELETE_ERROR": "An error occurred while trying to removed product from the database!!!"
+    },
+    "INFO": {
+        "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"
+    },
+    "CONTROL_PANEL_TABLES": {
+        "ADD": "Dodaj",
+        "EDIT": "Edytuj",
+        "DELETE": "Usuń",
+        "CLEAR": "Wyczyść"
+    },
+    "TABLES": {
+        "OPTIONS_COLUMN": "Opcje"
+    },
+    "PRODUCT_CONFIRM_DIALOG": {
+        "TITLE": "Usunięcie produktu",
+        "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
+        "ACTION": "Usuń"
+    },
+    "USERS_TABLE": {
+        "COLUMNS": {
+            "NAME": "Imie",
+            "SURNAME": "Nazwisko",
+            "NICK": "Login",
+            "PHONE": "Telefon",
+            "EMAIL": "Poczta"
+        }
+    },
+    "UPDATES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa",
+            "DATE": "Data",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "PRODUCT_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa",
+            "UNIT_PRICE": "Cena i Waga",
+            "COMPONENTS": "Składniki",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Zamknij"
+    },
+    "UPDATE_DIALOG": {
+        "INFO": {
+            "EDIT_LOG_TITLE": "Edycja Wpisu",
+            "EDIT_LOG_BUTTON": "Aktualizuj",
+            "NEW_LOG_TITLE": "Nowy Wpis",
+            "NEW_LOG_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "NAME": "Nazwa",
+            "DATE": "Data",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "PRODUCT_DIALOG": {
+        "STEPPER": {
+            "1STEP": "Podstawowe",
+            "2STEP": "Dodatkowe",
+            "3STEP": "Podsumowanie"
+        },
+        "INFO": {
+            "EDIT_PROD_TITLE": "Edycja Produktu",
+            "EDIT_PROD_BUTTON": "Aktualizuj",
+            "ADD_PROD_TITLE": "Nowy Produkt",
+            "ADD_PROD_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "NAME": "Nazwa",
+            "PRICE": "Cena (gr/zł)",
+            "WEIGHT": "Waga (g)",
+            "COMPONENTS": "Składniki",
+            "DESCRIPTION": "Opis"
+        }
+    }
 }
