@@ -43,8 +43,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
 }
 const navigatorLang = navigator.language.split('-')[0];
-const supportedLang = ['pl'];
-const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'pl';
+const supportedLang = ['pl', 'en'];
+const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'en';
 const materialsModules = [
     MatIconModule,
     MatTableModule,
