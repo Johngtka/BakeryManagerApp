@@ -97,15 +97,17 @@ export class UpdatesComponent implements OnInit {
             this.paginator.previousPage();
         }
     }
+
     clearSelect() {
         this.logID = [];
     }
+
     private updateTable(newOrUpdatedLogs: Update): void {
         if (!!this.update && !!newOrUpdatedLogs) {
             const tableUpdateIndex = this.update.findIndex(
-                (ds: Update) => ds.id === newOrUpdatedLogs.id,
+                (li: Update) => li.id === newOrUpdatedLogs.id,
             );
-
+            // li it is shortcut of log id
             if (tableUpdateIndex !== -1) {
                 // update
                 this.update[tableUpdateIndex] = newOrUpdatedLogs;

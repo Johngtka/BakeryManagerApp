@@ -12,6 +12,10 @@
 .mat-column-description {
     width: 20%;
 }
+.mat-column-options {
+    text-align: center;
+    width: 10%;
+}
 @media screen and (max-width: 700px) {
     .mat-column-name {
         width: 5%;

@@ -13,20 +13,37 @@
     },
     "SUCCESS": {
         "UPDATE_LOG_EDIT": "Pomyślnie zaktualizowano wpis, dziękujemy",
-        "UPDATE_LOG_ADD": "Pomyślnie dodano wpis, dziękujemy"
+        "UPDATE_LOG_ADD": "Pomyślnie dodano wpis, dziękujemy",
+        "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy",
+        "PRODUCT_EDITED": "Pomyślnie zmieniono dane produktu w bazie, dziękujemy",
+        "PRODUCT_ADDED": "Pomyślnie dodano produkt do bazy, dziękujemy"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
         "UPDATES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy aktualizacji z bazy!!!",
+        "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisu do bazy!!!",
+        "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!",
         "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
-        "UPDATES_POSTING_ERROR": "Wystąpił błąd podczas dodawania nowego wpisy do bazy!!!",
-        "UPDATES_EDITING_ERROR": "Wystąpił błąd podczas próby aktualizacji wpisu w bazie!!!"
+        "PRODUCT_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia produktu z bazy!!!",
+        "PRODUCT_EDIT_ERROR": "Wystąpił błąd podczas próby edycji produktu w bazie!!!",
+        "PRODUCT_ADD_ERROR": "Wystąpił błąd podczas próby dodania produktu do bazie!!!"
+    },
+    "INFO": {
+        "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
         "EDIT": "Edytuj",
         "DELETE": "Usuń",
         "CLEAR": "Wyczyść"
+    },
+    "TABLES": {
+        "OPTIONS_COLUMN": "Opcje"
+    },
+    "PRODUCT_CONFIRM_DIALOG": {
+        "TITLE": "Usunięcie produktu",
+        "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
+        "ACTION": "Usuń"
     },
     "USERS_TABLE": {
         "COLUMNS": {
@@ -41,8 +58,7 @@
         "COLUMNS": {
             "NAME": "Nazwa",
             "DATE": "Data",
-            "DESCRIPTION": "Opis",
-            "OPTIONS": "Opcje"
+            "DESCRIPTION": "Opis"
         }
     },
     "PRODUCT_TABLE": {
@@ -58,7 +74,7 @@
     },
     "UPDATE_DIALOG": {
         "INFO": {
-            "EDIT_LOG_TITLE": "Edycja Logów",
+            "EDIT_LOG_TITLE": "Edycja Wpisu",
             "EDIT_LOG_BUTTON": "Aktualizuj",
             "NEW_LOG_TITLE": "Nowy Wpis",
             "NEW_LOG_BUTTON": "Dodaj"
@@ -66,6 +82,26 @@
         "FORM": {
             "NAME": "Nazwa",
             "DATE": "Data",
+            "DESCRIPTION": "Opis"
+        }
+    },
+    "PRODUCT_DIALOG": {
+        "STEPPER": {
+            "1STEP": "Podstawowe",
+            "2STEP": "Dodatkowe",
+            "3STEP": "Podsumowanie"
+        },
+        "INFO": {
+            "EDIT_PROD_TITLE": "Edycja Produktu",
+            "EDIT_PROD_BUTTON": "Aktualizuj",
+            "ADD_PROD_TITLE": "Nowy Produkt",
+            "ADD_PROD_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "NAME": "Nazwa",
+            "PRICE": "Cena (gr/zł)",
+            "WEIGHT": "Waga (g)",
+            "COMPONENTS": "Składniki",
             "DESCRIPTION": "Opis"
         }
     }

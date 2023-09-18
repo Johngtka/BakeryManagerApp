@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -34,7 +35,9 @@ import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './pipes/price.pipe';
 import { WeightPipe } from './pipes/weight.pipe';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
+import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -46,6 +49,7 @@ const materialsModules = [
     MatIconModule,
     MatTableModule,
     MatInputModule,
+    MatStepperModule,
     MatButtonModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
@@ -69,7 +73,9 @@ const materialsModules = [
         PricePipe,
         WeightPipe,
         UpdateDescPipe,
+        ConfirmDialogComponent,
         UpdateInputDialogComponent,
+        ProductInputDialogComponent,
     ],
     imports: [
         BrowserModule,

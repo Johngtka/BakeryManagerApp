@@ -9,7 +9,7 @@
             mat-row
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
-            [ngClass]="{ selectedRow: logID.indexOf(row.id) > -1 }"
+            [ngClass]="{ selectedRow: prodID.indexOf(row.id) > -1 }"
         ></tr>
         <ng-container matColumnDef="name">
             <th mat-header *matHeaderCellDef>
@@ -44,6 +44,50 @@
                 {{ element.description }}
             </td>
         </ng-container>
+        <ng-container matColumnDef="options">
+            <th mat-header *matHeaderCellDef>
+                {{ 'TABLES.OPTIONS_COLUMN' | translate }}
+            </th>
+            <td
+                mat-cell
+                *matCellDef="let element"
+                (click)="prodID.push(element.id)"
+            >
+                <button
+                    mat-icon-button
+                    [matMenuTriggerFor]="menu"
+                    [disabled]="!prodID.includes(element.id)"
+                >
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu xPosition="after">
+                    <button
+                        mat-menu-item
+                        (mouseenter)="isEditHovered = 'active'"
+                        (mouseleave)="isEditHovered = 'inactive'"
+                        [@editHovered]="isEditHovered"
+                        (click)="openDialog(element)"
+                    >
+                        <mat-icon>edit</mat-icon>
+                        <span>{{
+                            'CONTROL_PANEL_TABLES.EDIT' | translate
+                        }}</span>
+                    </button>
+                    <button
+                        mat-menu-item
+                        (mouseenter)="isDeleteHovered = 'active'"
+                        (mouseleave)="isDeleteHovered = 'inactive'"
+                        [@deleteHovered]="isDeleteHovered"
+                        (click)="deleteProduct(element)"
+                    >
+                        <mat-icon>delete</mat-icon>
+                        <span>{{
+                            'CONTROL_PANEL_TABLES.DELETE' | translate
+                        }}</span>
+                    </button>
+                </mat-menu>
+            </td>
+        </ng-container>
     </table>
 </div>
 <mat-paginator
@@ -53,29 +97,24 @@
 >
 </mat-paginator>
 <div class="controlPanel">
-    <button mat-raised-button class="mat-elevation-z8" color="primary">
+    <button
+        mat-raised-button
+        (click)="openDialog()"
+        class="mat-elevation-z8"
+        color="primary"
+    >
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
     <button
-        mat-raised-button
-        style="background-color: #0f0"
+        mat-stroked-button
+        (click)="clearSelect()"
+        [disabled]="prodID.length < 1"
         class="mat-elevation-z8"
-        [disabled]="!isSelected"
-        [ngClass]="{ isSelect: !isSelected }"
+        color="warn"
     >
-        <mat-icon>edit</mat-icon>
-        <span>{{ 'CONTROL_PANEL_TABLES.EDIT' | translate }}</span>
-    </button>
-    <button
-        mat-raised-button
-        style="background-color: #f00"
-        class="mat-elevation-z8"
-        [disabled]="!isSelected"
-        [ngClass]="{ isSelect: !isSelected }"
-    >
-        <mat-icon>delete</mat-icon>
-        <span>{{ 'CONTROL_PANEL_TABLES.DELETE' | translate }}</span>
+        <mat-icon>highlight_off</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
 </div>
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">

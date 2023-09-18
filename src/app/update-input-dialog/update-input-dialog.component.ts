@@ -25,7 +25,7 @@ export class UpdateInputDialogComponent implements OnInit {
     isEdit!: boolean;
     buttonText!: string;
     registerForm!: FormGroup;
-    originalFormValues!: Worker;
+    originalFormValues!: Update;
 
     ngOnInit(): void {
         if (this.data?.update) {
