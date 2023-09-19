@@ -1,5 +1,5 @@
 export interface Sales {
-    id: Number;
+    id: number;
     ProductName: string;
     StartDate: string;
     EndDate: string;

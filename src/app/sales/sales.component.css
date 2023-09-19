@@ -1,0 +1,20 @@
+.mat-column-prodName {
+    width: 15%;
+    text-align: center;
+}
+.mat-column-startDate {
+    width: 15%;
+    text-align: center;
+}
+.mat-column-endDate {
+    width: 15%;
+    text-align: center;
+}
+.mat-column-value {
+    width: 15%;
+    text-align: center;
+}
+.mat-column-options {
+    width: 15%;
+    text-align: center;
+}

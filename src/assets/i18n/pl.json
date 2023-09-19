@@ -69,6 +69,14 @@
             "DESCRIPTION": "Opis"
         }
     },
+    "SALES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Nazwa Produktu",
+            "START_DATE": "Data Założenia",
+            "END_DATE": "Data Zakończenia",
+            "VALUE": "Wartość(%)"
+        }
+    },
     "DIALOG_ACTIONS": {
         "CLOSE": "Zamknij"
     },
