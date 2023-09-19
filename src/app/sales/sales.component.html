@@ -9,7 +9,9 @@
             mat-row
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
-            [ngClass]="{ selectedRow: saleID.indexOf(row.id) > -1 }"
+            [ngClass]="{
+                selectedRow: saleID.indexOf(row.id) > -1
+            }"
         ></tr>
         <ng-container matColumnDef="prodName">
             <th mat-header-cell *matHeaderCellDef>
@@ -32,7 +34,7 @@
                 {{ 'SALES_TABLE.COLUMNS.END_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.EndDate | date: 'dd.MM.yyyy' }}
+                {{ element.EndDate | salesDate: element.StartDate }}
             </td>
         </ng-container>
         <ng-container matColumnDef="value">
