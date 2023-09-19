@@ -34,6 +34,7 @@ import { UpdatesComponent } from './updates/updates.component';
 import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './pipes/price.pipe';
 import { WeightPipe } from './pipes/weight.pipe';
+import { SalesComponent } from './sales/sales.component';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
@@ -76,6 +77,7 @@ const materialsModules = [
         ConfirmDialogComponent,
         UpdateInputDialogComponent,
         ProductInputDialogComponent,
+        SalesComponent,
     ],
     imports: [
         BrowserModule,
