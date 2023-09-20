@@ -5,6 +5,7 @@
         class="mat-elevation-z8 tablesTemplate"
     >
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
         <tr
             mat-row
             *matRowDef="let row; columns: displayedColumns"
@@ -13,6 +14,7 @@
                 selectedRow: saleID.indexOf(row.id) > -1
             }"
         ></tr>
+
         <ng-container matColumnDef="prodName">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'SALES_TABLE.COLUMNS.NAME' | translate }}
@@ -21,6 +23,7 @@
                 {{ element.ProductName }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="startDate">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'SALES_TABLE.COLUMNS.START_DATE' | translate }}
@@ -29,6 +32,7 @@
                 {{ element.StartDate | date: 'dd.MM.yyyy' }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="endDate">
             <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'SALES_TABLE.COLUMNS.END_DATE' | translate }}
@@ -37,6 +41,7 @@
                 {{ element.EndDate | salesDate: element.StartDate }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="value">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'SALES_TABLE.COLUMNS.VALUE' | translate }}
@@ -45,6 +50,7 @@
                 {{ '-' + element.Value + '%' }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="options">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'TABLES.OPTIONS_COLUMN' | translate }}
@@ -66,11 +72,19 @@
         </ng-container>
     </table>
 </div>
+
+<mat-paginator
+    class="paginator"
+    [pageSizeOptions]="[8]"
+    aria-label="Select page"
+></mat-paginator>
+
 <div class="controlPanel">
     <button mat-raised-button class="mat-elevation-z8" color="primary">
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
+
     <button
         mat-stroked-button
         (click)="clearSelect()"

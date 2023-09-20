@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
-// import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import {
     MatTableDataSource,
     MatTableDataSourcePaginator,
@@ -21,6 +21,8 @@ export class SalesComponent implements OnInit {
         private snackService: SnackService,
     ) {}
 
+    @ViewChild(MatPaginator)
+    paginator!: MatPaginator;
     sale!: Sales[];
     saleID: number[] = [];
     dataSource!: MatTableDataSource<Sales, MatTableDataSourcePaginator>;
@@ -39,6 +41,7 @@ export class SalesComponent implements OnInit {
             next: (data) => {
                 this.sale = data;
                 this.dataSource = new MatTableDataSource<Sales>(this.sale);
+                this.dataSource.paginator = this.paginator;
                 this.loadingProcess = false;
             },
             error: (err) => {
@@ -59,5 +62,17 @@ export class SalesComponent implements OnInit {
 
     clearSelect(): void {
         this.saleID = [];
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
+            this.paginator.nextPage();
+        } else if (
+            event.key === 'ArrowLeft' &&
+            this.paginator.hasPreviousPage()
+        ) {
+            this.paginator.previousPage();
+        }
     }
 }

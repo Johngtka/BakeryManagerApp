@@ -103,7 +103,7 @@ export class UpdateInputDialogComponent implements OnInit {
         );
     }
     @HostListener('document:keydown', ['$event'])
-    keyboardCloseDialog(event: KeyboardEvent): void {
+    handleKeyEvent(event: KeyboardEvent): void {
         if (event.key === 'Escape') {
             this.dialogRef.close();
         }
