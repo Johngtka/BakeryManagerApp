@@ -72,7 +72,7 @@
     "SALES_TABLE": {
         "COLUMNS": {
             "NAME": "Nazwa Produktu",
-            "START_DATE": "Data Rozpoczęcia",
+            "START_DATE": "Data Utworzenia",
             "END_DATE": "Dni do Końca",
             "VALUE": "Wartość(%)"
         }
