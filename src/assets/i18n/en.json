@@ -96,7 +96,7 @@
     "PRODUCT_DIALOG": {
         "STEPPER": {
             "1STEP": "Basic",
-            "2STEP": "Additional",
+            "2STEP": "Optional",
             "3STEP": "Summary"
         },
         "INFO": {
