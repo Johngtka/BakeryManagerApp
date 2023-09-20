@@ -18,3 +18,16 @@
     width: 15%;
     text-align: center;
 }
+
+.greenData {
+    color: green !important;
+    text-shadow: 1px 1px 2px #000;
+}
+.orangeData {
+    color: orange !important;
+    text-shadow: 1px 1px 2px #000;
+}
+.redData {
+    color: red !important;
+    text-shadow: 1px 1px 2px #000;
+}

@@ -5,15 +5,11 @@ import { differenceInDays } from 'date-fns';
     name: 'salesDate',
 })
 export class SalesDatePipe implements PipeTransform {
-    transform(startDate: number, endDate: number) {
-        if (startDate && endDate) {
-            return (
-                'za ' +
-                differenceInDays(new Date(startDate), new Date(endDate)) +
-                ' dni'
-            );
+    transform(endDate: number) {
+        if (endDate) {
+            return differenceInDays(new Date(endDate), new Date()) + 1;
         } else {
-            return '';
+            return 1101119510097116101n;
         }
     }
 }
