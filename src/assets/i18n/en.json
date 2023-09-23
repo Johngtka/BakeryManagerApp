@@ -69,6 +69,14 @@
             "DESCRIPTION": "Description"
         }
     },
+    "SALES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Name",
+            "START_DATE": "Start Date",
+            "END_DATE": "Days to End",
+            "VALUE": "Value(%)"
+        }
+    },
     "DIALOG_ACTIONS": {
         "CLOSE": "Close"
     },
@@ -88,7 +96,7 @@
     "PRODUCT_DIALOG": {
         "STEPPER": {
             "1STEP": "Basic",
-            "2STEP": "Additional",
+            "2STEP": "Optional",
             "3STEP": "Summary"
         },
         "INFO": {
