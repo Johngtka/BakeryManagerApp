@@ -1,0 +1,137 @@
+{
+    "APP": {
+        "TITLE": "Bakery Manager"
+    },
+    "MENU": {
+        "HOME": "Home",
+        "SALES": "Sales",
+        "PRODUCTS": "Products",
+        "UPDATES": "Updates"
+    },
+    "SNACK_BAR": {
+        "CLOSE": "Close"
+    },
+    "SUCCESS": {
+        "UPDATE_LOG_ADD": "Successfully added new log to database. thanks",
+        "UPDATE_LOG_EDIT": "Successfully updated log in database, thanks",
+        "PRODUCT_ADDED": "Successfully added new product to database, thanks",
+        "PRODUCT_EDITED": "Successfully changed product data in database, thanks",
+        "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
+        "SALE_ADD": "Successfully added new sale to database, thanks"
+    },
+    "ERRORS": {
+        "USERS_GETTING_ERROR": "An error occurred while getting users from the database!!!",
+        "UPDATES_GETTING_ERROR": "An error occurred while getting updates from the database!!!",
+        "UPDATES_POSTING_ERROR": "An error occurred while adding new update log to the database!!!",
+        "UPDATES_EDITING_ERROR": "An error occurred while trying to update data of updates log in database!!!",
+        "PRODUCTS_GETTING_ERROR": "An error occurred while getting products from the database!!!",
+        "PRODUCT_ADD_ERROR": "An error occurred while trying to add a product to the database!!!",
+        "PRODUCT_EDIT_ERROR": "An error occurred while trying to edit a product in the database!!!",
+        "PRODUCT_DELETE_ERROR": "An error occurred while trying to removed product from the database!!!",
+        "SALES_GETTING_ERROR": "An error occurred while getting sales list from database!!!",
+        "SALES_ADD_ERROR": "An error occurred while adding new sale to the database!!!",
+        "SALES_DELETE_ERROR": "An error occurred while trying to delete sale from database!!!"
+    },
+    "INFO": {
+        "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process"
+    },
+    "CONTROL_PANEL_TABLES": {
+        "ADD": "Add",
+        "EDIT": "Edit",
+        "DELETE": "Delete",
+        "CLEAR": "Clear"
+    },
+    "TABLES": {
+        "OPTIONS_COLUMN": "Options"
+    },
+    "PRODUCT_CONFIRM_DIALOG": {
+        "TITLE": "Product Removing",
+        "MESSAGE": "Are you sure you wont to remove the product?",
+        "ACTION": "Delete"
+    },
+    "SALE_CONFIRM_DIALOG": {
+        "TITLE": "Sale Removing",
+        "MESSAGE": "Are you sure you wont to remove the sale?",
+        "ACTION": "Delete"
+    },
+    "USERS_TABLE": {
+        "COLUMNS": {
+            "NAME": "Name",
+            "SURNAME": "Surname",
+            "NICK": "Login",
+            "PHONE": "Phone",
+            "EMAIL": "Email"
+        }
+    },
+    "UPDATES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Name",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
+        }
+    },
+    "PRODUCT_TABLE": {
+        "COLUMNS": {
+            "NAME": "Name",
+            "UNIT_PRICE": "Price & Weight",
+            "COMPONENTS": "Components",
+            "DESCRIPTION": "Description"
+        }
+    },
+    "SALES_TABLE": {
+        "COLUMNS": {
+            "NAME": "Name",
+            "START_DATE": "Start Date",
+            "END_DATE": "Days to End",
+            "VALUE": "Value(%)"
+        }
+    },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Close"
+    },
+    "UPDATE_DIALOG": {
+        "INFO": {
+            "EDIT_LOG_TITLE": "Update Edit",
+            "EDIT_LOG_BUTTON": "Update",
+            "NEW_LOG_TITLE": "New Update",
+            "NEW_LOG_BUTTON": "Add"
+        },
+        "FORM": {
+            "NAME": "Name",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
+        }
+    },
+    "PRODUCT_DIALOG": {
+        "STEPPER": {
+            "1STEP": "Basic",
+            "2STEP": "Optional",
+            "3STEP": "Summary"
+        },
+        "INFO": {
+            "EDIT_PROD_TITLE": "Product Edit",
+            "EDIT_PROD_BUTTON": "Update",
+            "ADD_PROD_TITLE": "New Product",
+            "ADD_PROD_BUTTON": "Add"
+        },
+        "FORM": {
+            "NAME": "Name",
+            "PRICE": "Price (gr/zł)",
+            "WEIGHT": "Weight (g)",
+            "COMPONENTS": "Components",
+            "DESCRIPTION": "Description"
+        }
+    },
+    "SALES_DIALOG": {
+        "INFO": {
+            "NEW_SALE_TITLE": "New Sale",
+            "NEW_SALE_BUTTON": "Add"
+        },
+        "FORM": {
+            "PRODUCT": "Product",
+            "START_DATE": "Start Date",
+            "END_DATE": "End Date",
+            "VALUE": "Value"
+        }
+    }
+}
