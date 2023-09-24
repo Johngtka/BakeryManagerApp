@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.3...v0.0.4) (2023-09-24)
+
+
+### Features
+
+* added posting end deleting sales methods with new dialog form([#14](https://github.com/Johngtka/BakeryManagerApp/issues/14)) ([5a82409](https://github.com/Johngtka/BakeryManagerApp/commit/5a824097a8d2eb28b0a19d2d3c2266aab24dd97f))
+* i18n for En language is added ([#11](https://github.com/Johngtka/BakeryManagerApp/issues/11)) ([df3c34e](https://github.com/Johngtka/BakeryManagerApp/commit/df3c34ec96bc87dcf598133243a1ab4a1655774c))
+* new component with sales table ([#12](https://github.com/Johngtka/BakeryManagerApp/issues/12)) ([8ebae2a](https://github.com/Johngtka/BakeryManagerApp/commit/8ebae2aa3fa10b2774f7d044d31b552f92b074d8))
+* new working options of products table added ([#10](https://github.com/Johngtka/BakeryManagerApp/issues/10)) ([b016671](https://github.com/Johngtka/BakeryManagerApp/commit/b0166718bd5ef00e9976f88408b140f5954c98a1))
+
+
+### Bug Fixes
+
+* changes for updates paginator ([8e1732c](https://github.com/Johngtka/BakeryManagerApp/commit/8e1732ccdada07f4a1bcdf0b752186f0b35dda43))
+* repaired flex and response of the app ([#13](https://github.com/Johngtka/BakeryManagerApp/issues/13)) ([9178159](https://github.com/Johngtka/BakeryManagerApp/commit/9178159fc2d9c014842274fce45256a539c37a2b))
+
 ### [0.0.3](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.2...v0.0.3) (2023-09-08)
 
 
