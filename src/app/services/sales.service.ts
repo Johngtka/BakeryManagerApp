@@ -24,7 +24,7 @@ export class SalesService {
             postSale: true,
             sDate: data.StartDate,
             eDate: data.EndDate,
-            value: data.value,
+            value: data.Value,
         });
     }
 

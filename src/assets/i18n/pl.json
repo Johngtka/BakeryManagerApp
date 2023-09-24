@@ -112,5 +112,17 @@
             "COMPONENTS": "Składniki",
             "DESCRIPTION": "Opis"
         }
+    },
+    "SALES_DIALOG": {
+        "INFO": {
+            "NEW_SALE_TITLE": "Nowa Promocja",
+            "NEW_SALE_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "PRODUCT": "Produkt",
+            "START_DATE": "Data Rozpoczęcia",
+            "END_DATE": "Data Zakończenia",
+            "VALUE": "Wartość"
+        }
     }
 }

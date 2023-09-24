@@ -112,5 +112,17 @@
             "COMPONENTS": "Components",
             "DESCRIPTION": "Description"
         }
+    },
+    "SALES_DIALOG": {
+        "INFO": {
+            "NEW_SALE_TITLE": "New Sale",
+            "NEW_SALE_BUTTON": "Add"
+        },
+        "FORM": {
+            "PRODUCT": "Product",
+            "START_DATE": "Start Date",
+            "END_DATE": "End Date",
+            "VALUE": "Value"
+        }
     }
 }

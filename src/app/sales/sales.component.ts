@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import {
     MatTableDataSource,
@@ -9,6 +10,7 @@ import {
 import { Sales } from '../models/sales';
 import { SalesService } from '../services/sales.service';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
+import { SalesInputDialogComponent } from '../sales-input-dialog/sales-input-dialog.component';
 
 @Component({
     selector: 'app-sales',
@@ -19,6 +21,7 @@ export class SalesComponent implements OnInit {
     constructor(
         private salesService: SalesService,
         private snackService: SnackService,
+        private dialog: MatDialog,
     ) {}
 
     @ViewChild(MatPaginator)
@@ -58,6 +61,12 @@ export class SalesComponent implements OnInit {
         } else {
             this.saleID.push(row.id);
         }
+    }
+
+    openDialog(): void {
+        const dialogRef = this.dialog.open(SalesInputDialogComponent, {
+            disableClose: true,
+        });
     }
 
     clearSelect(): void {

@@ -3,5 +3,5 @@ export interface Sales {
     ProductName: string;
     StartDate: string;
     EndDate: string;
-    value: string;
+    Value: string;
 }
