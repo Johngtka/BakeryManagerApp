@@ -16,7 +16,8 @@
         "UPDATE_LOG_EDIT": "Pomyślnie zaktualizowano wpis, dziękujemy",
         "PRODUCT_ADDED": "Pomyślnie dodano produkt do bazy, dziękujemy",
         "PRODUCT_EDITED": "Pomyślnie zmieniono dane produktu w bazie, dziękujemy",
-        "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy"
+        "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy",
+        "SALE_ADD": "Pomyślnie dodano promocje, dziękujemy"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
@@ -26,10 +27,14 @@
         "PRODUCTS_GETTING_ERROR": "Wystąpił błąd podczas pobierania produktów z bazy!!!",
         "PRODUCT_ADD_ERROR": "Wystąpił błąd podczas próby dodania produktu do bazie!!!",
         "PRODUCT_EDIT_ERROR": "Wystąpił błąd podczas próby edycji produktu w bazie!!!",
-        "PRODUCT_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia produktu z bazy!!!"
+        "PRODUCT_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia produktu z bazy!!!",
+        "SALES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy promocji!!!",
+        "SALES_ADD_ERROR": "Wystąpił błąd podczas próby dodania promocji do bazy!!!",
+        "SALES_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia promocji z bazy!!!"
     },
     "INFO": {
-        "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy"
+        "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
+        "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -43,6 +48,11 @@
     "PRODUCT_CONFIRM_DIALOG": {
         "TITLE": "Usunięcie produktu",
         "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
+        "ACTION": "Usuń"
+    },
+    "SALE_CONFIRM_DIALOG": {
+        "TITLE": "Usunięcie Promocji",
+        "MESSAGE": "Czy jesteś pewny, że chcesz usunąć promocje?",
         "ACTION": "Usuń"
     },
     "USERS_TABLE": {

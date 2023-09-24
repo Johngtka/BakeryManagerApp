@@ -22,6 +22,7 @@ export class SalesService {
     postSale(data: Sales): Observable<Sales> {
         return this.http.post<Sales>(`${this.apiUrl}`, {
             postSale: true,
+            name: data.ProductName,
             sDate: data.StartDate,
             eDate: data.EndDate,
             value: data.Value,

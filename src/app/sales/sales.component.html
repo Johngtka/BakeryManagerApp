@@ -69,7 +69,11 @@
                 (click)="saleID.push(element.id)"
             >
                 <span *ngIf="saleID.length >= 1 && saleID.includes(element.id)">
-                    <button mat-stroked-button color="warn">
+                    <button
+                        mat-stroked-button
+                        (click)="deleteSale(element)"
+                        color="warn"
+                    >
                         <mat-icon>delete</mat-icon>
                         <span>{{
                             'CONTROL_PANEL_TABLES.DELETE' | translate

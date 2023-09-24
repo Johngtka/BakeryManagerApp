@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import { FormControl } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
@@ -62,5 +62,32 @@ export class SalesInputDialogComponent implements OnInit {
             Value: new FormControl('', [Validators.required]),
         });
         this.originalFormValues = this.registerForm.value;
+    }
+
+    addSale() {
+        const saleFormValue = this.registerForm.value;
+        this.salesService.postSale(saleFormValue).subscribe({
+            next: (newSale) => {
+                this.dialogRef.close(newSale);
+                this.snackService.showSnackBar(
+                    'SUCCESS.SALE_ADD',
+                    SNACK_TYPE.success,
+                );
+            },
+            error: (err) => {
+                this.snackService.showSnackBar(
+                    'ERRORS.SALES_ADD_ERROR',
+                    SNACK_TYPE.error,
+                );
+                console.log(err);
+            },
+        });
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'Escape') {
+            this.dialogRef.close();
+        }
     }
 }
