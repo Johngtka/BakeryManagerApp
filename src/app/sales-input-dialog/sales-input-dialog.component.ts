@@ -56,10 +56,10 @@ export class SalesInputDialogComponent implements OnInit {
         this.titleText = 'SALES_DIALOG.INFO.NEW_SALE_TITLE';
         this.buttonText = 'SALES_DIALOG.INFO.NEW_SALE_BUTTON';
         this.registerForm = new FormGroup({
-            ProductName: new FormControl('', [Validators.required]),
-            StartDate: new FormControl('', [Validators.required]),
-            EndDate: new FormControl('', [Validators.required]),
-            Value: new FormControl('', [Validators.required]),
+            productName: new FormControl('', [Validators.required]),
+            startDate: new FormControl('', [Validators.required]),
+            endDate: new FormControl('', [Validators.required]),
+            value: new FormControl('', [Validators.required]),
         });
         this.originalFormValues = this.registerForm.value;
     }

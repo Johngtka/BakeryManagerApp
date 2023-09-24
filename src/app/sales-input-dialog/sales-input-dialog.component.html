@@ -8,7 +8,7 @@
                     <mat-label>{{
                         'SALES_DIALOG.FORM.PRODUCT' | translate
                     }}</mat-label>
-                    <mat-select formControlName="ProductName">
+                    <mat-select formControlName="productName">
                         <mat-option
                             *ngFor="let product of productsList"
                             [value]="product"
@@ -21,19 +21,19 @@
                     <mat-label>{{
                         'SALES_DIALOG.FORM.START_DATE' | translate
                     }}</mat-label>
-                    <input matInput type="date" formControlName="StartDate" />
+                    <input matInput type="date" formControlName="startDate" />
                 </mat-form-field>
                 <mat-form-field appearance="fill" tabindex="3">
                     <mat-label>{{
                         'SALES_DIALOG.FORM.END_DATE' | translate
                     }}</mat-label>
-                    <input matInput type="date" formControlName="EndDate" />
+                    <input matInput type="date" formControlName="endDate" />
                 </mat-form-field>
                 <mat-form-field appearance="fill" tabindex="4">
                     <mat-label>{{
                         'SALES_DIALOG.FORM.VALUE' | translate
                     }}</mat-label>
-                    <input matInput formControlName="Value" />
+                    <input matInput formControlName="value" />
                 </mat-form-field>
             </div>
         </div>

@@ -22,10 +22,10 @@ export class SalesService {
     postSale(data: Sales): Observable<Sales> {
         return this.http.post<Sales>(`${this.apiUrl}`, {
             postSale: true,
-            name: data.ProductName,
-            sDate: data.StartDate,
-            eDate: data.EndDate,
-            value: data.Value,
+            name: data.productName,
+            sDate: data.startDate,
+            eDate: data.endDate,
+            value: data.value,
         });
     }
 
