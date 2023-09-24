@@ -18,4 +18,21 @@ export class SalesService {
             getSales: true,
         });
     }
+
+    postSale(data: Sales): Observable<Sales> {
+        return this.http.post<Sales>(`${this.apiUrl}`, {
+            postSale: true,
+            name: data.productName,
+            sDate: data.startDate,
+            eDate: data.endDate,
+            value: data.value,
+        });
+    }
+
+    deleteSale(data: Sales): Observable<Sales> {
+        return this.http.post<Sales>(`${this.apiUrl}`, {
+            deleteSale: true,
+            id: data.id,
+        });
+    }
 }

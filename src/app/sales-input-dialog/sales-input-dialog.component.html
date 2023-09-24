@@ -1,0 +1,56 @@
+<form [formGroup]="registerForm">
+    <h1 mat-dialog-title>{{ titleText | translate }}</h1>
+    <mat-divider class="dividers"></mat-divider>
+    <mat-dialog-content class="mat-typography">
+        <div class="col-wrapper">
+            <div class="col">
+                <mat-form-field appearance="fill" tabindex="1">
+                    <mat-label>{{
+                        'SALES_DIALOG.FORM.PRODUCT' | translate
+                    }}</mat-label>
+                    <mat-select formControlName="productName">
+                        <mat-option
+                            *ngFor="let product of productsList"
+                            [value]="product"
+                        >
+                            {{ product }}</mat-option
+                        >
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" tabindex="2">
+                    <mat-label>{{
+                        'SALES_DIALOG.FORM.START_DATE' | translate
+                    }}</mat-label>
+                    <input matInput type="date" formControlName="startDate" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" tabindex="3">
+                    <mat-label>{{
+                        'SALES_DIALOG.FORM.END_DATE' | translate
+                    }}</mat-label>
+                    <input matInput type="date" formControlName="endDate" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" tabindex="4">
+                    <mat-label>{{
+                        'SALES_DIALOG.FORM.VALUE' | translate
+                    }}</mat-label>
+                    <input matInput formControlName="value" />
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close mat-raised-button>
+            {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            mat-button
+            cdkFocusInitial
+            (click)="addSale()"
+            [disabled]="!registerForm.valid"
+        >
+            {{ buttonText | translate }}
+        </button>
+    </mat-dialog-actions>
+</form>

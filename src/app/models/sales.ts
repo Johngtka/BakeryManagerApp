@@ -1,7 +1,7 @@
 export interface Sales {
     id: number;
-    ProductName: string;
-    StartDate: string;
-    EndDate: string;
+    productName: string;
+    startDate: string;
+    endDate: string;
     value: string;
 }
