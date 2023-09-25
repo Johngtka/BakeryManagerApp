@@ -8,7 +8,7 @@
 }
 .mat-column-description {
     text-align: left;
-    font-size: small;
+    font-size: x-small;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 50%;
@@ -24,7 +24,6 @@
         padding: 0;
     }
     .mat-column-description {
-        font-size: x-small;
         padding-left: 0;
         padding-right: 0;
     }

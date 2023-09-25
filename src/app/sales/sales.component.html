@@ -29,7 +29,7 @@
                 {{ 'SALES_TABLE.COLUMNS.START_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.StartDate | date: 'dd.MM.yyyy' }}
+                {{ element.StartDate | date : 'dd.MM.yyyy' }}
             </td>
         </ng-container>
 
@@ -112,4 +112,8 @@
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
+</div>
+
+<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
+    <mat-spinner></mat-spinner>
 </div>
