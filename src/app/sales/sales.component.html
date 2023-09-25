@@ -113,3 +113,7 @@
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
 </div>
+
+<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
+    <mat-spinner></mat-spinner>
+</div>
