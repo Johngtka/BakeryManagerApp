@@ -29,7 +29,7 @@
                 {{ 'SALES_TABLE.COLUMNS.START_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.StartDate | date: 'dd.MM.yyyy' }}
+                {{ element.StartDate | date : 'dd.MM.yyyy' }}
             </td>
         </ng-container>
 
@@ -84,12 +84,6 @@
         </ng-container>
     </table>
 </div>
-
-<mat-paginator
-    class="paginator"
-    [pageSizeOptions]="[8]"
-    aria-label="Select page"
-></mat-paginator>
 
 <div class="controlPanel">
     <button

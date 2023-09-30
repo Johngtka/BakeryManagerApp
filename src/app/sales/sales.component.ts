@@ -1,11 +1,7 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
-import {
-    MatTableDataSource,
-    MatTableDataSourcePaginator,
-} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { Sales } from '../models/sales';
 import { SalesService } from '../services/sales.service';
@@ -28,11 +24,9 @@ export class SalesComponent implements OnInit {
         private dialog: MatDialog,
     ) {}
 
-    @ViewChild(MatPaginator)
-    paginator!: MatPaginator;
     sale!: Sales[];
     saleID: number[] = [];
-    dataSource!: MatTableDataSource<Sales, MatTableDataSourcePaginator>;
+    dataSource!: MatTableDataSource<Sales>;
     loadingProcess: boolean = true;
     isSelected: boolean = false;
     displayedColumns: string[] = [
@@ -48,7 +42,6 @@ export class SalesComponent implements OnInit {
             next: (data) => {
                 this.sale = data;
                 this.dataSource = new MatTableDataSource<Sales>(this.sale);
-                this.dataSource.paginator = this.paginator;
                 this.loadingProcess = false;
             },
             error: (err) => {
@@ -83,7 +76,6 @@ export class SalesComponent implements OnInit {
                         this.dataSource = new MatTableDataSource<Sales>(
                             this.sale,
                         );
-                        this.dataSource.paginator = this.paginator;
                         this.loadingProcess = false;
                     },
                     error: (err) => {
@@ -124,7 +116,6 @@ export class SalesComponent implements OnInit {
                                     newList,
                                 );
                                 this.loadingProcess = false;
-                                this.dataSource.paginator = this.paginator;
                             },
                             error: (err) => {
                                 this.snackService.showSnackBar(
@@ -157,23 +148,10 @@ export class SalesComponent implements OnInit {
         this.saleID = [];
     }
 
-    @HostListener('document:keydown', ['$event'])
-    handleKeyEvent(event: KeyboardEvent): void {
-        if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
-            this.paginator.nextPage();
-        } else if (
-            event.key === 'ArrowLeft' &&
-            this.paginator.hasPreviousPage()
-        ) {
-            this.paginator.previousPage();
-        }
-    }
-
     private updateSalesTable(newSale: Sales): void {
         if (!!this.sale && !!newSale) {
             this.sale = [...this.sale, newSale];
             this.dataSource = new MatTableDataSource<Sales>(this.sale);
-            this.dataSource.paginator = this.paginator;
         }
     }
 }
