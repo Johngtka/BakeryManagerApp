@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { User } from '../models/user';
@@ -15,13 +16,13 @@ export class HomeComponent implements OnInit {
     constructor(
         private userService: UsersService,
         private snackService: SnackService,
+        private router: Router,
     ) {}
 
     user!: User[];
     dataSource!: MatTableDataSource<User>;
     loadingProcess: boolean = true;
     usersId: number[] = [];
-    isSelected: boolean = false;
     displayedColumns: string[] = ['name', 'surname', 'nick', 'phone', 'email'];
 
     ngOnInit(): void {
@@ -42,11 +43,6 @@ export class HomeComponent implements OnInit {
     }
 
     clickedRow(row: User): void {
-        const ID = this.usersId.indexOf(row.id);
-        if (ID !== -1) {
-            this.usersId.splice(ID, 1);
-        } else {
-            this.usersId.push(row.id);
-        }
+        this.router.navigate(['user/orders'], { state: row });
     }
 }

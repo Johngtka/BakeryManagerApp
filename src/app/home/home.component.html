@@ -13,7 +13,6 @@
             mat-row
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
-            [ngClass]="{ selectedRow: usersId.indexOf(row.id) > -1 }"
         ></tr>
 
         <ng-container matColumnDef="name">
@@ -21,7 +20,7 @@
                 {{ 'USERS_TABLE.COLUMNS.NAME' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.imie }}
+                {{ element.name }}
             </td>
         </ng-container>
 
@@ -30,7 +29,7 @@
                 {{ 'USERS_TABLE.COLUMNS.SURNAME' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.nazwisko }}
+                {{ element.surName }}
             </td>
         </ng-container>
 
@@ -39,7 +38,7 @@
                 {{ 'USERS_TABLE.COLUMNS.NICK' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.logi }}
+                {{ element.login }}
             </td>
         </ng-container>
 
@@ -48,7 +47,7 @@
                 {{ 'USERS_TABLE.COLUMNS.PHONE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.telefon }}
+                {{ element.phone }}
             </td>
         </ng-container>
 
@@ -57,7 +56,7 @@
                 {{ 'USERS_TABLE.COLUMNS.EMAIL' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.mail }}
+                {{ element.email }}
             </td>
         </ng-container>
     </table>
