@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router } from '@angular/router';
-
 import { User } from '../models/user';
 
 export interface NavigationObject {
@@ -14,7 +12,7 @@ export interface NavigationObject {
     styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-    constructor(private router: Router) {}
+    constructor() {}
 
     user!: User;
 
