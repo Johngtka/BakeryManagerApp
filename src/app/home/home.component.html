@@ -8,7 +8,14 @@
             mat-header-row
             *matHeaderRowDef="displayedColumns; sticky: true"
         ></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="clickedRow(row)"
+            [ngClass]="{ selectedRow: usersId.indexOf(row.id) > -1 }"
+        ></tr>
+
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'USERS_TABLE.COLUMNS.NAME' | translate }}
@@ -17,6 +24,7 @@
                 {{ element.imie }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="surname">
             <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'USERS_TABLE.COLUMNS.SURNAME' | translate }}
@@ -25,6 +33,7 @@
                 {{ element.nazwisko }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="nick">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'USERS_TABLE.COLUMNS.NICK' | translate }}
@@ -33,6 +42,7 @@
                 {{ element.logi }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="phone">
             <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'USERS_TABLE.COLUMNS.PHONE' | translate }}
@@ -41,6 +51,7 @@
                 {{ element.telefon }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="email">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'USERS_TABLE.COLUMNS.EMAIL' | translate }}
@@ -51,6 +62,7 @@
         </ng-container>
     </table>
 </div>
+
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
 </div>

@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
     user!: User[];
     dataSource!: MatTableDataSource<User>;
     loadingProcess: boolean = true;
+    usersId: number[] = [];
+    isSelected: boolean = false;
     displayedColumns: string[] = ['name', 'surname', 'nick', 'phone', 'email'];
 
     ngOnInit(): void {
@@ -37,5 +39,14 @@ export class HomeComponent implements OnInit {
                 console.log(err);
             },
         });
+    }
+
+    clickedRow(row: User): void {
+        const ID = this.usersId.indexOf(row.id);
+        if (ID !== -1) {
+            this.usersId.splice(ID, 1);
+        } else {
+            this.usersId.push(row.id);
+        }
     }
 }
