@@ -21,7 +21,7 @@ export class OrdersComponent implements OnInit {
     ngOnInit(): void {
         this.user = {} as User;
         const userURL = history.state;
-        if (this.checkIfUser(userURL)) {
+        if (this.checkIfUserExist(userURL)) {
             this.user = userURL;
             console.log(userURL.name);
         } else {
@@ -29,7 +29,7 @@ export class OrdersComponent implements OnInit {
         }
     }
 
-    private checkIfUser(object: User | NavigationObject): object is User {
+    private checkIfUserExist(object: User | NavigationObject): object is User {
         return Object.hasOwn(object, 'name');
     }
 }
