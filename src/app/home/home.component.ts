@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
     user!: User[];
     dataSource!: MatTableDataSource<User>;
     loadingProcess: boolean = true;
-    usersId: number[] = [];
     displayedColumns: string[] = ['name', 'surname', 'nick', 'phone', 'email'];
 
     ngOnInit(): void {

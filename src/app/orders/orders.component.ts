@@ -23,7 +23,9 @@ export class OrdersComponent implements OnInit {
         const userURL = history.state;
         if (this.checkIfUser(userURL)) {
             this.user = userURL;
-            console.log(userURL);
+            console.log(userURL.name);
+        } else {
+            console.log('no user');
         }
     }
 
