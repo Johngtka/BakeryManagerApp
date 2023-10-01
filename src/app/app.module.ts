@@ -42,6 +42,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
+import { OrdersComponent } from './orders/orders.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -84,6 +85,7 @@ const materialsModules = [
         SalesComponent,
         SalesDatePipe,
         SalesInputDialogComponent,
+        OrdersComponent,
     ],
     imports: [
         BrowserModule,
