@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../models/user';
 import { Order } from '../models/order';
 import { UsersService } from '../services/users.service';
-import { SnackService } from '../services/snack.service';
+import { SNACK_TYPE, SnackService } from '../services/snack.service';
 
 export interface NavigationObject {
     navigationId: number;
@@ -48,6 +48,13 @@ export class OrdersComponent implements OnInit {
                         this.orders,
                     );
                     this.loadingProcess = false;
+                },
+                error: (err) => {
+                    this.snackService.showSnackBar(
+                        'ERRORS.ORDERS_GETTING_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                    console.log(err);
                 },
             });
         } else {
