@@ -59,6 +59,8 @@ export class OrdersComponent implements OnInit {
             });
         } else {
             console.log('no user');
+            this.loadingProcess = false;
+            this.showEmptyStateForUser = true;
         }
     }
 

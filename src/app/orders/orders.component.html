@@ -76,3 +76,7 @@
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
 </div>
+
+<div *ngIf="showEmptyStateForUser">
+    <app-empty-state></app-empty-state>
+</div>
