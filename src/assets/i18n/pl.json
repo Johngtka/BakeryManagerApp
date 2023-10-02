@@ -93,7 +93,8 @@
             "FULL_TIME_AND_DATE": "Data i Godzina",
             "CONTACT": "Telefon",
             "ORDER_COMMENT": "Komentarz Zamówienia"
-        }
+        },
+        "PDF_BUTTON": "Drukuj PDF"
     },
     "DIALOG_ACTIONS": {
         "CLOSE": "Zamknij"

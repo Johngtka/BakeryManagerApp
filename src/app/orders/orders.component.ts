@@ -24,6 +24,7 @@ export class OrdersComponent implements OnInit {
 
     user!: User;
     orders!: Order[];
+    orderId: number[] = [];
     dataSource!: MatTableDataSource<Order>;
     displayedColumns: string[] = [
         'fullNameWithCount',
@@ -51,6 +52,15 @@ export class OrdersComponent implements OnInit {
             });
         } else {
             console.log('no user');
+        }
+    }
+
+    clickedRow(row: Order): void {
+        const ID = this.orderId.indexOf(row.id);
+        if (ID !== -1) {
+            this.orderId.splice(ID, 1);
+        } else {
+            this.orderId.push(row.id);
         }
     }
 
