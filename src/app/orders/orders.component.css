@@ -1,0 +1,23 @@
+.mat-column-fullNameWithCount {
+    width: 25%;
+}
+
+.mat-column-fullTimeDate {
+    width: 20%;
+    text-align: center;
+}
+
+.mat-column-userContact {
+    width: 10%;
+    text-align: center;
+}
+
+.mat-column-orderComment {
+    width: 20%;
+    text-align: center;
+}
+
+.mat-column-options {
+    width: 20%;
+    text-align: center;
+}

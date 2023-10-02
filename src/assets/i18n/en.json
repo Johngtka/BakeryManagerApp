@@ -86,6 +86,14 @@
             "VALUE": "Value(%)"
         }
     },
+    "ORDERS_TABLE": {
+      "COLUMNS": {
+          "FULL_NAME_AND_COUNT": "Name & Count",
+          "FULL_TIME_AND_DATE": "Date & Time",
+          "CONTACT": "Phone",
+          "ORDER_COMMENT": "Order Comment"
+      }
+  },
     "DIALOG_ACTIONS": {
         "CLOSE": "Close"
     },

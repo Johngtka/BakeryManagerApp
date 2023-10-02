@@ -87,6 +87,14 @@
             "VALUE": "Wartość(%)"
         }
     },
+    "ORDERS_TABLE": {
+        "COLUMNS": {
+            "FULL_NAME_AND_COUNT": "Nazwa i Ilość",
+            "FULL_TIME_AND_DATE": "Data i Godzina",
+            "CONTACT": "Telefon",
+            "ORDER_COMMENT": "Komentarz Zamówienia"
+        }
+    },
     "DIALOG_ACTIONS": {
         "CLOSE": "Zamknij"
     },
