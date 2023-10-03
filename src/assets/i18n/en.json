@@ -143,5 +143,11 @@
             "END_DATE": "End Date",
             "VALUE": "Value"
         }
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Oops, something went wrong!!!",
+        "MESSAGES": {
+            "NO_USER": "You forgot to select a user from the table"
+        }
     }
 }

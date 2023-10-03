@@ -144,5 +144,11 @@
             "END_DATE": "Data Zakończenia",
             "VALUE": "Wartość"
         }
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Ups, coś poszło nie tak!!!",
+        "MESSAGES": {
+            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli"
+        }
     }
 }
