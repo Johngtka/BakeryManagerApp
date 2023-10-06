@@ -34,7 +34,9 @@
         "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!"
     },
     "INFO": {
-        "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process"
+        "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",
+        "STOPPED_SALE_REMOVING": "Deletion of sales from the base has been cancelled",
+        "ORDERS_EXISTING": "This user does not have any orders yet, you have to wait"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Add",

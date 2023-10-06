@@ -40,11 +40,11 @@ import { SalesDatePipe } from './pipes/sales-date.pipe';
 import { SalesComponent } from './sales/sales.component';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
 import { OrdersComponent } from './orders/orders.component';
+import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
-import { EmptyStateComponent } from './empty-state/empty-state.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
@@ -83,13 +83,13 @@ const materialsModules = [
         WeightPipe,
         UpdateDescPipe,
         OrdersComponent,
+        EmptyStateComponent,
         ConfirmDialogComponent,
         UpdateInputDialogComponent,
         ProductInputDialogComponent,
         SalesComponent,
         SalesDatePipe,
         SalesInputDialogComponent,
-        EmptyStateComponent,
     ],
     imports: [
         BrowserModule,

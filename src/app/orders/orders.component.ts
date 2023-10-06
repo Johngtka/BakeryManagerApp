@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
-import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import {
+    MatTableDataSource,
+    MatTableDataSourcePaginator,
+} from '@angular/material/table';
 
 import { User } from '../models/user';
 import { Order } from '../models/order';
@@ -21,11 +25,12 @@ export class OrdersComponent implements OnInit {
         private userService: UsersService,
         private snackService: SnackService,
     ) {}
-
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
     user!: User;
     orders!: Order[];
     orderId: number[] = [];
-    dataSource!: MatTableDataSource<Order>;
+    dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
+    paginatorStep!: number;
     displayedColumns: string[] = [
         'fullNameWithCount',
         'fullTimeDate',
@@ -43,11 +48,23 @@ export class OrdersComponent implements OnInit {
             this.user = userURL;
             this.userService.getUserOrders(this.user).subscribe({
                 next: (data) => {
-                    this.orders = data;
-                    this.dataSource = new MatTableDataSource<Order>(
-                        this.orders,
-                    );
-                    this.loadingProcess = false;
+                    this.paginatorStep = data.length;
+                    if (this.paginatorStep < 1) {
+                        setTimeout(() => {
+                            this.snackService.showSnackBar(
+                                'INFO.ORDERS_EXISTING',
+                                SNACK_TYPE.info,
+                            );
+                        }, 3000);
+                    } else {
+                        this.orders = data;
+                        this.dataSource = new MatTableDataSource<Order>(
+                            this.orders,
+                        );
+                        this.dataSource.paginator = this.paginator;
+
+                        this.loadingProcess = false;
+                    }
                 },
                 error: (err) => {
                     this.snackService.showSnackBar(
@@ -58,7 +75,6 @@ export class OrdersComponent implements OnInit {
                 },
             });
         } else {
-            console.log('no user');
             this.loadingProcess = false;
             this.showEmptyStateForUser = true;
         }
@@ -70,6 +86,18 @@ export class OrdersComponent implements OnInit {
             this.orderId.splice(ID, 1);
         } else {
             this.orderId.push(row.id);
+        }
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
+            this.paginator.nextPage();
+        } else if (
+            event.key === 'ArrowLeft' &&
+            this.paginator.hasPreviousPage()
+        ) {
+            this.paginator.previousPage();
         }
     }
 

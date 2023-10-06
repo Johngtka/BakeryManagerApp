@@ -35,7 +35,8 @@
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
-        "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy"
+        "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy",
+        "ORDERS_EXISTING": "Ten użytkownik nie ma jeszcze żadnych zamówień, trzeba poczekać"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
