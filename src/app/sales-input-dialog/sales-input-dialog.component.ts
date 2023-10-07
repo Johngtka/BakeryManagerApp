@@ -16,9 +16,9 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
 })
 export class SalesInputDialogComponent implements OnInit {
     constructor(
+        private dialogRef: MatDialogRef<SalesInputDialogComponent>,
         private salesService: SalesService,
         private snackService: SnackService,
-        private dialogRef: MatDialogRef<SalesInputDialogComponent>,
     ) {}
 
     titleText!: string;
@@ -64,7 +64,7 @@ export class SalesInputDialogComponent implements OnInit {
         this.originalFormValues = this.registerForm.value;
     }
 
-    addSale() {
+    addSale(): void {
         const saleFormValue = this.registerForm.value;
         this.salesService.postSale(saleFormValue).subscribe({
             next: (newSale) => {

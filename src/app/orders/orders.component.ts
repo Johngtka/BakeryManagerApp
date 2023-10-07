@@ -8,12 +8,9 @@ import {
 
 import { User } from '../models/user';
 import { Order } from '../models/order';
+import { NavigationObject } from '../models/navigation-object';
 import { UsersService } from '../services/users.service';
 import { SNACK_TYPE, SnackService } from '../services/snack.service';
-
-export interface NavigationObject {
-    navigationId: number;
-}
 
 @Component({
     selector: 'app-orders',
@@ -25,6 +22,7 @@ export class OrdersComponent implements OnInit {
         private userService: UsersService,
         private snackService: SnackService,
     ) {}
+
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     user!: User;
     orders!: Order[];

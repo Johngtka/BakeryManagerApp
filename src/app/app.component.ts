@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
+
 import { MatSidenav } from '@angular/material/sidenav';
 
 import { delay } from 'rxjs/operators';
@@ -17,7 +18,7 @@ export class AppComponent implements AfterViewInit {
     @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.observer
             .observe(['(max-width: 900px)'])
             .pipe(delay(1), untilDestroyed(this))

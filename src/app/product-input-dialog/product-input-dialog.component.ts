@@ -2,8 +2,8 @@ import {
     Component,
     Inject,
     OnInit,
-    HostListener,
     ViewChild,
+    HostListener,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
@@ -22,10 +22,10 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
 })
 export class ProductInputDialogComponent implements OnInit {
     constructor(
-        private productService: ProductsService,
-        private snackService: SnackService,
-        private dialogRef: MatDialogRef<ProductInputDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: { product: Product },
+        private dialogRef: MatDialogRef<ProductInputDialogComponent>,
+        private snackService: SnackService,
+        private productService: ProductsService,
     ) {}
 
     @ViewChild('stepper') stepper!: MatStepper;
@@ -110,7 +110,7 @@ export class ProductInputDialogComponent implements OnInit {
         }
     }
 
-    hasChange() {
+    hasChange(): boolean | void {
         return (
             JSON.stringify(this.registerForm.value) !==
             JSON.stringify(this.originalFormValues)

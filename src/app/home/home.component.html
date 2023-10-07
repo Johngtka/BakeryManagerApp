@@ -12,7 +12,7 @@
         <tr
             mat-row
             *matRowDef="let row; columns: displayedColumns"
-            (click)="clickedRow(row)"
+            (click)="openUserOrders(row)"
         ></tr>
 
         <ng-container matColumnDef="name">

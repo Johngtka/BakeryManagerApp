@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UsersService {
     constructor(private http: HttpClient) {}
+
     private apiUrl = environment.API_URL;
 
     getUsers(): Observable<Array<User>> {

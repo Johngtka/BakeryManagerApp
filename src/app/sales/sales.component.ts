@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -52,6 +52,10 @@ export class SalesComponent implements OnInit {
                 console.log(err);
             },
         });
+    }
+
+    clearSelect(): void {
+        this.saleID = [];
     }
 
     clickedRow(row: Sales): void {
@@ -142,10 +146,6 @@ export class SalesComponent implements OnInit {
                 this.saleID.splice(this.saleID.indexOf(saleObj.id), 1);
             }
         });
-    }
-
-    clearSelect(): void {
-        this.saleID = [];
     }
 
     private updateSalesTable(newSale: Sales): void {

@@ -66,10 +66,11 @@ import { ProductInputDialogComponent } from '../product-input-dialog/product-inp
 })
 export class ProductsComponent implements OnInit {
     constructor(
-        private productService: ProductsService,
-        private snackService: SnackService,
         private dialog: MatDialog,
+        private snackService: SnackService,
+        private productService: ProductsService,
     ) {}
+
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
     product!: Product[];
@@ -105,6 +106,10 @@ export class ProductsComponent implements OnInit {
         });
     }
 
+    clearSelect(): void {
+        this.prodID = [];
+    }
+
     clickedRow(row: Product): void {
         const ID = this.prodID.indexOf(row.id);
         if (ID !== -1) {
@@ -114,10 +119,6 @@ export class ProductsComponent implements OnInit {
             this.prodID.push(row.id);
         }
         this.checkLogSelect();
-    }
-
-    clearSelect(): void {
-        this.prodID = [];
     }
 
     openDialog(product?: Product): void {

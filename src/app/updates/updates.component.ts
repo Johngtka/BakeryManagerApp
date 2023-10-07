@@ -23,6 +23,7 @@ export class UpdatesComponent implements OnInit {
         private snackService: SnackService,
         private dialog: MatDialog,
     ) {}
+
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
     update!: Update[];
@@ -49,6 +50,10 @@ export class UpdatesComponent implements OnInit {
         });
     }
 
+    clearSelect(): void {
+        this.logID = [];
+    }
+
     clickedRow(row: Update): void {
         const ID = this.logID.indexOf(row.id);
         if (ID !== -1) {
@@ -58,7 +63,7 @@ export class UpdatesComponent implements OnInit {
         }
     }
 
-    openDialog(update?: Update) {
+    openDialog(update?: Update): void {
         const dialogRef = this.dialog.open(UpdateInputDialogComponent, {
             data: {
                 update,
@@ -96,10 +101,6 @@ export class UpdatesComponent implements OnInit {
         ) {
             this.paginator.previousPage();
         }
-    }
-
-    clearSelect() {
-        this.logID = [];
     }
 
     private updateTable(newOrUpdatedLogs: Update): void {
