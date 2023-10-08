@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -13,6 +14,7 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
 })
 export class HomeComponent implements OnInit {
     constructor(
+        private router: Router,
         private userService: UsersService,
         private snackService: SnackService,
     ) {}
@@ -37,5 +39,9 @@ export class HomeComponent implements OnInit {
                 console.log(err);
             },
         });
+    }
+
+    openUserOrders(row: User): void {
+        this.router.navigate(['user/orders'], { state: row });
     }
 }

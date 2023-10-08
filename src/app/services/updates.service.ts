@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UpdatesService {
     constructor(private http: HttpClient) {}
+
     private apiURL = environment.API_URL;
 
     getUpdates(): Observable<Array<Update>> {

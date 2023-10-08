@@ -30,11 +30,13 @@
         "PRODUCT_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia produktu z bazy!!!",
         "SALES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy promocji!!!",
         "SALES_ADD_ERROR": "Wystąpił błąd podczas próby dodania promocji do bazy!!!",
-        "SALES_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia promocji z bazy!!!"
+        "SALES_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia promocji z bazy!!!",
+        "ORDERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania zamówień użytkownika z bazy!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
-        "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy"
+        "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy",
+        "ORDERS_EXISTING": "Ten użytkownik nie ma jeszcze żadnych zamówień, trzeba poczekać"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -87,6 +89,15 @@
             "VALUE": "Wartość(%)"
         }
     },
+    "ORDERS_TABLE": {
+        "COLUMNS": {
+            "FULL_NAME_AND_COUNT": "Nazwa i Ilość",
+            "FULL_TIME_AND_DATE": "Data i Godzina",
+            "CONTACT": "Telefon",
+            "ORDER_COMMENT": "Komentarz Zamówienia"
+        },
+        "PDF_BUTTON": "Drukuj PDF"
+    },
     "DIALOG_ACTIONS": {
         "CLOSE": "Zamknij"
     },
@@ -133,6 +144,12 @@
             "START_DATE": "Data Rozpoczęcia",
             "END_DATE": "Data Zakończenia",
             "VALUE": "Wartość"
+        }
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Ups, coś poszło nie tak!!!",
+        "MESSAGES": {
+            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli"
         }
     }
 }

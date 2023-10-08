@@ -16,8 +16,8 @@ export enum ConfirmationDialogResponse {
 })
 export class ConfirmDialogComponent {
     constructor(
-        private dialogRef: MatDialogRef<ConfirmationDialogResponse>,
         @Inject(MAT_DIALOG_DATA) public data: Confirm,
+        private dialogRef: MatDialogRef<ConfirmationDialogResponse>,
     ) {}
 
     confirm(): void {
@@ -29,7 +29,7 @@ export class ConfirmDialogComponent {
     }
 
     @HostListener('document:keydown', ['event'])
-    keyBoardClose(event: KeyboardEvent) {
+    keyBoardClose(event: KeyboardEvent): void {
         if (event.key === 'Escape') {
             this.dialogRef.close();
         }

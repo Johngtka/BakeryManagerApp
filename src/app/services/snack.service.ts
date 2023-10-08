@@ -23,7 +23,7 @@ export class SnackService {
         const action = this.translateService.instant('SNACK_BAR.CLOSE');
         const info = this.translateService.instant(i18nKey);
         this.matSnackbar.open(info, action, {
-            duration: 3000,
+            duration: 5000,
             panelClass: [
                 type === SNACK_TYPE.error
                     ? 'error-snackbar'

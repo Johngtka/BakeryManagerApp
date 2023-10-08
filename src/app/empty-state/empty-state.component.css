@@ -1,0 +1,37 @@
+.stateCard {
+    display: flex;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.stateTitle {
+    display: flex;
+    align-items: center;
+}
+
+.mat-icon {
+    font-size: 7vw;
+    height: 7vw;
+    width: 7vw;
+    color: gray;
+}
+
+@media screen and (max-width: 900px) {
+    .stateCard {
+        width: 100vw;
+    }
+    .mat-icon {
+        font-size: 20vw;
+        width: 20vw;
+        height: 20vw;
+    }
+    .tablesTemplate {
+        padding: 0;
+    }
+}

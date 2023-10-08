@@ -15,10 +15,10 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
 })
 export class UpdateInputDialogComponent implements OnInit {
     constructor(
-        private updateService: UpdatesService,
-        private snackService: SnackService,
-        private dialogRef: MatDialogRef<UpdateInputDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: { update: Update },
+        private dialogRef: MatDialogRef<UpdateInputDialogComponent>,
+        private snackService: SnackService,
+        private updateService: UpdatesService,
     ) {}
 
     titleText!: string;
@@ -56,7 +56,7 @@ export class UpdateInputDialogComponent implements OnInit {
         this.originalFormValues = this.registerForm.value;
     }
 
-    addUpdate() {
+    addUpdate(): void {
         const logFormValues = this.registerForm.value;
         if (this.isEdit) {
             logFormValues.id = this.data.update.id;
@@ -96,12 +96,13 @@ export class UpdateInputDialogComponent implements OnInit {
         }
     }
 
-    hasChange() {
+    hasChange(): boolean | void {
         return (
             JSON.stringify(this.registerForm.value) !==
             JSON.stringify(this.originalFormValues)
         );
     }
+
     @HostListener('document:keydown', ['$event'])
     handleKeyEvent(event: KeyboardEvent): void {
         if (event.key === 'Escape') {
