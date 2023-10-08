@@ -5,12 +5,14 @@
         class="mat-elevation-z8 tablesTemplate"
     >
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
         <tr
             mat-row
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
             [ngClass]="{ selectedRow: logID.indexOf(row.id) > -1 }"
         ></tr>
+
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'UPDATES_TABLE.COLUMNS.NAME' | translate }}
@@ -19,6 +21,7 @@
                 {{ element.name }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'UPDATES_TABLE.COLUMNS.DATE' | translate }}
@@ -27,6 +30,7 @@
                 {{ element.date | date: 'dd.MM.y' }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'UPDATES_TABLE.COLUMNS.DESCRIPTION' | translate }}
@@ -35,6 +39,7 @@
                 {{ element.description | updateDesc: 'br' }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="options">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'TABLES.OPTIONS_COLUMN' | translate }}
@@ -58,11 +63,17 @@
         </ng-container>
     </table>
 </div>
+
 <mat-paginator
     class="paginator"
     [pageSizeOptions]="[8]"
     aria-label="Select page"
 ></mat-paginator>
+
+<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
+    <mat-spinner></mat-spinner>
+</div>
+
 <div class="controlPanel">
     <button
         mat-raised-button
@@ -83,7 +94,4 @@
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
-</div>
-<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
-    <mat-spinner></mat-spinner>
 </div>
