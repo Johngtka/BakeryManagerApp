@@ -11,7 +11,9 @@ import { Order } from '../models/order';
 import { NavigationObject } from '../models/navigation-object';
 import { UsersService } from '../services/users.service';
 import { SNACK_TYPE, SnackService } from '../services/snack.service';
-
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 @Component({
     selector: 'app-orders',
     templateUrl: './orders.component.html',
@@ -97,6 +99,11 @@ export class OrdersComponent implements OnInit {
         ) {
             this.paginator.previousPage();
         }
+    }
+
+    openPDF(): void {
+        const docDefinition = {};
+        // pdfMake.createPdf().open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
