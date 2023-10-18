@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -108,7 +109,7 @@ const materialsModules = [
         ReactiveFormsModule,
         ...materialsModules,
     ],
-    providers: [UsersService, CdkTextareaAutosize],
+    providers: [UsersService, CdkTextareaAutosize, DatePipe],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
