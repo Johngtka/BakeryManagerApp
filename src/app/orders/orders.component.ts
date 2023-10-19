@@ -105,21 +105,54 @@ export class OrdersComponent implements OnInit {
 
     openPDF(): void {
         const docDefinition = {
+            info: {
+                title: 'Order invoice of ' + this.user.login,
+                creator: 'BakeryOnlineFactory Inc.',
+            },
+            header: [
+                {
+                    layout: 'noBorders',
+                    table: {
+                        widths: ['50%', '50%'],
+                        body: [
+                            [
+                                {
+                                    text: this.datePipe.transform(
+                                        Date.now(),
+                                        'dd.MM.yyyy',
+                                    ),
+                                    margin: [20, 20],
+                                },
+
+                                {
+                                    text: 'Upcoming Logo',
+                                    margin: [20, 20],
+                                    alignment: 'right',
+                                },
+                            ],
+                        ],
+                    },
+                },
+            ],
             content: [
                 {
-                    text: this.datePipe.transform(Date.now(), 'dd.MM.yyyy'),
-                    margin: [0, 10],
+                    text:
+                        'Order list of ' +
+                        this.user.name +
+                        ' ' +
+                        this.user.surName,
+                    alignment: 'center',
+                    margin: [0, 40],
                 },
-                // {
-                //     image: 'https://www.medianauka.pl/biologia/grafika/ssaki/jak.jpg  ',
-                //     width: 150,
-                //     height: 150,
-                // },
-                { text: 'Tekst 3' },
-                // Dodaj dowolną ilość obiektów tekstowych, każdy będzie wyświetlany pod sobą.
             ],
         };
-        pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
+        pdfMake
+            .createPdf(docDefinition as TDocumentDefinitions)
+            .download(
+                docDefinition.info.title +
+                    ' created by ' +
+                    docDefinition.info.creator,
+            );
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
