@@ -6,11 +6,13 @@ import {
     MatTableDataSourcePaginator,
 } from '@angular/material/table';
 
+import { DatePipe } from '@angular/common';
 import { User } from '../models/user';
 import { Order } from '../models/order';
 import { NavigationObject } from '../models/navigation-object';
 import { UsersService } from '../services/users.service';
 import { SNACK_TYPE, SnackService } from '../services/snack.service';
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
@@ -23,6 +25,7 @@ export class OrdersComponent implements OnInit {
     constructor(
         private userService: UsersService,
         private snackService: SnackService,
+        private datePipe: DatePipe,
     ) {}
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -101,8 +104,22 @@ export class OrdersComponent implements OnInit {
     }
 
     openPDF(): void {
-        const docDefinition = {};
-        // pdfMake.createPdf().open();
+        const docDefinition = {
+            content: [
+                {
+                    text: this.datePipe.transform(Date.now(), 'dd.MM.yyyy'),
+                    margin: [0, 10],
+                },
+                // {
+                //     image: 'https://www.medianauka.pl/biologia/grafika/ssaki/jak.jpg  ',
+                //     width: 150,
+                //     height: 150,
+                // },
+                { text: 'Tekst 3' },
+                // Dodaj dowolną ilość obiektów tekstowych, każdy będzie wyświetlany pod sobą.
+            ],
+        };
+        pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
