@@ -116,7 +116,7 @@ export class OrdersComponent implements OnInit {
         }
     }
 
-    openPDF(row: Order): void {
+    openPDF(order: Order): void {
         const docDefinition = {
             info: {
                 title: 'Order invoice of ' + this.user.login,
@@ -189,27 +189,27 @@ export class OrdersComponent implements OnInit {
                             ],
                             [
                                 {
-                                    text: row.prodName,
+                                    text: order.prodName,
                                     alignment: 'left',
                                 },
                                 {
-                                    text: row.count,
+                                    text: order.count,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: row.date,
+                                    text: order.date,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: row.time,
+                                    text: order.time,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: row.email,
+                                    text: order.email,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: row.comment,
+                                    text: order.comment,
                                     alignment: 'left',
                                 },
                             ],
@@ -218,14 +218,14 @@ export class OrdersComponent implements OnInit {
                 },
             ],
         };
-        // pdfMake
-        //     .createPdf(docDefinition as TDocumentDefinitions)
-        //     .download(
-        //         docDefinition.info.title +
-        //             ' created by ' +
-        //             docDefinition.info.creator,
-        //     );
-        pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
+        pdfMake
+            .createPdf(docDefinition as TDocumentDefinitions)
+            .download(
+                docDefinition.info.title +
+                    ' created by ' +
+                    docDefinition.info.creator,
+            );
+        // pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
