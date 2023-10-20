@@ -16,7 +16,7 @@ export class CompanyService {
 
     getCompany(): Observable<Array<Company>> {
         return this.http.post<Array<Company>>(`${this.apiUrl}`, {
-            grtCompany: true,
+            getCompany: true,
         });
     }
 }

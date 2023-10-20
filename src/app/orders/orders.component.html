@@ -64,7 +64,7 @@
                 <button
                     mat-stroked-button
                     color="primary"
-                    (click)="openPDF()"
+                    (click)="openPDF(element)"
                     [disabled]="!orderId.includes(element.id)"
                 >
                     {{ 'ORDERS_TABLE.PDF_BUTTON' | translate }}

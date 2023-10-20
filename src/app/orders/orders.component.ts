@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 import { MatPaginator } from '@angular/material/paginator';
 import {
@@ -6,16 +7,18 @@ import {
     MatTableDataSourcePaginator,
 } from '@angular/material/table';
 
-import { DatePipe } from '@angular/common';
-import { User } from '../models/user';
-import { Order } from '../models/order';
-import { NavigationObject } from '../models/navigation-object';
-import { UsersService } from '../services/users.service';
-import { SNACK_TYPE, SnackService } from '../services/snack.service';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+import { User } from '../models/user';
+import { Company } from '../models/company';
+import { Order } from '../models/order';
+import { NavigationObject } from '../models/navigation-object';
+import { UsersService } from '../services/users.service';
+import { SNACK_TYPE, SnackService } from '../services/snack.service';
+import { CompanyService } from '../services/company.service';
+
 @Component({
     selector: 'app-orders',
     templateUrl: './orders.component.html',
@@ -25,11 +28,13 @@ export class OrdersComponent implements OnInit {
     constructor(
         private userService: UsersService,
         private snackService: SnackService,
+        private companyService: CompanyService,
         private datePipe: DatePipe,
     ) {}
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     user!: User;
+    company!: Company[];
     orders!: Order[];
     orderId: number[] = [];
     dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
@@ -80,6 +85,14 @@ export class OrdersComponent implements OnInit {
             this.loadingProcess = false;
             this.showEmptyStateForUser = true;
         }
+        this.companyService.getCompany().subscribe({
+            next: (data) => {
+                this.company = data;
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
     }
 
     clickedRow(row: Order): void {
@@ -103,7 +116,7 @@ export class OrdersComponent implements OnInit {
         }
     }
 
-    openPDF(): void {
+    openPDF(row: Order): void {
         const docDefinition = {
             info: {
                 title: 'Order invoice of ' + this.user.login,
@@ -144,15 +157,75 @@ export class OrdersComponent implements OnInit {
                     alignment: 'center',
                     margin: [0, 40],
                 },
+                {
+                    table: {
+                        width: 'auto',
+                        body: [
+                            [
+                                {
+                                    text: 'Product Name',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Count',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Delivery Date',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Delivery Time',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Customer Email',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Order Comment',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: row.prodName,
+                                    alignment: 'left',
+                                },
+                                {
+                                    text: row.count,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: row.date,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: row.time,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: row.email,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: row.comment,
+                                    alignment: 'left',
+                                },
+                            ],
+                        ],
+                    },
+                },
             ],
         };
-        pdfMake
-            .createPdf(docDefinition as TDocumentDefinitions)
-            .download(
-                docDefinition.info.title +
-                    ' created by ' +
-                    docDefinition.info.creator,
-            );
+        // pdfMake
+        //     .createPdf(docDefinition as TDocumentDefinitions)
+        //     .download(
+        //         docDefinition.info.title +
+        //             ' created by ' +
+        //             docDefinition.info.creator,
+        //     );
+        pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
