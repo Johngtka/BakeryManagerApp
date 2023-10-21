@@ -136,12 +136,12 @@ export class OrdersComponent implements OnInit {
                                             Date.now(),
                                             'dd.MM.yyyy',
                                         ),
-                                    margin: [20, 20],
+                                    style: 'header',
                                 },
 
                                 {
                                     text: 'Upcoming Logo',
-                                    margin: [20, 20],
+                                    style: 'header',
                                     alignment: 'right',
                                 },
                             ],
@@ -151,6 +151,23 @@ export class OrdersComponent implements OnInit {
             ],
             content: [
                 {
+                    text: `Dear Customer,
+
+                    Thank you for placing your order in our shop. We would like to inform you that your order will be delivered within the next week. Our company is committed to ensuring the fastest possible delivery.
+
+                    Our team is currently prepared to process your order and shipping will take place within one to two working days. This means that your products will be carefully packed and dispatched as quickly as possible.
+
+                    If you have any questions or need additional information regarding your order, please do not hesitate to contact us. Our customer service is available to help you.
+
+                    All messages regarding the progress of your order will be sent to the email you specified in your order.
+
+                    Thank you for choosing our shop and the trust you have placed in our products. We are sure that you will be satisfied with the quality of our products and services.
+
+                    Greetings,
+                    Customer Service Team`,
+                    style: 'textContent',
+                },
+                {
                     layout: 'noBorders',
                     table: {
                         widths: ['50%', '50%'],
@@ -158,53 +175,62 @@ export class OrdersComponent implements OnInit {
                             [
                                 {
                                     text: 'Seller',
-                                    alignment: 'left',
-                                    margin: [0, 10],
+                                    style: 'sellerAndBuyerSection',
                                 },
                                 {
                                     text: 'Buyer',
-                                    alignment: 'left',
-                                    margin: [0, 10],
+                                    style: 'sellerAndBuyerSection',
                                 },
                             ],
                             [
                                 {
                                     text: 'Wypiekarnia S.A',
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                                 {
                                     text:
                                         this.user.name +
                                         ' ' +
                                         this.user.surName,
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                             ],
                             [
                                 {
                                     text: 'Chrobrego 8a',
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                                 {
                                     text: '',
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                             ],
                             [
                                 {
                                     text: '64-980 Trzcianka',
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                                 {
                                     text: '',
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                             ],
                             [
                                 {
                                     text: 'Polska',
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                                 {
                                     text: '',
-                                    margin: [0, 20],
+                                    style: 'sellerAndBuyerTableCell',
                                 },
                             ],
                         ],
                     },
+                },
+                {
+                    text: 'Ordered Product:',
+                    style: 'orderedProductSection',
                 },
                 {
                     table: {
@@ -213,65 +239,89 @@ export class OrdersComponent implements OnInit {
                             [
                                 {
                                     text: 'Product Name',
-                                    alignment: 'center',
+                                    style: 'orderTableHeaderCell',
                                 },
                                 {
                                     text: 'Count',
-                                    alignment: 'center',
+                                    style: 'orderTableHeaderCell',
                                 },
                                 {
                                     text: 'Delivery Date',
-                                    alignment: 'center',
+                                    style: 'orderTableHeaderCell',
                                 },
                                 {
                                     text: 'Delivery Time',
-                                    alignment: 'center',
+                                    style: 'orderTableHeaderCell',
                                 },
                                 {
                                     text: 'Customer Email',
-                                    alignment: 'center',
-                                },
-                                {
-                                    text: 'Order Comment',
-                                    alignment: 'center',
+                                    style: 'orderTableHeaderCell',
                                 },
                             ],
                             [
                                 {
                                     text: order.prodName,
-                                    alignment: 'left',
-                                    margin: [0, 10],
+                                    style: 'orderTableCell',
                                 },
                                 {
                                     text: order.count,
-                                    alignment: 'center',
-                                    margin: [0, 10],
+                                    style: 'orderTableCell',
                                 },
                                 {
                                     text: order.date,
-                                    alignment: 'center',
-                                    margin: [0, 10],
+                                    style: 'orderTableCell',
                                 },
                                 {
                                     text: order.time,
-                                    alignment: 'center',
-                                    margin: [0, 10],
+                                    style: 'orderTableCell',
                                 },
                                 {
                                     text: order.email,
-                                    alignment: 'center',
-                                    margin: [0, 10],
-                                },
-                                {
-                                    text: order.comment,
-                                    alignment: 'left',
-                                    margin: [0, 10],
+                                    style: 'orderTableCell',
                                 },
                             ],
                         ],
                     },
                 },
             ],
+            styles: {
+                header: {
+                    margin: [20, 20],
+                    bold: true,
+                },
+                sellerAndBuyerSection: {
+                    alignment: 'left',
+                    bold: true,
+                    fontSize: 14,
+                    margin: [0, 10],
+                },
+                sellerAndBuyerTableCell: {
+                    margin: [20, 0, 0, 0],
+                    italics: true,
+                },
+                textContent: {
+                    alignment: 'left',
+                    italics: true,
+                    fontSize: 12,
+                    margin: [0, 30],
+                },
+                orderedProductSection: {
+                    alignment: 'left',
+                    margin: [0, 20],
+                    bold: true,
+                },
+                orderTableHeaderCell: {
+                    alignment: 'center',
+                    margin: 5,
+                    fontSize: 10,
+                    bold: true,
+                    italics: true,
+                },
+                orderTableCell: {
+                    alignment: 'center',
+                    margin: [3, 10, 2, 10],
+                },
+            },
         };
         // pdfMake
         //     .createPdf(docDefinition as TDocumentDefinitions)
@@ -280,7 +330,9 @@ export class OrdersComponent implements OnInit {
         //             ' created by ' +
         //             docDefinition.info.creator,
         //     );
-        pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
+        pdfMake
+            .createPdf(docDefinition as unknown as TDocumentDefinitions)
+            .open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
