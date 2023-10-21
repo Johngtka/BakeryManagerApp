@@ -130,10 +130,12 @@ export class OrdersComponent implements OnInit {
                         body: [
                             [
                                 {
-                                    text: this.datePipe.transform(
-                                        Date.now(),
-                                        'dd.MM.yyyy',
-                                    ),
+                                    text:
+                                        'Issue date: ' +
+                                        this.datePipe.transform(
+                                            Date.now(),
+                                            'dd.MM.yyyy',
+                                        ),
                                     margin: [20, 20],
                                 },
 
@@ -149,13 +151,60 @@ export class OrdersComponent implements OnInit {
             ],
             content: [
                 {
-                    text:
-                        'Order list of ' +
-                        this.user.name +
-                        ' ' +
-                        this.user.surName,
-                    alignment: 'center',
-                    margin: [0, 40],
+                    layout: 'noBorders',
+                    table: {
+                        widths: ['50%', '50%'],
+                        body: [
+                            [
+                                {
+                                    text: 'Seller',
+                                    alignment: 'left',
+                                    margin: [0, 10],
+                                },
+                                {
+                                    text: 'Buyer',
+                                    alignment: 'left',
+                                    margin: [0, 10],
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Wypiekarnia S.A',
+                                },
+                                {
+                                    text:
+                                        this.user.name +
+                                        ' ' +
+                                        this.user.surName,
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Chrobrego 8a',
+                                },
+                                {
+                                    text: '',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '64-980 Trzcianka',
+                                },
+                                {
+                                    text: '',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Polska',
+                                },
+                                {
+                                    text: '',
+                                    margin: [0, 20],
+                                },
+                            ],
+                        ],
+                    },
                 },
                 {
                     table: {
@@ -191,26 +240,32 @@ export class OrdersComponent implements OnInit {
                                 {
                                     text: order.prodName,
                                     alignment: 'left',
+                                    margin: [0, 10],
                                 },
                                 {
                                     text: order.count,
                                     alignment: 'center',
+                                    margin: [0, 10],
                                 },
                                 {
                                     text: order.date,
                                     alignment: 'center',
+                                    margin: [0, 10],
                                 },
                                 {
                                     text: order.time,
                                     alignment: 'center',
+                                    margin: [0, 10],
                                 },
                                 {
                                     text: order.email,
                                     alignment: 'center',
+                                    margin: [0, 10],
                                 },
                                 {
                                     text: order.comment,
                                     alignment: 'left',
+                                    margin: [0, 10],
                                 },
                             ],
                         ],
@@ -218,14 +273,14 @@ export class OrdersComponent implements OnInit {
                 },
             ],
         };
-        pdfMake
-            .createPdf(docDefinition as TDocumentDefinitions)
-            .download(
-                docDefinition.info.title +
-                    ' created by ' +
-                    docDefinition.info.creator,
-            );
-        // pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
+        // pdfMake
+        //     .createPdf(docDefinition as TDocumentDefinitions)
+        //     .download(
+        //         docDefinition.info.title +
+        //             ' created by ' +
+        //             docDefinition.info.creator,
+        //     );
+        pdfMake.createPdf(docDefinition as TDocumentDefinitions).open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
