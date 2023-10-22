@@ -7,17 +7,17 @@ import {
     MatTableDataSourcePaginator,
 } from '@angular/material/table';
 
-import { TDocumentDefinitions } from 'pdfmake/interfaces';
-import * as pdfMake from 'pdfmake/build/pdfmake';
-import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 import { User } from '../models/user';
 import { Company } from '../models/company';
 import { Order } from '../models/order';
 import { NavigationObject } from '../models/navigation-object';
 import { UsersService } from '../services/users.service';
 import { SNACK_TYPE, SnackService } from '../services/snack.service';
-import { CompanyService } from '../services/company.service';
+
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
     selector: 'app-orders',
@@ -28,7 +28,7 @@ export class OrdersComponent implements OnInit {
     constructor(
         private userService: UsersService,
         private snackService: SnackService,
-        private companyService: CompanyService,
+
         private datePipe: DatePipe,
     ) {}
 
@@ -85,14 +85,6 @@ export class OrdersComponent implements OnInit {
             this.loadingProcess = false;
             this.showEmptyStateForUser = true;
         }
-        this.companyService.getCompany().subscribe({
-            next: (data) => {
-                this.company = data;
-            },
-            error: (err) => {
-                console.log(err);
-            },
-        });
     }
 
     clickedRow(row: Order): void {
