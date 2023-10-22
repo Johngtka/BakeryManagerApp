@@ -26,7 +26,6 @@ export class OrdersComponent implements OnInit {
     constructor(
         private userService: UsersService,
         private snackService: SnackService,
-
         private datePipe: DatePipe,
     ) {}
 
