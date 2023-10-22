@@ -290,9 +290,9 @@ export class OrdersComponent implements OnInit {
                                     text:
                                         '©Wszelkie prawa zastrzeżone. (' +
                                         this.date.getFullYear() +
-                                        `) To dokument stworzony przez BakeryOnline Inc.
+                                        `) To dokument stworzony przez BakeryOnlineFactory Inc.
                                         i zawiera poufne informacje przeznaczone wyłącznie dla wewnętrznego użytku firmy i jego klijenta.
-                                        Każde kopiowanie, rozpowszechnianie lub wykorzystywanie tego dokumentu lub jego zawartości bez uprzedniej zgody BakeryOnline Inc. jest surowo zabronione, prosimy o rozwagę`,
+                                        Każde kopiowanie, rozpowszechnianie lub wykorzystywanie tego dokumentu lub jego zawartości bez uprzedniej zgody BakeryOnlineFactory Inc. jest surowo zabronione, prosimy o rozwagę`,
                                     style: 'footer',
                                 },
                             ],
