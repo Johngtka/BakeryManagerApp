@@ -8,12 +8,10 @@ import {
 } from '@angular/material/table';
 
 import { User } from '../models/user';
-import { Company } from '../models/company';
 import { Order } from '../models/order';
 import { NavigationObject } from '../models/navigation-object';
 import { UsersService } from '../services/users.service';
 import { SNACK_TYPE, SnackService } from '../services/snack.service';
-
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -34,7 +32,6 @@ export class OrdersComponent implements OnInit {
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     user!: User;
-    company!: Company[];
     orders!: Order[];
     orderId: number[] = [];
     dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
