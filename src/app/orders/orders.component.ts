@@ -46,6 +46,7 @@ export class OrdersComponent implements OnInit {
         'orderComment',
         'options',
     ];
+    date = new Date();
     loadingProcess: boolean = true;
     showEmptyStateForUser: boolean = false;
 
@@ -118,7 +119,8 @@ export class OrdersComponent implements OnInit {
                 {
                     layout: 'noBorders',
                     table: {
-                        widths: ['50%', '50%'],
+                        // widths: ['50%', '50%'],
+                        width: '*',
                         body: [
                             [
                                 {
@@ -131,11 +133,11 @@ export class OrdersComponent implements OnInit {
                                     style: 'header',
                                 },
 
-                                {
-                                    text: 'Upcoming Logo',
-                                    style: 'header',
-                                    alignment: 'right',
-                                },
+                                // {
+                                //     text: 'Upcoming Logo',
+                                //     style: 'header',
+                                //     alignment: 'right',
+                                // },
                             ],
                         ],
                     },
@@ -276,6 +278,32 @@ export class OrdersComponent implements OnInit {
                     },
                 },
             ],
+            footer: [
+                {
+                    layout: 'lightHorizontalLines',
+                    table: {
+                        width: '100%',
+                        body: [
+                            [
+                                {
+                                    text: '',
+                                },
+                            ],
+                            [
+                                {
+                                    text:
+                                        '©Wszelkie prawa zastrzeżone. (' +
+                                        this.date.getFullYear() +
+                                        `) To dokument stworzony przez BakeryOnline Inc.
+                                        i zawiera poufne informacje przeznaczone wyłącznie dla wewnętrznego użytku firmy i jego klijenta.
+                                        Każde kopiowanie, rozpowszechnianie lub wykorzystywanie tego dokumentu lub jego zawartości bez uprzedniej zgody BakeryOnline Inc. jest surowo zabronione, prosimy o rozwagę`,
+                                    style: 'footer',
+                                },
+                            ],
+                        ],
+                    },
+                },
+            ],
             styles: {
                 header: {
                     margin: [20, 20],
@@ -313,18 +341,24 @@ export class OrdersComponent implements OnInit {
                     alignment: 'center',
                     margin: [3, 10, 2, 10],
                 },
+                footer: {
+                    alignment: 'center',
+                    margin: [10, 5],
+                    fontSize: 8,
+                    italics: true,
+                },
             },
         };
-        // pdfMake
-        //     .createPdf(docDefinition as TDocumentDefinitions)
-        //     .download(
-        //         docDefinition.info.title +
-        //             ' created by ' +
-        //             docDefinition.info.creator,
-        //     );
         pdfMake
             .createPdf(docDefinition as unknown as TDocumentDefinitions)
-            .open();
+            .download(
+                docDefinition.info.title +
+                    ' created by ' +
+                    docDefinition.info.creator,
+            );
+        // pdfMake
+        //     .createPdf(docDefinition as unknown as TDocumentDefinitions)
+        //     .open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
