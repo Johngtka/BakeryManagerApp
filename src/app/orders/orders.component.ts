@@ -45,6 +45,7 @@ export class OrdersComponent implements OnInit {
     date = new Date();
     loadingProcess: boolean = true;
     showEmptyStateForUser: boolean = false;
+    showClearButton: boolean = false;
 
     ngOnInit(): void {
         this.user = {} as User;
@@ -91,6 +92,16 @@ export class OrdersComponent implements OnInit {
         } else {
             this.orderId.push(row.id);
         }
+        if (this.orderId.length >= 2) {
+            this.showClearButton = true;
+        } else {
+            this.showClearButton = false;
+        }
+    }
+
+    clearSelect(): void {
+        this.orderId = [];
+        this.showClearButton = false;
     }
 
     @HostListener('document:keydown', ['$event'])
