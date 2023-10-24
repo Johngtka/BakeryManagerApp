@@ -285,6 +285,7 @@ export class OrdersComponent implements OnInit {
                     },
                 },
             ],
+
             footer: [
                 {
                     layout: 'lightHorizontalLines',
@@ -299,11 +300,9 @@ export class OrdersComponent implements OnInit {
                             [
                                 {
                                     text:
-                                        '©Wszelkie prawa zastrzeżone. (' +
+                                        'All rights reserved ©' +
                                         this.date.getFullYear() +
-                                        `) To dokument stworzony przez BakeryOnlineFactory Inc.
-                                        i zawiera poufne informacje przeznaczone wyłącznie dla wewnętrznego użytku firmy i jego klijenta.
-                                        Każde kopiowanie, rozpowszechnianie lub wykorzystywanie tego dokumentu lub jego zawartości bez uprzedniej zgody BakeryOnlineFactory Inc. jest surowo zabronione, prosimy o rozwagę`,
+                                        ` This document contains confidential information intended for the exclusive use of the company and its partners. Copying or distribution without the consent of BakeryOnlineFactory Inc. is prohibited.`,
                                     style: 'footer',
                                 },
                             ],
@@ -311,6 +310,7 @@ export class OrdersComponent implements OnInit {
                     },
                 },
             ],
+
             styles: {
                 header: {
                     margin: [20, 20],
@@ -350,7 +350,7 @@ export class OrdersComponent implements OnInit {
                 },
                 footer: {
                     alignment: 'center',
-                    margin: [10, 5],
+                    margin: [50, 5, 50, 5],
                     fontSize: 8,
                     italics: true,
                 },
