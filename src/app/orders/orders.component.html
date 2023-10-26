@@ -74,7 +74,7 @@
     </table>
 </div>
 
-<div [hidden]="paginatorStep < 8 || showEmptyStateForUser">
+<div [hidden]="paginatorStep <= 8 || showEmptyStateForUser">
     <mat-paginator
         class="paginator"
         [pageSizeOptions]="[8]"

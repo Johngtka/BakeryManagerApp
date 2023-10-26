@@ -67,6 +67,7 @@ export class OrdersComponent implements OnInit {
                             this.orders,
                         );
                         this.dataSource.paginator = this.paginator;
+                        this.paginatorStep = data.length;
                         this.loadingProcess = false;
                     }
                 },
