@@ -22,7 +22,7 @@ export class UsersService {
     getUserOrders(data: User): Observable<Array<Order>> {
         return this.http.post<Array<Order>>(`${this.apiUrl}`, {
             usersOrders: true,
-            email: data.email,
+            login: data.login,
         });
     }
 }

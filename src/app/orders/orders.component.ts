@@ -54,8 +54,7 @@ export class OrdersComponent implements OnInit {
             this.user = userURL;
             this.userService.getUserOrders(this.user).subscribe({
                 next: (data) => {
-                    this.paginatorStep = data.length;
-                    if (this.paginatorStep < 1) {
+                    if (Array.isArray(data) && data.length === 0) {
                         setTimeout(() => {
                             this.snackService.showSnackBar(
                                 'INFO.ORDERS_EXISTING',
