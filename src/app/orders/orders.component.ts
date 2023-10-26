@@ -276,7 +276,7 @@ export class OrdersComponent implements OnInit {
                                     style: 'orderTableCell',
                                 },
                                 {
-                                    text: order.email,
+                                    text: this.user.login,
                                     style: 'orderTableCell',
                                 },
                             ],
