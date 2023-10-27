@@ -30,7 +30,7 @@
                 {{ 'ORDERS_TABLE.COLUMNS.FULL_TIME_AND_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.date | date: 'dd.MM.yyyy' + ' ' + element.time }}
+                {{ element.date | date : 'dd.MM.yyyy' + ' ' + element.time }}
             </td>
         </ng-container>
 
@@ -64,6 +64,7 @@
                 <button
                     mat-stroked-button
                     color="primary"
+                    (click)="openPDF(element)"
                     [disabled]="!orderId.includes(element.id)"
                 >
                     {{ 'ORDERS_TABLE.PDF_BUTTON' | translate }}
@@ -73,12 +74,25 @@
     </table>
 </div>
 
-<div [hidden]="paginatorStep < 8 || showEmptyStateForUser">
+<div [hidden]="paginatorStep <= 8 || showEmptyStateForUser">
     <mat-paginator
         class="paginator"
         [pageSizeOptions]="[8]"
         aria-label="Select page"
     ></mat-paginator>
+</div>
+
+<div class="controlPanel">
+    <button
+        mat-stroked-button
+        *ngIf="showClearButton"
+        (click)="clearSelect()"
+        class="mat-elevation-z8"
+        color="warn"
+    >
+        <mat-icon>highlight_off</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
+    </button>
 </div>
 
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
