@@ -30,10 +30,13 @@
         "PRODUCT_DELETE_ERROR": "An error occurred while trying to removed product from the database!!!",
         "SALES_GETTING_ERROR": "An error occurred while getting sales list from database!!!",
         "SALES_ADD_ERROR": "An error occurred while adding new sale to the database!!!",
-        "SALES_DELETE_ERROR": "An error occurred while trying to delete sale from database!!!"
+        "SALES_DELETE_ERROR": "An error occurred while trying to delete sale from database!!!",
+        "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!"
     },
     "INFO": {
-        "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process"
+        "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",
+        "STOPPED_SALE_REMOVING": "Deletion of sales from the base has been cancelled",
+        "ORDERS_EXISTING": "This user does not have any orders yet, you have to wait"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Add",
@@ -86,6 +89,15 @@
             "VALUE": "Value(%)"
         }
     },
+    "ORDERS_TABLE": {
+        "COLUMNS": {
+            "FULL_NAME_AND_COUNT": "Name & Count",
+            "FULL_TIME_AND_DATE": "Date & Time",
+            "CONTACT": "Phone",
+            "ORDER_COMMENT": "Order Comment"
+        },
+        "PDF_BUTTON": "Print PDF"
+    },
     "DIALOG_ACTIONS": {
         "CLOSE": "Close"
     },
@@ -132,6 +144,12 @@
             "START_DATE": "Start Date",
             "END_DATE": "End Date",
             "VALUE": "Value"
+        }
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Oops, something went wrong!!!",
+        "MESSAGES": {
+            "NO_USER": "You forgot to select a user from the table"
         }
     }
 }
