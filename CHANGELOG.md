@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.4...v0.0.5) (2023-10-28)
+
+
+### Features
+
+* new printing pdf engine for next steps for realize the orders ([#19](https://github.com/Johngtka/BakeryManagerApp/issues/19)) ([ca9999d](https://github.com/Johngtka/BakeryManagerApp/commit/ca9999dcf0b9da73bc63a2d4129902274f63b862))
+* new table with user orders researched by user email ([#17](https://github.com/Johngtka/BakeryManagerApp/issues/17)) ([73b125e](https://github.com/Johngtka/BakeryManagerApp/commit/73b125eeebdd39e52687c6116ee9241e5a8c5bef))
+
+
+### Bug Fixes
+
+* changes for sales componene ([#16](https://github.com/Johngtka/BakeryManagerApp/issues/16)) ([e9c59c8](https://github.com/Johngtka/BakeryManagerApp/commit/e9c59c83b23c2f7a498ecf7904e45d28744df7e1))
+* fixes the layout of app and styles ([#18](https://github.com/Johngtka/BakeryManagerApp/issues/18)) ([9f5ea36](https://github.com/Johngtka/BakeryManagerApp/commit/9f5ea36380aca0049be481fce006e00b4861a11b))
+* global styles changes ([#15](https://github.com/Johngtka/BakeryManagerApp/issues/15)) ([3fd11ab](https://github.com/Johngtka/BakeryManagerApp/commit/3fd11abbf0a1aec8cb4f40975947fe99089645be))
+
 ### [0.0.4](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.3...v0.0.4) (2023-09-24)
 
 
