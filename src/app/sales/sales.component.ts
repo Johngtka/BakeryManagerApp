@@ -40,9 +40,19 @@ export class SalesComponent implements OnInit {
     ngOnInit(): void {
         this.salesService.getSales().subscribe({
             next: (data) => {
-                this.sale = data;
-                this.dataSource = new MatTableDataSource<Sales>(this.sale);
-                this.loadingProcess = false;
+                if (Array.isArray(data) && data.length > 0) {
+                    this.sale = data;
+                    this.dataSource = new MatTableDataSource<Sales>(this.sale);
+                    this.loadingProcess = false;
+                } else {
+                    this.snackService.showSnackBar(
+                        'INFO.SALES_EXISTING',
+                        SNACK_TYPE.info,
+                    );
+                    setTimeout(() => {
+                        this.loadingProcess = false;
+                    }, 6000);
+                }
             },
             error: (err) => {
                 this.snackService.showSnackBar(

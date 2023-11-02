@@ -54,15 +54,7 @@ export class OrdersComponent implements OnInit {
             this.user = userURL;
             this.userService.getUserOrders(this.user).subscribe({
                 next: (data) => {
-                    if (Array.isArray(data) && data.length === 0) {
-                        this.paginatorStep = data.length;
-                        setTimeout(() => {
-                            this.snackService.showSnackBar(
-                                'INFO.ORDERS_EXISTING',
-                                SNACK_TYPE.info,
-                            );
-                        }, 3000);
-                    } else {
+                    if (Array.isArray(data) && data.length >= 1) {
                         this.orders = data;
                         this.dataSource = new MatTableDataSource<Order>(
                             this.orders,
@@ -70,6 +62,15 @@ export class OrdersComponent implements OnInit {
                         this.dataSource.paginator = this.paginator;
                         this.paginatorStep = data.length;
                         this.loadingProcess = false;
+                    } else {
+                        this.paginatorStep = data.length;
+                        this.snackService.showSnackBar(
+                            'INFO.ORDERS_EXISTING',
+                            SNACK_TYPE.info,
+                        );
+                        setTimeout(() => {
+                            this.loadingProcess = false;
+                        }, 3000);
                     }
                 },
                 error: (err) => {

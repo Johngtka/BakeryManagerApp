@@ -30,7 +30,7 @@
                 {{ 'ORDERS_TABLE.COLUMNS.FULL_TIME_AND_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.date | date : 'dd.MM.yyyy' + ' ' + element.time }}
+                {{ element.date | date: 'dd.MM.yyyy' + ' ' + element.time }}
             </td>
         </ng-container>
 
