@@ -37,7 +37,7 @@ export class OrdersComponent implements OnInit {
     paginatorStep!: number;
     displayedColumns: string[] = [
         'fullNameWithCount',
-        'fullTimeDate',
+        'orderTimeAndDate',
         'userContact',
         'orderComment',
         'options',
@@ -249,11 +249,11 @@ export class OrdersComponent implements OnInit {
                                     style: 'orderTableHeaderCell',
                                 },
                                 {
-                                    text: 'Delivery Date',
+                                    text: 'Order Date',
                                     style: 'orderTableHeaderCell',
                                 },
                                 {
-                                    text: 'Delivery Time',
+                                    text: 'Order Time',
                                     style: 'orderTableHeaderCell',
                                 },
                                 {
@@ -271,11 +271,11 @@ export class OrdersComponent implements OnInit {
                                     style: 'orderTableCell',
                                 },
                                 {
-                                    text: order.date,
+                                    text: order.orderDate,
                                     style: 'orderTableCell',
                                 },
                                 {
-                                    text: order.time,
+                                    text: order.orderTime,
                                     style: 'orderTableCell',
                                 },
                                 {
@@ -358,16 +358,16 @@ export class OrdersComponent implements OnInit {
                 },
             },
         };
-        pdfMake
-            .createPdf(docDefinition as unknown as TDocumentDefinitions)
-            .download(
-                docDefinition.info.title +
-                    ' created by ' +
-                    docDefinition.info.creator,
-            );
         // pdfMake
         //     .createPdf(docDefinition as unknown as TDocumentDefinitions)
-        //     .open();
+        //     .download(
+        //         docDefinition.info.title +
+        //             ' created by ' +
+        //             docDefinition.info.creator,
+        //     );
+        pdfMake
+            .createPdf(docDefinition as unknown as TDocumentDefinitions)
+            .open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
