@@ -41,6 +41,7 @@ import { SalesDatePipe } from './pipes/sales-date.pipe';
 import { SalesComponent } from './sales/sales.component';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
 import { OrdersComponent } from './orders/orders.component';
+import { VersionComponent } from './version/version.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dialog.component';
@@ -84,6 +85,7 @@ const materialsModules = [
         WeightPipe,
         UpdateDescPipe,
         OrdersComponent,
+        VersionComponent,
         EmptyStateComponent,
         ConfirmDialogComponent,
         UpdateInputDialogComponent,
