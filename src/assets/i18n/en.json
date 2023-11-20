@@ -152,5 +152,9 @@
         "MESSAGES": {
             "NO_USER": "You forgot to select a user from the table"
         }
+    },
+    "APP_FOOTER": {
+        "FOOTER_CONTENT": "Version:",
+        "FOOTER_RIGHTS": "All rights reserved"
     }
 }

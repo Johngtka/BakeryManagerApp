@@ -10,7 +10,7 @@ mat-icon {
 }
 
 mat-sidenav {
-    width: 200px;
+    width: 250px;
     display: flex;
     background: #ffffff;
     color: white;
@@ -36,6 +36,7 @@ span {
         width: auto;
         padding: 0;
     }
+
     .menu-button {
         justify-content: flex-start;
     }
@@ -45,13 +46,16 @@ span {
         width: auto;
         padding: 0;
     }
+
     .menu-button {
         justify-content: flex-start;
     }
 }
 
 .content {
-    height: 90vh;
+    display: flex;
+    align-items: center;
+    height: 80vh;
     margin: 0;
     /* padding: 2%; */
     background-color: rgb(44, 44, 44);
@@ -74,10 +78,17 @@ span {
     width: 3rem;
     border-radius: 40%;
 }
+
 .dividers {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .descriptions {
     resize: none;
+}
+
+.appContent {
+    display: block;
+    width: 100%;
 }
