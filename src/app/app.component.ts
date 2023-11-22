@@ -18,6 +18,8 @@ export class AppComponent implements AfterViewInit {
     @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
 
+    date = new Date();
+
     ngAfterViewInit(): void {
         this.observer
             .observe(['(max-width: 900px)'])

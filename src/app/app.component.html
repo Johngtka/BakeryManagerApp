@@ -1,13 +1,19 @@
-<mat-toolbar class="mat-elevation-z8">
-    <button
-        mat-icon-button
-        *ngIf="sidenav.mode === 'over'"
-        (click)="sidenav.toggle()"
-        style="color: #000; float: right"
-    >
-        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-        <mat-icon *ngIf="sidenav.opened">closed</mat-icon>
-    </button>
+<mat-toolbar class="mat-elevation-z8 appToolBar">
+    <div class="appTitleSet">
+        <button
+            mat-icon-button
+            *ngIf="sidenav.mode === 'over'"
+            (click)="sidenav.toggle()"
+            style="color: #000; float: right"
+        >
+            <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+            <mat-icon *ngIf="sidenav.opened">closed</mat-icon>
+        </button>
+        {{ 'APP.TOOL_BAR_TITLE' | translate }}
+    </div>
+    <div class="systemDate">
+        {{ date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear() }}
+    </div>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">

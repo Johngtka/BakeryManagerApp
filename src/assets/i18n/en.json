@@ -1,6 +1,7 @@
 {
     "APP": {
-        "TITLE": "Bakery Manager"
+        "TITLE": "Bakery Manager",
+        "TOOL_BAR_TITLE": "Company Application of the Service: Wypiekarnia.pl"
     },
     "MENU": {
         "HOME": "Home",
