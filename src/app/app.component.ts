@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { MatSidenav } from '@angular/material/sidenav';
@@ -12,13 +12,24 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
     constructor(private observer: BreakpointObserver) {}
 
     @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
 
     date = new Date();
+    isMobileDetected = false;
+
+    ngOnInit(): void {
+        this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {
+            if (isMobile.matches) {
+                this.isMobileDetected = true;
+            } else {
+                this.isMobileDetected = false;
+            }
+        });
+    }
 
     ngAfterViewInit(): void {
         this.observer

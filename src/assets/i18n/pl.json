@@ -1,7 +1,8 @@
 {
     "APP": {
         "TITLE": "Menadżer Piekarni",
-        "TOOL_BAR_TITLE": "Aplikacja Firmowa Serwisu: Wypiekarnia.pl"
+        "TOOL_BAR_TITLE": "Aplikacja Firmowa Serwisu: Wypiekarnia.pl",
+        "TOOL_BAR_TITLE_FOR_MOBILES": "Apka obsługi: Wypiekarnia.pl"
     },
     "MENU": {
         "HOME": "Strona Główna",
