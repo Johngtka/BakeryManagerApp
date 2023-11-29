@@ -4,6 +4,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 
 import { delay } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
@@ -20,6 +21,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
     date = new Date();
     isMobileDetected = false;
+    version = environment.appVersion;
 
     ngOnInit(): void {
         this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {

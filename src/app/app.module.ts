@@ -86,11 +86,11 @@ const materialsModules = [
         OrdersComponent,
         EmptyStateComponent,
         ConfirmDialogComponent,
+        SalesInputDialogComponent,
         UpdateInputDialogComponent,
         ProductInputDialogComponent,
         SalesComponent,
         SalesDatePipe,
-        SalesInputDialogComponent,
     ],
     imports: [
         BrowserModule,
