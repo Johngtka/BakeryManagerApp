@@ -1,6 +1,8 @@
 {
     "APP": {
-        "TITLE": "Bakery Manager"
+        "TITLE": "Bakery Manager",
+        "TOOL_BAR_TITLE": "Company Application of the Service: Wypiekarnia.pl",
+        "TOOL_BAR_TITLE_FOR_MOBILES": "Service App: Wypiekarnia.pl"
     },
     "MENU": {
         "HOME": "Home",
@@ -36,7 +38,8 @@
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",
         "STOPPED_SALE_REMOVING": "Deletion of sales from the base has been cancelled",
-        "ORDERS_EXISTING": "This user does not have any orders yet, you have to wait"
+        "ORDERS_EXISTING": "This user does not have any orders yet, you have to wait",
+        "SALES_EXISTING": "Sorry, but there are no sales at this time"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Add",
@@ -92,7 +95,7 @@
     "ORDERS_TABLE": {
         "COLUMNS": {
             "FULL_NAME_AND_COUNT": "Name & Count",
-            "FULL_TIME_AND_DATE": "Date & Time",
+            "FULL_TIME_AND_DATE": "Date & Time of Order",
             "CONTACT": "Phone",
             "ORDER_COMMENT": "Order Comment"
         },
@@ -151,5 +154,9 @@
         "MESSAGES": {
             "NO_USER": "You forgot to select a user from the table"
         }
+    },
+    "APP_FOOTER": {
+        "FOOTER_CONTENT": "Version:",
+        "FOOTER_RIGHTS": "All rights reserved"
     }
 }

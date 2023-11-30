@@ -1,6 +1,8 @@
 {
     "APP": {
-        "TITLE": "Menadżer Piekarni"
+        "TITLE": "Menadżer Piekarni",
+        "TOOL_BAR_TITLE": "Aplikacja Firmowa Serwisu: Wypiekarnia.pl",
+        "TOOL_BAR_TITLE_FOR_MOBILES": "Apka obsługi: Wypiekarnia.pl"
     },
     "MENU": {
         "HOME": "Strona Główna",
@@ -36,7 +38,8 @@
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
         "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy",
-        "ORDERS_EXISTING": "Ten użytkownik nie ma jeszcze żadnych zamówień, trzeba poczekać"
+        "ORDERS_EXISTING": "Ten użytkownik nie ma jeszcze żadnych zamówień, trzeba poczekać",
+        "SALES_EXISTING": "Przepraszamy ale w tym momencie nie istnieją żadne promocje"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -92,7 +95,7 @@
     "ORDERS_TABLE": {
         "COLUMNS": {
             "FULL_NAME_AND_COUNT": "Nazwa i Ilość",
-            "FULL_TIME_AND_DATE": "Data i Godzina",
+            "FULL_TIME_AND_DATE": "Data i Czas Zamówienia",
             "CONTACT": "Telefon",
             "ORDER_COMMENT": "Komentarz Zamówienia"
         },
@@ -151,5 +154,9 @@
         "MESSAGES": {
             "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli"
         }
+    },
+    "APP_FOOTER": {
+        "FOOTER_CONTENT": "Wersja:",
+        "FOOTER_RIGHTS": "Wszelkie prawa zastrzeżone"
     }
 }
