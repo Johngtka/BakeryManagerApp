@@ -1,6 +1,8 @@
 {
     "APP": {
-        "TITLE": "Bakery Manager"
+        "TITLE": "Bakery Manager",
+        "TOOL_BAR_TITLE": "Company Application of the Service: Wypiekarnia.pl",
+        "TOOL_BAR_TITLE_FOR_MOBILES": "Service App: Wypiekarnia.pl"
     },
     "MENU": {
         "HOME": "Home",
@@ -152,5 +154,9 @@
         "MESSAGES": {
             "NO_USER": "You forgot to select a user from the table"
         }
+    },
+    "APP_FOOTER": {
+        "FOOTER_CONTENT": "Version:",
+        "FOOTER_RIGHTS": "All rights reserved"
     }
 }

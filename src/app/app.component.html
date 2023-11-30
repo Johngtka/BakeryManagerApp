@@ -1,3 +1,33 @@
+<mat-toolbar class="mat-elevation-z8">
+    <div class="appToolBar">
+        <div class="appTitleSet">
+            <button
+                mat-icon-button
+                *ngIf="sidenav.mode === 'over'"
+                (click)="sidenav.toggle()"
+                style="color: #000; float: right"
+            >
+                <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+                <mat-icon *ngIf="sidenav.opened">closed</mat-icon>
+            </button>
+            <span *ngIf="!isMobileDetected">{{
+                'APP.TOOL_BAR_TITLE' | translate
+            }}</span>
+            <span *ngIf="isMobileDetected">{{
+                'APP.TOOL_BAR_TITLE_FOR_MOBILES' | translate
+            }}</span>
+        </div>
+        <div class="systemDate">
+            {{
+                date.getDate() +
+                    '.' +
+                    date.getMonth() +
+                    '.' +
+                    date.getFullYear()
+            }}
+        </div>
+    </div>
+</mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
         <div class="project">
@@ -21,20 +51,17 @@
             <mat-icon>storage</mat-icon>
             <span>{{ 'MENU.PRODUCTS' | translate }}</span>
         </button>
+        <button mat-button disabled class="menu-button">
+            <mat-icon>help_outline</mat-icon>
+            <span>V.{{ version }}</span>
+        </button>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <div class="content">
-            <button
-                mat-icon-button
-                *ngIf="sidenav.mode === 'over' && !sidenav.opened"
-                (click)="sidenav.toggle()"
-                style="float: left; color: #fff; margin: 10px"
-                class="mat-elevation-z8"
-            >
-                <mat-icon>menu</mat-icon>
-            </button>
-            <router-outlet></router-outlet>
+            <div class="appContent">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

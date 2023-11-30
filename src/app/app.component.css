@@ -1,3 +1,21 @@
+.appToolBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.appTitleSet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appTitleSet,
+.systemDate {
+    display: flex;
+}
+
 mat-sidenav-container {
     height: 100vh;
 }
@@ -10,7 +28,7 @@ mat-icon {
 }
 
 mat-sidenav {
-    width: 200px;
+    width: 250px;
     display: flex;
     background: #ffffff;
     color: white;
@@ -36,6 +54,7 @@ span {
         width: auto;
         padding: 0;
     }
+
     .menu-button {
         justify-content: flex-start;
     }
@@ -45,12 +64,15 @@ span {
         width: auto;
         padding: 0;
     }
+
     .menu-button {
         justify-content: flex-start;
     }
 }
 
 .content {
+    display: flex;
+    align-items: center;
     height: 100vh;
     margin: 0;
     /* padding: 2%; */
@@ -74,10 +96,17 @@ span {
     width: 3rem;
     border-radius: 40%;
 }
+
 .dividers {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .descriptions {
     resize: none;
+}
+
+.appContent {
+    display: block;
+    width: 100%;
 }
