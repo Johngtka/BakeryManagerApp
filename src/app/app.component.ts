@@ -18,6 +18,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
     @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
+    fullDateValue!: string;
 
     date = new Date();
     isMobileDetected = false;
@@ -31,6 +32,15 @@ export class AppComponent implements AfterViewInit, OnInit {
                 this.isMobileDetected = false;
             }
         });
+
+        let day = this.date.getDate();
+        let month = this.date.getMonth() + 1;
+        let year = this.date.getFullYear();
+
+        let formattedDay = day < 10 ? '0' + day : day;
+        let formattedMonth = month < 10 ? '0' + month : month;
+
+        this.fullDateValue = `${formattedDay}.${formattedMonth}.${year}`;
     }
 
     ngAfterViewInit(): void {
