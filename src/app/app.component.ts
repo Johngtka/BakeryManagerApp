@@ -39,7 +39,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
         let formattedDay = day < 10 ? '0' + day : day;
         let formattedMonth = month < 10 ? '0' + month : month;
-
+        //
         this.fullDateValue = `${formattedDay}.${formattedMonth}.${year}`;
     }
 
