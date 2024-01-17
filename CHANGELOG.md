@@ -2,32 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.8](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.6...v0.0.8) (2024-01-17)
-
-
-### Features
-
-* new logic of calendar displaying on the top of app ([#23](https://github.com/Johngtka/BakeryManagerApp/issues/23)) ([c9a03d4](https://github.com/Johngtka/BakeryManagerApp/commit/c9a03d47b3829d59e44051e0c28d0c231a8381d2))
-
-### [0.0.7](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.6...v0.0.7) (2024-01-17)
-
-
-### Features
-
-* new logic of calendar displaying on the top of app ([#23](https://github.com/Johngtka/BakeryManagerApp/issues/23)) ([c9a03d4](https://github.com/Johngtka/BakeryManagerApp/commit/c9a03d47b3829d59e44051e0c28d0c231a8381d2))
-
 ### [0.0.6](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.5...v0.0.6) (2023-11-30)
 
-
 ### Features
 
-* created new app footer and responsive toolbar ([#22](https://github.com/Johngtka/BakeryManagerApp/issues/22)) ([a44341e](https://github.com/Johngtka/BakeryManagerApp/commit/a44341e6f6dbe8b4bb2226f7aaa738bf1f677f34))
-* new names of order data and tables ([#21](https://github.com/Johngtka/BakeryManagerApp/issues/21)) ([ece7d75](https://github.com/Johngtka/BakeryManagerApp/commit/ece7d757f55a2c9544a2efcaace134234eefb662))
-
+-   created new app footer and responsive toolbar ([#22](https://github.com/Johngtka/BakeryManagerApp/issues/22)) ([a44341e](https://github.com/Johngtka/BakeryManagerApp/commit/a44341e6f6dbe8b4bb2226f7aaa738bf1f677f34))
+-   new names of order data and tables ([#21](https://github.com/Johngtka/BakeryManagerApp/issues/21)) ([ece7d75](https://github.com/Johngtka/BakeryManagerApp/commit/ece7d757f55a2c9544a2efcaace134234eefb662))
 
 ### Bug Fixes
 
-* implements support for empty returned data from db in sales and orders components ([#20](https://github.com/Johngtka/BakeryManagerApp/issues/20)) ([1486c4d](https://github.com/Johngtka/BakeryManagerApp/commit/1486c4d4a6e4d3550fc3dc85671449cb5b3bf535))
+-   implements support for empty returned data from db in sales and orders components ([#20](https://github.com/Johngtka/BakeryManagerApp/issues/20)) ([1486c4d](https://github.com/Johngtka/BakeryManagerApp/commit/1486c4d4a6e4d3550fc3dc85671449cb5b3bf535))
 
 ### [0.0.5](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.4...v0.0.5) (2023-10-28)
 
