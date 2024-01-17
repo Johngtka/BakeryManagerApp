@@ -21,6 +21,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     fullDateValue!: string;
 
     date = new Date();
+    dayScopeValue!: string | number;
+    monthScopeValue!: string | number;
     isMobileDetected = false;
     version = environment.appVersion;
 
@@ -37,10 +39,9 @@ export class AppComponent implements AfterViewInit, OnInit {
         let month = this.date.getMonth() + 1;
         let year = this.date.getFullYear();
 
-        let formattedDay = day < 10 ? '0' + day : day;
-        let formattedMonth = month < 10 ? '0' + month : month;
-        //
-        this.fullDateValue = `${formattedDay}.${formattedMonth}.${year}`;
+        this.dayScopeValue = day < 10 ? '0' + day : day;
+        this.monthScopeValue = month < 10 ? '0' + month : month;
+        this.fullDateValue = `${this.dayScopeValue}.${this.monthScopeValue}.${year}`;
     }
 
     ngAfterViewInit(): void {
