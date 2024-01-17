@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.6...v0.0.7) (2024-01-17)
+
+
+### Features
+
+* new logic of calendar displaying on the top of app ([#23](https://github.com/Johngtka/BakeryManagerApp/issues/23)) ([c9a03d4](https://github.com/Johngtka/BakeryManagerApp/commit/c9a03d47b3829d59e44051e0c28d0c231a8381d2))
+
 ### [0.0.6](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.5...v0.0.6) (2023-11-30)
 
 ### Features
