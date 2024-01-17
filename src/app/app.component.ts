@@ -19,10 +19,9 @@ export class AppComponent implements AfterViewInit, OnInit {
     @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
     fullDateValue!: string;
-
-    date = new Date();
     dayScopeValue!: string | number;
     monthScopeValue!: string | number;
+    date = new Date();
     isMobileDetected = false;
     version = environment.appVersion;
 
