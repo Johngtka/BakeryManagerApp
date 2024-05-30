@@ -358,16 +358,16 @@ export class OrdersComponent implements OnInit {
                 },
             },
         };
-        // pdfMake
-        //     .createPdf(docDefinition as unknown as TDocumentDefinitions)
-        //     .download(
-        //         docDefinition.info.title +
-        //             ' created by ' +
-        //             docDefinition.info.creator,
-        //     );
         pdfMake
             .createPdf(docDefinition as unknown as TDocumentDefinitions)
-            .open();
+            .download(
+                docDefinition.info.title +
+                    ' created by ' +
+                    docDefinition.info.creator,
+            );
+        // pdfMake
+        //     .createPdf(docDefinition as unknown as TDocumentDefinitions)
+        //     .open();
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
