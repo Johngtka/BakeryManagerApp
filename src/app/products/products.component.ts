@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    AfterViewInit,
+    ViewChild,
+    HostListener,
+} from '@angular/core';
 import {
     trigger,
     state,
@@ -6,6 +12,7 @@ import {
     animate,
     transition,
 } from '@angular/animations';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -64,11 +71,12 @@ import { ProductInputDialogComponent } from '../product-input-dialog/product-inp
         ]),
     ],
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, AfterViewInit {
     constructor(
         private dialog: MatDialog,
         private snackService: SnackService,
         private productService: ProductsService,
+        private observer: BreakpointObserver,
     ) {}
 
     @ViewChild(MatPaginator)
@@ -78,6 +86,7 @@ export class ProductsComponent implements OnInit {
     dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
     isSelected: boolean = false;
+    isScreenDetected!: boolean;
     displayedColumns: string[] = [
         'name',
         'unitPrice',
@@ -89,20 +98,18 @@ export class ProductsComponent implements OnInit {
     isDeleteHovered: string = 'inactive';
 
     ngOnInit(): void {
-        this.productService.getProducts().subscribe({
-            next: (data) => {
-                this.product = data;
-                this.dataSource = new MatTableDataSource<Product>(this.product);
-                this.dataSource.paginator = this.paginator;
-                this.loadingProcess = false;
-            },
-            error: (err) => {
-                this.snackService.showSnackBar(
-                    'ERRORS.PRODUCTS_GETTING_ERROR',
-                    SNACK_TYPE.error,
-                );
-                console.log(err);
-            },
+        this.getProducts();
+    }
+
+    ngAfterViewInit(): void {
+        this.observer.observe(['(max-width: 960px)']).subscribe((isMatches) => {
+            if (isMatches.matches) {
+                this.isScreenDetected = true;
+                this.getProducts();
+            } else {
+                this.isScreenDetected = false;
+                this.getProducts();
+            }
         });
     }
 
@@ -130,21 +137,7 @@ export class ProductsComponent implements OnInit {
         });
         dialogRef.afterClosed().subscribe((result: Product) => {
             if (result) {
-                this.updateProductsTable(result);
-                this.productService.getProducts().subscribe({
-                    next: (data) => {
-                        this.dataSource = new MatTableDataSource<Product>(data);
-                        this.dataSource.paginator = this.paginator;
-                        this.loadingProcess = false;
-                    },
-                    error: (err) => {
-                        console.log(err);
-                        this.snackService.showSnackBar(
-                            'ERRORS.PRODUCTS_GETTING_ERROR',
-                            SNACK_TYPE.error,
-                        );
-                    },
-                });
+                this.getProducts();
             }
         });
     }
@@ -161,34 +154,12 @@ export class ProductsComponent implements OnInit {
             if (response === ConfirmationDialogResponse.OK) {
                 this.productService.deleteProduct(product).subscribe({
                     next: () => {
-                        this.product = this.product.filter(
-                            (newList: Product) => {
-                                newList.id !== product.id;
-                            },
-                        );
-                        this.dataSource = new MatTableDataSource<Product>(
-                            this.product,
-                        );
+                        this.getProducts();
                         this.clearSelect();
                         this.snackService.showSnackBar(
                             'SUCCESS.PRODUCT_REMOVED',
                             SNACK_TYPE.success,
                         );
-                        this.productService.getProducts().subscribe({
-                            next: (newList) => {
-                                this.dataSource =
-                                    new MatTableDataSource<Product>(newList);
-                                this.loadingProcess = false;
-                                this.dataSource.paginator = this.paginator;
-                            },
-                            error: (err) => {
-                                this.snackService.showSnackBar(
-                                    'ERRORS.PRODUCTS_GETTING_ERROR',
-                                    SNACK_TYPE.error,
-                                );
-                                console.log(err);
-                            },
-                        });
                     },
                     error: (err) => {
                         this.snackService.showSnackBar(
@@ -228,24 +199,21 @@ export class ProductsComponent implements OnInit {
         }
     }
 
-    private updateProductsTable(newOrUpdatedProd: Product): void {
-        if (!!this.product && !!newOrUpdatedProd) {
-            const tableProductIndex = this.product.findIndex(
-                (pi: Product) => pi.id === newOrUpdatedProd.id,
-            );
-            // pi it is shortcut of product id
-            if (tableProductIndex !== -1) {
-                // update
-                this.product[tableProductIndex] = newOrUpdatedProd;
-                this.product = [...this.product];
+    private getProducts(): void {
+        this.productService.getProducts().subscribe({
+            next: (data) => {
+                this.product = data;
                 this.dataSource = new MatTableDataSource<Product>(this.product);
                 this.dataSource.paginator = this.paginator;
-            } else {
-                // new
-                this.product = [...this.product, newOrUpdatedProd];
-                this.dataSource = new MatTableDataSource<Product>(this.product);
-                this.dataSource.paginator = this.paginator;
-            }
-        }
+                this.loadingProcess = false;
+            },
+            error: (err) => {
+                this.snackService.showSnackBar(
+                    'ERRORS.PRODUCTS_GETTING_ERROR',
+                    SNACK_TYPE.error,
+                );
+                console.log(err);
+            },
+        });
     }
 }

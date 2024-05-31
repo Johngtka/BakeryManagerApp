@@ -60,7 +60,6 @@ export class SalesComponent implements OnInit {
         });
         dialogRef.afterClosed().subscribe((result: Sales) => {
             if (result) {
-                // this.updateSalesTable(result);
                 this.getSales();
             }
         });
@@ -84,8 +83,8 @@ export class SalesComponent implements OnInit {
                         this.dataSource = new MatTableDataSource<Sales>(
                             this.sale,
                         );
-                        this.clearSelect();
                         this.getSales();
+                        this.clearSelect();
                     },
                     error: (err) => {
                         this.snackService.showSnackBar(
@@ -130,11 +129,4 @@ export class SalesComponent implements OnInit {
             },
         });
     }
-
-    // private updateSalesTable(newSale: Sales): void {
-    //     if (!!this.sale && !!newSale) {
-    //         this.sale = [...this.sale, newSale];
-    //         this.dataSource = new MatTableDataSource<Sales>(this.sale);
-    //     }
-    // }
 }

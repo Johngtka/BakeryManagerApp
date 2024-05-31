@@ -36,7 +36,7 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
     paginator!: MatPaginator;
     update!: Update[];
     dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
-    isHalfScreenDetected!: boolean;
+    isScreenDetected!: boolean;
     loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'date', 'description', 'options'];
     logID: number[] = [];
@@ -49,10 +49,10 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
             .observe(['(max-width: 1209px)'])
             .subscribe((isMatches) => {
                 if (isMatches.matches) {
-                    this.isHalfScreenDetected = true;
+                    this.isScreenDetected = true;
                     this.getUpdates();
                 } else {
-                    this.isHalfScreenDetected = false;
+                    this.isScreenDetected = false;
                     this.getUpdates();
                 }
             });
@@ -80,7 +80,6 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
         });
         dialogRef.afterClosed().subscribe((result: Update) => {
             if (result) {
-                // this.updateTable(result);
                 this.getUpdates();
             }
         });
@@ -115,25 +114,4 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
             },
         });
     }
-
-    // private updateTable(newOrUpdatedLogs: Update): void {
-    //     if (!!this.update && !!newOrUpdatedLogs) {
-    //         const tableUpdateIndex = this.update.findIndex(
-    //             (li: Update) => li.id === newOrUpdatedLogs.id,
-    //         );
-    //         // li it is shortcut of log id
-    //         if (tableUpdateIndex !== -1) {
-    //             // update
-    //             this.update[tableUpdateIndex] = newOrUpdatedLogs;
-    //             this.update = [...this.update];
-    //             this.dataSource = new MatTableDataSource<Update>(this.update);
-    //             this.dataSource.paginator = this.paginator;
-    //         } else {
-    //             // new
-    //             this.update = [...this.update, newOrUpdatedLogs];
-    //             this.dataSource = new MatTableDataSource<Update>(this.update);
-    //             this.dataSource.paginator = this.paginator;
-    //         }
-    //     }
-    // }
 }
