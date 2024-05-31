@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    AfterViewInit,
+    ViewChild,
+    HostListener,
+} from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -17,10 +24,11 @@ import { UpdateInputDialogComponent } from '../update-input-dialog/update-input-
     templateUrl: './updates.component.html',
     styleUrls: ['./updates.component.css'],
 })
-export class UpdatesComponent implements OnInit {
+export class UpdatesComponent implements AfterViewInit, OnInit {
     constructor(
         private updateService: UpdatesService,
         private snackService: SnackService,
+        private observer: BreakpointObserver,
         private dialog: MatDialog,
     ) {}
 
@@ -28,26 +36,26 @@ export class UpdatesComponent implements OnInit {
     paginator!: MatPaginator;
     update!: Update[];
     dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
+    isHalfScreenDetected!: boolean;
     loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'date', 'description', 'options'];
     logID: number[] = [];
 
     ngOnInit(): void {
-        this.updateService.getUpdates().subscribe({
-            next: (data) => {
-                this.update = data;
-                this.dataSource = new MatTableDataSource<Update>(this.update);
-                this.dataSource.paginator = this.paginator;
-                this.loadingProcess = false;
-            },
-            error: (err) => {
-                this.snackService.showSnackBar(
-                    'ERRORS.UPDATES_GETTING_ERROR',
-                    SNACK_TYPE.error,
-                );
-                console.log(err);
-            },
-        });
+        this.getUpdates();
+    }
+    ngAfterViewInit(): void {
+        this.observer
+            .observe(['(max-width: 1209px)'])
+            .subscribe((isMatches) => {
+                if (isMatches.matches) {
+                    this.isHalfScreenDetected = true;
+                    this.getUpdates();
+                } else {
+                    this.isHalfScreenDetected = false;
+                    this.getUpdates();
+                }
+            });
     }
 
     clearSelect(): void {
@@ -101,6 +109,24 @@ export class UpdatesComponent implements OnInit {
         ) {
             this.paginator.previousPage();
         }
+    }
+
+    private getUpdates(): void {
+        this.updateService.getUpdates().subscribe({
+            next: (data) => {
+                this.update = data;
+                this.dataSource = new MatTableDataSource<Update>(this.update);
+                this.dataSource.paginator = this.paginator;
+                this.loadingProcess = false;
+            },
+            error: (err) => {
+                this.snackService.showSnackBar(
+                    'ERRORS.UPDATES_GETTING_ERROR',
+                    SNACK_TYPE.error,
+                );
+                console.log(err);
+            },
+        });
     }
 
     private updateTable(newOrUpdatedLogs: Update): void {
