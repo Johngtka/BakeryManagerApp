@@ -24,17 +24,21 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 })
 export class OrdersComponent implements OnInit {
     constructor(
+        private datePipe: DatePipe,
         private userService: UsersService,
         private snackService: SnackService,
-        private datePipe: DatePipe,
     ) {}
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
+    date = new Date();
     user!: User;
     orders!: Order[];
     orderId: number[] = [];
     dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
+    loadingProcess: boolean = true;
     paginatorStep!: number;
+    showClearButton: boolean = false;
+    showEmptyStateForUser: boolean = false;
     displayedColumns: string[] = [
         'fullNameWithCount',
         'orderTimeAndDate',
@@ -42,10 +46,6 @@ export class OrdersComponent implements OnInit {
         'orderComment',
         'options',
     ];
-    date = new Date();
-    loadingProcess: boolean = true;
-    showEmptyStateForUser: boolean = false;
-    showClearButton: boolean = false;
 
     ngOnInit(): void {
         this.user = {} as User;

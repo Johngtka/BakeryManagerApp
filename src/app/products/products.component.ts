@@ -74,19 +74,19 @@ import { ProductInputDialogComponent } from '../product-input-dialog/product-inp
 export class ProductsComponent implements OnInit, AfterViewInit {
     constructor(
         private dialog: MatDialog,
+        private observer: BreakpointObserver,
         private snackService: SnackService,
         private productService: ProductsService,
-        private observer: BreakpointObserver,
     ) {}
 
-    @ViewChild(MatPaginator)
-    paginator!: MatPaginator;
-    product!: Product[];
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
     prodID: number[] = [];
-    dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
-    loadingProcess: boolean = true;
+    product!: Product[];
     isSelected: boolean = false;
-    isScreenDetected!: boolean;
+    dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
+    isEditHovered: string = 'inactive';
+    loadingProcess: boolean = true;
+    isDeleteHovered: string = 'inactive';
     displayedColumns: string[] = [
         'name',
         'unitPrice',
@@ -94,8 +94,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
         'description',
         'options',
     ];
-    isEditHovered: string = 'inactive';
-    isDeleteHovered: string = 'inactive';
+    isScreenDetected!: boolean;
 
     ngOnInit(): void {
         this.getProducts();

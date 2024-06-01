@@ -24,7 +24,6 @@ export class SalesInputDialogComponent implements OnInit {
     titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
-    originalFormValues!: Sales;
     productsList: string[] = [
         'Tort Urodzinowy',
         'Tort dla Smakoszy',
@@ -51,6 +50,7 @@ export class SalesInputDialogComponent implements OnInit {
         'Babeczka Malinowa',
         'Babeczka Sezonowa',
     ];
+    originalFormValues!: Sales;
 
     ngOnInit(): void {
         this.titleText = 'SALES_DIALOG.INFO.NEW_SALE_TITLE';

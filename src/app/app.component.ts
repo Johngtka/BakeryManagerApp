@@ -16,14 +16,13 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 export class AppComponent implements AfterViewInit, OnInit {
     constructor(private observer: BreakpointObserver) {}
 
-    @ViewChild(MatSidenav)
-    sidenav!: MatSidenav;
+    @ViewChild(MatSidenav) sidenav!: MatSidenav;
+    date = new Date();
+    version = environment.appVersion;
     fullDateValue!: string;
     dayScopeValue!: string | number;
-    monthScopeValue!: string | number;
-    date = new Date();
     isMobileDetected = false;
-    version = environment.appVersion;
+    monthScopeValue!: string | number;
 
     ngOnInit(): void {
         this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {
