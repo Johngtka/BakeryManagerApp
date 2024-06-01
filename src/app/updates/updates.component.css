@@ -24,15 +24,22 @@
         font-size: x-small;
         padding: 0;
     }
-    .mat-column-description {
+    /* .mat-column-description {
         font-size: xx-small;
         padding-left: 0;
         padding-right: 0;
-    }
+    } */
     .mat-column-options {
         padding: 0;
     }
     .buttons {
         box-shadow: none;
+    }
+}
+@media screen and (max-width: 400px) {
+    .mat-column-description {
+        font-size: xx-small;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

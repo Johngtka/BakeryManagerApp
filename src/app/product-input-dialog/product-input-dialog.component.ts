@@ -29,8 +29,8 @@ export class ProductInputDialogComponent implements OnInit {
     ) {}
 
     @ViewChild('stepper') stepper!: MatStepper;
-    titleText!: string;
     isEdit!: boolean;
+    titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
     originalFormValues!: Product;

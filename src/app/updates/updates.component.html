@@ -65,8 +65,15 @@
 </div>
 
 <mat-paginator
+    *ngIf="!isScreenDetected"
     class="paginator"
     [pageSizeOptions]="[6]"
+    aria-label="Select page"
+></mat-paginator>
+<mat-paginator
+    *ngIf="isScreenDetected"
+    class="paginator"
+    [pageSizeOptions]="[3]"
     aria-label="Select page"
 ></mat-paginator>
 

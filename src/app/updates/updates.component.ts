@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    AfterViewInit,
+    ViewChild,
+    HostListener,
+} from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -17,10 +24,11 @@ import { UpdateInputDialogComponent } from '../update-input-dialog/update-input-
     templateUrl: './updates.component.html',
     styleUrls: ['./updates.component.css'],
 })
-export class UpdatesComponent implements OnInit {
+export class UpdatesComponent implements AfterViewInit, OnInit {
     constructor(
         private updateService: UpdatesService,
         private snackService: SnackService,
+        private observer: BreakpointObserver,
         private dialog: MatDialog,
     ) {}
 
@@ -28,26 +36,26 @@ export class UpdatesComponent implements OnInit {
     paginator!: MatPaginator;
     update!: Update[];
     dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
+    isScreenDetected!: boolean;
     loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'date', 'description', 'options'];
     logID: number[] = [];
 
     ngOnInit(): void {
-        this.updateService.getUpdates().subscribe({
-            next: (data) => {
-                this.update = data;
-                this.dataSource = new MatTableDataSource<Update>(this.update);
-                this.dataSource.paginator = this.paginator;
-                this.loadingProcess = false;
-            },
-            error: (err) => {
-                this.snackService.showSnackBar(
-                    'ERRORS.UPDATES_GETTING_ERROR',
-                    SNACK_TYPE.error,
-                );
-                console.log(err);
-            },
-        });
+        this.getUpdates();
+    }
+    ngAfterViewInit(): void {
+        this.observer
+            .observe(['(max-width: 1209px)'])
+            .subscribe((isMatches) => {
+                if (isMatches.matches) {
+                    this.isScreenDetected = true;
+                    this.getUpdates();
+                } else {
+                    this.isScreenDetected = false;
+                    this.getUpdates();
+                }
+            });
     }
 
     clearSelect(): void {
@@ -72,21 +80,7 @@ export class UpdatesComponent implements OnInit {
         });
         dialogRef.afterClosed().subscribe((result: Update) => {
             if (result) {
-                this.updateTable(result);
-                this.updateService.getUpdates().subscribe({
-                    next: (data) => {
-                        this.dataSource = new MatTableDataSource<Update>(data);
-                        this.dataSource.paginator = this.paginator;
-                        this.loadingProcess = false;
-                    },
-                    error: (err) => {
-                        console.log(err);
-                        this.snackService.showSnackBar(
-                            'ERRORS.UPDATES_GETTING_ERROR',
-                            SNACK_TYPE.error,
-                        );
-                    },
-                });
+                this.getUpdates();
             }
         });
     }
@@ -103,24 +97,21 @@ export class UpdatesComponent implements OnInit {
         }
     }
 
-    private updateTable(newOrUpdatedLogs: Update): void {
-        if (!!this.update && !!newOrUpdatedLogs) {
-            const tableUpdateIndex = this.update.findIndex(
-                (li: Update) => li.id === newOrUpdatedLogs.id,
-            );
-            // li it is shortcut of log id
-            if (tableUpdateIndex !== -1) {
-                // update
-                this.update[tableUpdateIndex] = newOrUpdatedLogs;
-                this.update = [...this.update];
+    private getUpdates(): void {
+        this.updateService.getUpdates().subscribe({
+            next: (data) => {
+                this.update = data;
                 this.dataSource = new MatTableDataSource<Update>(this.update);
                 this.dataSource.paginator = this.paginator;
-            } else {
-                // new
-                this.update = [...this.update, newOrUpdatedLogs];
-                this.dataSource = new MatTableDataSource<Update>(this.update);
-                this.dataSource.paginator = this.paginator;
-            }
-        }
+                this.loadingProcess = false;
+            },
+            error: (err) => {
+                this.snackService.showSnackBar(
+                    'ERRORS.UPDATES_GETTING_ERROR',
+                    SNACK_TYPE.error,
+                );
+                console.log(err);
+            },
+        });
     }
 }

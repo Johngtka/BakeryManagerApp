@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+    HttpClient,
+    HttpClientModule,
+    provideHttpClient,
+    withInterceptorsFromDi,
+} from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card';
@@ -92,10 +97,11 @@ const materialsModules = [
         SalesComponent,
         SalesDatePipe,
     ],
+    bootstrap: [AppComponent],
     imports: [
+        HttpClientModule,
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule,
         BrowserAnimationsModule,
         TranslateModule.forRoot({
             defaultLanguage: lang,
@@ -109,7 +115,11 @@ const materialsModules = [
         ReactiveFormsModule,
         ...materialsModules,
     ],
-    providers: [UsersService, CdkTextareaAutosize, DatePipe],
-    bootstrap: [AppComponent],
+    providers: [
+        UsersService,
+        CdkTextareaAutosize,
+        DatePipe,
+        provideHttpClient(withInterceptorsFromDi()),
+    ],
 })
 export class AppModule {}

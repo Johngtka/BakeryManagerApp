@@ -21,8 +21,8 @@ export class UpdateInputDialogComponent implements OnInit {
         private updateService: UpdatesService,
     ) {}
 
-    titleText!: string;
     isEdit!: boolean;
+    titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
     originalFormValues!: Update;
