@@ -32,10 +32,10 @@ export class UpdatesService {
     editUpdate(data: Update): Observable<Update> {
         return this.http.post<Update>(`${this.apiURL}`, {
             editUpdate: true,
+            id: data.id,
             name: data.name,
             date: data.date,
             desc: data.description,
-            id: data.id,
         });
     }
 }
