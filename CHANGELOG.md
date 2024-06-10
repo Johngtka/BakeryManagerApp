@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.8](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.7...v0.0.8) (2024-06-10)
 
+### Config
+
+-   refactor: changed body data structure of update and products services ([#27](https://github.com/Johngtka/BakeryManagerApp/issues/27))([b135953](https://github.com/Johngtka/BakeryManagerApp/commit/b1359536b78372c7ad36b89a74bf393baa93e1a3))
+
+-   config: some angular packages updates and changes ([#26](https://github.com/Johngtka/BakeryManagerApp/issues/26))([c904d79](https://github.com/Johngtka/BakeryManagerApp/commit/c904d799a5a00de5af06af3ce6964290aef5fc9d))
+
 ### [0.0.7](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.6...v0.0.7) (2024-01-17)
 
 ### Features
