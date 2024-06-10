@@ -53,10 +53,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "buildTarget": "Bakery-Manage-App:build:production"
+                            "browserTarget": "Bakery-Manage-App:build:production"
                         },
                         "development": {
-                            "buildTarget": "Bakery-Manage-App:build:development"
+                            "browserTarget": "Bakery-Manage-App:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "Bakery-Manage-App:build"
+                        "browserTarget": "Bakery-Manage-App:build"
                     }
                 },
                 "test": {
