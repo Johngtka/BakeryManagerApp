@@ -1,4 +1,4 @@
 export const environment = {
     API_URL: 'http://localhost/bakery_api/',
-    appVersion: '0.0.7',
+    appVersion: '0.0.8',
 };
