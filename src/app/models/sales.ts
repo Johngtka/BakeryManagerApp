@@ -3,6 +3,6 @@ export interface Sales {
     productName: string;
     startDate: string;
     endDate: string;
-    value: string;
     saleCode: string;
+    value: string;
 }

@@ -21,10 +21,11 @@ export class SalesInputDialogComponent implements OnInit {
         private snackService: SnackService,
     ) {}
 
-    saleCode: string = this.generateRandomString(8);
     titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
+    originalFormValues!: Sales;
+    saleCode: string = this.generateRandomString(8);
     productsList: string[] = [
         'Tort Urodzinowy',
         'Tort dla Smakoszy',
@@ -51,7 +52,6 @@ export class SalesInputDialogComponent implements OnInit {
         'Babeczka Malinowa',
         'Babeczka Sezonowa',
     ];
-    originalFormValues!: Sales;
 
     ngOnInit(): void {
         this.titleText = 'SALES_DIALOG.INFO.NEW_SALE_TITLE';
@@ -92,6 +92,7 @@ export class SalesInputDialogComponent implements OnInit {
             this.dialogRef.close();
         }
     }
+
     private generateRandomString(length: number) {
         const characters =
             'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345678910';
