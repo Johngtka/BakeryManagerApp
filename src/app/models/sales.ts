@@ -4,4 +4,5 @@ export interface Sales {
     startDate: string;
     endDate: string;
     value: string;
+    saleCode: string;
 }

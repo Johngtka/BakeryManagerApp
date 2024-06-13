@@ -27,6 +27,7 @@ export class SalesService {
             sDate: data.startDate,
             eDate: data.endDate,
             value: data.value,
+            saleCode: data.saleCode,
         });
     }
 

@@ -21,6 +21,7 @@ export class SalesInputDialogComponent implements OnInit {
         private snackService: SnackService,
     ) {}
 
+    saleCode: string = this.generateRandomString(8);
     titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
@@ -60,6 +61,7 @@ export class SalesInputDialogComponent implements OnInit {
             startDate: new FormControl('', [Validators.required]),
             endDate: new FormControl('', [Validators.required]),
             value: new FormControl('', [Validators.required]),
+            saleCode: new FormControl(this.saleCode),
         });
         this.originalFormValues = this.registerForm.value;
     }
@@ -89,5 +91,17 @@ export class SalesInputDialogComponent implements OnInit {
         if (event.key === 'Escape') {
             this.dialogRef.close();
         }
+    }
+    private generateRandomString(length: number) {
+        const characters =
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345678910';
+        let result = '';
+
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(
+                Math.floor(Math.random() * characters.length),
+            );
+        }
+        return result;
     }
 }
