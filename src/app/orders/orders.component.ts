@@ -39,6 +39,7 @@ export class OrdersComponent implements OnInit {
     paginatorStep!: number;
     showClearButton: boolean = false;
     showEmptyStateForUser: boolean = false;
+    ordersDiscountCodeToCheck!: string[];
     displayedColumns: string[] = [
         'fullNameWithCount',
         'orderTimeAndDate',
@@ -63,6 +64,9 @@ export class OrdersComponent implements OnInit {
                         this.dataSource.paginator = this.paginator;
                         this.paginatorStep = data.length;
                         this.loadingProcess = false;
+                        this.ordersDiscountCodeToCheck = this.orders.map(
+                            (order) => order.SaleCode,
+                        );
                     } else {
                         this.paginatorStep = data.length;
                         this.snackService.showSnackBar(
