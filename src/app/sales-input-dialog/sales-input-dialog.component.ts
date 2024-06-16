@@ -24,6 +24,8 @@ export class SalesInputDialogComponent implements OnInit {
     titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
+    originalFormValues!: Sales;
+    saleCode: string = this.generateRandomString(8);
     productsList: string[] = [
         'Tort Urodzinowy',
         'Tort dla Smakoszy',
@@ -50,7 +52,6 @@ export class SalesInputDialogComponent implements OnInit {
         'Babeczka Malinowa',
         'Babeczka Sezonowa',
     ];
-    originalFormValues!: Sales;
 
     ngOnInit(): void {
         this.titleText = 'SALES_DIALOG.INFO.NEW_SALE_TITLE';
@@ -60,6 +61,7 @@ export class SalesInputDialogComponent implements OnInit {
             startDate: new FormControl('', [Validators.required]),
             endDate: new FormControl('', [Validators.required]),
             value: new FormControl('', [Validators.required]),
+            saleCode: new FormControl(this.saleCode),
         });
         this.originalFormValues = this.registerForm.value;
     }
@@ -89,5 +91,18 @@ export class SalesInputDialogComponent implements OnInit {
         if (event.key === 'Escape') {
             this.dialogRef.close();
         }
+    }
+
+    private generateRandomString(length: number) {
+        const characters =
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345678910';
+        let result = '';
+
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(
+                Math.floor(Math.random() * characters.length),
+            );
+        }
+        return result;
     }
 }
