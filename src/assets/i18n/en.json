@@ -97,7 +97,8 @@
             "FULL_NAME_AND_COUNT": "Name & Count",
             "FULL_TIME_AND_DATE": "Date & Time of Order",
             "CONTACT": "Phone",
-            "ORDER_COMMENT": "Order Comment"
+            "ORDER_COMMENT": "Order Comment",
+            "DISCOUNT_CODE": "Discount Code"
         },
         "PDF_BUTTON": "Print PDF"
     },

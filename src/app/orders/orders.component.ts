@@ -44,6 +44,7 @@ export class OrdersComponent implements OnInit {
         'orderTimeAndDate',
         'userContact',
         'orderComment',
+        'discountCode',
         'options',
     ];
 

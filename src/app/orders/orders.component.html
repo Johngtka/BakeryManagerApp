@@ -32,7 +32,7 @@
             <td mat-cell *matCellDef="let element" class="onPhone">
                 {{
                     element.orderDate
-                        | date: 'dd.MM.yyyy' + ' ' + element.orderTime
+                        | date : 'dd.MM.yyyy' + ' ' + element.orderTime
                 }}
             </td>
         </ng-container>
@@ -52,6 +52,15 @@
             </th>
             <td mat-cell *matCellDef="let element">
                 {{ element.comment }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="discountCode">
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'ORDERS_TABLE.COLUMNS.DISCOUNT_CODE' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.SaleCode }}
             </td>
         </ng-container>
 
