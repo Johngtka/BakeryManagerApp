@@ -39,7 +39,7 @@ export class OrdersComponent implements OnInit {
     paginatorStep!: number;
     showClearButton: boolean = false;
     showEmptyStateForUser: boolean = false;
-    ordersDiscountCodeToCheck!: string[];
+    discountCodeCheckingProcess!: boolean;
     displayedColumns: string[] = [
         'fullNameWithCount',
         'orderTimeAndDate',
@@ -64,9 +64,6 @@ export class OrdersComponent implements OnInit {
                         this.dataSource.paginator = this.paginator;
                         this.paginatorStep = data.length;
                         this.loadingProcess = false;
-                        this.ordersDiscountCodeToCheck = this.orders.map(
-                            (order) => order.SaleCode,
-                        );
                     } else {
                         this.paginatorStep = data.length;
                         this.snackService.showSnackBar(
@@ -98,6 +95,7 @@ export class OrdersComponent implements OnInit {
             this.orderId.splice(ID, 1);
         } else {
             this.orderId.push(row.id);
+            this.discountCodeChecker(row);
         }
         if (this.orderId.length >= 2) {
             this.showClearButton = true;
@@ -373,6 +371,26 @@ export class OrdersComponent implements OnInit {
         // pdfMake
         //     .createPdf(docDefinition as unknown as TDocumentDefinitions)
         //     .open();
+    }
+
+    private discountCodeChecker(row: Order) {
+        this.userService.checkForOrderDiscountCode(row).subscribe({
+            next: (data) => {
+                if (Array.isArray(data) && data.length >= 1) {
+                    this.discountCodeCheckingProcess = true;
+                    console.log(this.discountCodeCheckingProcess);
+                } else {
+                    this.discountCodeCheckingProcess = false;
+                    this.snackService.showSnackBar(
+                        'ERRORS.ORDER_DISCOUNT_CODE_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {

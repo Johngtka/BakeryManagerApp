@@ -33,7 +33,8 @@
         "SALES_GETTING_ERROR": "Wystąpił błąd podczas pobierania listy promocji!!!",
         "SALES_ADD_ERROR": "Wystąpił błąd podczas próby dodania promocji do bazy!!!",
         "SALES_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia promocji z bazy!!!",
-        "ORDERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania zamówień użytkownika z bazy!!!"
+        "ORDERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania zamówień użytkownika z bazy!!!",
+        "ORDER_DISCOUNT_CODE_ERROR": "Kod rabatowy nie isnieje lub jest niepoprawny!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
