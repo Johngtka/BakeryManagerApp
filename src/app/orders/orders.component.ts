@@ -37,13 +37,15 @@ export class OrdersComponent implements OnInit {
     dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
     paginatorStep!: number;
-    showClearButton: boolean = false;
     showEmptyStateForUser: boolean = false;
+    showBufferingCheckProcess!: boolean;
+    discountCodeCheckingProcess!: boolean;
     displayedColumns: string[] = [
         'fullNameWithCount',
         'orderTimeAndDate',
         'userContact',
         'orderComment',
+        'discountCode',
         'options',
     ];
 
@@ -93,17 +95,12 @@ export class OrdersComponent implements OnInit {
             this.orderId.splice(ID, 1);
         } else {
             this.orderId.push(row.id);
-        }
-        if (this.orderId.length >= 2) {
-            this.showClearButton = true;
-        } else {
-            this.showClearButton = false;
+            this.discountCodeChecker(row);
         }
     }
 
     clearSelect(): void {
         this.orderId = [];
-        this.showClearButton = false;
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -122,7 +119,7 @@ export class OrdersComponent implements OnInit {
         const docDefinition = {
             info: {
                 title: 'Order invoice of ' + this.user.login,
-                creator: 'BakeryOnlineFactory Inc.',
+                creator: 'BakeryOnlineFactory',
             },
             header: [
                 {
@@ -286,6 +283,10 @@ export class OrdersComponent implements OnInit {
                         ],
                     },
                 },
+                {
+                    text: this.discountOutputConfig(),
+                    style: 'orderedProductSection',
+                },
             ],
 
             footer: [
@@ -368,6 +369,35 @@ export class OrdersComponent implements OnInit {
         // pdfMake
         //     .createPdf(docDefinition as unknown as TDocumentDefinitions)
         //     .open();
+    }
+
+    private discountCodeChecker(row: Order): void {
+        this.showBufferingCheckProcess = false;
+        this.userService.checkForOrderDiscountCode(row).subscribe({
+            next: (data) => {
+                if (Array.isArray(data) && data.length >= 1) {
+                    this.discountCodeCheckingProcess = true;
+                    this.discountOutputConfig();
+                } else {
+                    this.discountCodeCheckingProcess = false;
+                    this.discountOutputConfig();
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
+        setTimeout(() => {
+            this.showBufferingCheckProcess = true;
+        }, 1000);
+    }
+
+    private discountOutputConfig(): string {
+        if (this.discountCodeCheckingProcess) {
+            return 'Successfully charged discount on ordered product';
+        } else {
+            return 'No discount due to incorrect or non-existent code';
+        }
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {

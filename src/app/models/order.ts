@@ -7,4 +7,5 @@ export interface Order {
     email: string;
     phone: string;
     comment: string;
+    SaleCode: string;
 }

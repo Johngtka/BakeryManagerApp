@@ -97,7 +97,8 @@
             "FULL_NAME_AND_COUNT": "Nazwa i Ilość",
             "FULL_TIME_AND_DATE": "Data i Czas Zamówienia",
             "CONTACT": "Telefon",
-            "ORDER_COMMENT": "Komentarz Zamówienia"
+            "ORDER_COMMENT": "Komentarz Zamówienia",
+            "DISCOUNT_CODE": "Kod Rabatowy"
         },
         "PDF_BUTTON": "Drukuj PDF"
     },
