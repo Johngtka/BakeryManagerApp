@@ -13,7 +13,9 @@
             mat-row
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
-            [ngClass]="{ selectedRow: orderId.includes(row.id) }"
+            [ngClass]="{
+                selectedRow: orderId.includes(row.id)
+            }"
         ></tr>
 
         <ng-container matColumnDef="fullNameWithCount">
@@ -77,7 +79,10 @@
                     mat-stroked-button
                     color="primary"
                     (click)="openPDF(element)"
-                    [disabled]="!orderId.includes(element.id)"
+                    [disabled]="
+                        !orderId.includes(element.id) ||
+                        !showBufferingCheckProcess
+                    "
                 >
                     {{ 'ORDERS_TABLE.PDF_BUTTON' | translate }}
                 </button>
@@ -92,19 +97,6 @@
         [pageSizeOptions]="[8]"
         aria-label="Select page"
     ></mat-paginator>
-</div>
-
-<div class="controlPanel">
-    <button
-        mat-stroked-button
-        *ngIf="showClearButton"
-        (click)="clearSelect()"
-        class="mat-elevation-z8"
-        color="warn"
-    >
-        <mat-icon>highlight_off</mat-icon>
-        <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
-    </button>
 </div>
 
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">

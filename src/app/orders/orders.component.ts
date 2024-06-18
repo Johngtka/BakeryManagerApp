@@ -37,8 +37,8 @@ export class OrdersComponent implements OnInit {
     dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
     loadingProcess: boolean = true;
     paginatorStep!: number;
-    showClearButton: boolean = false;
     showEmptyStateForUser: boolean = false;
+    showBufferingCheckProcess!: boolean;
     discountCodeCheckingProcess!: boolean;
     displayedColumns: string[] = [
         'fullNameWithCount',
@@ -97,16 +97,10 @@ export class OrdersComponent implements OnInit {
             this.orderId.push(row.id);
             this.discountCodeChecker(row);
         }
-        if (this.orderId.length >= 2) {
-            this.showClearButton = true;
-        } else {
-            this.showClearButton = false;
-        }
     }
 
     clearSelect(): void {
         this.orderId = [];
-        this.showClearButton = false;
     }
 
     @HostListener('document:keydown', ['$event'])
@@ -378,6 +372,7 @@ export class OrdersComponent implements OnInit {
     }
 
     private discountCodeChecker(row: Order): void {
+        this.showBufferingCheckProcess = false;
         this.userService.checkForOrderDiscountCode(row).subscribe({
             next: (data) => {
                 if (Array.isArray(data) && data.length >= 1) {
@@ -385,10 +380,6 @@ export class OrdersComponent implements OnInit {
                     this.discountOutputConfig();
                 } else {
                     this.discountCodeCheckingProcess = false;
-                    this.snackService.showSnackBar(
-                        'ERRORS.ORDER_DISCOUNT_CODE_ERROR',
-                        SNACK_TYPE.error,
-                    );
                     this.discountOutputConfig();
                 }
             },
@@ -396,6 +387,9 @@ export class OrdersComponent implements OnInit {
                 console.log(err);
             },
         });
+        setTimeout(() => {
+            this.showBufferingCheckProcess = true;
+        }, 1000);
     }
 
     private discountOutputConfig(): string {
