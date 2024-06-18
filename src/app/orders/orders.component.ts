@@ -125,7 +125,7 @@ export class OrdersComponent implements OnInit {
         const docDefinition = {
             info: {
                 title: 'Order invoice of ' + this.user.login,
-                creator: 'BakeryOnlineFactory Inc.',
+                creator: 'BakeryOnlineFactory',
             },
             header: [
                 {
@@ -289,6 +289,10 @@ export class OrdersComponent implements OnInit {
                         ],
                     },
                 },
+                {
+                    text: this.discountOutputConfig(),
+                    style: 'orderedProductSection',
+                },
             ],
 
             footer: [
@@ -373,24 +377,33 @@ export class OrdersComponent implements OnInit {
         //     .open();
     }
 
-    private discountCodeChecker(row: Order) {
+    private discountCodeChecker(row: Order): void {
         this.userService.checkForOrderDiscountCode(row).subscribe({
             next: (data) => {
                 if (Array.isArray(data) && data.length >= 1) {
                     this.discountCodeCheckingProcess = true;
-                    console.log(this.discountCodeCheckingProcess);
+                    this.discountOutputConfig();
                 } else {
                     this.discountCodeCheckingProcess = false;
                     this.snackService.showSnackBar(
                         'ERRORS.ORDER_DISCOUNT_CODE_ERROR',
                         SNACK_TYPE.error,
                     );
+                    this.discountOutputConfig();
                 }
             },
             error: (err) => {
                 console.log(err);
             },
         });
+    }
+
+    private discountOutputConfig(): string {
+        if (this.discountCodeCheckingProcess) {
+            return 'Successfully charged discount on ordered product';
+        } else {
+            return 'No discount due to incorrect or non-existent code';
+        }
     }
 
     private checkIfUserExist(object: User | NavigationObject): object is User {
