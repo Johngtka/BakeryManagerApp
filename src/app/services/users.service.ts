@@ -25,4 +25,11 @@ export class UsersService {
             login: data.login,
         });
     }
+
+    checkForOrderDiscountCode(data: Order): Observable<Array<Order>> {
+        return this.http.post<Array<Order>>(`${this.apiUrl}`, {
+            orderDiscountCode: true,
+            code: data.SaleCode,
+        });
+    }
 }
