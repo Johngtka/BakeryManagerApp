@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.8...v0.0.9) (2024-07-16)
+
+
 ### Features
 
-### [0.0.8](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.7...v0.0.8) (2024-06-10)
-
--   new discount code validation for user/orders ([#29](https://github.com/Johngtka/BakeryManagerApp/issues/29)) ([5549d8b](https://github.com/Johngtka/BakeryManagerApp/commit/5549d8b60a30aba4a32f06adca1be943eefbffbf))
--   new sale discount code generator ([#28](https://github.com/Johngtka/BakeryManagerApp/issues/28)) ([d64c44b](https://github.com/Johngtka/BakeryManagerApp/commit/d64c44bbab2f548836a4c2ec107fe7fd47d9aba5))
+* new discount code validation for user/orders ([#29](https://github.com/Johngtka/BakeryManagerApp/issues/29)) ([5549d8b](https://github.com/Johngtka/BakeryManagerApp/commit/5549d8b60a30aba4a32f06adca1be943eefbffbf))
+* new sale discount code generator ([#28](https://github.com/Johngtka/BakeryManagerApp/issues/28)) ([d64c44b](https://github.com/Johngtka/BakeryManagerApp/commit/d64c44bbab2f548836a4c2ec107fe7fd47d9aba5))
 
 ### [0.0.8](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.7...v0.0.8) (2024-06-10)
 
