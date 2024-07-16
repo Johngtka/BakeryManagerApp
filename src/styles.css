@@ -14,36 +14,42 @@ td:hover {
 }
 
 .info-snackbar div {
-    background: blue !important;
     color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    background: blue !important;
 }
 
 .info-snackbar button {
-    background-color: blue;
-    color: white !important;
     border: none;
+    color: white !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    background-color: blue;
 }
 
 .success-snackbar div {
-    background: green !important;
     color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    background: green !important;
 }
 
 .success-snackbar button {
-    background-color: green;
-    color: white !important;
     border: none;
+    color: white !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    background-color: green;
 }
 
 .error-snackbar div {
-    background: red !important;
     color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    background: red !important;
 }
 
 .error-snackbar button {
-    background-color: red;
-    color: white !important;
     border: none;
+    color: white !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    background-color: red;
 }
 
 .loader-container {
