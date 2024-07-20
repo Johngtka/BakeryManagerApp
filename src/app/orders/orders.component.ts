@@ -48,6 +48,7 @@ export class OrdersComponent implements OnInit {
         'discountCode',
         'options',
     ];
+    showLostConnection!: boolean;
 
     ngOnInit(): void {
         this.user = {} as User;
@@ -80,6 +81,12 @@ export class OrdersComponent implements OnInit {
                         'ERRORS.ORDERS_GETTING_ERROR',
                         SNACK_TYPE.error,
                     );
+
+                    setTimeout(() => {
+                        this.loadingProcess = false;
+                        this.showLostConnection = true;
+                    }, 3000);
+
                     console.log(err);
                 },
             });
@@ -384,6 +391,11 @@ export class OrdersComponent implements OnInit {
                 }
             },
             error: (err) => {
+                setTimeout(() => {
+                    this.loadingProcess = false;
+                    this.showLostConnection = true;
+                }, 3000);
+
                 console.log(err);
             },
         });

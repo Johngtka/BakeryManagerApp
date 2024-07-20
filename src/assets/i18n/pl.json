@@ -153,7 +153,8 @@
     "EMPTY_STATE": {
         "STATE_TITLE": "Ups, coś poszło nie tak!!!",
         "MESSAGES": {
-            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli"
+            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli",
+            "CONNECTION_LOST": "Utracono połączenie lub wystąpiły inne problemy techniczne"
         }
     },
     "APP_FOOTER": {

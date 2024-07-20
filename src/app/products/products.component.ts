@@ -95,6 +95,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
         'options',
     ];
     isScreenDetected!: boolean;
+    showLostConnection!: boolean;
 
     ngOnInit(): void {
         this.getProducts();
@@ -165,6 +166,12 @@ export class ProductsComponent implements OnInit, AfterViewInit {
                             'ERRORS.PRODUCT_DELETE_ERROR',
                             SNACK_TYPE.error,
                         );
+
+                        setTimeout(() => {
+                            this.loadingProcess = false;
+                            this.showLostConnection = true;
+                        }, 3000);
+
                         console.log(err);
                     },
                 });
@@ -211,6 +218,12 @@ export class ProductsComponent implements OnInit, AfterViewInit {
                     'ERRORS.PRODUCTS_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
+
+                setTimeout(() => {
+                    this.loadingProcess = false;
+                    this.showLostConnection = true;
+                }, 3000);
+
                 console.log(err);
             },
         });

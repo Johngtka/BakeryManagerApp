@@ -36,6 +36,7 @@ export class SalesComponent implements OnInit {
         'value',
         'options',
     ];
+    showLostConnection!: boolean;
 
     ngOnInit(): void {
         this.getSales();
@@ -125,6 +126,12 @@ export class SalesComponent implements OnInit {
                     'ERRORS.SALES_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
+
+                setTimeout(() => {
+                    this.loadingProcess = false;
+                    this.showLostConnection = true;
+                }, 3000);
+
                 console.log(err);
             },
         });

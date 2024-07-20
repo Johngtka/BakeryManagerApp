@@ -1,4 +1,4 @@
-<div class="mat_elevation_z8 tablesTemplateBox">
+<div *ngIf="!showLostConnection" class="mat_elevation_z8 tablesTemplateBox">
     <table
         mat-table
         [dataSource]="dataSource"
@@ -89,7 +89,7 @@
     <mat-spinner></mat-spinner>
 </div>
 
-<div class="controlPanel">
+<div *ngIf="!showLostConnection" class="controlPanel">
     <button
         mat-raised-button
         (click)="openDialog()"
@@ -110,4 +110,12 @@
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
+</div>
+
+<div *ngIf="showLostConnection">
+    <app-empty-state
+        icon="signal_wifi_off"
+        text="EMPTY_STATE.MESSAGES.CONNECTION_LOST"
+        [showRefreshButton]="true"
+    ></app-empty-state>
 </div>

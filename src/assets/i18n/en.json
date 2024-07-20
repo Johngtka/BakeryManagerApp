@@ -153,7 +153,8 @@
     "EMPTY_STATE": {
         "STATE_TITLE": "Oops, something went wrong!!!",
         "MESSAGES": {
-            "NO_USER": "You forgot to select a user from the table"
+            "NO_USER": "You forgot to select a user from the table",
+            "CONNECTION_LOST": "The connection was lost or other technical problems occurred"
         }
     },
     "APP_FOOTER": {

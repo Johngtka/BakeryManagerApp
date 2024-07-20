@@ -7,6 +7,13 @@
             >
             <mat-divider class="dividers"></mat-divider>
             <p>{{ text | translate }}</p>
+            <button
+                *ngIf="showRefreshButton"
+                mat-raised-button
+                (click)="reloadApp()"
+            >
+                Refresh
+            </button>
         </mat-card-content>
     </mat-card>
 </div>
