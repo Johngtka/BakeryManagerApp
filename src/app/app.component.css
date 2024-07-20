@@ -1,6 +1,7 @@
 .appToolBar {
     width: 100%;
     display: flex;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
     align-items: center;
     justify-content: space-between;
 }

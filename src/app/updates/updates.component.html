@@ -70,6 +70,7 @@
     [pageSizeOptions]="[6]"
     aria-label="Select page"
 ></mat-paginator>
+
 <mat-paginator
     *ngIf="isScreenDetected"
     class="paginator"
@@ -91,6 +92,7 @@
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
+
     <button
         mat-stroked-button
         (click)="clearSelect()"
