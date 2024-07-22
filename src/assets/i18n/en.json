@@ -155,7 +155,8 @@
         "MESSAGES": {
             "NO_USER": "You forgot to select a user from the table",
             "CONNECTION_LOST": "The connection was lost or other technical problems occurred"
-        }
+        },
+        "REFRESH_BUTTON": "Refresh"
     },
     "APP_FOOTER": {
         "FOOTER_CONTENT": "Version:",

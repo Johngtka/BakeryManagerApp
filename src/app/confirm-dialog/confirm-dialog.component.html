@@ -1,12 +1,18 @@
 <h1 mat-dialog-title>{{ data.title | translate }}</h1>
 <mat-divider class="dividers"></mat-divider>
 <mat-dialog-content class="mat-typography">
-    <p style="display: flex; align-items: center; padding: 0" mat-dialog-title>
+    <p mat-dialog-title style="display: flex; align-items: center; padding: 0">
         {{ data.message | translate }}
     </p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close (click)="close()" mat-raised-button>
+    <button
+        mat-button
+        mat-raised-button
+        mat-dialog-close
+        (click)="close()"
+        class="dialogButtons"
+    >
         {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
     </button>
     <button
@@ -14,6 +20,7 @@
         mat-raised-button
         cdkFocusInitial
         color="warn"
+        class="dialogButtons"
         (click)="confirm()"
     >
         {{ data.action | translate }}

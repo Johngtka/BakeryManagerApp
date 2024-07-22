@@ -35,6 +35,9 @@ mat-sidenav {
     padding: 16px;
     background: #ffffff;
     text-align: center;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, serif;
 }
 
 .menu-button {
@@ -42,6 +45,7 @@ mat-sidenav {
     display: flex;
     font-size: 1rem;
     align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
     justify-content: center;
 }
 
