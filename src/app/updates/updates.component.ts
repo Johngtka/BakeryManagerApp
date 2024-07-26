@@ -40,6 +40,7 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
     loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'date', 'description', 'options'];
     logID: number[] = [];
+    showLostConnection!: boolean;
 
     ngOnInit(): void {
         this.getUpdates();
@@ -110,6 +111,12 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
                     'ERRORS.UPDATES_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
+
+                setTimeout(() => {
+                    this.loadingProcess = false;
+                    this.showLostConnection = true;
+                }, 3000);
+
                 console.log(err);
             },
         });

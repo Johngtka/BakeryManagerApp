@@ -8,4 +8,9 @@ import { Component, Input } from '@angular/core';
 export class EmptyStateComponent {
     @Input() text!: string;
     @Input() icon!: string;
+    @Input() showRefreshButton!: boolean;
+
+    reloadApp() {
+        window.location.reload();
+    }
 }

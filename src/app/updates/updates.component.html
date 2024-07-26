@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8 tablesTemplateBox">
+<div *ngIf="!showLostConnection" class="mat-elevation-z8 tablesTemplateBox">
     <table
         mat-table
         [dataSource]="dataSource"
@@ -64,24 +64,25 @@
     </table>
 </div>
 
-<mat-paginator
-    *ngIf="!isScreenDetected"
-    class="paginator"
-    [pageSizeOptions]="[6]"
-    aria-label="Select page"
-></mat-paginator>
-<mat-paginator
-    *ngIf="isScreenDetected"
-    class="paginator"
-    [pageSizeOptions]="[3]"
-    aria-label="Select page"
-></mat-paginator>
-
-<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
-    <mat-spinner></mat-spinner>
+<div *ngIf="!showLostConnection">
+    <mat-paginator
+        *ngIf="!isScreenDetected"
+        class="paginator"
+        [pageSizeOptions]="[6]"
+        aria-label="Select page"
+    ></mat-paginator>
 </div>
 
-<div class="controlPanel">
+<div *ngIf="!showLostConnection">
+    <mat-paginator
+        *ngIf="isScreenDetected"
+        class="paginator"
+        [pageSizeOptions]="[3]"
+        aria-label="Select page"
+    ></mat-paginator>
+</div>
+
+<div *ngIf="!showLostConnection" class="controlPanel">
     <button
         mat-raised-button
         (click)="openDialog()"
@@ -91,6 +92,7 @@
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
+
     <button
         mat-stroked-button
         (click)="clearSelect()"
@@ -101,4 +103,16 @@
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
+</div>
+
+<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="showLostConnection">
+    <app-empty-state
+        icon="signal_wifi_off"
+        text="EMPTY_STATE.MESSAGES.CONNECTION_LOST"
+        [showRefreshButton]="true"
+    ></app-empty-state>
 </div>

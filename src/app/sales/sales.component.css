@@ -2,18 +2,22 @@
     width: auto;
     text-align: center;
 }
+
 .mat-column-startDate {
     width: auto;
     text-align: center;
 }
+
 .mat-column-endDate {
     width: auto;
     text-align: center;
 }
+
 .mat-column-value {
     width: auto;
     text-align: center;
 }
+
 .mat-column-options {
     width: 30%;
     text-align: center;
@@ -23,10 +27,12 @@
     color: green !important;
     text-shadow: 1px 1px 2px #000;
 }
+
 .orangeData {
     color: orange !important;
     text-shadow: 1px 1px 2px #000;
 }
+
 .redData {
     color: red !important;
     text-shadow: 1px 1px 2px #000;

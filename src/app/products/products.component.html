@@ -1,16 +1,17 @@
-<div class="mat-elevation-z8 tablesTemplateBox">
+<div *ngIf="!showLostConnection" class="mat-elevation-z8 tablesTemplateBox">
     <table
         mat-table
-        [dataSource]="dataSource"
         class="mat-elevation-z8 tablesTemplate"
+        [dataSource]="dataSource"
     >
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr
             mat-row
             *matRowDef="let row; columns: displayedColumns"
-            (click)="clickedRow(row)"
             [ngClass]="{ selectedRow: prodID.indexOf(row.id) > -1 }"
+            (click)="clickedRow(row)"
         ></tr>
+
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'PRODUCT_TABLE.COLUMNS.NAME' | translate }}
@@ -19,6 +20,7 @@
                 {{ element.name }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="unitPrice">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'PRODUCT_TABLE.COLUMNS.UNIT_PRICE' | translate }}
@@ -28,6 +30,7 @@
                 {{ element.weight | weight }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="components">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'PRODUCT_TABLE.COLUMNS.COMPONENTS' | translate }}
@@ -36,6 +39,7 @@
                 {{ element.components }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'PRODUCT_TABLE.COLUMNS.DESCRIPTION' | translate }}
@@ -44,6 +48,7 @@
                 {{ element.description }}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="options">
             <th mat-header-cell *matHeaderCellDef>
                 {{ 'TABLES.OPTIONS_COLUMN' | translate }}
@@ -90,21 +95,28 @@
         </ng-container>
     </table>
 </div>
-<mat-paginator
-    *ngIf="!isScreenDetected"
-    class="paginator"
-    [pageSizeOptions]="[8]"
-    aria-label="Select page"
->
-</mat-paginator>
-<mat-paginator
-    *ngIf="isScreenDetected"
-    class="paginator"
-    [pageSizeOptions]="[5]"
-    aria-label="Select page"
->
-</mat-paginator>
-<div class="controlPanel">
+
+<div *ngIf="!showLostConnection">
+    <mat-paginator
+        *ngIf="!isScreenDetected"
+        class="paginator"
+        [pageSizeOptions]="[8]"
+        aria-label="Select page"
+    >
+    </mat-paginator>
+</div>
+
+<div *ngIf="!showLostConnection">
+    <mat-paginator
+        *ngIf="isScreenDetected"
+        class="paginator"
+        [pageSizeOptions]="[5]"
+        aria-label="Select page"
+    >
+    </mat-paginator>
+</div>
+
+<div *ngIf="!showLostConnection" class="controlPanel">
     <button
         mat-raised-button
         (click)="openDialog()"
@@ -125,6 +137,15 @@
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
 </div>
+
 <div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
     <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="showLostConnection">
+    <app-empty-state
+        icon="signal_wifi_off"
+        text="EMPTY_STATE.MESSAGES.CONNECTION_LOST"
+        [showRefreshButton]="true"
+    ></app-empty-state>
 </div>

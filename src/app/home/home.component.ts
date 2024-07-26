@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     dataSource!: MatTableDataSource<User>;
     loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'surname', 'nick', 'phone', 'email'];
+    showLostConnection!: boolean;
 
     ngOnInit(): void {
         this.userService.getUsers().subscribe({
@@ -36,6 +37,12 @@ export class HomeComponent implements OnInit {
                     'ERRORS.USERS_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
+
+                setTimeout(() => {
+                    this.loadingProcess = false;
+                    this.showLostConnection = true;
+                }, 3000);
+
                 console.log(err);
             },
         });

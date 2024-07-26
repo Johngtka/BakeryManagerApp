@@ -6,87 +6,94 @@ body {
 }
 body {
     margin: 0;
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-td:hover {
-    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .info-snackbar div {
-    background: blue !important;
     color: white;
-}
-
-.info-snackbar button {
-    background-color: blue;
-    color: white !important;
-    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    background: blue !important;
 }
 
 .success-snackbar div {
-    background: green !important;
     color: white;
-}
-
-.success-snackbar button {
-    background-color: green;
-    color: white !important;
-    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    background: green !important;
 }
 
 .error-snackbar div {
-    background: red !important;
     color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    background: red !important;
+}
+
+.info-snackbar button {
+    color: white !important;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    background-color: blue;
+}
+
+.success-snackbar button {
+    color: white !important;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    background-color: green;
 }
 
 .error-snackbar button {
-    background-color: red;
     color: white !important;
     border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    background-color: red;
 }
 
 .loader-container {
-    position: relative;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 30vh;
+    display: flex;
+    position: relative;
+    overflow: auto;
     min-height: 200px;
     max-height: 400px;
-    overflow: auto;
     background: rgba(0, 0, 0, 0.15);
-    height: 30vh;
-    border-radius: 10px;
-    display: flex;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
     justify-content: center;
 }
 
 .tablesTemplate {
-    justify-content: center;
+    padding: 3%;
     align-items: center;
     border-radius: 10px;
-    padding: 3%;
+    justify-content: center;
 }
 
 .tablesTemplateBox {
+    clear: both;
     width: 80%;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    clear: both;
 }
+
 .controlPanel {
-    padding-top: 10px;
     width: 80%;
     display: flex;
     align-items: center;
+    padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
     justify-content: flex-end;
 }
+
 .controlPanel button {
     margin: 10px;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, serif;
 }
 
 .paginator {
@@ -140,4 +147,14 @@ td:hover {
     .col {
         width: 100vw;
     }
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+.dialogButtons {
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, serif;
 }

@@ -45,10 +45,16 @@
             <mat-icon>storage</mat-icon>
             <span>{{ 'MENU.PRODUCTS' | translate }}</span>
         </button>
-        <button mat-button disabled class="menu-button">
+        <a
+            mat-button
+            style="text-decoration: none"
+            class="menu-button"
+            target="_blank"
+            href="https://github.com/Johngtka/BakeryManagerApp/releases"
+        >
             <mat-icon>help_outline</mat-icon>
             <span>V.{{ version }}</span>
-        </button>
+        </a>
     </mat-sidenav>
 
     <mat-sidenav-content>

@@ -1,14 +1,15 @@
 .appToolBar {
     width: 100%;
     display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
     align-items: center;
     justify-content: space-between;
 }
 
 .appTitleSet {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .appTitleSet,
@@ -28,20 +29,24 @@ mat-icon {
 }
 
 mat-sidenav {
+    color: white;
     width: 250px;
     display: flex;
-    background: #ffffff;
-    color: white;
     padding: 16px;
+    background: #ffffff;
     text-align: center;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, serif;
 }
 
 .menu-button {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1rem;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    justify-content: center;
 }
 
 .menu-button mat-icon,
@@ -71,25 +76,25 @@ span {
 }
 
 .content {
+    margin: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
-    height: 100vh;
-    margin: 0;
     /* padding: 2%; */
     /* background-image: url('../assets/background-app.png'); */
-    background-color: rgb(44, 44, 44);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(44, 44, 44);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .project {
+    color: #000;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    color: #000;
+    justify-content: flex-start;
 }
 
 .project span {
@@ -97,8 +102,8 @@ span {
 }
 
 .logo {
-    margin: 5%;
     width: 3rem;
+    margin: 5%;
     border-radius: 40%;
 }
 
@@ -112,6 +117,6 @@ span {
 }
 
 .appContent {
-    display: block;
     width: 100%;
+    display: block;
 }
