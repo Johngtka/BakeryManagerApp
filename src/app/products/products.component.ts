@@ -16,10 +16,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import {
-    MatTableDataSource,
-    MatTableDataSourcePaginator,
-} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { Product } from '../models/product';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
@@ -83,7 +80,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     prodID: number[] = [];
     product!: Product[];
     isSelected: boolean = false;
-    dataSource!: MatTableDataSource<Product, MatTableDataSourcePaginator>;
+    dataSource!: MatTableDataSource<Product>;
     isEditHovered: string = 'inactive';
     loadingProcess: boolean = true;
     isDeleteHovered: string = 'inactive';

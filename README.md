@@ -1,26 +1,18 @@
 # BakeryManagerApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
 ## Deployed app
 
 Navigate to `https://johngtka.github.io/BakeryManagerApp/`. The New versions and builds is Deployed every 2 weeks
 
-## Code scaffolding
+## Supported Services
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application is designed to manage the store [Wypiekarnia.com](https://localhost/Wypiekarnia)
 
-## Build
+We have api written on PHP [Bakery-API.com](https://github.com/Johngtka/bakery_api) and developed by Postman
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Database of all services in this project is developed by SQL
 
 ## Further help
 

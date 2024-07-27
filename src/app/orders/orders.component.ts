@@ -2,10 +2,7 @@ import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import { MatPaginator } from '@angular/material/paginator';
-import {
-    MatTableDataSource,
-    MatTableDataSourcePaginator,
-} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { User } from '../models/user';
 import { Order } from '../models/order';
@@ -34,7 +31,7 @@ export class OrdersComponent implements OnInit {
     user!: User;
     orders!: Order[];
     orderId: number[] = [];
-    dataSource!: MatTableDataSource<Order, MatTableDataSourcePaginator>;
+    dataSource!: MatTableDataSource<Order>;
     loadingProcess: boolean = true;
     paginatorStep!: number;
     showEmptyStateForUser: boolean = false;
