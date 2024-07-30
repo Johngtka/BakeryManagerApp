@@ -9,10 +9,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import {
-    MatTableDataSource,
-    MatTableDataSourcePaginator,
-} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { Update } from '../models/update';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
@@ -35,7 +32,7 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
     update!: Update[];
-    dataSource!: MatTableDataSource<Update, MatTableDataSourcePaginator>;
+    dataSource!: MatTableDataSource<Update>;
     isScreenDetected!: boolean;
     loadingProcess: boolean = true;
     displayedColumns: string[] = ['name', 'date', 'description', 'options'];
