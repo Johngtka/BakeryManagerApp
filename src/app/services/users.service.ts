@@ -30,6 +30,7 @@ export class UsersService {
         return this.http.post<Array<Order>>(`${this.apiUrl}`, {
             orderDiscountCode: true,
             code: data.SaleCode,
+            prodName: data.prodName,
         });
     }
 }
