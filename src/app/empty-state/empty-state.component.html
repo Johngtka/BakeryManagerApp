@@ -2,17 +2,21 @@
     <mat-card class="stateCard">
         <mat-card-content>
             <span class="stateTitle"
-                ><mat-icon>{{ icon }}</mat-icon>
+                ><mat-icon class="mainIcon">{{ icon }}</mat-icon>
                 <h1>{{ 'EMPTY_STATE.STATE_TITLE' | translate }}</h1></span
             >
             <mat-divider class="dividers"></mat-divider>
             <p>{{ text | translate }}</p>
             <button
+                mat-fab
+                extended
                 *ngIf="showRefreshButton"
-                mat-raised-button
+                class="refreshButton"
                 (click)="reloadApp()"
             >
-                {{ 'EMPTY_STATE.REFRESH_BUTTON' | translate }}
+                <mat-icon style="margin-right: 10px; font-weight: bolder"
+                    >refresh</mat-icon
+                >{{ 'EMPTY_STATE.REFRESH_BUTTON' | translate }}
             </button>
         </mat-card-content>
     </mat-card>
