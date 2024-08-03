@@ -118,7 +118,6 @@ const materialsModules = [
         CdkTextareaAutosize,
         DatePipe,
         provideHttpClient(withInterceptorsFromDi()),
-        provideHttpClient(withInterceptorsFromDi()),
     ],
 })
 export class AppModule {}
