@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {
     HttpClient,
-    HttpClientModule,
     provideHttpClient,
     withInterceptorsFromDi,
 } from '@angular/common/http';
@@ -99,7 +98,6 @@ const materialsModules = [
     ],
     bootstrap: [AppComponent],
     imports: [
-        HttpClientModule,
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,

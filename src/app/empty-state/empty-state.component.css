@@ -1,32 +1,44 @@
 .stateCard {
-    display: flex;
     width: 50vw;
     height: 50vh;
-    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    border-radius: 20px;
     flex-direction: column;
+    justify-content: center;
 }
 .stateTitle {
     display: flex;
     align-items: center;
 }
 
-.mat-icon {
+.mainIcon {
     font-size: 7vw;
     height: 7vw;
     width: 7vw;
     color: gray;
 }
 
+.refreshButton {
+    color: #000;
+    width: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
 @media screen and (max-width: 900px) {
     .stateCard {
         width: 100vw;
     }
-    .mat-icon {
+    .mainIcon {
         font-size: 20vw;
         width: 20vw;
         height: 20vw;
