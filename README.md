@@ -12,7 +12,7 @@ The application is designed to manage the store [Wypiekarnia.com](https://localh
 
 ## Backend connected Apps
 
-We have api written in PHP [Bakery-API.com](https://github.com/Johngtka/bakery_api/release/latest) which is developed and tested by [Postman](https://www.postman.com/)
+We have api written in PHP [Bakery-API.com](https://github.com/Johngtka/bakery_api/releases/latest) which is developed and tested by [Postman](https://www.postman.com/)
 
 Our Database and another project apps is posted on dev hosting [XAMPP](https://www.apachefriends.org/pl/index.html)
 
