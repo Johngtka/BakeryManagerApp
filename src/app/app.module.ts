@@ -1,4 +1,9 @@
 import { NgModule } from '@angular/core';
+import {
+    NativeDateAdapter,
+    DateAdapter,
+    MAT_DATE_FORMATS,
+} from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -55,6 +60,19 @@ import { ProductInputDialogComponent } from './product-input-dialog/product-inpu
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
 }
+
+export const MY_DATE_FORMATS = {
+    parse: {
+        dateInput: 'LL',
+    },
+    display: {
+        dateInput: 'LL',
+        monthYearLabel: 'MMM YYYY',
+        dateA11yLabel: 'LL',
+        monthYearA11yLabel: 'MMMM YYYY',
+    },
+};
+
 const navigatorLang = navigator.language.split('-')[0];
 const supportedLang = ['pl', 'en'];
 const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'en';
@@ -120,6 +138,8 @@ const materialsModules = [
         CdkTextareaAutosize,
         DatePipe,
         provideHttpClient(withInterceptorsFromDi()),
+        { provide: DateAdapter, useClass: NativeDateAdapter },
+        { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
     ],
 })
 export class AppModule {}

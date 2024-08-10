@@ -1,12 +1,21 @@
-import { Component, Inject, OnInit, HostListener } from '@angular/core';
+import {
+    Component,
+    Inject,
+    OnInit,
+    HostListener,
+    inject,
+    signal,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
 
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Update } from '../models/update';
 import { UpdatesService } from '../services/updates.service';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-update-input-dialog',
@@ -19,7 +28,12 @@ export class UpdateInputDialogComponent implements OnInit {
         private dialogRef: MatDialogRef<UpdateInputDialogComponent>,
         private snackService: SnackService,
         private updateService: UpdatesService,
+        private datePipe: DatePipe,
     ) {}
+
+    private readonly _adapter =
+        inject<DateAdapter<unknown, unknown>>(DateAdapter);
+    private readonly _locale = signal(inject<unknown>(MAT_DATE_LOCALE));
 
     isEdit!: boolean;
     titleText!: string;
@@ -53,11 +67,19 @@ export class UpdateInputDialogComponent implements OnInit {
                 description: new FormControl('', [Validators.required]),
             });
         }
+        this._locale.set('pl');
+        this._adapter.setLocale(this._locale());
         this.originalFormValues = this.registerForm.value;
     }
 
     addUpdate(): void {
         const logFormValues = this.registerForm.value;
+
+        logFormValues.date = this.datePipe.transform(
+            logFormValues.date,
+            'yyyy-MM-dd',
+        );
+
         if (this.isEdit) {
             logFormValues.id = this.data.update.id;
             this.updateService.editUpdate(logFormValues).subscribe({

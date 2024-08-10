@@ -42,6 +42,7 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
     ngOnInit(): void {
         this.getUpdates();
     }
+
     ngAfterViewInit(): void {
         this.observer
             .observe(['(max-width: 1209px)'])
