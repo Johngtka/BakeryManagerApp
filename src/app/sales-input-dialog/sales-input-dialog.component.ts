@@ -1,8 +1,9 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, HostListener, inject, signal } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 import { Sales } from '../models/sales';
@@ -19,7 +20,12 @@ export class SalesInputDialogComponent implements OnInit {
         private dialogRef: MatDialogRef<SalesInputDialogComponent>,
         private salesService: SalesService,
         private snackService: SnackService,
+        private datePipe: DatePipe,
     ) {}
+
+    private readonly _adapter =
+        inject<DateAdapter<unknown, unknown>>(DateAdapter);
+    private readonly _locale = signal(inject<unknown>(MAT_DATE_LOCALE));
 
     titleText!: string;
     buttonText!: string;
@@ -63,11 +69,24 @@ export class SalesInputDialogComponent implements OnInit {
             value: new FormControl('', [Validators.required]),
             saleCode: new FormControl(this.saleCode),
         });
+        this._locale.set('pl');
+        this._adapter.setLocale(this._locale());
         this.originalFormValues = this.registerForm.value;
     }
 
     addSale(): void {
         const saleFormValue = this.registerForm.value;
+
+        saleFormValue.startDate = this.datePipe.transform(
+            saleFormValue.startDate,
+            'yyyy-MM-dd',
+        );
+
+        saleFormValue.endDate = this.datePipe.transform(
+            saleFormValue.endDate,
+            'yyyy-MM-dd',
+        );
+
         this.salesService.postSale(saleFormValue).subscribe({
             next: (newSale) => {
                 this.dialogRef.close(newSale);

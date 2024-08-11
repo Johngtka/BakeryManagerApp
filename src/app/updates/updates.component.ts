@@ -2,8 +2,8 @@ import {
     Component,
     OnInit,
     AfterViewInit,
-    ViewChild,
     HostListener,
+    ViewChild,
 } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 

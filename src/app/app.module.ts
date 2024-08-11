@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import {
-    NativeDateAdapter,
     DateAdapter,
     MAT_DATE_FORMATS,
+    NativeDateAdapter,
 } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -57,10 +57,6 @@ import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dial
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
 
-export function HttpLoaderFactory(httpClient: HttpClient) {
-    return new TranslateHttpLoader(httpClient, './assets/i18n/');
-}
-
 export const MY_DATE_FORMATS = {
     parse: {
         dateInput: 'LL',
@@ -72,6 +68,10 @@ export const MY_DATE_FORMATS = {
         monthYearA11yLabel: 'MMMM YYYY',
     },
 };
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+    return new TranslateHttpLoader(httpClient, './assets/i18n/');
+}
 
 const navigatorLang = navigator.language.split('-')[0];
 const supportedLang = ['pl', 'en'];
