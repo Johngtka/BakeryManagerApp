@@ -1,8 +1,8 @@
 import {
     Component,
-    Inject,
     OnInit,
     HostListener,
+    Inject,
     inject,
     signal,
 } from '@angular/core';
