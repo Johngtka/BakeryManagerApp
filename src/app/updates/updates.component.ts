@@ -29,14 +29,14 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
         private dialog: MatDialog,
     ) {}
 
-    @ViewChild(MatPaginator)
-    paginator!: MatPaginator;
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    logID: number[] = [];
     update!: Update[];
     dataSource!: MatTableDataSource<Update>;
-    isScreenDetected!: boolean;
     loadingProcess: boolean = true;
+    isScreenDetected!: boolean;
     displayedColumns: string[] = ['name', 'date', 'description', 'options'];
-    logID: number[] = [];
+    dialogOpeningDetect: boolean = false;
     showLostConnection!: boolean;
 
     ngOnInit(): void {
@@ -77,6 +77,11 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
             },
             disableClose: true,
         });
+
+        dialogRef.afterOpened().subscribe(() => {
+            this.dialogOpeningDetect = true;
+        });
+
         dialogRef.afterClosed().subscribe((result: Update) => {
             if (result) {
                 this.getUpdates();
@@ -86,6 +91,10 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
 
     @HostListener('document:keydown', ['$event'])
     handleKeyEvent(event: KeyboardEvent): void {
+        if (this.dialogOpeningDetect) {
+            return;
+        }
+
         if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
             this.paginator.nextPage();
         } else if (

@@ -91,6 +91,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
         'description',
         'options',
     ];
+    dialogOpeningDetect: boolean = false;
     isScreenDetected!: boolean;
     showLostConnection!: boolean;
 
@@ -132,6 +133,11 @@ export class ProductsComponent implements OnInit, AfterViewInit {
             },
             disableClose: true,
         });
+
+        dialogRef.afterOpened().subscribe(() => {
+            this.dialogOpeningDetect = true;
+        });
+
         dialogRef.afterClosed().subscribe((result: Product) => {
             if (result) {
                 this.getProducts();
@@ -184,6 +190,10 @@ export class ProductsComponent implements OnInit, AfterViewInit {
 
     @HostListener('document:keydown', ['$event'])
     handleKeyEvent(event: KeyboardEvent): void {
+        if (this.dialogOpeningDetect) {
+            return;
+        }
+
         if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
             this.paginator.nextPage();
         } else if (
