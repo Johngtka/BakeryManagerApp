@@ -1,9 +1,4 @@
 import { NgModule } from '@angular/core';
-import {
-    DateAdapter,
-    MAT_DATE_FORMATS,
-    NativeDateAdapter,
-} from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +12,11 @@ import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {
+    DateAdapter,
+    MAT_DATE_FORMATS,
+    NativeDateAdapter,
+} from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
