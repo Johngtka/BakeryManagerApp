@@ -142,6 +142,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
             if (result) {
                 this.getProducts();
             }
+            this.dialogOpeningDetect = false;
         });
     }
 

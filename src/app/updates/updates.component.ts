@@ -86,6 +86,7 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
             if (result) {
                 this.getUpdates();
             }
+            this.dialogOpeningDetect = false;
         });
     }
 
