@@ -29,7 +29,7 @@
                 {{ 'SALES_TABLE.COLUMNS.START_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.StartDate | date: 'dd.MM.yyyy' }}
+                {{ element.StartDate | date : 'dd.MM.yyyy' }}
             </td>
         </ng-container>
 
@@ -40,9 +40,9 @@
             <td mat-cell *matCellDef="let element">
                 <span
                     [ngClass]="{
-                        greenData: (element.EndDate | salesDate) >= 5,
-                        orangeData: (element.EndDate | salesDate) <= 4,
-                        redData: (element.EndDate | salesDate) < 1
+                        greenDate: (element.EndDate | salesDate) >= 5,
+                        orangeDate: (element.EndDate | salesDate) <= 4,
+                        redDate: (element.EndDate | salesDate) < 1
                     }"
                 >
                     {{ element.EndDate | salesDate }}

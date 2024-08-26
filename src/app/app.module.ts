@@ -12,6 +12,11 @@ import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {
+    DateAdapter,
+    MAT_DATE_FORMATS,
+    NativeDateAdapter,
+} from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -28,6 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateLoader } from '@ngx-translate/core';
@@ -51,9 +57,22 @@ import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dial
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
 
+export const MY_DATE_FORMATS = {
+    parse: {
+        dateInput: 'LL',
+    },
+    display: {
+        dateInput: 'LL',
+        monthYearLabel: 'MMM YYYY',
+        dateA11yLabel: 'LL',
+        monthYearA11yLabel: 'MMMM YYYY',
+    },
+};
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
 }
+
 const navigatorLang = navigator.language.split('-')[0];
 const supportedLang = ['pl', 'en'];
 const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'en';
@@ -66,6 +85,7 @@ const materialsModules = [
     MatStepperModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatDatepickerModule,
     MatProgressSpinnerModule,
     MatMenuModule,
     MatSidenavModule,
@@ -118,6 +138,8 @@ const materialsModules = [
         CdkTextareaAutosize,
         DatePipe,
         provideHttpClient(withInterceptorsFromDi()),
+        { provide: DateAdapter, useClass: NativeDateAdapter },
+        { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
     ],
 })
 export class AppModule {}

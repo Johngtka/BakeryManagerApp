@@ -10,26 +10,33 @@
                     }}</mat-label>
                     <input matInput formControlName="name" tabindex="1" />
                 </mat-form-field>
+
                 <mat-form-field appearance="fill">
                     <mat-label>{{
                         'UPDATE_DIALOG.FORM.DATE' | translate
                     }}</mat-label>
                     <input
                         matInput
-                        type="date"
-                        formControlName="date"
                         tabindex="2"
+                        formControlName="date"
+                        [matDatepicker]="publishedUpdateDate"
                     />
+                    <mat-datepicker-toggle
+                        matIconSuffix
+                        [for]="publishedUpdateDate"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #publishedUpdateDate></mat-datepicker>
                 </mat-form-field>
+
                 <mat-form-field appearance="fill">
                     <mat-label>{{
                         'UPDATE_DIALOG.FORM.DESCRIPTION' | translate
                     }}</mat-label>
                     <textarea
-                        matInput
-                        formControlName="description"
-                        tabindex="3"
                         class="descriptions"
+                        matInput
+                        tabindex="3"
+                        formControlName="description"
                         cdkTextareaAutosize
                         #autosize="cdkTextareaAutosize"
                     ></textarea>

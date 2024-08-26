@@ -21,13 +21,31 @@
                     <mat-label>{{
                         'SALES_DIALOG.FORM.START_DATE' | translate
                     }}</mat-label>
-                    <input matInput type="date" formControlName="startDate" />
+                    <input
+                        matInput
+                        formControlName="startDate"
+                        [matDatepicker]="saleStartDate"
+                    />
+                    <mat-datepicker-toggle
+                        matIconSuffix
+                        [for]="saleStartDate"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #saleStartDate></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field appearance="fill" tabindex="3">
                     <mat-label>{{
                         'SALES_DIALOG.FORM.END_DATE' | translate
                     }}</mat-label>
-                    <input matInput type="date" formControlName="endDate" />
+                    <input
+                        matInput
+                        formControlName="endDate"
+                        [matDatepicker]="saleEndDate"
+                    />
+                    <mat-datepicker-toggle
+                        matIconSuffix
+                        [for]="saleEndDate"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #saleEndDate></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field appearance="fill" tabindex="4">
                     <mat-label>{{
