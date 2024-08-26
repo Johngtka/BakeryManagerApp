@@ -9,6 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Sales } from '../models/sales';
 import { SalesService } from '../services/sales.service';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
+import { SalesProductsList } from '../models/sales-products-list';
 
 @Component({
     selector: 'app-sales-input-dialog',
@@ -32,32 +33,7 @@ export class SalesInputDialogComponent implements OnInit {
     registerForm!: FormGroup;
     originalFormValues!: Sales;
     saleCode: string = this.generateRandomString(8);
-    productsList: string[] = [
-        'Tort Urodzinowy',
-        'Tort dla Smakoszy',
-        'Tort Jubileuszowy',
-        'Tort Ślubny',
-        'Ciasto Drożdżowe',
-        'Ciasto Sernik',
-        'Ciasto Browne',
-        'Ciasto Dziecięce',
-        'Tarta jabłkowa na mlecznym kremie',
-        'Tarta wiosenna',
-        'Tarta czekoladowo-orzechowa',
-        'Tarta malinowa',
-        'Ciasteczka Amerykańskie',
-        'Ciasteczka Ziarna w Karmelu',
-        'Ciasteczka owsiane z bakaliami',
-        'Ciasteczka Cantuccini',
-        'Bułka Przenna',
-        'Bułka Kajzerka',
-        'Bułka Razowa',
-        'Bułka Ziarnista',
-        'Babeczka Czekoladowa Biała',
-        'Babeczka Czekoladowa Czarna',
-        'Babeczka Malinowa',
-        'Babeczka Sezonowa',
-    ];
+    productsList: SalesProductsList[] = [];
 
     ngOnInit(): void {
         this.titleText = 'SALES_DIALOG.INFO.NEW_SALE_TITLE';
@@ -72,6 +48,15 @@ export class SalesInputDialogComponent implements OnInit {
         this._locale.set('pl');
         this._adapter.setLocale(this._locale());
         this.originalFormValues = this.registerForm.value;
+
+        this.salesService.getListOfProducts().subscribe({
+            next: (data) => {
+                this.productsList = data;
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
     }
 
     addSale(): void {
