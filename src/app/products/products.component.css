@@ -40,3 +40,11 @@
         font-size: x-small;
     }
 }
+
+.components{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size:xx-small;
+  font-weight: bold;
+  text-transform: uppercase;
+}

@@ -17,7 +17,8 @@
                 {{ 'PRODUCT_TABLE.COLUMNS.NAME' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.name }}
+                <span *ngIf="!isScreenDetected">{{ element.name }}</span>
+                <span *ngIf="isScreenDetected">{{ element.name }}</span>
             </td>
         </ng-container>
 
@@ -32,11 +33,11 @@
         </ng-container>
 
         <ng-container matColumnDef="components">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef [hidden]="isScreenDetected">
                 {{ 'PRODUCT_TABLE.COLUMNS.COMPONENTS' | translate }}
             </th>
-            <td mat-cell *matCellDef="let element">
-                {{ element.components }}
+            <td mat-cell *matCellDef="let element" [hidden]="isScreenDetected">
+                <p class="components">{{ element.components }}</p>
             </td>
         </ng-container>
 
