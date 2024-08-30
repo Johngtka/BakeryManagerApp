@@ -41,10 +41,10 @@
     }
 }
 
-.components{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size:xx-small;
-  font-weight: bold;
-  text-transform: uppercase;
+.components {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: xx-small;
+    font-weight: bold;
+    text-transform: uppercase;
 }

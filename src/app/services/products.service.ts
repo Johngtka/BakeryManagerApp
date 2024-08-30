@@ -27,8 +27,8 @@ export class ProductsService {
             name: data.name,
             price: data.price,
             weight: data.weight,
+            recipe: data.recipe,
             components: data.components,
-            description: data.description,
         });
     }
 
@@ -39,8 +39,8 @@ export class ProductsService {
             name: data.name,
             price: data.price,
             weight: data.weight,
+            recipe: data.recipe,
             components: data.components,
-            description: data.description,
         });
     }
 

@@ -18,7 +18,11 @@
             </th>
             <td mat-cell *matCellDef="let element">
                 <span *ngIf="!isScreenDetected">{{ element.name }}</span>
-                <span *ngIf="isScreenDetected">{{ element.name }}</span>
+                <span
+                    *ngIf="isScreenDetected"
+                    (click)="openRecipeOnMobile(element)"
+                    >{{ element.name }}</span
+                >
             </td>
         </ng-container>
 
@@ -41,12 +45,19 @@
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="description">
+        <ng-container matColumnDef="realization">
             <th mat-header-cell *matHeaderCellDef class="onPhone">
-                {{ 'PRODUCT_TABLE.COLUMNS.DESCRIPTION' | translate }}
+                {{ 'PRODUCT_TABLE.COLUMNS.REALIZATION' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.description }}
+                <a
+                    color="primary"
+                    (click)="openRecipeOnMobile(element)"
+                    disabled="{{ !prodID.includes(element.id) }}"
+                    mat-stroked-button
+                >
+                    {{ 'PRODUCT_TABLE.RECIPE_BUTTON' | translate }}
+                </a>
             </td>
         </ng-container>
 
@@ -101,8 +112,8 @@
     <mat-paginator
         *ngIf="!isScreenDetected"
         class="paginator"
-        [pageSizeOptions]="[8]"
         aria-label="Select page"
+        [pageSizeOptions]="[8]"
     >
     </mat-paginator>
 </div>
@@ -111,28 +122,40 @@
     <mat-paginator
         *ngIf="isScreenDetected"
         class="paginator"
-        [pageSizeOptions]="[5]"
         aria-label="Select page"
+        [pageSizeOptions]="[5]"
     >
     </mat-paginator>
 </div>
 
 <div *ngIf="!showLostConnection" class="controlPanel">
     <button
-        mat-raised-button
-        (click)="openDialog()"
-        class="mat-elevation-z8"
         color="primary"
+        class="mat-elevation-z8"
+        (click)="openDialog()"
+        mat-raised-button
     >
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
+
     <button
+        color="accent"
+        class="mat-elevation-z8"
+        (click)="selectAll()"
+        [hidden]="isScreenDetected"
         mat-stroked-button
+    >
+        <mat-icon>checklist</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.SELECT_ALL' | translate }}</span>
+    </button>
+
+    <button
+        color="warn"
+        class="mat-elevation-z8"
         (click)="clearSelect()"
         [disabled]="prodID.length < 1"
-        class="mat-elevation-z8"
-        color="warn"
+        mat-stroked-button
     >
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>

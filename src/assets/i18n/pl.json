@@ -45,7 +45,8 @@
         "ADD": "Dodaj",
         "EDIT": "Edytuj",
         "DELETE": "Usuń",
-        "CLEAR": "Wyczyść"
+        "CLEAR": "Wyczyść",
+        "SELECT_ALL": "Wybierz Wszystko"
     },
     "TABLES": {
         "OPTIONS_COLUMN": "Opcje"
@@ -81,8 +82,9 @@
             "NAME": "Nazwa",
             "UNIT_PRICE": "Cena i Waga",
             "COMPONENTS": "Składniki",
-            "DESCRIPTION": "Opis"
-        }
+            "REALIZATION": "Wykonanie"
+        },
+        "RECIPE_BUTTON": "Wyświetl Przepis"
     },
     "SALES_TABLE": {
         "COLUMNS": {
@@ -135,7 +137,7 @@
             "PRICE": "Cena (gr/zł)",
             "WEIGHT": "Waga (g)",
             "COMPONENTS": "Składniki",
-            "DESCRIPTION": "Opis"
+            "REALIZATION": "Przepis"
         }
     },
     "SALES_DIALOG": {

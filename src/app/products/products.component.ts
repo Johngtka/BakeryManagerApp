@@ -88,7 +88,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
         'name',
         'unitPrice',
         'components',
-        'description',
+        'realization',
         'options',
     ];
     dialogOpeningDetect: boolean = false;
@@ -113,6 +113,14 @@ export class ProductsComponent implements OnInit, AfterViewInit {
 
     clearSelect(): void {
         this.prodID = [];
+    }
+
+    selectAll(): void {
+        this.prodID = this.dataSource.data.map((item) => item.id);
+    }
+
+    openRecipeOnMobile(data: Product) {
+        window.open(data.recipe, '_blank');
     }
 
     clickedRow(row: Product): void {
