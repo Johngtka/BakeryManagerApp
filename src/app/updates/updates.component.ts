@@ -61,6 +61,10 @@ export class UpdatesComponent implements AfterViewInit, OnInit {
         this.logID = [];
     }
 
+    selectAll(): void {
+        this.logID = this.dataSource.data.map((item) => item.id);
+    }
+
     clickedRow(row: Update): void {
         const ID = this.logID.indexOf(row.id);
         if (ID !== -1) {

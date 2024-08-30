@@ -27,7 +27,7 @@
                 {{ 'UPDATES_TABLE.COLUMNS.DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.date | date: 'dd.MM.y' }}
+                {{ element.date | date : 'dd.MM.y' }}
             </td>
         </ng-container>
 
@@ -36,7 +36,7 @@
                 {{ 'UPDATES_TABLE.COLUMNS.DESCRIPTION' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.description | updateDesc: 'br' }}
+                {{ element.description | updateDesc : 'br' }}
             </td>
         </ng-container>
 
@@ -91,6 +91,17 @@
     >
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
+    </button>
+
+    <button
+        color="accent"
+        class="mat-elevation-z8"
+        (click)="selectAll()"
+        [hidden]="isScreenDetected"
+        mat-stroked-button
+    >
+        <mat-icon>checklist</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.SELECT_ALL' | translate }}</span>
     </button>
 
     <button
