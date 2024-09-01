@@ -9,7 +9,7 @@ export class PricePipe implements PipeTransform {
         if (priceProduct > 1) {
             return value + 'zł';
         } else if (priceProduct < 1) {
-            return '80gr';
+            return value.toString().replace(/^0\./, '') + 'gr';
         } else {
             return '';
         }
