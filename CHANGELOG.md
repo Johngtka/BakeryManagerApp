@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.10...v0.0.11) (2024-09-01)
+
+
+### Features
+
+* changed datepickers in Updates and Sales forms ([#34](https://github.com/Johngtka/BakeryManagerApp/issues/34)) ([097b566](https://github.com/Johngtka/BakeryManagerApp/commit/097b566650612dae275634d9c56aca58cd743906))
+* new functionality of sales and products like ( realistic data, recipe link and select all button etc.) ([#35](https://github.com/Johngtka/BakeryManagerApp/issues/35)) ([863e6f2](https://github.com/Johngtka/BakeryManagerApp/commit/863e6f2c202b63c2f8b0e312b3b0e30034b34371))
+
 ### [0.0.10](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.9...v0.0.10) (2024-08-04)
 
 ### Features
