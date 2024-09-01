@@ -2,25 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.11](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.10...v0.0.11) (2024-09-01)
-
-
-### Features
-
-* changed datepickers in Updates and Sales forms ([#34](https://github.com/Johngtka/BakeryManagerApp/issues/34)) ([097b566](https://github.com/Johngtka/BakeryManagerApp/commit/097b566650612dae275634d9c56aca58cd743906))
-* new functionality of sales and products like ( realistic data, recipe link and select all button etc.) ([#35](https://github.com/Johngtka/BakeryManagerApp/issues/35)) ([863e6f2](https://github.com/Johngtka/BakeryManagerApp/commit/863e6f2c202b63c2f8b0e312b3b0e30034b34371))
-
 ### [0.0.10](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.9...v0.0.10) (2024-08-04)
 
-
 ### Features
 
-* Code fixes and organization with better Server Error Handling on the client side ([#30](https://github.com/Johngtka/BakeryManagerApp/issues/30)) ([1bbf799](https://github.com/Johngtka/BakeryManagerApp/commit/1bbf79911957a3ab1f964d65dc431a0d104f841c))
-
+-   Code fixes and organization with better Server Error Handling on the client side ([#30](https://github.com/Johngtka/BakeryManagerApp/issues/30)) ([1bbf799](https://github.com/Johngtka/BakeryManagerApp/commit/1bbf79911957a3ab1f964d65dc431a0d104f841c))
 
 ### Bug Fixes
 
-* posting new argument to check the order discount code and product name in API ([#32](https://github.com/Johngtka/BakeryManagerApp/issues/32)) ([9e0b741](https://github.com/Johngtka/BakeryManagerApp/commit/9e0b74137cd65fc0e0f40f5b1b6141393cea8244))
+-   posting new argument to check the order discount code and product name in API ([#32](https://github.com/Johngtka/BakeryManagerApp/issues/32)) ([9e0b741](https://github.com/Johngtka/BakeryManagerApp/commit/9e0b74137cd65fc0e0f40f5b1b6141393cea8244))
 
 ### [0.0.9](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.8...v0.0.9) (2024-07-16)
 
