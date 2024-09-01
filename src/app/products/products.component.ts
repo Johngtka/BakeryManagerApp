@@ -100,15 +100,17 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.observer.observe(['(max-width: 960px)']).subscribe((isMatches) => {
-            if (isMatches.matches) {
-                this.isScreenDetected = true;
-                this.getProducts();
-            } else {
-                this.isScreenDetected = false;
-                this.getProducts();
-            }
-        });
+        this.observer
+            .observe(['(max-width: 1559px)'])
+            .subscribe((isMatches) => {
+                if (isMatches.matches) {
+                    this.isScreenDetected = true;
+                    this.getProducts();
+                } else {
+                    this.isScreenDetected = false;
+                    this.getProducts();
+                }
+            });
     }
 
     clearSelect(): void {
