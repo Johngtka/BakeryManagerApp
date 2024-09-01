@@ -11,9 +11,9 @@
                     <mat-select formControlName="productName">
                         <mat-option
                             *ngFor="let product of productsList"
-                            [value]="product"
+                            [value]="product.name"
                         >
-                            {{ product }}</mat-option
+                            {{ product.name }}</mat-option
                         >
                     </mat-select>
                 </mat-form-field>

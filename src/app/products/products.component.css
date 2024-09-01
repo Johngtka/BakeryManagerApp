@@ -12,8 +12,9 @@
     width: 30%;
 }
 
-.mat-column-description {
-    width: 20%;
+.mat-column-realization {
+    text-align: center;
+    width: 10%;
 }
 
 .mat-column-options {
@@ -35,8 +36,12 @@
     .mat-column-components {
         font-size: x-small;
     }
+}
 
-    .mat-column-description {
-        font-size: x-small;
-    }
+.components {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: xx-small;
+    font-weight: bold;
+    text-transform: uppercase;
 }

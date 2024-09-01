@@ -94,6 +94,17 @@
     </button>
 
     <button
+        color="accent"
+        class="mat-elevation-z8"
+        (click)="selectAll()"
+        [hidden]="isScreenDetected"
+        mat-stroked-button
+    >
+        <mat-icon>checklist</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.SELECT_ALL' | translate }}</span>
+    </button>
+
+    <button
         mat-stroked-button
         (click)="clearSelect()"
         [disabled]="logID.length < 1"

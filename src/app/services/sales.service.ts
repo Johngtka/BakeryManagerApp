@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { Sales } from '../models/sales';
 import { environment } from 'src/environments/environment';
+import { SalesProductsList } from '../models/sales-products-list';
 
 @Injectable({
     providedIn: 'root',
@@ -17,6 +18,12 @@ export class SalesService {
     getSales(): Observable<Array<Sales>> {
         return this.http.post<Array<Sales>>(`${this.apiUrl}`, {
             getSales: true,
+        });
+    }
+
+    getListOfProducts(): Observable<Array<SalesProductsList>> {
+        return this.http.post<Array<SalesProductsList>>(`${this.apiUrl}`, {
+            getListOfProducts: true,
         });
     }
 

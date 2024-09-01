@@ -88,7 +88,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
         'name',
         'unitPrice',
         'components',
-        'description',
+        'realization',
         'options',
     ];
     dialogOpeningDetect: boolean = false;
@@ -100,19 +100,29 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.observer.observe(['(max-width: 960px)']).subscribe((isMatches) => {
-            if (isMatches.matches) {
-                this.isScreenDetected = true;
-                this.getProducts();
-            } else {
-                this.isScreenDetected = false;
-                this.getProducts();
-            }
-        });
+        this.observer
+            .observe(['(max-width: 1559px)'])
+            .subscribe((isMatches) => {
+                if (isMatches.matches) {
+                    this.isScreenDetected = true;
+                    this.getProducts();
+                } else {
+                    this.isScreenDetected = false;
+                    this.getProducts();
+                }
+            });
     }
 
     clearSelect(): void {
         this.prodID = [];
+    }
+
+    selectAll(): void {
+        this.prodID = this.dataSource.data.map((item) => item.id);
+    }
+
+    openRecipeOnMobile(data: Product) {
+        window.open(data.recipe, '_blank');
     }
 
     clickedRow(row: Product): void {

@@ -50,8 +50,8 @@ export class ProductInputDialogComponent implements OnInit {
                 weight: new FormControl(this.data.product.weight, [
                     Validators.required,
                 ]),
+                recipe: new FormControl(this.data.product.recipe),
                 components: new FormControl(this.data.product.components),
-                description: new FormControl(this.data.product.description),
             });
         } else {
             this.isEdit = false;
@@ -61,8 +61,8 @@ export class ProductInputDialogComponent implements OnInit {
                 name: new FormControl('', [Validators.required]),
                 price: new FormControl('', [Validators.required]),
                 weight: new FormControl('', [Validators.required]),
+                recipe: new FormControl(''),
                 components: new FormControl(''),
-                description: new FormControl(''),
             });
         }
         this.originalFormValues = this.registerForm.value;

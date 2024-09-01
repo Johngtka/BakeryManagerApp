@@ -45,7 +45,8 @@
         "ADD": "Add",
         "EDIT": "Edit",
         "DELETE": "Delete",
-        "CLEAR": "Clear"
+        "CLEAR": "Clear",
+        "SELECT_ALL": "Wybierz Wszystko"
     },
     "TABLES": {
         "OPTIONS_COLUMN": "Options"
@@ -81,8 +82,9 @@
             "NAME": "Name",
             "UNIT_PRICE": "Price & Weight",
             "COMPONENTS": "Components",
-            "DESCRIPTION": "Description"
-        }
+            "REALIZATION": "Realization"
+        },
+        "RECIPE_BUTTON": "Recipe"
     },
     "SALES_TABLE": {
         "COLUMNS": {
@@ -135,7 +137,7 @@
             "PRICE": "Price (gr/zł)",
             "WEIGHT": "Weight (g)",
             "COMPONENTS": "Components",
-            "DESCRIPTION": "Description"
+            "REALIZATION": "Show Recipe"
         }
     },
     "SALES_DIALOG": {
