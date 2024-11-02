@@ -119,3 +119,16 @@ span {
     width: 100%;
     display: block;
 }
+
+.loginPage{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-card{
+  width: 50%;
+  padding: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -23,6 +23,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     dayScopeValue!: string | number;
     isMobileDetected = false;
     monthScopeValue!: string | number;
+    showEmployersLoginPage = true;
 
     ngOnInit(): void {
         this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {
@@ -55,5 +56,9 @@ export class AppComponent implements AfterViewInit, OnInit {
                     this.sidenav.open();
                 }
             });
+    }
+
+    logEmployer() {
+        this.showEmployersLoginPage = false;
     }
 }
