@@ -29,19 +29,51 @@
             <span>{{ 'APP.TITLE' | translate }}</span>
         </div>
         <mat-divider class="dividers"> </mat-divider>
-        <button mat-button routerLink="/home" class="menu-button">
+        <button
+            mat-button
+            routerLink="/home"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>home</mat-icon>
             <span>{{ 'MENU.HOME' | translate }}</span>
         </button>
-        <button mat-button routerLink="/updates" class="menu-button">
+        <button
+            mat-button
+            routerLink="/updates"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>file_upload</mat-icon>
             <span>{{ 'MENU.UPDATES' | translate }}</span>
         </button>
-        <button mat-button routerLink="/sales" class="menu-button">
+        <button
+            mat-button
+            routerLink="/sales"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>add_to_queue</mat-icon>
             <span>{{ 'MENU.SALES' | translate }}</span>
         </button>
-        <button mat-button routerLink="/products" class="menu-button">
+        <button
+            mat-button
+            routerLink="/products"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>storage</mat-icon>
             <span>{{ 'MENU.PRODUCTS' | translate }}</span>
         </button>
@@ -51,6 +83,10 @@
             class="menu-button"
             target="_blank"
             href="https://github.com/Johngtka/BakeryManagerApp/releases/latest"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
         >
             <mat-icon>new_releases</mat-icon>
             <span>V.{{ version }}</span>
@@ -62,9 +98,7 @@
             <div class="appContent">
                 <div class="loginPage" *ngIf="showEmployersLoginPage">
                     <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>Logowanie</mat-card-title>
-                        </mat-card-header>
+                        <mat-card-title>Logowanie</mat-card-title>
                         <mat-card-content> Text content </mat-card-content>
                         <mat-card-footer
                             ><button
