@@ -128,7 +128,24 @@ span {
 
 mat-card{
   width: 50%;
-  padding: 10%;
+  padding: 5%;
   margin-left: auto;
   margin-right: auto;
+}
+
+mat-card-content{
+  padding: 10%;
+  padding-bottom: 5%;
+}
+
+@media screen and (max-width: 500px){
+  mat-card{
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  mat-card{
+    width: 80%;
+  }
 }

@@ -163,5 +163,13 @@
     "APP_FOOTER": {
         "FOOTER_CONTENT": "Wersja:",
         "FOOTER_RIGHTS": "Wszelkie prawa zastrzeżone"
+    },
+    "EMPLOYERS_FORM":{
+      "FORM_HEADER": "Logowanie Pracownika",
+      "FORM_BUTTON":"Zaloguj",
+      "FORM_FIELDS":{
+        "LOGIN": "Login",
+        "PASSWORD": "Hasło"
+      }
     }
 }
