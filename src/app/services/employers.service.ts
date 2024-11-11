@@ -10,5 +10,15 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root',
 })
 export class EmployersService {
-    constructor() {}
+    constructor(private http: HttpClient) {}
+
+    private apiURL = environment.API_URL;
+
+    employerLogin(data: Employers): Observable<Array<Employers>> {
+        return this.http.post<Array<Employers>>(`${this.apiURL}`, {
+            empLog: true,
+            employerLogin: data.login,
+            employerPassword: data.password,
+        });
+    }
 }
