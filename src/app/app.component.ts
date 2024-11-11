@@ -1,4 +1,10 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    AfterViewInit,
+    ViewChild,
+    HostListener,
+} from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { FormControl } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
@@ -9,6 +15,7 @@ import { delay } from 'rxjs/operators';
 import { Employers } from './models/employers';
 import { environment } from 'src/environments/environment';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { EmployersService } from './services/employers.service';
 
 @UntilDestroy()
 @Component({
@@ -17,7 +24,10 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit, OnInit {
-    constructor(private observer: BreakpointObserver) {}
+    constructor(
+        private observer: BreakpointObserver,
+        private employersService: EmployersService,
+    ) {}
 
     @ViewChild(MatSidenav) sidenav!: MatSidenav;
     date = new Date();
@@ -69,7 +79,20 @@ export class AppComponent implements AfterViewInit, OnInit {
     }
 
     logEmployer() {
-        this.showEmployersLoginPage = false;
+        const loginFormValue = this.employersForm.value;
+
+        this.employersService.employerLogin(loginFormValue).subscribe({
+            next: (data) => {
+                console.log(data);
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
+
+        setTimeout(() => {
+            this.showEmployersLoginPage = false;
+        }, 4000);
     }
 
     hasChange(): boolean | void {
@@ -77,5 +100,12 @@ export class AppComponent implements AfterViewInit, OnInit {
             JSON.stringify(this.employersForm.value) !==
             JSON.stringify(this.originalFormValues)
         );
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'Enter' && this.employersForm.valid) {
+            this.logEmployer();
+        }
     }
 }
