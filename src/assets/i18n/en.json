@@ -14,12 +14,13 @@
         "CLOSE": "Close"
     },
     "SUCCESS": {
+        "SALE_ADD": "Successfully added new sale to database, thanks",
         "UPDATE_LOG_ADD": "Successfully added new log to database. thanks",
         "UPDATE_LOG_EDIT": "Successfully updated log in database, thanks",
         "PRODUCT_ADDED": "Successfully added new product to database, thanks",
         "PRODUCT_EDITED": "Successfully changed product data in database, thanks",
         "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
-        "SALE_ADD": "Successfully added new sale to database, thanks"
+        "EMPLOYER_LOGIN": "Successfully logged into the system, welcome"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "An error occurred while getting users from the database!!!",
@@ -33,7 +34,8 @@
         "SALES_GETTING_ERROR": "An error occurred while getting sales list from database!!!",
         "SALES_ADD_ERROR": "An error occurred while adding new sale to the database!!!",
         "SALES_DELETE_ERROR": "An error occurred while trying to delete sale from database!!!",
-        "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!"
+        "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!",
+        "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",

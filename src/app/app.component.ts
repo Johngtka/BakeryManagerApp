@@ -14,6 +14,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { delay } from 'rxjs/operators';
 import { Employers } from './models/employers';
 import { environment } from 'src/environments/environment';
+import { SnackService, SNACK_TYPE } from './services/snack.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { EmployersService } from './services/employers.service';
 
@@ -26,6 +27,7 @@ import { EmployersService } from './services/employers.service';
 export class AppComponent implements AfterViewInit, OnInit {
     constructor(
         private observer: BreakpointObserver,
+        private snackService: SnackService,
         private employersService: EmployersService,
     ) {}
 
@@ -83,16 +85,24 @@ export class AppComponent implements AfterViewInit, OnInit {
 
         this.employersService.employerLogin(loginFormValue).subscribe({
             next: (data) => {
-                console.log(data);
+                if (data.length === 1) {
+                    this.snackService.showSnackBar(
+                        'SUCCESS.EMPLOYER_LOGIN',
+                        SNACK_TYPE.success,
+                    );
+                    setTimeout(() => {
+                        this.showEmployersLoginPage = false;
+                    }, 3500);
+                }
             },
             error: (err) => {
+                this.snackService.showSnackBar(
+                    'ERRORS.EMPLOYER_LOGIN_ERROR',
+                    SNACK_TYPE.error,
+                );
                 console.log(err);
             },
         });
-
-        setTimeout(() => {
-            this.showEmployersLoginPage = false;
-        }, 4000);
     }
 
     hasChange(): boolean | void {
