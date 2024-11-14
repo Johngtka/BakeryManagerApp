@@ -86,7 +86,7 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.loadingProcess = true;
         this.employersService.employerLogin(loginFormValue).subscribe({
             next: (data) => {
-                if (data.length === 1) {
+                if (data) {
                     this.snackService.showSnackBar(
                         'SUCCESS.EMPLOYER_LOGIN',
                         SNACK_TYPE.success,
