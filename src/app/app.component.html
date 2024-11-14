@@ -104,8 +104,18 @@
                             </h1>
                             <mat-divider class="dividers"> </mat-divider>
                         </mat-card-title>
+
+                        <div class="loginLoading" *ngIf="loadingProcess">
+                            <mat-spinner></mat-spinner>
+                        </div>
+
                         <mat-card-content
-                            ><form [formGroup]="employersForm">
+                            ><form
+                                [ngClass]="{
+                                    tempDisableLoginForm: loadingProcess
+                                }"
+                                [formGroup]="employersForm"
+                            >
                                 <div class="col-wrapper">
                                     <div class="col">
                                         <mat-form-field appearance="fill">
@@ -133,8 +143,9 @@
                                             />
                                         </mat-form-field>
                                     </div>
-                                </div></form
-                        ></mat-card-content>
+                                </div>
+                            </form>
+                        </mat-card-content>
                         <mat-card-footer
                             ><button
                                 mat-raised-button
@@ -143,7 +154,9 @@
                                 cdkFocusInitial
                                 (click)="logEmployer()"
                                 [disabled]="
-                                    !hasChange() || !employersForm.valid
+                                    !hasChange() ||
+                                    !employersForm.valid ||
+                                    loadingProcess
                                 "
                                 style="
                                     font-size: xx-large;

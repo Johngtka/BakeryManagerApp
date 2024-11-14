@@ -41,6 +41,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     monthScopeValue!: string | number;
     originalFormValues!: Employers;
     showEmployersLoginPage = true;
+    loadingProcess = false;
 
     ngOnInit(): void {
         this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {
@@ -82,7 +83,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
     logEmployer() {
         const loginFormValue = this.employersForm.value;
-
+        this.loadingProcess = true;
         this.employersService.employerLogin(loginFormValue).subscribe({
             next: (data) => {
                 if (data.length === 1) {
@@ -91,6 +92,7 @@ export class AppComponent implements AfterViewInit, OnInit {
                         SNACK_TYPE.success,
                     );
                     setTimeout(() => {
+                        this.loadingProcess = false;
                         this.showEmployersLoginPage = false;
                     }, 3500);
                 }
@@ -100,6 +102,12 @@ export class AppComponent implements AfterViewInit, OnInit {
                     'ERRORS.EMPLOYER_LOGIN_ERROR',
                     SNACK_TYPE.error,
                 );
+
+                setTimeout(() => {
+                    this.loadingProcess = false;
+                    this.showEmployersLoginPage = true;
+                }, 3500);
+
                 console.log(err);
             },
         });
