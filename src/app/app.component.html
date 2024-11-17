@@ -29,19 +29,51 @@
             <span>{{ 'APP.TITLE' | translate }}</span>
         </div>
         <mat-divider class="dividers"> </mat-divider>
-        <button mat-button routerLink="/home" class="menu-button">
+        <button
+            mat-button
+            routerLink="/home"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>home</mat-icon>
             <span>{{ 'MENU.HOME' | translate }}</span>
         </button>
-        <button mat-button routerLink="/updates" class="menu-button">
+        <button
+            mat-button
+            routerLink="/updates"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>file_upload</mat-icon>
             <span>{{ 'MENU.UPDATES' | translate }}</span>
         </button>
-        <button mat-button routerLink="/sales" class="menu-button">
+        <button
+            mat-button
+            routerLink="/sales"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>add_to_queue</mat-icon>
             <span>{{ 'MENU.SALES' | translate }}</span>
         </button>
-        <button mat-button routerLink="/products" class="menu-button">
+        <button
+            mat-button
+            routerLink="/products"
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
+        >
             <mat-icon>storage</mat-icon>
             <span>{{ 'MENU.PRODUCTS' | translate }}</span>
         </button>
@@ -51,6 +83,10 @@
             class="menu-button"
             target="_blank"
             href="https://github.com/Johngtka/BakeryManagerApp/releases/latest"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage
+            }"
         >
             <mat-icon>new_releases</mat-icon>
             <span>V.{{ version }}</span>
@@ -60,7 +96,83 @@
     <mat-sidenav-content>
         <div class="content">
             <div class="appContent">
-                <router-outlet></router-outlet>
+                <div class="loginPage" *ngIf="showEmployersLoginPage">
+                    <mat-card>
+                        <mat-card-title
+                            ><h1>
+                                {{ 'EMPLOYERS_FORM.FORM_HEADER' | translate }}
+                            </h1>
+                            <mat-divider class="dividers"> </mat-divider>
+                        </mat-card-title>
+
+                        <div class="loginLoading" *ngIf="loadingProcess">
+                            <mat-spinner></mat-spinner>
+                        </div>
+
+                        <mat-card-content
+                            ><form
+                                [ngClass]="{
+                                    tempDisableLoginForm: loadingProcess
+                                }"
+                                [formGroup]="employersForm"
+                            >
+                                <div class="col-wrapper">
+                                    <div class="col">
+                                        <mat-form-field appearance="fill">
+                                            <mat-label>{{
+                                                'EMPLOYERS_FORM.FORM_FIELDS.LOGIN'
+                                                    | translate
+                                            }}</mat-label>
+                                            <input
+                                                matInput
+                                                formControlName="login"
+                                                tabindex="1"
+                                            />
+                                        </mat-form-field>
+
+                                        <mat-form-field appearance="fill">
+                                            <mat-label>{{
+                                                'EMPLOYERS_FORM.FORM_FIELDS.PASSWORD'
+                                                    | translate
+                                            }}</mat-label>
+                                            <input
+                                                type="password"
+                                                matInput
+                                                tabindex="2"
+                                                formControlName="password"
+                                            />
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </form>
+                        </mat-card-content>
+                        <mat-card-footer
+                            ><button
+                                mat-raised-button
+                                color="primary"
+                                mat-button
+                                cdkFocusInitial
+                                (click)="logEmployer()"
+                                [disabled]="
+                                    !hasChange() ||
+                                    !employersForm.valid ||
+                                    loadingProcess
+                                "
+                                style="
+                                    font-size: xx-large;
+                                    padding: 4%;
+                                    font-family: 'Lucida Sans',
+                                        'Lucida Sans Regular', 'Lucida Grande',
+                                        'Lucida Sans Unicode', Geneva, Verdana,
+                                        serif;
+                                "
+                            >
+                                {{ 'EMPLOYERS_FORM.FORM_BUTTON' | translate }}
+                            </button></mat-card-footer
+                        >
+                    </mat-card>
+                </div>
+                <router-outlet *ngIf="!showEmployersLoginPage"></router-outlet>
             </div>
         </div>
     </mat-sidenav-content>
