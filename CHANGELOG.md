@@ -2,26 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.12](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.11...v0.0.12) (2024-11-17)
-
-
-### Features
-
-* new login page in app with visual features ([#37](https://github.com/Johngtka/BakeryManagerApp/issues/37)) ([6b7c118](https://github.com/Johngtka/BakeryManagerApp/commit/6b7c118d239dfa83445dc0faed73f3512174b926))
-* new login page in app with visual features ([#37](https://github.com/Johngtka/BakeryManagerApp/issues/37)) ([09ee555](https://github.com/Johngtka/BakeryManagerApp/commit/09ee555e652d128493a8f95ce066e9007b3b289b))
-
-
-### Bug Fixes
-
-* fixes for price pipe data processing ([#36](https://github.com/Johngtka/BakeryManagerApp/issues/36)) ([92c8eec](https://github.com/Johngtka/BakeryManagerApp/commit/92c8eec26e433be09e65ddb2697cb6fb14a3ed7b))
-
 ### [0.0.11](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.10...v0.0.11) (2024-09-01)
 
-
 ### Features
 
-* changed datepickers in Updates and Sales forms ([#34](https://github.com/Johngtka/BakeryManagerApp/issues/34)) ([097b566](https://github.com/Johngtka/BakeryManagerApp/commit/097b566650612dae275634d9c56aca58cd743906))
-* new functionality of sales and products like ( realistic data, recipe link and select all button etc.) ([#35](https://github.com/Johngtka/BakeryManagerApp/issues/35)) ([863e6f2](https://github.com/Johngtka/BakeryManagerApp/commit/863e6f2c202b63c2f8b0e312b3b0e30034b34371))
+-   changed datepickers in Updates and Sales forms ([#34](https://github.com/Johngtka/BakeryManagerApp/issues/34)) ([097b566](https://github.com/Johngtka/BakeryManagerApp/commit/097b566650612dae275634d9c56aca58cd743906))
+-   new functionality of sales and products like ( realistic data, recipe link and select all button etc.) ([#35](https://github.com/Johngtka/BakeryManagerApp/issues/35)) ([863e6f2](https://github.com/Johngtka/BakeryManagerApp/commit/863e6f2c202b63c2f8b0e312b3b0e30034b34371))
 
 ### [0.0.10](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.9...v0.0.10) (2024-08-04)
 
