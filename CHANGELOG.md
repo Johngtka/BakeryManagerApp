@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.11...v0.0.12) (2024-11-17)
+
+
+### Features
+
+* new login page in app with visual features ([#37](https://github.com/Johngtka/BakeryManagerApp/issues/37)) ([6b7c118](https://github.com/Johngtka/BakeryManagerApp/commit/6b7c118d239dfa83445dc0faed73f3512174b926))
+* new login page in app with visual features ([#37](https://github.com/Johngtka/BakeryManagerApp/issues/37)) ([09ee555](https://github.com/Johngtka/BakeryManagerApp/commit/09ee555e652d128493a8f95ce066e9007b3b289b))
+
+
+### Bug Fixes
+
+* fixes for price pipe data processing ([#36](https://github.com/Johngtka/BakeryManagerApp/issues/36)) ([92c8eec](https://github.com/Johngtka/BakeryManagerApp/commit/92c8eec26e433be09e65ddb2697cb6fb14a3ed7b))
+
 ### [0.0.11](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.10...v0.0.11) (2024-09-01)
 
 
