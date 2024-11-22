@@ -64,6 +64,13 @@ export class AppComponent implements AfterViewInit, OnInit {
             password: new FormControl('', [Validators.required]),
         });
         this.originalFormValues = this.employersForm.value;
+
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (isLoggedIn) {
+            this.showEmployersLoginPage = false;
+        } else {
+            this.showEmployersLoginPage = true;
+        }
     }
 
     ngAfterViewInit(): void {
@@ -91,10 +98,13 @@ export class AppComponent implements AfterViewInit, OnInit {
                         'SUCCESS.EMPLOYER_LOGIN',
                         SNACK_TYPE.success,
                     );
+
                     setTimeout(() => {
                         this.loadingProcess = false;
                         this.showEmployersLoginPage = false;
                     }, 3500);
+
+                    sessionStorage.setItem('isLoggedIn', 'true');
                 }
             },
             error: (err) => {
