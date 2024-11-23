@@ -6,8 +6,8 @@ import {
     HostListener,
 } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { FormControl } from '@angular/forms';
-import { FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { MatSidenav } from '@angular/material/sidenav';
 
@@ -26,6 +26,7 @@ import { EmployersService } from './services/employers.service';
 })
 export class AppComponent implements AfterViewInit, OnInit {
     constructor(
+        private router: Router,
         private observer: BreakpointObserver,
         private snackService: SnackService,
         private employersService: EmployersService,
@@ -131,6 +132,7 @@ export class AppComponent implements AfterViewInit, OnInit {
                 this.loadingProcess = false;
                 this.showEmployersLoginPage = true;
                 sessionStorage.removeItem('isLoggedIn');
+                this.router.navigate(['/home']);
             },
             error: (err) => {
                 console.log(err);
