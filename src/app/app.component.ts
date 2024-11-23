@@ -44,14 +44,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     loadingProcess = false;
 
     ngOnInit(): void {
-        this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {
-            if (isMobile.matches) {
-                this.isMobileDetected = true;
-            } else {
-                this.isMobileDetected = false;
-            }
-        });
-
         let day = this.date.getDate();
         let month = this.date.getMonth() + 1;
         let year = this.date.getFullYear();
@@ -71,6 +63,14 @@ export class AppComponent implements AfterViewInit, OnInit {
         } else {
             this.showEmployersLoginPage = true;
         }
+
+        this.observer.observe(['(max-width: 560px)']).subscribe((isMobile) => {
+            if (isMobile.matches) {
+                this.isMobileDetected = true;
+            } else {
+                this.isMobileDetected = false;
+            }
+        });
     }
 
     ngAfterViewInit(): void {
@@ -94,29 +94,29 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.employersService.employerLogin(loginFormValue).subscribe({
             next: (data) => {
                 if (data) {
-                    this.snackService.showSnackBar(
-                        'SUCCESS.EMPLOYER_LOGIN',
-                        SNACK_TYPE.success,
-                    );
-
                     setTimeout(() => {
                         this.loadingProcess = false;
                         this.showEmployersLoginPage = false;
-                    }, 3500);
+
+                        this.snackService.showSnackBar(
+                            'SUCCESS.EMPLOYER_LOGIN',
+                            SNACK_TYPE.success,
+                        );
+                    }, 2500);
 
                     sessionStorage.setItem('isLoggedIn', 'true');
                 }
             },
             error: (err) => {
-                this.snackService.showSnackBar(
-                    'ERRORS.EMPLOYER_LOGIN_ERROR',
-                    SNACK_TYPE.error,
-                );
-
                 setTimeout(() => {
                     this.loadingProcess = false;
                     this.showEmployersLoginPage = true;
-                }, 3500);
+
+                    this.snackService.showSnackBar(
+                        'ERRORS.EMPLOYER_LOGIN_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                }, 2500);
 
                 console.log(err);
             },
@@ -124,11 +124,13 @@ export class AppComponent implements AfterViewInit, OnInit {
     }
 
     logOutEmployer() {
+        this.loadingProcess = true;
         this.employersService.employerLogout().subscribe({
             next: () => {
-                sessionStorage.removeItem('isLoggedIn');
-                this.showEmployersLoginPage = true;
                 this.employersForm.reset();
+                this.loadingProcess = false;
+                this.showEmployersLoginPage = true;
+                sessionStorage.removeItem('isLoggedIn');
             },
             error: (err) => {
                 console.log(err);
