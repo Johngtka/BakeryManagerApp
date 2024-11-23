@@ -91,6 +91,15 @@
             <mat-icon>new_releases</mat-icon>
             <span>V.{{ version }}</span>
         </a>
+        <button
+            mat-button
+            (click)="logOutEmployer()"
+            class="menu-button"
+            *ngIf="!showEmployersLoginPage"
+        >
+            <mat-icon>logout</mat-icon>
+            <span>{{ 'MENU.LOGOUT' | translate }}</span>
+        </button>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -173,6 +182,12 @@
                     </mat-card>
                 </div>
                 <router-outlet *ngIf="!showEmployersLoginPage"></router-outlet>
+                <!-- <div
+                    *ngIf="!showEmployersLoginPage"
+                    class="loader-container mat-elevation-z8"
+                >
+                    <mat-spinner></mat-spinner>
+                </div> -->
             </div>
         </div>
     </mat-sidenav-content>

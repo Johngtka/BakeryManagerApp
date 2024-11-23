@@ -123,6 +123,19 @@ export class AppComponent implements AfterViewInit, OnInit {
         });
     }
 
+    logOutEmployer() {
+        this.employersService.employerLogout().subscribe({
+            next: () => {
+                sessionStorage.removeItem('isLoggedIn');
+                this.showEmployersLoginPage = true;
+                this.employersForm.reset();
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
+    }
+
     hasChange(): boolean | void {
         return (
             JSON.stringify(this.employersForm.value) !==
