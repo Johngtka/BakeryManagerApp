@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.12...v0.0.13) (2024-11-24)
+
+
+### Features
+
+* added block before auto logout ([fa9fd09](https://github.com/Johngtka/BakeryManagerApp/commit/fa9fd09f2f5ef277a94a9b03db0fa11f4d802330))
+* added new logout process to app ([f3f7230](https://github.com/Johngtka/BakeryManagerApp/commit/f3f723025492bbaca04f71e919b3cecc57f14acc))
+* added new method to employers service ([b0841f4](https://github.com/Johngtka/BakeryManagerApp/commit/b0841f4d99e753568a622c26e6d8da40c1ac40c7))
+* added router navigating to home page after logout ([39a96ff](https://github.com/Johngtka/BakeryManagerApp/commit/39a96ffbf17fa1c258236a2b518016995f13425c))
+* update changelog ([8526d6b](https://github.com/Johngtka/BakeryManagerApp/commit/8526d6bf67046b7fda357e05e9731dae3da937ca))
+
+
+### Bug Fixes
+
+* fixed logout and login process ordering ([5060cd2](https://github.com/Johngtka/BakeryManagerApp/commit/5060cd27288d0c37d635080d678f50ab01735031))
+
 ### [0.0.12](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.11...v0.0.12) (2024-11-17)
 
 ### Features

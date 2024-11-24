@@ -35,7 +35,7 @@
             class="menu-button"
             [disabled]="showEmployersLoginPage"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage
+                disabledButton: showEmployersLoginPage || loadingProcess
             }"
         >
             <mat-icon>home</mat-icon>
@@ -47,7 +47,7 @@
             class="menu-button"
             [disabled]="showEmployersLoginPage"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage
+                disabledButton: showEmployersLoginPage || loadingProcess
             }"
         >
             <mat-icon>file_upload</mat-icon>
@@ -59,7 +59,7 @@
             class="menu-button"
             [disabled]="showEmployersLoginPage"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage
+                disabledButton: showEmployersLoginPage || loadingProcess
             }"
         >
             <mat-icon>add_to_queue</mat-icon>
@@ -71,7 +71,7 @@
             class="menu-button"
             [disabled]="showEmployersLoginPage"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage
+                disabledButton: showEmployersLoginPage || loadingProcess
             }"
         >
             <mat-icon>storage</mat-icon>
@@ -85,12 +85,25 @@
             href="https://github.com/Johngtka/BakeryManagerApp/releases/latest"
             [disabled]="showEmployersLoginPage"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage
+                disabledButton: showEmployersLoginPage || loadingProcess
             }"
         >
             <mat-icon>new_releases</mat-icon>
             <span>V.{{ version }}</span>
         </a>
+        <button
+            mat-button
+            (click)="logOutEmployer()"
+            class="menu-button"
+            *ngIf="!showEmployersLoginPage"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: loadingProcess
+            }"
+        >
+            <mat-icon>logout</mat-icon>
+            <span>{{ 'MENU.LOGOUT' | translate }}</span>
+        </button>
     </mat-sidenav>
 
     <mat-sidenav-content>

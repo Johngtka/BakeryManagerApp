@@ -8,7 +8,8 @@
         "HOME": "Home",
         "SALES": "Sales",
         "PRODUCTS": "Products",
-        "UPDATES": "Updates"
+        "UPDATES": "Updates",
+        "LOGOUT": "Logout"
     },
     "SNACK_BAR": {
         "CLOSE": "Close"
