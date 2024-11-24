@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+* features for login system with new logout functions ([#38](https://github.com/Johngtka/BakeryManagerApp/issues/38)) ([7f117c9](https://github.com/Johngtka/BakeryManagerApp/commit/7f117c9b882c710719c0d390dfde7ccda0ef810c))
+* update changelog ([8526d6b](https://github.com/Johngtka/BakeryManagerApp/commit/8526d6bf67046b7fda357e05e9731dae3da937ca))
+
+### [0.0.13](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.12...v0.0.13) (2024-11-24)
+
+
+### Features
+
 * added block before auto logout ([fa9fd09](https://github.com/Johngtka/BakeryManagerApp/commit/fa9fd09f2f5ef277a94a9b03db0fa11f4d802330))
 * added new logout process to app ([f3f7230](https://github.com/Johngtka/BakeryManagerApp/commit/f3f723025492bbaca04f71e919b3cecc57f14acc))
 * added new method to employers service ([b0841f4](https://github.com/Johngtka/BakeryManagerApp/commit/b0841f4d99e753568a622c26e6d8da40c1ac40c7))
