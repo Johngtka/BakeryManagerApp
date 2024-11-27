@@ -38,11 +38,12 @@ export class AppComponent implements AfterViewInit, OnInit {
     fullDateValue!: string;
     employersForm!: FormGroup;
     dayScopeValue!: string | number;
+    loadingProcess = false;
     isMobileDetected = false;
     monthScopeValue!: string | number;
     originalFormValues!: Employers;
+    loggedEmployerData!: Employers;
     showEmployersLoginPage = true;
-    loadingProcess = false;
 
     ngOnInit(): void {
         let day = this.date.getDate();
@@ -95,6 +96,7 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.employersService.employerLogin(loginFormValue).subscribe({
             next: (data) => {
                 if (data) {
+                    this.loggedEmployerData = data[0];
                     setTimeout(() => {
                         this.loadingProcess = false;
                         this.showEmployersLoginPage = false;
@@ -126,18 +128,20 @@ export class AppComponent implements AfterViewInit, OnInit {
 
     logOutEmployer() {
         this.loadingProcess = true;
-        this.employersService.employerLogout().subscribe({
-            next: () => {
-                this.employersForm.reset();
-                this.loadingProcess = false;
-                this.showEmployersLoginPage = true;
-                sessionStorage.removeItem('isLoggedIn');
-                this.router.navigate(['/home']);
-            },
-            error: (err) => {
-                console.log(err);
-            },
-        });
+        this.employersService
+            .employerLogout(this.loggedEmployerData)
+            .subscribe({
+                next: () => {
+                    this.employersForm.reset();
+                    this.loadingProcess = false;
+                    this.showEmployersLoginPage = true;
+                    sessionStorage.removeItem('isLoggedIn');
+                    this.router.navigate(['/home']);
+                },
+                error: (err) => {
+                    console.log(err);
+                },
+            });
     }
 
     hasChange(): boolean | void {
