@@ -14,9 +14,10 @@ export class EmployersService {
 
     private apiURL = environment.API_URL;
 
-    employerLogout(): Observable<boolean> {
+    employerLogout(data: Employers): Observable<boolean> {
         return this.http.post<boolean>(`${this.apiURL}`, {
             empLogout: true,
+            login: data.login,
         });
     }
 
