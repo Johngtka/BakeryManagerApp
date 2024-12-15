@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.13...v0.0.14) (2024-12-15)
+
+
+### Bug Fixes
+
+* fixes for logout and login systems in app ([#39](https://github.com/Johngtka/BakeryManagerApp/issues/39)) ([bcb9620](https://github.com/Johngtka/BakeryManagerApp/commit/bcb96202a363f8103452849fc490b5830c8a757e))
+
 ### [0.0.13](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.12...v0.0.13) (2024-11-24)
 
 ### Features
