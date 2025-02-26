@@ -78,6 +78,18 @@
             <mat-icon>storage</mat-icon>
             <span>{{ 'MENU.PRODUCTS' | translate }}</span>
         </button>
+        <button
+            *ngIf="lena"
+            mat-button
+            class="menu-button"
+            [disabled]="showEmployersLoginPage"
+            [ngClass]="{
+                disabledButton: showEmployersLoginPage || loadingProcess
+            }"
+        >
+            <mat-icon>person_apron</mat-icon>
+            <span>{{ 'MENU.EMPLOYERS' | translate }}</span>
+        </button>
         <a
             mat-button
             style="text-decoration: none"

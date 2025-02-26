@@ -98,11 +98,6 @@ export class AppComponent implements AfterViewInit, OnInit {
             next: (data) => {
                 if (data) {
                     this.loggedEmployerData = data[0];
-                    if (this.loggedEmployerData.position === 'chief') {
-                        this.lena = true;
-                    } else {
-                        this.lena = false;
-                    }
                     setTimeout(() => {
                         this.loadingProcess = false;
                         this.showEmployersLoginPage = false;
@@ -114,19 +109,13 @@ export class AppComponent implements AfterViewInit, OnInit {
                     }, 2500);
 
                     sessionStorage.setItem('isLoggedIn', 'true');
+                    this.checkEmployerPosition();
+                } else {
+                    this.loginError();
                 }
             },
             error: (err) => {
-                setTimeout(() => {
-                    this.loadingProcess = false;
-                    this.showEmployersLoginPage = true;
-
-                    this.snackService.showSnackBar(
-                        'ERRORS.EMPLOYER_LOGIN_ERROR',
-                        SNACK_TYPE.error,
-                    );
-                }, 2500);
-
+                this.loginError();
                 console.log(err);
             },
         });
@@ -143,6 +132,7 @@ export class AppComponent implements AfterViewInit, OnInit {
                     this.showEmployersLoginPage = true;
                     sessionStorage.removeItem('isLoggedIn');
                     this.router.navigate(['/home']);
+                    location.reload();
                 },
                 error: (err) => {
                     console.log(err);
@@ -162,5 +152,24 @@ export class AppComponent implements AfterViewInit, OnInit {
         if (event.key === 'Enter' && this.employersForm.valid) {
             this.logEmployer();
         }
+    }
+
+    checkEmployerPosition() {
+        if (this.loggedEmployerData.position === 'chief') {
+            this.lena = true;
+        } else {
+            this.lena = false;
+        }
+    }
+    loginError() {
+        setTimeout(() => {
+            this.loadingProcess = false;
+            this.showEmployersLoginPage = true;
+
+            this.snackService.showSnackBar(
+                'ERRORS.EMPLOYER_LOGIN_ERROR',
+                SNACK_TYPE.error,
+            );
+        }, 2500);
     }
 }
