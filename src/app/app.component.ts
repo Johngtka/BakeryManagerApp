@@ -44,6 +44,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     originalFormValues!: Employers;
     loggedEmployerData!: Employers;
     showEmployersLoginPage = true;
+    lena!: boolean;
 
     ngOnInit(): void {
         let day = this.date.getDate();
@@ -97,6 +98,11 @@ export class AppComponent implements AfterViewInit, OnInit {
             next: (data) => {
                 if (data) {
                     this.loggedEmployerData = data[0];
+                    if (this.loggedEmployerData.position === 'chief') {
+                        this.lena = true;
+                    } else {
+                        this.lena = false;
+                    }
                     setTimeout(() => {
                         this.loadingProcess = false;
                         this.showEmployersLoginPage = false;

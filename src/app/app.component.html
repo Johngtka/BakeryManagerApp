@@ -66,6 +66,7 @@
             <span>{{ 'MENU.SALES' | translate }}</span>
         </button>
         <button
+            *ngIf="lena"
             mat-button
             routerLink="/products"
             class="menu-button"
