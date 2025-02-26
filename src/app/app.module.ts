@@ -40,6 +40,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
+import { EMMComponent } from './emm/emm.component';
 import { UsersService } from './services/users.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -101,6 +102,7 @@ const materialsModules = [
 @NgModule({
     declarations: [
         AppComponent,
+        EMMComponent,
         HomeComponent,
         UpdatesComponent,
         ProductsComponent,
