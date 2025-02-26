@@ -44,6 +44,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     originalFormValues!: Employers;
     loggedEmployerData!: Employers;
     showEmployersLoginPage = true;
+    lena!: boolean;
 
     ngOnInit(): void {
         let day = this.date.getDate();
@@ -108,19 +109,13 @@ export class AppComponent implements AfterViewInit, OnInit {
                     }, 2500);
 
                     sessionStorage.setItem('isLoggedIn', 'true');
+                    this.checkEmployerPosition();
+                } else {
+                    this.loginError();
                 }
             },
             error: (err) => {
-                setTimeout(() => {
-                    this.loadingProcess = false;
-                    this.showEmployersLoginPage = true;
-
-                    this.snackService.showSnackBar(
-                        'ERRORS.EMPLOYER_LOGIN_ERROR',
-                        SNACK_TYPE.error,
-                    );
-                }, 2500);
-
+                this.loginError();
                 console.log(err);
             },
         });
@@ -156,5 +151,24 @@ export class AppComponent implements AfterViewInit, OnInit {
         if (event.key === 'Enter' && this.employersForm.valid) {
             this.logEmployer();
         }
+    }
+
+    checkEmployerPosition() {
+        if (this.loggedEmployerData.position === 'chief') {
+            this.lena = true;
+        } else {
+            this.lena = false;
+        }
+    }
+    loginError() {
+        setTimeout(() => {
+            this.loadingProcess = false;
+            this.showEmployersLoginPage = true;
+
+            this.snackService.showSnackBar(
+                'ERRORS.EMPLOYER_LOGIN_ERROR',
+                SNACK_TYPE.error,
+            );
+        }, 2500);
     }
 }
