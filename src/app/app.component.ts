@@ -132,7 +132,6 @@ export class AppComponent implements AfterViewInit, OnInit {
                     this.showEmployersLoginPage = true;
                     sessionStorage.removeItem('isLoggedIn');
                     this.router.navigate(['/home']);
-                    location.reload();
                 },
                 error: (err) => {
                     console.log(err);
