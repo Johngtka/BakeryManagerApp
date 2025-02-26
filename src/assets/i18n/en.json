@@ -8,7 +8,7 @@
         "HOME": "Home",
         "SALES": "Sales",
         "PRODUCTS": "Products",
-        "EMPLOYERS":"Employers",
+        "EMPLOYERS": "Employers",
         "UPDATES": "Updates",
         "LOGOUT": "Logout"
     },
@@ -107,6 +107,14 @@
             "DISCOUNT_CODE": "Discount Code"
         },
         "PDF_BUTTON": "Print PDF"
+    },
+    "EMPLOYERS_TABLE":{
+      "COLUMNS":{
+        "LOGIN": "Login",
+        "PASSWORD": "Password",
+        "EMAIL": "Email",
+        "POSITION": "Role"
+      }
     },
     "DIALOG_ACTIONS": {
         "CLOSE": "Close"

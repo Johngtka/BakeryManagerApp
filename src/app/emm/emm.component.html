@@ -1,1 +1,76 @@
-<p>emm works!</p>
+<div *ngIf="!showLostConnection" class="mat-elevation-z8 tablesTemplateBox">
+    <table
+        mat-table
+        [dataSource]="dataSource"
+        class="mat-elevation-z8 tablesTemplate"
+    >
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <ng-container matColumnDef="login">
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'EMPLOYERS_TABLE.COLUMNS.LOGIN' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+
+        <ng-container matColumnDef="password">
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'EMPLOYERS_TABLE.COLUMNS.PASSWORD' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'EMPLOYERS_TABLE.COLUMNS.EMAIL' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'EMPLOYERS_TABLE.COLUMNS.POSITION' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+    </table>
+</div>
+
+<div *ngIf="!showLostConnection">
+    <mat-paginator
+        class="paginator"
+        [pageSizeOptions]="[3]"
+        aria-label="Select page"
+    ></mat-paginator>
+</div>
+
+<div *ngIf="!showLostConnection" class="controlPanel">
+    <button mat-raised-button class="mat-elevation-z8" color="primary">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
+    </button>
+
+    <button color="accent" class="mat-elevation-z8" mat-stroked-button>
+        <mat-icon>checklist</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.SELECT_ALL' | translate }}</span>
+    </button>
+
+    <button mat-stroked-button class="mat-elevation-z8" color="warn">
+        <mat-icon>highlight_off</mat-icon>
+        <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
+    </button>
+</div>
+
+<div class="loader-container mat-elevation-z8" *ngIf="loadingProcess">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="showLostConnection">
+    <app-empty-state
+        icon="signal_wifi_off"
+        text="EMPTY_STATE.MESSAGES.CONNECTION_LOST"
+        [showRefreshButton]="true"
+    ></app-empty-state>
+</div>

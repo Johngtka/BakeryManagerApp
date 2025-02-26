@@ -8,7 +8,7 @@
         "HOME": "Strona Główna",
         "SALES": "Promocje",
         "PRODUCTS": "Produkty",
-        "EMPLOYERS":"Pracownicy",
+        "EMPLOYERS": "Pracownicy",
         "UPDATES": "Aktualizacje",
         "LOGOUT": "Wyloguj"
     },
@@ -107,6 +107,14 @@
             "DISCOUNT_CODE": "Kod Rabatowy"
         },
         "PDF_BUTTON": "Drukuj PDF"
+    },
+    "EMPLOYERS_TABLE":{
+      "COLUMNS":{
+        "LOGIN": "Login",
+        "PASSWORD": "Hasło",
+        "EMAIL": "Email",
+        "POSITION": "Ranga"
+      }
     },
     "DIALOG_ACTIONS": {
         "CLOSE": "Zamknij"
