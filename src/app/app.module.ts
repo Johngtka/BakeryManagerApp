@@ -57,6 +57,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
+import { EmployersInputDialogComponent } from './employers-input-dialog/employers-input-dialog.component';
 
 export const MY_DATE_FORMATS = {
     parse: {
@@ -115,6 +116,7 @@ const materialsModules = [
         SalesInputDialogComponent,
         UpdateInputDialogComponent,
         ProductInputDialogComponent,
+        EmployersInputDialogComponent,
         SalesComponent,
         SalesDatePipe,
     ],
