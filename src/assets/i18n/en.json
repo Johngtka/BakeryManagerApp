@@ -108,13 +108,14 @@
         },
         "PDF_BUTTON": "Print PDF"
     },
-    "EMPLOYERS_TABLE":{
-      "COLUMNS":{
-        "LOGIN": "Login",
-        "PASSWORD": "Password",
-        "EMAIL": "Email",
-        "POSITION": "Role"
-      }
+    "EMPLOYERS_TABLE": {
+        "COLUMNS": {
+            "LOGIN": "Login",
+            "PASSWORD": "Password",
+            "EMAIL": "Email",
+            "POSITION": "Role"
+        },
+        "FIRED_BUTTON": "Fire"
     },
     "DIALOG_ACTIONS": {
         "CLOSE": "Close"
