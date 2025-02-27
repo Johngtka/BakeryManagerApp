@@ -1,0 +1,24 @@
+.mat-column-login {
+  width: 10%;
+  text-align: center;
+}
+
+.mat-column-password {
+  width: 10%;
+  text-align: center;
+}
+
+.mat-column-email {
+  width: 10%;
+  text-align: center;
+}
+
+.mat-column-position {
+  width: 10%;
+  text-align: center;
+}
+
+.mat-column-options {
+  text-align: center;
+  width: 10%;
+}

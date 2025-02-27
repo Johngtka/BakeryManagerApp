@@ -6,7 +6,12 @@
     >
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="clickedRow(row)"
+            [ngClass]="{ selectedRow: empID.indexOf(row.id) > -1 }"
+        ></tr>
 
         <ng-container matColumnDef="login">
             <th mat-header-cell *matHeaderCellDef>
@@ -27,20 +32,63 @@
         </ng-container>
 
         <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'EMPLOYERS_TABLE.COLUMNS.EMAIL' | translate }}
             </th>
-            <td mat-cell *matCellDef="let element">
+            <td mat-cell *matCellDef="let element" class="onPhone">
                 {{ element.email }}
             </td>
         </ng-container>
 
         <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="onPhone">
                 {{ 'EMPLOYERS_TABLE.COLUMNS.POSITION' | translate }}
             </th>
-            <td mat-cell *matCellDef="let element">
+            <td mat-cell *matCellDef="let element" class="onPhone">
                 {{ element.position }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'TABLES.OPTIONS_COLUMN' | translate }}
+            </th>
+            <td
+                mat-cell
+                *matCellDef="let element"
+                (click)="empID.push(element.id)"
+            >
+                <button
+                    mat-icon-button
+                    [matMenuTriggerFor]="menu"
+                    [disabled]="!empID.includes(element.id)"
+                >
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu xPosition="after">
+                    <button
+                        mat-menu-item
+                        (mouseenter)="isEditHovered = 'active'"
+                        (mouseleave)="isEditHovered = 'inactive'"
+                        [@editHovered]="isEditHovered"
+                    >
+                        <mat-icon>edit</mat-icon>
+                        <span>{{
+                            'CONTROL_PANEL_TABLES.EDIT' | translate
+                        }}</span>
+                    </button>
+                    <button
+                        mat-menu-item
+                        (mouseenter)="isDeleteHovered = 'active'"
+                        (mouseleave)="isDeleteHovered = 'inactive'"
+                        [@deleteHovered]="isDeleteHovered"
+                    >
+                        <mat-icon>delete</mat-icon>
+                        <span>{{
+                            'CONTROL_PANEL_TABLES.DELETE' | translate
+                        }}</span>
+                    </button>
+                </mat-menu>
             </td>
         </ng-container>
     </table>
@@ -60,7 +108,12 @@
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
 
-    <button mat-stroked-button class="mat-elevation-z8" color="warn">
+    <button
+        mat-stroked-button
+        (click)="clearSelect()"
+        class="mat-elevation-z8"
+        color="warn"
+    >
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>
     </button>
