@@ -22,7 +22,8 @@
         "PRODUCT_ADDED": "Successfully added new product to database, thanks",
         "PRODUCT_EDITED": "Successfully changed product data in database, thanks",
         "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
-        "EMPLOYER_LOGIN": "Successfully logged into the system, welcome"
+        "EMPLOYER_LOGIN": "Successfully logged into the system, welcome",
+        "EMPLOYER_ADD": "Successfully hired a new employee, thank you"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "An error occurred while getting users from the database!!!",
@@ -37,7 +38,9 @@
         "SALES_ADD_ERROR": "An error occurred while adding new sale to the database!!!",
         "SALES_DELETE_ERROR": "An error occurred while trying to delete sale from database!!!",
         "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!",
-        "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!"
+        "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!",
+        "EMPLOYER_ADD_ERROR": "There was an error when hiring an employee!!!",
+        "EMPLOYER_GETTING_ERROR":"There was an error when downloading employees from the database!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",

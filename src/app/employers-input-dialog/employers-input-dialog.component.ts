@@ -23,6 +23,7 @@ export class EmployersInputDialogComponent implements OnInit {
     titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
+    employersPositions: string[] = ['chief', 'regular'];
     originalFormValues!: Employers;
 
     ngOnInit(): void {
@@ -35,5 +36,25 @@ export class EmployersInputDialogComponent implements OnInit {
             position: new FormControl('', [Validators.required]),
         });
         this.originalFormValues = this.registerForm.value;
+    }
+
+    addEmployer(): void {
+        const newEmployerData = this.registerForm.value;
+        this.employersService.postNewEmployer(newEmployerData).subscribe({
+            next: (NewEmp) => {
+                this.dialogRef.close(NewEmp);
+                this.snackService.showSnackBar(
+                    'SUCCESS.EMPLOYER_ADD',
+                    SNACK_TYPE.success,
+                );
+            },
+            error: (err) => {
+                console.log(err);
+                this.snackService.showSnackBar(
+                    'ERRORS.EMPLOYER_ADD_ERROR',
+                    SNACK_TYPE.error,
+                );
+            },
+        });
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import {
     trigger,
     state,
@@ -124,7 +124,7 @@ export class EMMComponent implements OnInit {
             },
             error: (err) => {
                 this.snackService.showSnackBar(
-                    'ERRORS.PRODUCTS_GETTING_ERROR',
+                    'ERRORS.EMPLOYER_GETTING_ERROR',
                     SNACK_TYPE.error,
                 );
 
@@ -136,5 +136,17 @@ export class EMMComponent implements OnInit {
                 console.log(err);
             },
         });
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'ArrowRight' && this.paginator.hasNextPage()) {
+            this.paginator.nextPage();
+        } else if (
+            event.key === 'ArrowLeft' &&
+            this.paginator.hasPreviousPage()
+        ) {
+            this.paginator.previousPage();
+        }
     }
 }
