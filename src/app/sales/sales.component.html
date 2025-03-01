@@ -29,7 +29,7 @@
                 {{ 'SALES_TABLE.COLUMNS.START_DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element" class="onPhone">
-                {{ element.StartDate | date: 'dd.MM.yyyy' }}
+                {{ element.StartDate | date : 'dd.MM.yyyy' }}
             </td>
         </ng-container>
 
@@ -116,6 +116,6 @@
     <app-empty-state
         icon="signal_wifi_off"
         text="EMPTY_STATE.MESSAGES.CONNECTION_LOST"
-        [showRefreshButton]="true"
+        [showRefreshButton]="false"
     ></app-empty-state>
 </div>
