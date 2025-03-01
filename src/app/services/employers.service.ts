@@ -20,6 +20,16 @@ export class EmployersService {
         });
     }
 
+    postNewEmployer(data: Employers): Observable<Employers> {
+        return this.http.post<Employers>(`${this.apiURL}`, {
+            postEmployer: true,
+            login: data.login,
+            password: data.password,
+            email: data.email,
+            position: data.position,
+        });
+    }
+
     employerLogout(data: Employers): Observable<boolean> {
         return this.http.post<boolean>(`${this.apiURL}`, {
             empLogout: true,
