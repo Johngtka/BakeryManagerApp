@@ -165,6 +165,18 @@
             "VALUE": "Wartość"
         }
     },
+    "EMPLOYERS_DIALOG": {
+        "INFO": {
+            "NEW_EMPLOYER_TITLE": "Nowy Pracownik",
+            "NEW_EMPLOYER_BUTTON": "Dodaj"
+        },
+        "FORM": {
+            "LOGIN": "Login",
+            "PASSWORD": "Hasło",
+            "EMAIL": "Email",
+            "POSITION": "Rodzaj Zatrudnienia"
+        }
+    },
     "EMPTY_STATE": {
         "STATE_TITLE": "Ups, coś poszło nie tak!!!",
         "MESSAGES": {

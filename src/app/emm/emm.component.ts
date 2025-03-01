@@ -7,12 +7,18 @@ import {
     transition,
 } from '@angular/animations';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { Employers } from '../models/employers';
 import { SnackService, SNACK_TYPE } from '../services/snack.service';
 import { EmployersService } from '../services/employers.service';
+import { EmployersInputDialogComponent } from '../employers-input-dialog/employers-input-dialog.component';
+import {
+    ConfirmDialogComponent,
+    ConfirmationDialogResponse,
+} from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
     selector: 'app-emm',
@@ -59,6 +65,7 @@ export class EMMComponent implements OnInit {
     constructor(
         private employerService: EmployersService,
         private snackService: SnackService,
+        private dialog: MatDialog,
     ) {}
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -92,6 +99,17 @@ export class EMMComponent implements OnInit {
         } else {
             this.empID.push(row.id);
         }
+    }
+
+    openDialog(): void {
+        const dialogRef = this.dialog.open(EmployersInputDialogComponent, {
+            disableClose: true,
+        });
+        dialogRef.afterClosed().subscribe((result: Employers) => {
+            if (result) {
+                this.getEmployers();
+            }
+        });
     }
 
     private getEmployers(): void {

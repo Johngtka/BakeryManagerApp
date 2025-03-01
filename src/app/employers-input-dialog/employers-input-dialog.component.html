@@ -1,1 +1,29 @@
-<p>employers-input-dialog works!</p>
+<form [formGroup]="registerForm">
+    <h1 mat-dialog-title>{{ titleText | translate }}</h1>
+    <mat-divider class="dividers"></mat-divider>
+    <mat-dialog-content class="mat-typography">
+        <div class="col-wrapper">
+            <div class="col"></div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button
+            mat-button
+            mat-raised-button
+            mat-dialog-close
+            class="dialogButtons"
+        >
+            {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
+        </button>
+        <button
+            mat-button
+            mat-raised-button
+            color="primary"
+            cdkFocusInitial
+            [disabled]="!registerForm.valid"
+            class="dialogButtons"
+        >
+            {{ buttonText | translate }}
+        </button>
+    </mat-dialog-actions>
+</form>

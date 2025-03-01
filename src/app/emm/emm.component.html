@@ -103,13 +103,19 @@
 </div>
 
 <div *ngIf="!showLostConnection" class="controlPanel">
-    <button mat-raised-button class="mat-elevation-z8" color="primary">
+    <button
+        mat-raised-button
+        (click)="openDialog()"
+        class="mat-elevation-z8"
+        color="primary"
+    >
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
 
     <button
         mat-stroked-button
+        [disabled]="empID.length < 1"
         (click)="clearSelect()"
         class="mat-elevation-z8"
         color="warn"

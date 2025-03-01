@@ -165,6 +165,18 @@
             "VALUE": "Value"
         }
     },
+    "EMPLOYERS_DIALOG": {
+        "INFO": {
+            "NEW_EMPLOYER_TITLE": "New Employer",
+            "NEW_EMPLOYER_BUTTON": "ADD"
+        },
+        "FORM": {
+            "LOGIN": "Login",
+            "PASSWORD": "Password",
+            "EMAIL": "Email",
+            "POSITION": "Type of Employment"
+        }
+    },
     "EMPTY_STATE": {
         "STATE_TITLE": "Oops, something went wrong!!!",
         "MESSAGES": {
