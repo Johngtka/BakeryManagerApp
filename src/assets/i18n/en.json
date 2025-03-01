@@ -58,6 +58,17 @@
     "TABLES": {
         "OPTIONS_COLUMN": "Options"
     },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Close"
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Oops, something went wrong!!!",
+        "MESSAGES": {
+            "NO_USER": "You forgot to select a user from the table",
+            "CONNECTION_LOST": "The connection was lost or other technical problems occurred"
+        },
+        "REFRESH_BUTTON": "Refresh"
+    },
     "PRODUCT_CONFIRM_DIALOG": {
         "TITLE": "Product Removing",
         "MESSAGE": "Are you sure you wont to remove the product?",
@@ -67,6 +78,11 @@
         "TITLE": "Sale Removing",
         "MESSAGE": "Are you sure you wont to remove the sale?",
         "ACTION": "Delete"
+    },
+    "EMPLOYERS_CONFIRM_DIALOG":{
+      "TITLE":"Employee Dismissal",
+      "MESSAGE":"Are you sure you wont to fire the worker?",
+      "ACTION":"Delete"
     },
     "USERS_TABLE": {
         "COLUMNS": {
@@ -119,9 +135,6 @@
             "POSITION": "Role"
         },
         "FIRED_BUTTON": "Fire"
-    },
-    "DIALOG_ACTIONS": {
-        "CLOSE": "Close"
     },
     "UPDATE_DIALOG": {
         "INFO": {
@@ -179,17 +192,5 @@
             "EMAIL": "Email",
             "POSITION": "Type of Employment"
         }
-    },
-    "EMPTY_STATE": {
-        "STATE_TITLE": "Oops, something went wrong!!!",
-        "MESSAGES": {
-            "NO_USER": "You forgot to select a user from the table",
-            "CONNECTION_LOST": "The connection was lost or other technical problems occurred"
-        },
-        "REFRESH_BUTTON": "Refresh"
-    },
-    "APP_FOOTER": {
-        "FOOTER_CONTENT": "Version:",
-        "FOOTER_RIGHTS": "All rights reserved"
     }
 }

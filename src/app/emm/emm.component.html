@@ -82,6 +82,7 @@
                         (mouseenter)="isDeleteHovered = 'active'"
                         (mouseleave)="isDeleteHovered = 'inactive'"
                         [@deleteHovered]="isDeleteHovered"
+                        (click)="deleteEmployer(element)"
                     >
                         <mat-icon>delete</mat-icon>
                         <span>{{

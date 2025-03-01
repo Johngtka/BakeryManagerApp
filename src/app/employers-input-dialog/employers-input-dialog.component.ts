@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 
 import { Employers } from '../models/employers';
@@ -56,5 +57,12 @@ export class EmployersInputDialogComponent implements OnInit {
                 );
             },
         });
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyEvent(event: KeyboardEvent): void {
+        if (event.key === 'Escape') {
+            this.dialogRef.close();
+        }
     }
 }

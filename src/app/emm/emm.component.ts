@@ -112,6 +112,16 @@ export class EMMComponent implements OnInit {
         });
     }
 
+    deleteEmployer(employer: Employers): void {
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+            data: {
+                title: 'EMPLOYERS_CONFIRM_DIALOG.TITLE',
+                message: 'EMPLOYERS_CONFIRM_DIALOG.MESSAGE',
+                action: 'EMPLOYERS_CONFIRM_DIALOG.ACTION',
+            },
+        });
+    }
+
     private getEmployers(): void {
         this.employerService.getEmployers().subscribe({
             next: (data) => {

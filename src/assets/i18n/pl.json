@@ -58,6 +58,17 @@
     "TABLES": {
         "OPTIONS_COLUMN": "Opcje"
     },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Zamknij"
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Ups, coś poszło nie tak!!!",
+        "MESSAGES": {
+            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli",
+            "CONNECTION_LOST": "Utracono połączenie lub wystąpiły inne problemy techniczne"
+        },
+        "REFRESH_BUTTON": "Odśwież"
+    },
     "PRODUCT_CONFIRM_DIALOG": {
         "TITLE": "Usunięcie produktu",
         "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
@@ -67,6 +78,11 @@
         "TITLE": "Usunięcie Promocji",
         "MESSAGE": "Czy jesteś pewny, że chcesz usunąć promocje?",
         "ACTION": "Usuń"
+    },
+    "EMPLOYERS_CONFIRM_DIALOG":{
+      "TITLE":"Zwolnienie Pracownika",
+      "MESSAGE":"Czy jesteś pewny, że chcesz zwolnić pracownika?",
+      "ACTION":"Usuń"
     },
     "USERS_TABLE": {
         "COLUMNS": {
@@ -119,9 +135,6 @@
             "POSITION": "Ranga"
         },
         "FIRED_BUTTON": "Zwolnij"
-    },
-    "DIALOG_ACTIONS": {
-        "CLOSE": "Zamknij"
     },
     "UPDATE_DIALOG": {
         "INFO": {
@@ -179,18 +192,6 @@
             "EMAIL": "Email",
             "POSITION": "Rodzaj Zatrudnienia"
         }
-    },
-    "EMPTY_STATE": {
-        "STATE_TITLE": "Ups, coś poszło nie tak!!!",
-        "MESSAGES": {
-            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli",
-            "CONNECTION_LOST": "Utracono połączenie lub wystąpiły inne problemy techniczne"
-        },
-        "REFRESH_BUTTON": "Odśwież"
-    },
-    "APP_FOOTER": {
-        "FOOTER_CONTENT": "Wersja:",
-        "FOOTER_RIGHTS": "Wszelkie prawa zastrzeżone"
     },
     "EMPLOYERS_FORM": {
         "FORM_HEADER": "Logowanie Pracownika",
