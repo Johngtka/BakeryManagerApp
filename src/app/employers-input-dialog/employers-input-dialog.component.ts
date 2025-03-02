@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, HostListener, inject } from '@angular/core';
+import { Component, Inject, OnInit, HostListener } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
@@ -61,22 +61,27 @@ export class EmployersInputDialogComponent implements OnInit {
 
     addEmployer(): void {
         const newEmployerData = this.registerForm.value;
-        this.employersService.postNewEmployer(newEmployerData).subscribe({
-            next: (NewEmp) => {
-                this.dialogRef.close(NewEmp);
-                this.snackService.showSnackBar(
-                    'SUCCESS.EMPLOYER_ADD',
-                    SNACK_TYPE.success,
-                );
-            },
-            error: (err) => {
-                console.log(err);
-                this.snackService.showSnackBar(
-                    'ERRORS.EMPLOYER_ADD_ERROR',
-                    SNACK_TYPE.error,
-                );
-            },
-        });
+        if (this.isEdit) {
+            newEmployerData.id = this.data.employer.id;
+            console.log('edit');
+        } else {
+            this.employersService.postNewEmployer(newEmployerData).subscribe({
+                next: (NewEmp) => {
+                    this.dialogRef.close(NewEmp);
+                    this.snackService.showSnackBar(
+                        'SUCCESS.EMPLOYER_ADD',
+                        SNACK_TYPE.success,
+                    );
+                },
+                error: (err) => {
+                    console.log(err);
+                    this.snackService.showSnackBar(
+                        'ERRORS.EMPLOYER_ADD_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                },
+            });
+        }
     }
 
     @HostListener('document:keydown', ['$event'])
