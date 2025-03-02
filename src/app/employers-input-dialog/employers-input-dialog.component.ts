@@ -1,9 +1,8 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, Inject, OnInit, HostListener, inject } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
-import { MatDialog } from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Employers } from '../models/employers';
 import { EmployersService } from '../services/employers.service';
@@ -16,11 +15,13 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
 })
 export class EmployersInputDialogComponent implements OnInit {
     constructor(
+        @Inject(MAT_DIALOG_DATA) public data: { employer: Employers },
         private dialogRef: MatDialogRef<EmployersInputDialogComponent>,
         private employersService: EmployersService,
         private snackService: SnackService,
     ) {}
 
+    isEdit!: boolean;
     titleText!: string;
     buttonText!: string;
     registerForm!: FormGroup;
@@ -28,14 +29,33 @@ export class EmployersInputDialogComponent implements OnInit {
     originalFormValues!: Employers;
 
     ngOnInit(): void {
-        this.titleText = 'EMPLOYERS_DIALOG.INFO.NEW_EMPLOYER_TITLE';
-        this.buttonText = 'EMPLOYERS_DIALOG.INFO.NEW_EMPLOYER_BUTTON';
-        this.registerForm = new FormGroup({
-            login: new FormControl('', [Validators.required]),
-            password: new FormControl('', [Validators.required]),
-            email: new FormControl('', [Validators.required]),
-            position: new FormControl('', [Validators.required]),
-        });
+        if (this.data?.employer) {
+            this.isEdit = true;
+            this.titleText = 'EMPLOYERS_DIALOG.INFO.EDIT_EMPLOYER_TITLE';
+            this.buttonText = 'EMPLOYERS_DIALOG.INFO.EDIT_EMPLOYER_BUTTON';
+            this.registerForm = new FormGroup({
+                login: new FormControl(this.data.employer.login, [
+                    Validators.required,
+                ]),
+                password: new FormControl(this.data.employer.password, [
+                    Validators.required,
+                ]),
+                email: new FormControl(this.data.employer.email, [
+                    Validators.required,
+                ]),
+                position: new FormControl(this.data.employer.position),
+            });
+        } else {
+            this.isEdit = false;
+            this.titleText = 'EMPLOYERS_DIALOG.INFO.NEW_EMPLOYER_TITLE';
+            this.buttonText = 'EMPLOYERS_DIALOG.INFO.NEW_EMPLOYER_BUTTON';
+            this.registerForm = new FormGroup({
+                login: new FormControl('', [Validators.required]),
+                password: new FormControl('', [Validators.required]),
+                email: new FormControl('', [Validators.required]),
+                position: new FormControl('', [Validators.required]),
+            });
+        }
         this.originalFormValues = this.registerForm.value;
     }
 

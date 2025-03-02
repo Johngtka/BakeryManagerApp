@@ -24,7 +24,7 @@
         "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy",
         "EMPLOYER_LOGIN": "Pomyślnie zalogowano do systemu, zapraszamy",
         "EMPLOYER_ADD": "Pomyślnie zatrudniono nowego pracownika, dziękujemy",
-        "EMPLOYER_REMOVED":"Pomyślnie zwolniono pracownika, dziękujemy"
+        "EMPLOYER_REMOVED": "Pomyślnie zwolniono pracownika, dziękujemy"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
@@ -41,15 +41,15 @@
         "ORDERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania zamówień użytkownika z bazy!!!",
         "EMPLOYER_LOGIN_ERROR": "Niepoprawne dane logowania lub nie jesteś zatrudniony!!!",
         "EMPLOYER_ADD_ERROR": "Wystąpił błąd przy zatrudnianiu pracownika!!!",
-        "EMPLOYER_GETTING_ERROR":"Wystąpił błąd przy pobieraniu pracowników z bazy!!!",
-        "EMPLOYER_REMOVING_ERROR":"Wystąpił błąd przy zwalnianiu pracownika"
+        "EMPLOYER_GETTING_ERROR": "Wystąpił błąd przy pobieraniu pracowników z bazy!!!",
+        "EMPLOYER_REMOVING_ERROR": "Wystąpił błąd przy zwalnianiu pracownika"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
         "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy",
         "ORDERS_EXISTING": "Ten użytkownik nie ma jeszcze żadnych zamówień, trzeba poczekać",
         "SALES_EXISTING": "Przepraszamy ale w tym momencie nie istnieją żadne promocje",
-        "STOPPED_EMPLOYER_REMOVING":"Anulowano proces zwalniania pracownika"
+        "STOPPED_EMPLOYER_REMOVING": "Anulowano proces zwalniania pracownika"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -82,10 +82,10 @@
         "MESSAGE": "Czy jesteś pewny, że chcesz usunąć promocje?",
         "ACTION": "Usuń"
     },
-    "EMPLOYERS_CONFIRM_DIALOG":{
-      "TITLE":"Zwolnienie Pracownika",
-      "MESSAGE":"Czy jesteś pewny, że chcesz zwolnić pracownika?",
-      "ACTION":"Usuń"
+    "EMPLOYERS_CONFIRM_DIALOG": {
+        "TITLE": "Zwolnienie Pracownika",
+        "MESSAGE": "Czy jesteś pewny, że chcesz zwolnić pracownika?",
+        "ACTION": "Usuń"
     },
     "USERS_TABLE": {
         "COLUMNS": {
@@ -187,7 +187,9 @@
     "EMPLOYERS_DIALOG": {
         "INFO": {
             "NEW_EMPLOYER_TITLE": "Nowy Pracownik",
-            "NEW_EMPLOYER_BUTTON": "Dodaj"
+            "NEW_EMPLOYER_BUTTON": "Dodaj",
+            "EDIT_EMPLOYER_TITLE": "Edycja Pracownika",
+            "EDIT_EMPLOYER_BUTTON": "Edytuj"
         },
         "FORM": {
             "LOGIN": "Login",

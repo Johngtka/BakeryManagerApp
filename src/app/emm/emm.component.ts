@@ -101,8 +101,11 @@ export class EMMComponent implements OnInit {
         }
     }
 
-    openDialog(): void {
+    openDialog(employer?: Employers): void {
         const dialogRef = this.dialog.open(EmployersInputDialogComponent, {
+            data: {
+                employer,
+            },
             disableClose: true,
         });
         dialogRef.afterClosed().subscribe((result: Employers) => {
