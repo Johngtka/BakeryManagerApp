@@ -120,6 +120,32 @@ export class EMMComponent implements OnInit {
                 action: 'EMPLOYERS_CONFIRM_DIALOG.ACTION',
             },
         });
+        dialogRef.afterClosed().subscribe((response) => {
+            if (response === ConfirmationDialogResponse.OK) {
+                this.employerService.deleteEmployer(employer).subscribe({
+                    next: () => {
+                        this.getEmployers();
+                        this.clearSelect();
+                        this.snackService.showSnackBar(
+                            'SUCCESS.EMPLOYER_REMOVED',
+                            SNACK_TYPE.success,
+                        );
+                    },
+                    error: (err) => {
+                        console.log(err);
+                        this.snackService.showSnackBar(
+                            'ERRORS.EMPLOYER_REMOVING_ERROR',
+                            SNACK_TYPE.error,
+                        );
+                    },
+                });
+            } else if (response === ConfirmationDialogResponse.NOPE) {
+                this.snackService.showSnackBar(
+                    'INFO.STOPPED_EMPLOYER_REMOVING',
+                    SNACK_TYPE.info,
+                );
+            }
+        });
     }
 
     private getEmployers(): void {

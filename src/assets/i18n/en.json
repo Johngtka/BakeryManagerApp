@@ -23,7 +23,8 @@
         "PRODUCT_EDITED": "Successfully changed product data in database, thanks",
         "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
         "EMPLOYER_LOGIN": "Successfully logged into the system, welcome",
-        "EMPLOYER_ADD": "Successfully hired a new employee, thank you"
+        "EMPLOYER_ADD": "Successfully hired a new employee, thank you",
+        "EMPLOYER_REMOVED":"Successfully dismissed employee, thank you"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "An error occurred while getting users from the database!!!",
@@ -40,13 +41,15 @@
         "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!",
         "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!",
         "EMPLOYER_ADD_ERROR": "There was an error when hiring an employee!!!",
-        "EMPLOYER_GETTING_ERROR":"There was an error when downloading employees from the database!!!"
+        "EMPLOYER_GETTING_ERROR":"There was an error when downloading employees from the database!!!",
+        "EMPLOYER_REMOVING_ERROR":"An error occurred when firing an employee"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",
         "STOPPED_SALE_REMOVING": "Deletion of sales from the base has been cancelled",
         "ORDERS_EXISTING": "This user does not have any orders yet, you have to wait",
-        "SALES_EXISTING": "Sorry, but there are no sales at this time"
+        "SALES_EXISTING": "Sorry, but there are no sales at this time",
+        "STOPPED_EMPLOYER_REMOVING":"The process of dismissing an employee was canceled"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Add",

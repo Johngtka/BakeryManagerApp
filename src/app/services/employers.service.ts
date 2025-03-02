@@ -30,6 +30,14 @@ export class EmployersService {
         });
     }
 
+    employerLogin(data: Employers): Observable<Array<Employers>> {
+        return this.http.post<Array<Employers>>(`${this.apiURL}`, {
+            empLog: true,
+            employerLogin: data.login,
+            employerPassword: data.password,
+        });
+    }
+
     employerLogout(data: Employers): Observable<boolean> {
         return this.http.post<boolean>(`${this.apiURL}`, {
             empLogout: true,
@@ -37,11 +45,10 @@ export class EmployersService {
         });
     }
 
-    employerLogin(data: Employers): Observable<Array<Employers>> {
-        return this.http.post<Array<Employers>>(`${this.apiURL}`, {
-            empLog: true,
-            employerLogin: data.login,
-            employerPassword: data.password,
+    deleteEmployer(data: Employers): Observable<Employers> {
+        return this.http.post<Employers>(`${this.apiURL}`, {
+            deleteEmployer: true,
+            id: data.id,
         });
     }
 }
