@@ -34,15 +34,9 @@ export class EmployersInputDialogComponent implements OnInit {
             this.titleText = 'EMPLOYERS_DIALOG.INFO.EDIT_EMPLOYER_TITLE';
             this.buttonText = 'EMPLOYERS_DIALOG.INFO.EDIT_EMPLOYER_BUTTON';
             this.registerForm = new FormGroup({
-                login: new FormControl(this.data.employer.login, [
-                    Validators.required,
-                ]),
-                password: new FormControl(this.data.employer.password, [
-                    Validators.required,
-                ]),
-                email: new FormControl(this.data.employer.email, [
-                    Validators.required,
-                ]),
+                login: new FormControl(this.data.employer.login),
+                password: new FormControl(this.data.employer.password),
+                email: new FormControl(this.data.employer.email),
                 position: new FormControl(this.data.employer.position),
             });
         } else {
@@ -63,7 +57,22 @@ export class EmployersInputDialogComponent implements OnInit {
         const newEmployerData = this.registerForm.value;
         if (this.isEdit) {
             newEmployerData.id = this.data.employer.id;
-            console.log('edit');
+            this.employersService.editEmployer(newEmployerData).subscribe({
+                next: (data) => {
+                    this.dialogRef.close(data);
+                    this.snackService.showSnackBar(
+                        'SUCCESS.EMPLOYER_EDITED',
+                        SNACK_TYPE.success,
+                    );
+                },
+                error: (err) => {
+                    console.log(err);
+                    this.snackService.showSnackBar(
+                        'ERRORS.EMPLOYER_EDITING_ERROR',
+                        SNACK_TYPE.error,
+                    );
+                },
+            });
         } else {
             this.employersService.postNewEmployer(newEmployerData).subscribe({
                 next: (NewEmp) => {
@@ -82,6 +91,13 @@ export class EmployersInputDialogComponent implements OnInit {
                 },
             });
         }
+    }
+
+    hasChange(): boolean | void {
+        return (
+            JSON.stringify(this.registerForm.value) !==
+            JSON.stringify(this.originalFormValues)
+        );
     }
 
     @HostListener('document:keydown', ['$event'])

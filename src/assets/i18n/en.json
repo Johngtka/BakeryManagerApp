@@ -24,6 +24,7 @@
         "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
         "EMPLOYER_LOGIN": "Successfully logged into the system, welcome",
         "EMPLOYER_ADD": "Successfully hired a new employee, thank you",
+        "EMPLOYER_EDITED": "Successfully updated the employee, thank you",
         "EMPLOYER_REMOVED": "Successfully dismissed employee, thank you"
     },
     "ERRORS": {
@@ -42,7 +43,8 @@
         "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!",
         "EMPLOYER_ADD_ERROR": "There was an error when hiring an employee!!!",
         "EMPLOYER_GETTING_ERROR": "There was an error when downloading employees from the database!!!",
-        "EMPLOYER_REMOVING_ERROR": "An error occurred when firing an employee"
+        "EMPLOYER_REMOVING_ERROR": "An error occurred when firing an employee!!!",
+        "EMPLOYER_EDITING_ERROR": "There was an error when editing an employee!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",

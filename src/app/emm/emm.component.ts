@@ -147,6 +147,7 @@ export class EMMComponent implements OnInit {
                     'INFO.STOPPED_EMPLOYER_REMOVING',
                     SNACK_TYPE.info,
                 );
+                this.empID.splice(this.empID.indexOf(employer.id), 1);
             }
         });
     }

@@ -45,6 +45,17 @@ export class EmployersService {
         });
     }
 
+    editEmployer(data: Employers): Observable<Employers> {
+        return this.http.post<Employers>(`${this.apiURL}`, {
+            editEmployer: true,
+            id: data.id,
+            nLogin: data.login,
+            nPass: data.password,
+            nEmail: data.email,
+            nPosition: data.position,
+        });
+    }
+
     deleteEmployer(data: Employers): Observable<Employers> {
         return this.http.post<Employers>(`${this.apiURL}`, {
             deleteEmployer: true,

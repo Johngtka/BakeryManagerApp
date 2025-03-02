@@ -51,7 +51,7 @@
             mat-raised-button
             color="primary"
             cdkFocusInitial
-            [disabled]="!registerForm.valid"
+            [disabled]="!hasChange() || !registerForm.valid"
             class="dialogButtons"
             (click)="addEmployer()"
         >

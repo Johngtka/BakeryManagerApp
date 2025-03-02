@@ -24,6 +24,7 @@
         "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy",
         "EMPLOYER_LOGIN": "Pomyślnie zalogowano do systemu, zapraszamy",
         "EMPLOYER_ADD": "Pomyślnie zatrudniono nowego pracownika, dziękujemy",
+        "EMPLOYER_EDITED": "Pomyślnie zaktualizowano pracownika, dziękujemy",
         "EMPLOYER_REMOVED": "Pomyślnie zwolniono pracownika, dziękujemy"
     },
     "ERRORS": {
@@ -42,7 +43,8 @@
         "EMPLOYER_LOGIN_ERROR": "Niepoprawne dane logowania lub nie jesteś zatrudniony!!!",
         "EMPLOYER_ADD_ERROR": "Wystąpił błąd przy zatrudnianiu pracownika!!!",
         "EMPLOYER_GETTING_ERROR": "Wystąpił błąd przy pobieraniu pracowników z bazy!!!",
-        "EMPLOYER_REMOVING_ERROR": "Wystąpił błąd przy zwalnianiu pracownika"
+        "EMPLOYER_EDITING_ERROR": "Wystąpił błąd przy edytowaniu pracownika!!!",
+        "EMPLOYER_REMOVING_ERROR": "Wystąpił błąd przy zwalnianiu pracownika!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
