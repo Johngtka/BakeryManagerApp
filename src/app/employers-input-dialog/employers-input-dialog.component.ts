@@ -17,8 +17,8 @@ export class EmployersInputDialogComponent implements OnInit {
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: { employer: Employers },
         private dialogRef: MatDialogRef<EmployersInputDialogComponent>,
-        private employersService: EmployersService,
         private snackService: SnackService,
+        private employersService: EmployersService,
     ) {}
 
     isEdit!: boolean;

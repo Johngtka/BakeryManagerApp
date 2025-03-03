@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import {
-    trigger,
     state,
     style,
+    trigger,
     animate,
     transition,
 } from '@angular/animations';
@@ -63,9 +63,9 @@ import {
 })
 export class EMMComponent implements OnInit {
     constructor(
-        private employerService: EmployersService,
-        private snackService: SnackService,
         private dialog: MatDialog,
+        private snackService: SnackService,
+        private employerService: EmployersService,
     ) {}
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
