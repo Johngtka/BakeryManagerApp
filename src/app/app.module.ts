@@ -49,6 +49,7 @@ import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './pipes/price.pipe';
 import { WeightPipe } from './pipes/weight.pipe';
 import { SalesDatePipe } from './pipes/sales-date.pipe';
+import { AnonymousPipe } from './pipes/anonymous.pipe';
 import { SalesComponent } from './sales/sales.component';
 import { UpdateDescPipe } from './pipes/update-desc.pipe';
 import { OrdersComponent } from './orders/orders.component';
@@ -106,6 +107,7 @@ const materialsModules = [
         WeightPipe,
         AppComponent,
         EMMComponent,
+        AnonymousPipe,
         SalesDatePipe,
         HomeComponent,
         SalesComponent,
