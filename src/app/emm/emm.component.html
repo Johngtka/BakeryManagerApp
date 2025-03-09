@@ -27,7 +27,7 @@
                 {{ 'EMPLOYERS_TABLE.COLUMNS.PASSWORD' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.password }}
+                {{ element.password | anonymous }}
             </td>
         </ng-container>
 
