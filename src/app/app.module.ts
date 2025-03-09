@@ -40,6 +40,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
+import { EMMComponent } from './emm/emm.component';
 import { UsersService } from './services/users.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -56,6 +57,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { SalesInputDialogComponent } from './sales-input-dialog/sales-input-dialog.component';
 import { UpdateInputDialogComponent } from './update-input-dialog/update-input-dialog.component';
 import { ProductInputDialogComponent } from './product-input-dialog/product-input-dialog.component';
+import { EmployersInputDialogComponent } from './employers-input-dialog/employers-input-dialog.component';
 
 export const MY_DATE_FORMATS = {
     parse: {
@@ -77,44 +79,46 @@ const navigatorLang = navigator.language.split('-')[0];
 const supportedLang = ['pl', 'en'];
 const lang = supportedLang.includes(navigatorLang) ? navigatorLang : 'en';
 const materialsModules = [
+    LayoutModule,
+    MatMenuModule,
     MatCardModule,
     MatIconModule,
     MatTableModule,
     MatInputModule,
     MatSelectModule,
-    MatStepperModule,
     MatButtonModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
+    MatDialogModule,
+    MatStepperModule,
     MatSidenavModule,
     MatDividerModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatDialogModule,
     MatSnackBarModule,
     MatPaginatorModule,
-    LayoutModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatProgressSpinnerModule,
 ];
 
 @NgModule({
     declarations: [
-        AppComponent,
-        HomeComponent,
-        UpdatesComponent,
-        ProductsComponent,
         PricePipe,
         WeightPipe,
+        AppComponent,
+        EMMComponent,
+        SalesDatePipe,
+        HomeComponent,
+        SalesComponent,
         UpdateDescPipe,
         OrdersComponent,
+        UpdatesComponent,
+        ProductsComponent,
         EmptyStateComponent,
         ConfirmDialogComponent,
         SalesInputDialogComponent,
         UpdateInputDialogComponent,
         ProductInputDialogComponent,
-        SalesComponent,
-        SalesDatePipe,
+        EmployersInputDialogComponent,
     ],
     bootstrap: [AppComponent],
     imports: [

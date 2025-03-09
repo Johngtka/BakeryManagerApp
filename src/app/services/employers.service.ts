@@ -14,10 +14,19 @@ export class EmployersService {
 
     private apiURL = environment.API_URL;
 
-    employerLogout(data: Employers): Observable<boolean> {
-        return this.http.post<boolean>(`${this.apiURL}`, {
-            empLogout: true,
+    getEmployers(): Observable<Array<Employers>> {
+        return this.http.post<Array<Employers>>(`${this.apiURL}`, {
+            getEmployers: true,
+        });
+    }
+
+    postNewEmployer(data: Employers): Observable<Employers> {
+        return this.http.post<Employers>(`${this.apiURL}`, {
+            postEmployer: true,
             login: data.login,
+            password: data.password,
+            email: data.email,
+            position: data.position,
         });
     }
 
@@ -26,6 +35,31 @@ export class EmployersService {
             empLog: true,
             employerLogin: data.login,
             employerPassword: data.password,
+        });
+    }
+
+    employerLogout(data: Employers): Observable<boolean> {
+        return this.http.post<boolean>(`${this.apiURL}`, {
+            empLogout: true,
+            login: data.login,
+        });
+    }
+
+    editEmployer(data: Employers): Observable<Employers> {
+        return this.http.post<Employers>(`${this.apiURL}`, {
+            editEmployer: true,
+            id: data.id,
+            nLogin: data.login,
+            nPass: data.password,
+            nEmail: data.email,
+            nPosition: data.position,
+        });
+    }
+
+    deleteEmployer(data: Employers): Observable<Employers> {
+        return this.http.post<Employers>(`${this.apiURL}`, {
+            deleteEmployer: true,
+            id: data.id,
         });
     }
 }

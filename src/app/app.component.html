@@ -30,89 +30,90 @@
         </div>
         <mat-divider class="dividers"> </mat-divider>
         <button
+            class="menu-button"
             mat-button
             routerLink="/home"
-            class="menu-button"
-            [disabled]="showEmployersLoginPage"
             [ngClass]="{
                 disabledButton: showEmployersLoginPage || loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>home</mat-icon>
             <span>{{ 'MENU.HOME' | translate }}</span>
         </button>
         <button
+            class="menu-button"
             mat-button
             routerLink="/updates"
-            class="menu-button"
-            [disabled]="showEmployersLoginPage"
             [ngClass]="{
                 disabledButton: showEmployersLoginPage || loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>file_upload</mat-icon>
             <span>{{ 'MENU.UPDATES' | translate }}</span>
         </button>
         <button
+            class="menu-button"
             mat-button
             routerLink="/sales"
-            class="menu-button"
-            [disabled]="showEmployersLoginPage"
             [ngClass]="{
                 disabledButton: showEmployersLoginPage || loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>add_to_queue</mat-icon>
             <span>{{ 'MENU.SALES' | translate }}</span>
         </button>
         <button
+            class="menu-button"
             *ngIf="lena"
             mat-button
             routerLink="/products"
-            class="menu-button"
-            [disabled]="showEmployersLoginPage"
             [ngClass]="{
                 disabledButton: showEmployersLoginPage || loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>storage</mat-icon>
             <span>{{ 'MENU.PRODUCTS' | translate }}</span>
         </button>
         <button
+            class="menu-button"
             *ngIf="lena"
             mat-button
-            class="menu-button"
-            [disabled]="showEmployersLoginPage"
+            routerLink="/employers"
             [ngClass]="{
                 disabledButton: showEmployersLoginPage || loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>person_apron</mat-icon>
             <span>{{ 'MENU.EMPLOYERS' | translate }}</span>
         </button>
         <a
-            mat-button
+            href="https://github.com/Johngtka/BakeryManagerApp/releases/latest"
             style="text-decoration: none"
             class="menu-button"
             target="_blank"
-            href="https://github.com/Johngtka/BakeryManagerApp/releases/latest"
-            [disabled]="showEmployersLoginPage"
+            mat-button
             [ngClass]="{
                 disabledButton: showEmployersLoginPage || loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>new_releases</mat-icon>
             <span>V.{{ version }}</span>
         </a>
         <button
-            mat-button
-            (click)="logOutEmployer()"
             class="menu-button"
             *ngIf="!showEmployersLoginPage"
-            [disabled]="showEmployersLoginPage"
+            (click)="logOutEmployer()"
+            mat-button
             [ngClass]="{
                 disabledButton: loadingProcess
             }"
+            [disabled]="showEmployersLoginPage"
         >
             <mat-icon>logout</mat-icon>
             <span>{{ 'MENU.LOGOUT' | translate }}</span>

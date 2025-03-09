@@ -1,68 +1,51 @@
 <div *ngIf="!showLostConnection" class="mat-elevation-z8 tablesTemplateBox">
     <table
         mat-table
-        class="mat-elevation-z8 tablesTemplate"
         [dataSource]="dataSource"
+        class="mat-elevation-z8 tablesTemplate"
     >
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
         <tr
             mat-row
             *matRowDef="let row; columns: displayedColumns"
-            [ngClass]="{ selectedRow: prodID.indexOf(row.id) > -1 }"
             (click)="clickedRow(row)"
+            [ngClass]="{ selectedRow: empID.indexOf(row.id) > -1 }"
         ></tr>
 
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="login">
             <th mat-header-cell *matHeaderCellDef>
-                {{ 'PRODUCT_TABLE.COLUMNS.NAME' | translate }}
+                {{ 'EMPLOYERS_TABLE.COLUMNS.LOGIN' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                <span *ngIf="!isScreenDetected">{{ element.name }}</span>
-                <span
-                    *ngIf="isScreenDetected"
-                    (click)="openRecipeOnMobile(element)"
-                    >{{ element.name }}</span
-                >
+                {{ element.login }}
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="unitPrice">
+        <ng-container matColumnDef="password">
             <th mat-header-cell *matHeaderCellDef>
-                {{ 'PRODUCT_TABLE.COLUMNS.UNIT_PRICE' | translate }}
+                {{ 'EMPLOYERS_TABLE.COLUMNS.PASSWORD' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.price | price }}
-                {{ element.weight | weight }}
+                {{ element.password }}
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="components">
-            <th mat-header-cell *matHeaderCellDef [hidden]="isScreenDetected">
-                {{ 'PRODUCT_TABLE.COLUMNS.COMPONENTS' | translate }}
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef class="onPhone">
+                {{ 'EMPLOYERS_TABLE.COLUMNS.EMAIL' | translate }}
             </th>
-            <td mat-cell *matCellDef="let element" [hidden]="isScreenDetected">
-                <p class="components">{{ element.components }}</p>
+            <td mat-cell *matCellDef="let element" class="onPhone">
+                {{ element.email }}
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="realization">
-            <th mat-header-cell *matHeaderCellDef [hidden]="isScreenDetected">
-                {{ 'PRODUCT_TABLE.COLUMNS.REALIZATION' | translate }}
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef class="onPhone">
+                {{ 'EMPLOYERS_TABLE.COLUMNS.POSITION' | translate }}
             </th>
-            <td
-                mat-cell
-                *matCellDef="let element"
-                (click)="prodID.push(element.id)"
-                [hidden]="isScreenDetected"
-            >
-                <a
-                    color="primary"
-                    (click)="openRecipeOnMobile(element)"
-                    disabled="{{ !prodID.includes(element.id) }}"
-                    mat-stroked-button
-                >
-                    {{ 'PRODUCT_TABLE.RECIPE_BUTTON' | translate }}
-                </a>
+            <td mat-cell *matCellDef="let element" class="onPhone">
+                {{ element.position }}
             </td>
         </ng-container>
 
@@ -73,12 +56,12 @@
             <td
                 mat-cell
                 *matCellDef="let element"
-                (click)="prodID.push(element.id)"
+                (click)="empID.push(element.id)"
             >
                 <button
                     mat-icon-button
                     [matMenuTriggerFor]="menu"
-                    [disabled]="!prodID.includes(element.id)"
+                    [disabled]="!empID.includes(element.id)"
                 >
                     <mat-icon>more_vert</mat-icon>
                 </button>
@@ -100,11 +83,11 @@
                         (mouseenter)="isDeleteHovered = 'active'"
                         (mouseleave)="isDeleteHovered = 'inactive'"
                         [@deleteHovered]="isDeleteHovered"
-                        (click)="deleteProduct(element)"
+                        (click)="deleteEmployer(element)"
                     >
                         <mat-icon>delete</mat-icon>
                         <span>{{
-                            'CONTROL_PANEL_TABLES.DELETE' | translate
+                            'EMPLOYERS_TABLE.FIRED_BUTTON' | translate
                         }}</span>
                     </button>
                 </mat-menu>
@@ -115,52 +98,29 @@
 
 <div *ngIf="!showLostConnection">
     <mat-paginator
-        *ngIf="!isScreenDetected"
         class="paginator"
+        [pageSizeOptions]="[6]"
         aria-label="Select page"
-        [pageSizeOptions]="[8]"
-    >
-    </mat-paginator>
-</div>
-
-<div *ngIf="!showLostConnection">
-    <mat-paginator
-        *ngIf="isScreenDetected"
-        class="paginator"
-        aria-label="Select page"
-        [pageSizeOptions]="[5]"
-    >
-    </mat-paginator>
+    ></mat-paginator>
 </div>
 
 <div *ngIf="!showLostConnection" class="controlPanel">
     <button
-        color="primary"
-        class="mat-elevation-z8"
-        (click)="openDialog()"
         mat-raised-button
+        (click)="openDialog()"
+        class="mat-elevation-z8"
+        color="primary"
     >
         <mat-icon>add_circle_outline</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.ADD' | translate }}</span>
     </button>
 
     <button
-        color="accent"
-        class="mat-elevation-z8"
-        (click)="selectAll()"
-        [hidden]="isScreenDetected"
         mat-stroked-button
-    >
-        <mat-icon>checklist</mat-icon>
-        <span>{{ 'CONTROL_PANEL_TABLES.SELECT_ALL' | translate }}</span>
-    </button>
-
-    <button
-        color="warn"
-        class="mat-elevation-z8"
+        [disabled]="empID.length < 1"
         (click)="clearSelect()"
-        [disabled]="prodID.length < 1"
-        mat-stroked-button
+        class="mat-elevation-z8"
+        color="warn"
     >
         <mat-icon>highlight_off</mat-icon>
         <span>{{ 'CONTROL_PANEL_TABLES.CLEAR' | translate }}</span>

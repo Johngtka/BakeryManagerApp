@@ -23,7 +23,6 @@ export class ProductsService {
     postProduct(data: Product): Observable<Product> {
         return this.http.post<Product>(`${this.apiURL}`, {
             postProduct: true,
-            id: data.id,
             name: data.name,
             price: data.price,
             weight: data.weight,

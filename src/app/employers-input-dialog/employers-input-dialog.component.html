@@ -1,0 +1,61 @@
+<form [formGroup]="registerForm">
+    <h1 mat-dialog-title>{{ titleText | translate }}</h1>
+    <mat-divider class="dividers"></mat-divider>
+    <mat-dialog-content class="mat-typography">
+        <div class="col-wrapper">
+            <div class="col">
+                <mat-form-field tabindex="1" appearance="fill">
+                    <mat-label>{{
+                        'EMPLOYERS_DIALOG.FORM.LOGIN' | translate
+                    }}</mat-label>
+                    <input matInput formControlName="login" />
+                </mat-form-field>
+                <mat-form-field tabindex="2" appearance="fill">
+                    <mat-label>{{
+                        'EMPLOYERS_DIALOG.FORM.PASSWORD' | translate
+                    }}</mat-label>
+                    <input matInput formControlName="password" />
+                </mat-form-field>
+                <mat-form-field tabindex="3" appearance="fill">
+                    <mat-label>{{
+                        'EMPLOYERS_DIALOG.FORM.EMAIL' | translate
+                    }}</mat-label>
+                    <input matInput formControlName="email" />
+                </mat-form-field>
+                <mat-form-field tabindex="4" appearance="fill">
+                    <mat-label>{{
+                        'EMPLOYERS_DIALOG.FORM.POSITION' | translate
+                    }}</mat-label>
+                    <mat-select formControlName="position"
+                        ><mat-option
+                            *ngFor="let Role of employersPositions"
+                            [value]="Role"
+                            >{{ Role }}</mat-option
+                        ></mat-select
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button
+            mat-button
+            mat-raised-button
+            mat-dialog-close
+            class="dialogButtons"
+        >
+            {{ 'DIALOG_ACTIONS.CLOSE' | translate }}
+        </button>
+        <button
+            mat-button
+            mat-raised-button
+            color="primary"
+            cdkFocusInitial
+            [disabled]="!hasChange() || !registerForm.valid"
+            class="dialogButtons"
+            (click)="addEmployer()"
+        >
+            {{ buttonText | translate }}
+        </button>
+    </mat-dialog-actions>
+</form>
