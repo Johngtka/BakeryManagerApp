@@ -8,6 +8,7 @@
         "HOME": "Strona Główna",
         "SALES": "Promocje",
         "PRODUCTS": "Produkty",
+        "EMPLOYERS": "Pracownicy",
         "UPDATES": "Aktualizacje",
         "LOGOUT": "Wyloguj"
     },
@@ -21,7 +22,10 @@
         "PRODUCT_ADDED": "Pomyślnie dodano produkt do bazy, dziękujemy",
         "PRODUCT_EDITED": "Pomyślnie zmieniono dane produktu w bazie, dziękujemy",
         "PRODUCT_REMOVED": "Pomyślnie usunięto produkt z bazy, dziękujemy",
-        "EMPLOYER_LOGIN": "Pomyślnie zalogowano do systemu, zapraszamy"
+        "EMPLOYER_LOGIN": "Pomyślnie zalogowano do systemu, zapraszamy",
+        "EMPLOYER_ADD": "Pomyślnie zatrudniono nowego pracownika, dziękujemy",
+        "EMPLOYER_EDITED": "Pomyślnie zaktualizowano pracownika, dziękujemy",
+        "EMPLOYER_REMOVED": "Pomyślnie zwolniono pracownika, dziękujemy"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania użytkowników z bazy!!!",
@@ -36,13 +40,18 @@
         "SALES_ADD_ERROR": "Wystąpił błąd podczas próby dodania promocji do bazy!!!",
         "SALES_DELETE_ERROR": "Wystąpił błąd podczas próby usuięcia promocji z bazy!!!",
         "ORDERS_GETTING_ERROR": "Wystąpił błąd podczas pobierania zamówień użytkownika z bazy!!!",
-        "EMPLOYER_LOGIN_ERROR": "Niepoprawne dane logowania lub nie jesteś zatrudniony!!!"
+        "EMPLOYER_LOGIN_ERROR": "Niepoprawne dane logowania lub nie jesteś zatrudniony!!!",
+        "EMPLOYER_ADD_ERROR": "Wystąpił błąd przy zatrudnianiu pracownika!!!",
+        "EMPLOYER_GETTING_ERROR": "Wystąpił błąd przy pobieraniu pracowników z bazy!!!",
+        "EMPLOYER_EDITING_ERROR": "Wystąpił błąd przy edytowaniu pracownika!!!",
+        "EMPLOYER_REMOVING_ERROR": "Wystąpił błąd przy zwalnianiu pracownika!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Anulowano usunięcie produktu z bazy",
         "STOPPED_SALE_REMOVING": "Anulowano usunięcie promocji z bazy",
         "ORDERS_EXISTING": "Ten użytkownik nie ma jeszcze żadnych zamówień, trzeba poczekać",
-        "SALES_EXISTING": "Przepraszamy ale w tym momencie nie istnieją żadne promocje"
+        "SALES_EXISTING": "Przepraszamy ale w tym momencie nie istnieją żadne promocje",
+        "STOPPED_EMPLOYER_REMOVING": "Anulowano proces zwalniania pracownika"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Dodaj",
@@ -54,6 +63,17 @@
     "TABLES": {
         "OPTIONS_COLUMN": "Opcje"
     },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Zamknij"
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Ups, coś poszło nie tak!!!",
+        "MESSAGES": {
+            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli",
+            "CONNECTION_LOST": "Utracono połączenie lub wystąpiły inne problemy techniczne"
+        },
+        "REFRESH_BUTTON": "Odśwież"
+    },
     "PRODUCT_CONFIRM_DIALOG": {
         "TITLE": "Usunięcie produktu",
         "MESSAGE": "Czy jesteś pewny, że chcesz usunąć produkt?",
@@ -62,6 +82,11 @@
     "SALE_CONFIRM_DIALOG": {
         "TITLE": "Usunięcie Promocji",
         "MESSAGE": "Czy jesteś pewny, że chcesz usunąć promocje?",
+        "ACTION": "Usuń"
+    },
+    "EMPLOYERS_CONFIRM_DIALOG": {
+        "TITLE": "Zwolnienie Pracownika",
+        "MESSAGE": "Czy jesteś pewny, że chcesz zwolnić pracownika?",
         "ACTION": "Usuń"
     },
     "USERS_TABLE": {
@@ -107,8 +132,14 @@
         },
         "PDF_BUTTON": "Drukuj PDF"
     },
-    "DIALOG_ACTIONS": {
-        "CLOSE": "Zamknij"
+    "EMPLOYERS_TABLE": {
+        "COLUMNS": {
+            "LOGIN": "Login",
+            "PASSWORD": "Hasło",
+            "EMAIL": "Email",
+            "POSITION": "Ranga"
+        },
+        "FIRED_BUTTON": "Zwolnij"
     },
     "UPDATE_DIALOG": {
         "INFO": {
@@ -155,17 +186,19 @@
             "VALUE": "Wartość"
         }
     },
-    "EMPTY_STATE": {
-        "STATE_TITLE": "Ups, coś poszło nie tak!!!",
-        "MESSAGES": {
-            "NO_USER": "Zapomniałeś wybrać użytkownika z tabeli",
-            "CONNECTION_LOST": "Utracono połączenie lub wystąpiły inne problemy techniczne"
+    "EMPLOYERS_DIALOG": {
+        "INFO": {
+            "NEW_EMPLOYER_TITLE": "Nowy Pracownik",
+            "NEW_EMPLOYER_BUTTON": "Dodaj",
+            "EDIT_EMPLOYER_TITLE": "Edycja Pracownika",
+            "EDIT_EMPLOYER_BUTTON": "Edytuj"
         },
-        "REFRESH_BUTTON": "Odśwież"
-    },
-    "APP_FOOTER": {
-        "FOOTER_CONTENT": "Wersja:",
-        "FOOTER_RIGHTS": "Wszelkie prawa zastrzeżone"
+        "FORM": {
+            "LOGIN": "Login",
+            "PASSWORD": "Hasło",
+            "EMAIL": "Email",
+            "POSITION": "Rodzaj Zatrudnienia"
+        }
     },
     "EMPLOYERS_FORM": {
         "FORM_HEADER": "Logowanie Pracownika",

@@ -8,6 +8,7 @@
         "HOME": "Home",
         "SALES": "Sales",
         "PRODUCTS": "Products",
+        "EMPLOYERS": "Employers",
         "UPDATES": "Updates",
         "LOGOUT": "Logout"
     },
@@ -21,7 +22,10 @@
         "PRODUCT_ADDED": "Successfully added new product to database, thanks",
         "PRODUCT_EDITED": "Successfully changed product data in database, thanks",
         "PRODUCT_REMOVED": "Successfully removed product from database, thanks",
-        "EMPLOYER_LOGIN": "Successfully logged into the system, welcome"
+        "EMPLOYER_LOGIN": "Successfully logged into the system, welcome",
+        "EMPLOYER_ADD": "Successfully hired a new employee, thank you",
+        "EMPLOYER_EDITED": "Successfully updated the employee, thank you",
+        "EMPLOYER_REMOVED": "Successfully dismissed employee, thank you"
     },
     "ERRORS": {
         "USERS_GETTING_ERROR": "An error occurred while getting users from the database!!!",
@@ -36,13 +40,18 @@
         "SALES_ADD_ERROR": "An error occurred while adding new sale to the database!!!",
         "SALES_DELETE_ERROR": "An error occurred while trying to delete sale from database!!!",
         "ORDERS_GETTING_ERROR": "An error occurred while retrieving user orders from the database!!!",
-        "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!"
+        "EMPLOYER_LOGIN_ERROR": "Incorrect login information or you are not employed!!!",
+        "EMPLOYER_ADD_ERROR": "There was an error when hiring an employee!!!",
+        "EMPLOYER_GETTING_ERROR": "There was an error when downloading employees from the database!!!",
+        "EMPLOYER_REMOVING_ERROR": "An error occurred when firing an employee!!!",
+        "EMPLOYER_EDITING_ERROR": "There was an error when editing an employee!!!"
     },
     "INFO": {
         "STOPPED_PRODUCT_REMOVING": "Canceled the product removing process",
         "STOPPED_SALE_REMOVING": "Deletion of sales from the base has been cancelled",
         "ORDERS_EXISTING": "This user does not have any orders yet, you have to wait",
-        "SALES_EXISTING": "Sorry, but there are no sales at this time"
+        "SALES_EXISTING": "Sorry, but there are no sales at this time",
+        "STOPPED_EMPLOYER_REMOVING": "The process of dismissing an employee was canceled"
     },
     "CONTROL_PANEL_TABLES": {
         "ADD": "Add",
@@ -54,6 +63,17 @@
     "TABLES": {
         "OPTIONS_COLUMN": "Options"
     },
+    "DIALOG_ACTIONS": {
+        "CLOSE": "Close"
+    },
+    "EMPTY_STATE": {
+        "STATE_TITLE": "Oops, something went wrong!!!",
+        "MESSAGES": {
+            "NO_USER": "You forgot to select a user from the table",
+            "CONNECTION_LOST": "The connection was lost or other technical problems occurred"
+        },
+        "REFRESH_BUTTON": "Refresh"
+    },
     "PRODUCT_CONFIRM_DIALOG": {
         "TITLE": "Product Removing",
         "MESSAGE": "Are you sure you wont to remove the product?",
@@ -62,6 +82,11 @@
     "SALE_CONFIRM_DIALOG": {
         "TITLE": "Sale Removing",
         "MESSAGE": "Are you sure you wont to remove the sale?",
+        "ACTION": "Delete"
+    },
+    "EMPLOYERS_CONFIRM_DIALOG": {
+        "TITLE": "Employee Dismissal",
+        "MESSAGE": "Are you sure you wont to fire the worker?",
         "ACTION": "Delete"
     },
     "USERS_TABLE": {
@@ -107,8 +132,14 @@
         },
         "PDF_BUTTON": "Print PDF"
     },
-    "DIALOG_ACTIONS": {
-        "CLOSE": "Close"
+    "EMPLOYERS_TABLE": {
+        "COLUMNS": {
+            "LOGIN": "Login",
+            "PASSWORD": "Password",
+            "EMAIL": "Email",
+            "POSITION": "Role"
+        },
+        "FIRED_BUTTON": "Fire"
     },
     "UPDATE_DIALOG": {
         "INFO": {
@@ -155,16 +186,18 @@
             "VALUE": "Value"
         }
     },
-    "EMPTY_STATE": {
-        "STATE_TITLE": "Oops, something went wrong!!!",
-        "MESSAGES": {
-            "NO_USER": "You forgot to select a user from the table",
-            "CONNECTION_LOST": "The connection was lost or other technical problems occurred"
+    "EMPLOYERS_DIALOG": {
+        "INFO": {
+            "NEW_EMPLOYER_TITLE": "New Employer",
+            "NEW_EMPLOYER_BUTTON": "ADD",
+            "EDIT_EMPLOYER_TITLE": "Employer Editing",
+            "EDIT_EMPLOYER_BUTTON": "Edit"
         },
-        "REFRESH_BUTTON": "Refresh"
-    },
-    "APP_FOOTER": {
-        "FOOTER_CONTENT": "Version:",
-        "FOOTER_RIGHTS": "All rights reserved"
+        "FORM": {
+            "LOGIN": "Login",
+            "PASSWORD": "Password",
+            "EMAIL": "Email",
+            "POSITION": "Type of Employment"
+        }
     }
 }
