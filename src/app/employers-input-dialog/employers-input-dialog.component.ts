@@ -12,6 +12,7 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
     selector: 'app-employers-input-dialog',
     templateUrl: './employers-input-dialog.component.html',
     styleUrl: './employers-input-dialog.component.css',
+    standalone: false,
 })
 export class EmployersInputDialogComponent implements OnInit {
     constructor(

@@ -34,7 +34,7 @@
             mat-button
             routerLink="/home"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage || loadingProcess
+                disabledButton: showEmployersLoginPage || loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -46,7 +46,7 @@
             mat-button
             routerLink="/updates"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage || loadingProcess
+                disabledButton: showEmployersLoginPage || loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -58,7 +58,7 @@
             mat-button
             routerLink="/sales"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage || loadingProcess
+                disabledButton: showEmployersLoginPage || loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -71,7 +71,7 @@
             mat-button
             routerLink="/products"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage || loadingProcess
+                disabledButton: showEmployersLoginPage || loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -84,7 +84,7 @@
             mat-button
             routerLink="/employers"
             [ngClass]="{
-                disabledButton: showEmployersLoginPage || loadingProcess
+                disabledButton: showEmployersLoginPage || loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -98,7 +98,7 @@
             target="_blank"
             mat-button
             [ngClass]="{
-                disabledButton: showEmployersLoginPage || loadingProcess
+                disabledButton: showEmployersLoginPage || loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -111,7 +111,7 @@
             (click)="logOutEmployer()"
             mat-button
             [ngClass]="{
-                disabledButton: loadingProcess
+                disabledButton: loadingProcess,
             }"
             [disabled]="showEmployersLoginPage"
         >
@@ -139,7 +139,7 @@
                         <mat-card-content
                             ><form
                                 [ngClass]="{
-                                    tempDisableLoginForm: loadingProcess
+                                    tempDisableLoginForm: loadingProcess,
                                 }"
                                 [formGroup]="employersForm"
                             >
@@ -188,10 +188,10 @@
                                 style="
                                     font-size: xx-large;
                                     padding: 4%;
-                                    font-family: 'Lucida Sans',
-                                        'Lucida Sans Regular', 'Lucida Grande',
-                                        'Lucida Sans Unicode', Geneva, Verdana,
-                                        serif;
+                                    font-family:
+                                        'Lucida Sans', 'Lucida Sans Regular',
+                                        'Lucida Grande', 'Lucida Sans Unicode',
+                                        Geneva, Verdana, serif;
                                 "
                             >
                                 {{ 'EMPLOYERS_FORM.FORM_BUTTON' | translate }}

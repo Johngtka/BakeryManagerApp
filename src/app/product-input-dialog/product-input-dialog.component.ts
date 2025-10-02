@@ -19,6 +19,7 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
     selector: 'app-product-input-dialog',
     templateUrl: './product-input-dialog.component.html',
     styleUrls: ['./product-input-dialog.component.css'],
+    standalone: false,
 })
 export class ProductInputDialogComponent implements OnInit {
     constructor(

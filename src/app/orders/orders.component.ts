@@ -18,6 +18,7 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
     selector: 'app-orders',
     templateUrl: './orders.component.html',
     styleUrls: ['./orders.component.css'],
+    standalone: false,
 })
 export class OrdersComponent implements OnInit {
     constructor(

@@ -4,6 +4,7 @@ import { differenceInDays } from 'date-fns';
 
 @Pipe({
     name: 'salesDate',
+    standalone: false,
 })
 export class SalesDatePipe implements PipeTransform {
     transform(endDate: number) {

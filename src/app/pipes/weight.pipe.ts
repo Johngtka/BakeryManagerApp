@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'weight',
+    standalone: false,
 })
 export class WeightPipe implements PipeTransform {
     transform(value: string): string {

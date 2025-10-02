@@ -15,7 +15,7 @@
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
             [ngClass]="{
-                selectedRow: orderId.includes(row.id)
+                selectedRow: orderId.includes(row.id),
             }"
         ></tr>
 

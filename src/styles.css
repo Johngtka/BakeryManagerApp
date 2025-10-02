@@ -110,7 +110,8 @@ body {
 .controlPanel button {
     margin: 10px;
     font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    font-family:
+        'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, serif;
 }
 
@@ -173,7 +174,8 @@ td:hover {
 
 .dialogButtons {
     font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    font-family:
+        'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, serif;
 }
 .disabledButton {
