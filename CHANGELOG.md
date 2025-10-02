@@ -2,19 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.15](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.14...v0.0.15) (2025-10-02)
-
-
-### Features
-
-* anonymous pipe for employers and system updates ([#42](https://github.com/Johngtka/BakeryManagerApp/issues/42)) ([73a9cb8](https://github.com/Johngtka/BakeryManagerApp/commit/73a9cb89ecbf9909dee2aee964401d45fe1c341d))
-* new EMM - Employers Manager Module to app ([#41](https://github.com/Johngtka/BakeryManagerApp/issues/41)) ([f41b2d8](https://github.com/Johngtka/BakeryManagerApp/commit/f41b2d8bc3106a34986ff6d4df5b682ffa455702))
-
-
-### Bug Fixes
-
-* fixes for login and logout engine with application rules for regular and chief employers ([#40](https://github.com/Johngtka/BakeryManagerApp/issues/40)) ([420ed78](https://github.com/Johngtka/BakeryManagerApp/commit/420ed7874b9eb03bfa7ded3d127f85ec33e95b78))
-
 ### [0.0.14](https://github.com/Johngtka/BakeryManagerApp/compare/v0.0.13...v0.0.14) (2024-12-15)
 
 
