@@ -60,6 +60,7 @@ import {
             transition('active => inactive', animate('400ms ease-out')),
         ]),
     ],
+    standalone: false,
 })
 export class EMMComponent implements OnInit {
     constructor(

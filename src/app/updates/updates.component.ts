@@ -20,6 +20,7 @@ import { UpdateInputDialogComponent } from '../update-input-dialog/update-input-
     selector: 'app-updates',
     templateUrl: './updates.component.html',
     styleUrls: ['./updates.component.css'],
+    standalone: false,
 })
 export class UpdatesComponent implements AfterViewInit, OnInit {
     constructor(

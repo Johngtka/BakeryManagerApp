@@ -15,6 +15,7 @@ import { SalesProductsList } from '../models/sales-products-list';
     selector: 'app-sales-input-dialog',
     templateUrl: './sales-input-dialog.component.html',
     styleUrls: ['./sales-input-dialog.component.css'],
+    standalone: false,
 })
 export class SalesInputDialogComponent implements OnInit {
     constructor(

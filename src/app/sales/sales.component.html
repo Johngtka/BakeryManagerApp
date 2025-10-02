@@ -11,7 +11,7 @@
             *matRowDef="let row; columns: displayedColumns"
             (click)="clickedRow(row)"
             [ngClass]="{
-                selectedRow: saleID.indexOf(row.id) > -1
+                selectedRow: saleID.indexOf(row.id) > -1,
             }"
         ></tr>
 
@@ -42,7 +42,7 @@
                     [ngClass]="{
                         greenDate: (element.EndDate | salesDate) >= 5,
                         orangeDate: (element.EndDate | salesDate) <= 4,
-                        redDate: (element.EndDate | salesDate) < 1
+                        redDate: (element.EndDate | salesDate) < 1,
                     }"
                 >
                     {{ element.EndDate | salesDate }}

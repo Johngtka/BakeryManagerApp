@@ -21,6 +21,7 @@ import { SnackService, SNACK_TYPE } from '../services/snack.service';
     selector: 'app-update-input-dialog',
     templateUrl: './update-input-dialog.component.html',
     styleUrls: ['./update-input-dialog.component.css'],
+    standalone: false,
 })
 export class UpdateInputDialogComponent implements OnInit {
     constructor(

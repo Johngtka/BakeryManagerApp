@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
     selector: 'app-empty-state',
     templateUrl: './empty-state.component.html',
     styleUrls: ['./empty-state.component.css'],
+    standalone: false,
 })
 export class EmptyStateComponent {
     @Input() text!: string;

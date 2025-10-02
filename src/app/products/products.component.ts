@@ -67,6 +67,7 @@ import { ProductInputDialogComponent } from '../product-input-dialog/product-inp
             transition('active => inactive', animate('400ms ease-out')),
         ]),
     ],
+    standalone: false,
 })
 export class ProductsComponent implements OnInit, AfterViewInit {
     constructor(
